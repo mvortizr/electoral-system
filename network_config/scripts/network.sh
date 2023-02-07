@@ -20,7 +20,7 @@
 ROOTDIR=$(cd "$(dirname "$0")" && pwd)
 export PATH=${ROOTDIR}/../bin:${PWD}/../bin:$PATH
 export FABRIC_CFG_PATH=${PWD}/configtx
-export VERBOSE=false
+export VERBOSE=true
 
 # push to the required directory & set a trap to go back if needed
 pushd ${ROOTDIR} > /dev/null
@@ -159,15 +159,6 @@ function createOrgs() {
       fatalln "Failed to generate certificates..."
     fi
 
-    infoln "Creating Org2 Identities"
-
-    # set -x
-    # cryptogen generate --config=./organizations/cryptogen/crypto-config-org2.yaml --output="organizations"
-    # res=$?
-    # { set +x; } 2>/dev/null
-    # if [ $res -ne 0 ]; then
-    #   fatalln "Failed to generate certificates..."
-    # fi
 
     infoln "Creating Orderer Org Identities"
 
@@ -201,17 +192,13 @@ function createOrgs() {
 
     createOrg1
 
-    infoln "Creating Org2 Identities"
-
-    createOrg2
-
     infoln "Creating Orderer Org Identities"
 
     createOrderer
 
   fi
 
-  infoln "Generating CCP files for Org1 and Org2"
+  infoln "Generating CCP files for Org1"
   ./organizations/ccp-generate.sh
 }
 

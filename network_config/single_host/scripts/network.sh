@@ -283,23 +283,6 @@ function createChannel() {
 }
 
 
-## Call the script to deploy a chaincode to the channel
-function deployCC() {
-  scripts/deployCC.sh $CHANNEL_NAME $CC_NAME $CC_SRC_PATH $CC_SRC_LANGUAGE $CC_VERSION $CC_SEQUENCE $CC_INIT_FCN $CC_END_POLICY $CC_COLL_CONFIG $CLI_DELAY $MAX_RETRY $VERBOSE
-
-  if [ $? -ne 0 ]; then
-    fatalln "Deploying chaincode failed"
-  fi
-}
-
-## Call the script to deploy a chaincode to the channel
-function deployCCAAS() {
-  scripts/deployCCAAS.sh $CHANNEL_NAME $CC_NAME $CC_SRC_PATH $CCAAS_DOCKER_RUN $CC_VERSION $CC_SEQUENCE $CC_INIT_FCN $CC_END_POLICY $CC_COLL_CONFIG $CLI_DELAY $MAX_RETRY $VERBOSE $CCAAS_DOCKER_RUN
-
-  if [ $? -ne 0 ]; then
-    fatalln "Deploying chaincode-as-a-service failed"
-  fi
-}
 
 # Tear down running network
 function networkDown() {
@@ -327,7 +310,7 @@ function networkDown() {
   # Don't remove the generated artifacts -- note, the ledgers are always removed
   if [ "$MODE" != "restart" ]; then
     # Bring down the network, deleting the volumes
-    ${CONTAINER_CLI} volume rm docker_orderer.example.com docker_peer0.org1.example.com docker_peer1.org1.example.com
+    ${CONTAINER_CLI} volume rm docker_orderer.voting_system.com docker_peer0.org1.voting_system.com docker_peer1.org1.voting_system.com
     #Cleanup the chaincode containers
     clearContainers
     #Cleanup images

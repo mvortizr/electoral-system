@@ -3,7 +3,7 @@ docker volume rm compose_orderer.voting_system.com
 docker volume rm compose_peer0.org1.voting_system.com 
 docker volume rm compose_peer0.org2.voting_system.com 
 docker volume rm compose_peer1.org1.voting_system.com
-docker network rm fabric_test
+docker network rm voting_system
 
 removeContainers() {
     docker stop $(docker ps -aq)

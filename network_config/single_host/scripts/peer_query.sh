@@ -10,4 +10,4 @@ export CORE_PEER_ADDRESS=localhost:7051
 
 peer lifecycle chaincode queryinstalled
 
-peer channel list
+#peer channel list

@@ -1,7 +1,7 @@
 export PATH=${PWD}/../bin:$PATH
 export FABRIC_CFG_PATH=$PWD/../config/
 # this id must be changed always to the result of peer lifecycle chaincode queryinstalled
-export CC_PACKAGE_ID=basic_0.1:43719fa60b50e68467a357ae9922fd5deb1e209cfc50695b57f4fd376159912c
+export CC_PACKAGE_ID=basic_0.1:51811bff7266d59c46b6f2d4860772faa36d199c0adec97ed9bd00f8b1e4ff45
 
 # P0 approves the chaincode
 

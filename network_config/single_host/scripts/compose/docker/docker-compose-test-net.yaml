@@ -7,7 +7,7 @@ version: '3.7'
 services:
   peer0.org1.voting_system.com:
     container_name: peer0.org1.voting_system.com
-    image: hyperledger/fabric-peer:latest
+    image: hyperledger/fabric-peer:2.4.1
     labels:
       service: hyperledger-fabric
     environment:
@@ -20,7 +20,7 @@ services:
 
   peer1.org1.voting_system.com:
     container_name: peer1.org1.voting_system.com
-    image: hyperledger/fabric-peer:latest
+    image: hyperledger/fabric-peer:2.4.1
     labels:
       service: hyperledger-fabric
     environment:
@@ -33,6 +33,6 @@ services:
   
   cli:
     container_name: cli
-    image: hyperledger/fabric-tools:latest
+    image: hyperledger/fabric-tools:2.4.1
     volumes:
       - ./docker/peercfg:/etc/hyperledger/peercfg

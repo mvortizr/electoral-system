@@ -106,6 +106,74 @@ function createOrg1() {
  
 
 ###############################################################################################
+
+################################################################################################
+ 
+ #PEER 2
+ 
+ ###########################################################################################
+ infoln "Registering peer2 in org 1"
+  set -x
+  fabric-ca-client register --caname ca_org1 --id.name peer2 --id.secret peer2pw --id.type peer --tls.certfiles "${PWD}/organizations/fabric-ca/org1/ca-cert.pem"
+  { set +x; } 2>/dev/null
+
+  mkdir -p organizations/peerOrganizations/org1.voting_system.com/peers/peer2.org1.voting_system.com
+
+  infoln "Generating the peer2 msp"
+  set -x
+  fabric-ca-client enroll -u https://peer2:peer2pw@localhost:7054 --caname ca_org1 -M "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer2.org1.voting_system.com/msp" --csr.hosts peer2.org1.voting_system.com --tls.certfiles "${PWD}/organizations/fabric-ca/org1/ca-cert.pem"
+  { set +x; } 2>/dev/null
+
+  cp "${PWD}/organizations/peerOrganizations/org1.voting_system.com/msp/config.yaml" "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer2.org1.voting_system.com/msp/config.yaml"
+
+  infoln "Generating the peer2-tls certificates"
+  set -x
+  fabric-ca-client enroll -u https://peer2:peer2pw@localhost:7054 --caname ca_org1 -M "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer2.org1.voting_system.com/tls" --enrollment.profile tls --csr.hosts peer2.org1.voting_system.com --csr.hosts localhost --tls.certfiles "${PWD}/organizations/fabric-ca/org1/ca-cert.pem"
+  { set +x; } 2>/dev/null
+
+  # Copy the tls CA cert, server cert, server keystore to well known file names in the peer's tls directory that are referenced by peer startup config
+  cp "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer2.org1.voting_system.com/tls/tlscacerts/"* "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer2.org1.voting_system.com/tls/ca.crt"
+  cp "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer2.org1.voting_system.com/tls/signcerts/"* "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer2.org1.voting_system.com/tls/server.crt"
+  cp "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer2.org1.voting_system.com/tls/keystore/"* "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer2.org1.voting_system.com/tls/server.key"
+ 
+
+
+ ###############################################################################################
+
+ ################################################################################################
+ 
+ #PEER 3
+ 
+ ###########################################################################################
+ infoln "Registering peer3 in org 1"
+  set -x
+  fabric-ca-client register --caname ca_org1 --id.name peer3 --id.secret peer3pw --id.type peer --tls.certfiles "${PWD}/organizations/fabric-ca/org1/ca-cert.pem"
+  { set +x; } 2>/dev/null
+
+  mkdir -p organizations/peerOrganizations/org1.voting_system.com/peers/peer3.org1.voting_system.com
+
+  infoln "Generating the peer3 msp"
+  set -x
+  fabric-ca-client enroll -u https://peer3:peer3pw@localhost:7054 --caname ca_org1 -M "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer3.org1.voting_system.com/msp" --csr.hosts peer3.org1.voting_system.com --tls.certfiles "${PWD}/organizations/fabric-ca/org1/ca-cert.pem"
+  { set +x; } 2>/dev/null
+
+  cp "${PWD}/organizations/peerOrganizations/org1.voting_system.com/msp/config.yaml" "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer3.org1.voting_system.com/msp/config.yaml"
+
+  infoln "Generating the peer3-tls certificates"
+  set -x
+  fabric-ca-client enroll -u https://peer3:peer3pw@localhost:7054 --caname ca_org1 -M "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer3.org1.voting_system.com/tls" --enrollment.profile tls --csr.hosts peer3.org1.voting_system.com --csr.hosts localhost --tls.certfiles "${PWD}/organizations/fabric-ca/org1/ca-cert.pem"
+  { set +x; } 2>/dev/null
+
+  # Copy the tls CA cert, server cert, server keystore to well known file names in the peer's tls directory that are referenced by peer startup config
+  cp "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer3.org1.voting_system.com/tls/tlscacerts/"* "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer3.org1.voting_system.com/tls/ca.crt"
+  cp "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer3.org1.voting_system.com/tls/signcerts/"* "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer3.org1.voting_system.com/tls/server.crt"
+  cp "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer3.org1.voting_system.com/tls/keystore/"* "${PWD}/organizations/peerOrganizations/org1.voting_system.com/peers/peer3.org1.voting_system.com/tls/server.key"
+ 
+
+
+ ###############################################################################################
+
+
  
   infoln "Generating the user msp"
   set -x

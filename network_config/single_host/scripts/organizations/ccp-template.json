@@ -43,6 +43,26 @@
                 "ssl-target-name-override": "peer1.org${ORG}.voting_system.com",
                 "hostnameOverride": "peer1.org${ORG}.voting_system.com"
             }
+        },
+        "peer2.org${ORG}.voting_system.com": {
+            "url": "grpcs://localhost:${P2PORT}",
+            "tlsCACerts": {
+                "pem": "${PEERPEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer2.org${ORG}.voting_system.com",
+                "hostnameOverride": "peer2.org${ORG}.voting_system.com"
+            }
+        },
+        "peer3.org${ORG}.voting_system.com": {
+            "url": "grpcs://localhost:${P3PORT}",
+            "tlsCACerts": {
+                "pem": "${PEERPEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer3.org${ORG}.voting_system.com",
+                "hostnameOverride": "peer3.org${ORG}.voting_system.com"
+            }
         }
     },
     "certificateAuthorities": {

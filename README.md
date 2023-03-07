@@ -1,9 +1,11 @@
 # Blockchain del Sistema de Elecciones UCAB (voting-system-bchain)
 
 
+
+
 ## Instrucciones para correr la network single host
 
-1. Ir a carpeta network_config > single_host > scripts
+1. Ir a carpeta network_config > single_host > scripts, la PC donde se ejecuten los comandos debe tener instalados los [prerrequsitos](https://hyperledger-fabric.readthedocs.io/en/release-2.2/prereqs.html).
 2. En ese terminal se debe ejecutar el comando ```./network.sh up``` con permisos de administrador. 
 Este script va a levantar los 5 dockers (uno cli y 4 peers) que componen la red además de crear los elementos criptográficos para registrar cada uno de ellos
 

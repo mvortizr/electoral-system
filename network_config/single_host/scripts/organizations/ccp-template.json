@@ -1,5 +1,5 @@
 {
-    "name": "test-network-org${ORG}",
+    "name": "network-org${ORG}",
     "version": "1.0.0",
     "client": {
         "organization": "Org${ORG}",
@@ -15,38 +15,58 @@
         "Org${ORG}": {
             "mspid": "Org${ORG}MSP",
             "peers": [
-                "peer0.org${ORG}.example.com",
-                "peer1.org${ORG}.example.com"
+                "peer0.org${ORG}.voting_system.com",
+                "peer1.org${ORG}.voting_system.com"
             ],
             "certificateAuthorities": [
-                "ca.org${ORG}.example.com"
+                "ca.org${ORG}.voting_system.com"
             ]
         }
     },
     "peers": {
-        "peer0.org${ORG}.example.com": {
+        "peer0.org${ORG}.voting_system.com": {
             "url": "grpcs://localhost:${P0PORT}",
             "tlsCACerts": {
                 "pem": "${PEERPEM}"
             },
             "grpcOptions": {
-                "ssl-target-name-override": "peer0.org${ORG}.example.com",
-                "hostnameOverride": "peer0.org${ORG}.example.com"
+                "ssl-target-name-override": "peer0.org${ORG}.voting_system.com",
+                "hostnameOverride": "peer0.org${ORG}.voting_system.com"
             }
         },
-        "peer1.org${ORG}.example.com": {
+        "peer1.org${ORG}.voting_system.com": {
             "url": "grpcs://localhost:${P1PORT}",
             "tlsCACerts": {
                 "pem": "${PEERPEM}"
             },
             "grpcOptions": {
-                "ssl-target-name-override": "peer1.org${ORG}.example.com",
-                "hostnameOverride": "peer1.org${ORG}.example.com"
+                "ssl-target-name-override": "peer1.org${ORG}.voting_system.com",
+                "hostnameOverride": "peer1.org${ORG}.voting_system.com"
+            }
+        },
+        "peer2.org${ORG}.voting_system.com": {
+            "url": "grpcs://localhost:${P2PORT}",
+            "tlsCACerts": {
+                "pem": "${PEERPEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer2.org${ORG}.voting_system.com",
+                "hostnameOverride": "peer2.org${ORG}.voting_system.com"
+            }
+        },
+        "peer3.org${ORG}.voting_system.com": {
+            "url": "grpcs://localhost:${P3PORT}",
+            "tlsCACerts": {
+                "pem": "${PEERPEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer3.org${ORG}.voting_system.com",
+                "hostnameOverride": "peer3.org${ORG}.voting_system.com"
             }
         }
     },
     "certificateAuthorities": {
-        "ca.org${ORG}.example.com": {
+        "ca.org${ORG}.voting_system.com": {
             "url": "https://localhost:${CAPORT}",
             "caName": "ca-org${ORG}",
             "tlsCACerts": {

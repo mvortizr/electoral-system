@@ -68,7 +68,7 @@ function checkPrereqs() {
   # use the fabric tools container to see if the samples and binaries match your
   # docker images
   LOCAL_VERSION=$(peer version | sed -ne 's/^ Version: //p')
-  DOCKER_IMAGE_VERSION=$(${CONTAINER_CLI} run --rm hyperledger/fabric-tools:latest peer version | sed -ne 's/^ Version: //p')
+  DOCKER_IMAGE_VERSION=$(${CONTAINER_CLI} run --rm hyperledger/fabric-tools:2.4.1 peer version | sed -ne 's/^ Version: //p')
 
   infoln "LOCAL_VERSION=$LOCAL_VERSION"
   infoln "DOCKER_IMAGE_VERSION=$DOCKER_IMAGE_VERSION"
@@ -101,7 +101,7 @@ function checkPrereqs() {
       exit 1
     fi
     CA_LOCAL_VERSION=$(fabric-ca-client version | sed -ne 's/ Version: //p')
-    CA_DOCKER_IMAGE_VERSION=$(${CONTAINER_CLI} run --rm hyperledger/fabric-ca:latest fabric-ca-client version | sed -ne 's/ Version: //p' | head -1)
+    CA_DOCKER_IMAGE_VERSION=$(${CONTAINER_CLI} run --rm hyperledger/fabric-ca:2.4.1 fabric-ca-client version | sed -ne 's/ Version: //p' | head -1)
     infoln "CA_LOCAL_VERSION=$CA_LOCAL_VERSION"
     infoln "CA_DOCKER_IMAGE_VERSION=$CA_DOCKER_IMAGE_VERSION"
 
@@ -283,23 +283,6 @@ function createChannel() {
 }
 
 
-## Call the script to deploy a chaincode to the channel
-function deployCC() {
-  scripts/deployCC.sh $CHANNEL_NAME $CC_NAME $CC_SRC_PATH $CC_SRC_LANGUAGE $CC_VERSION $CC_SEQUENCE $CC_INIT_FCN $CC_END_POLICY $CC_COLL_CONFIG $CLI_DELAY $MAX_RETRY $VERBOSE
-
-  if [ $? -ne 0 ]; then
-    fatalln "Deploying chaincode failed"
-  fi
-}
-
-## Call the script to deploy a chaincode to the channel
-function deployCCAAS() {
-  scripts/deployCCAAS.sh $CHANNEL_NAME $CC_NAME $CC_SRC_PATH $CCAAS_DOCKER_RUN $CC_VERSION $CC_SEQUENCE $CC_INIT_FCN $CC_END_POLICY $CC_COLL_CONFIG $CLI_DELAY $MAX_RETRY $VERBOSE $CCAAS_DOCKER_RUN
-
-  if [ $? -ne 0 ]; then
-    fatalln "Deploying chaincode-as-a-service failed"
-  fi
-}
 
 # Tear down running network
 function networkDown() {
@@ -327,7 +310,7 @@ function networkDown() {
   # Don't remove the generated artifacts -- note, the ledgers are always removed
   if [ "$MODE" != "restart" ]; then
     # Bring down the network, deleting the volumes
-    ${CONTAINER_CLI} volume rm docker_orderer.example.com docker_peer0.org1.example.com docker_peer1.org1.example.com
+    ${CONTAINER_CLI} volume rm docker_orderer.voting_system.com docker_peer0.org1.voting_system.com docker_peer1.org1.voting_system.com
     #Cleanup the chaincode containers
     clearContainers
     #Cleanup images

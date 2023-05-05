@@ -8,7 +8,7 @@ services:
       - 6379:6379
     networks:
       - voting_system
-  
+  # sha256:9ea47b75a75e5f21d8b8b1cce9a545cf2e5a8460afd0d07ad4fdd9420a40abd4
   nodeapp:
     image: 'ghcr.io/hyperledger/fabric-rest-sample:latest'
     command: ['start:dotenv']

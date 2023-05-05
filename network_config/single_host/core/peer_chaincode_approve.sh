@@ -7,6 +7,8 @@ export CC_PACKAGE_ID=basic_0.1:2070a815875efb38bad252c84a5177891066916fa75c2dc89
 
 
 
+
+
 # P0 approves the chaincode
 
 export CORE_PEER_TLS_ENABLED=true

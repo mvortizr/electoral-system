@@ -11,8 +11,6 @@ export VERBOSE=true
 . ./scripts/utils.sh
 
 
-
-
 ################################
 ### Parsing parameters      ####
 ################################
@@ -20,7 +18,7 @@ ELECTION_NAME="$1"
 DELAY="$2"
 MAX_RETRY="$3"
 VERBOSE="$4"
-: ${ELECTION_NAME:="election"}
+: ${ELECTION_NAME:="oelection"}
 : ${DELAY:="3"}
 : ${MAX_RETRY:="5"}
 : ${VERBOSE:="false"}
@@ -75,8 +73,6 @@ createChannelGenesisBlock() {
 createChannel() {
 	CHANNEL_NAME="$1"
 	infoln "Creating channel ${CHANNEL_NAME}"
-
-	setGlobals 1
 	#TODO Poll in case the raft leader is not set yet
 	local rc=1
 	local COUNTER=1
@@ -99,21 +95,14 @@ createChannel() {
 ## Creating the channels #####
 ##############################
 
-infoln "Channel creation process started for Channel 1"
-createChannelGenesisBlock "$CHANNEL_1_NAME"
-BLOCKFILE="./channel-artifacts/${CHANNEL_1_NAME}.block"
-createChannel "$CHANNEL_1_NAME"
-successln "Channel '$CHANNEL_1_NAME' created"
+CHANNEL_NAMES=( "$CHANNEL_1_NAME" "$CHANNEL_2_NAME" "$CHANNEL_3_NAME" )
 
+for CHANNEL_NAME in "${CHANNEL_NAMES[@]}"
+do
+    infoln "Channel creation process started for $CHANNEL_NAME"
+    createChannelGenesisBlock "$CHANNEL_NAME"
+    BLOCKFILE="./channel-artifacts/${CHANNEL_NAME}.block"
+    createChannel "$CHANNEL_NAME"
+    successln "Channel '$CHANNEL_NAME' created"
+done
 
-infoln "Channel creation process started for Channel 2"
-## Channel 2
-
-
-infoln "Channel creation process started for Channel 3"
-## Channel 3
-
-
-################################
-### Joining Peers to Channels###
-################################

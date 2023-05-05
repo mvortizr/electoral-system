@@ -18,7 +18,7 @@ networks:
 services:
   orderer.voting_system.com:
     container_name: orderer.voting_system.com
-    image: hyperledger/fabric-orderer:2.4.1  
+    image: hyperledger/fabric-orderer:2.5.0
     labels:
       service: hyperledger-fabric
     environment:
@@ -60,7 +60,7 @@ services:
 
   peer0.org1.voting_system.com:
     container_name: peer0.org1.voting_system.com
-    image: hyperledger/fabric-peer:2.4.1  
+    image: hyperledger/fabric-peer:2.5.0
     labels:
       service: hyperledger-fabric
     environment:
@@ -99,7 +99,7 @@ services:
 
   peer1.org1.voting_system.com:
     container_name: peer1.org1.voting_system.com
-    image: hyperledger/fabric-peer:2.4.1  
+    image: hyperledger/fabric-peer:2.5.0
     labels:
       service: hyperledger-fabric
     environment:
@@ -138,7 +138,7 @@ services:
 
   peer2.org1.voting_system.com:
     container_name: peer2.org1.voting_system.com
-    image: hyperledger/fabric-peer:2.4.1  
+    image: hyperledger/fabric-peer:2.5.0
     labels:
       service: hyperledger-fabric
     environment:
@@ -177,7 +177,7 @@ services:
 
   peer3.org1.voting_system.com:
     container_name: peer3.org1.voting_system.com
-    image: hyperledger/fabric-peer:2.4.1  
+    image: hyperledger/fabric-peer:2.5.0
     labels:
       service: hyperledger-fabric
     environment:
@@ -215,7 +215,7 @@ services:
       - test
   cli:
     container_name: cli
-    image: hyperledger/fabric-tools:2.4.1  
+    image: hyperledger/fabric-tools:2.5.0
     labels:
       service: hyperledger-fabric
     tty: true

@@ -7,12 +7,12 @@ version: '3.7'
 
 networks:
   test:
-    name: fabric_test
+    name: voting_system
 
 services:
 
   ca_org1:
-    image: hyperledger/fabric-ca:2.4.1
+    image: hyperledger/fabric-ca:1.5.6
     labels:
       service: hyperledger-fabric
     environment:
@@ -52,7 +52,7 @@ services:
   #     - test
 
   ca_orderer:
-    image: hyperledger/fabric-ca:2.4.1
+    image: hyperledger/fabric-ca:1.5.6
     labels:
       service: hyperledger-fabric
     environment:

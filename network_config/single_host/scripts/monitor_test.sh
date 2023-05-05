@@ -1,1 +1,1 @@
-./monitordocker.sh fabric_test
+./monitordocker.sh voting_system

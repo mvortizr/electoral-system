@@ -52,6 +52,7 @@ setGlobals() {
   fi
 }
 
+
 # Set environment variables for use in the CLI container
 setGlobalsCLI() {
   setGlobals $1

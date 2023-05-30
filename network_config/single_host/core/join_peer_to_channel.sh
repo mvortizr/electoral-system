@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PATH=${PWD}/../bin:$PATH
+
 ####################################
 ### Imports                      ###
 ####################################
@@ -20,8 +22,10 @@ VERBOSE="$5"
 : ${CONTAINER_CLI:="docker"}
 : ${CONTAINER_CLI_COMPOSE:="${CONTAINER_CLI}-compose"}
 
-FABRIC_CFG_PATH=$PWD/../config/
+export FABRIC_CFG_PATH=$PWD/../config/
+BLOCKFILE="./channel-artifacts/${CHANNEL_NAME}.block"
 
+infoln "FABRIC_CFG PATH ${FABRIC_CFG_PATH} "
 
 ####################################
 ### Helpers Functions            ###
@@ -43,7 +47,7 @@ joinChannel() {
 		COUNTER=$(expr $COUNTER + 1)
 	done
 	cat log.txt
-	verifyResult $res "After $MAX_RETRY attempts, $PEER_NUMBER has failed to join channel '$CHANNEL_NAME' "
+	verifyResult $res "After $MAX_RETRY attempts, peer $PEER_NUMBER has failed to join channel '$CHANNEL_NAME' "
 }
 
 

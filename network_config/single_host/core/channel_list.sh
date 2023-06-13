@@ -1,7 +1,8 @@
 export PATH=${PWD}/../bin:$PATH
 export FABRIC_CFG_PATH=$PWD/../config/
+. scripts/utils.sh
 
-echo "PEER 0"
+infoln "PEER 0"
 
 export CORE_PEER_TLS_ENABLED=true
 export CORE_PEER_LOCALMSPID="Org1MSP"
@@ -11,7 +12,7 @@ export CORE_PEER_ADDRESS=localhost:7051
 
 peer channel list
 
-echo "PEER 1"
+infoln "PEER 1"
 
 export CORE_PEER_TLS_ENABLED=true
 export CORE_PEER_LOCALMSPID="Org1MSP"
@@ -22,7 +23,7 @@ export CORE_PEER_ADDRESS=localhost:9051
 peer channel list
 
 
-echo "PEER 2"
+infoln "PEER 2"
 
 export CORE_PEER_TLS_ENABLED=true
 export CORE_PEER_LOCALMSPID="Org1MSP"
@@ -32,7 +33,7 @@ export CORE_PEER_ADDRESS=localhost:20051
 
 peer channel list
 
-echo "PEER 3"
+infoln "PEER 3"
 
 export CORE_PEER_TLS_ENABLED=true
 export CORE_PEER_LOCALMSPID="Org1MSP"

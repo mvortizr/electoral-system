@@ -45,7 +45,7 @@ setPeerVars $APPROVAL_PEER
 setOrdererVars
    
 # Note: Expected to change when we have multiple orderers and organizations
-infoln "Peer #$PEER is approving chaincode $CC_NAME with package ID $CC_PACKAGE_ID"
+infoln "Peer #$APPROVAL_PEER is approving chaincode $CC_NAME with package ID $CC_PACKAGE_ID"
 ## Approve for current organization
 peer lifecycle chaincode approveformyorg -o $ORDERER_IP --ordererTLSHostnameOverride $ORDERER_TLS_HOSTNAME --channelID $CHANNEL_NAME --name $CC_NAME --version $CC_VERSION --package-id $CC_PACKAGE_ID --sequence $CC_SEQUENCE --tls --cafile $ORDERER_CA_FILE
 

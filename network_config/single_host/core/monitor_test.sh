@@ -1,0 +1,1 @@
+./monitordocker.sh voting_system

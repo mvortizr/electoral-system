@@ -39,22 +39,19 @@ Create a KIND cluster:
 ./network kind
 ./network cluster init
 ```
-or for [Rancher / k3s](docs/KUBERNETES.md#rancher-desktop-and-k3s):
-```shell
-export TEST_NETWORK_CLUSTER_RUNTIME=k3s
-
-./network cluster init
-```
 
 Launch the network, create a channel, and deploy the [basic-asset-transfer](../asset-transfer-basic) smart contract: 
+
 ```shell
 ./network up
 
 ./network channel create
 
-#./network chaincode deploy asset-transfer-basic ../asset-transfer-basic/chaincode-java
+./network chaincode deploy asset-transfer-basic ../../../asset-transfer-basic/chaincode-java
 
-./network chaincode deploy asset-transfer-basic ../../../chaincode/fabric_example_code
+# in the future, when dockerfile is done
+#./network chaincode deploy asset-transfer-basic ../../../chaincode/fabric_example_code/chaincode-javascript/
+
 ```
 
 Invoke and query chaincode:
@@ -68,6 +65,13 @@ Access the blockchain with a [REST API](https://github.com/hyperledger/fabric-sa
 ./network rest-easy
 ```
 
+```shell
+SAMPLE_APIKEY=97834158-3224-4CE7-95F9-A148C886653E
+
+curl -s --header "X-Api-Key:97834158-3224-4CE7-95F9-A148C886653E" http://fabric-rest-sample.localho.st/api/assets
+
+```
+
 Shut down the test network: 
 ```shell
 ./network down 
@@ -78,9 +82,9 @@ Tear down the cluster (KIND):
 ./network unkind
 ```
 
-For Rancher: Preferences -> Kubernetes Settings -> Reset Kubernetes  OR ...
+<!-- For Rancher: Preferences -> Kubernetes Settings -> Reset Kubernetes  OR ...
 ```shell
-./network cluster clean
+./network cluster clean -->
 ```
 
 

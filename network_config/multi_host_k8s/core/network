@@ -37,13 +37,12 @@ context CONTAINER_NAMESPACE           ""                    # or "--namespace k8
 
 context FABRIC_CONTAINER_REGISTRY     hyperledger
 context FABRIC_PEER_IMAGE             ${FABRIC_CONTAINER_REGISTRY}/fabric-peer:${FABRIC_VERSION}
-context NETWORK_NAME                  test-network
-context CLUSTER_NAME                  kind
+context NETWORK_NAME                  voting-system-bchain-network
+context CLUSTER_NAME                  voting-system-bchain-cluster
 context KUBE_NAMESPACE                ${NETWORK_NAME}
 context NS                            ${KUBE_NAMESPACE}
 context ORG0_NS                       ${NS}
 context ORG1_NS                       ${NS}
-context ORG2_NS                       ${NS}
 context DOMAIN                        localho.st
 context CHANNEL_NAME                  mychannel
 context ORDERER_TIMEOUT               10s                   # see https://github.com/hyperledger/fabric/issues/3372
@@ -101,7 +100,7 @@ function print_help() {
 . scripts/cluster.sh
 . scripts/fabric_config.sh
 . scripts/fabric_CAs.sh
-. scripts/test_network.sh
+. scripts/handle_network.sh
 . scripts/channel.sh
 . scripts/chaincode.sh
 . scripts/rest_sample.sh

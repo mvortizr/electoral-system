@@ -164,6 +164,11 @@ function query_chaincode_metadata() {
   local args='{"Args":["org.hyperledger.fabric:GetMetadata"]}'
 
   log ''
+  log 'Org1-Peer0:'
+  export_peer_context org1 peer0
+  peer chaincode query -n $cc_name -C $CHANNEL_NAME -c $args
+
+  log ''
   log 'Org1-Peer1:'
   export_peer_context org1 peer1
   peer chaincode query -n $cc_name -C $CHANNEL_NAME -c $args
@@ -172,13 +177,18 @@ function query_chaincode_metadata() {
   log 'Org1-Peer2:'
   export_peer_context org1 peer2
   peer chaincode query -n $cc_name -C $CHANNEL_NAME -c $args
+  
+  log ''
+  log 'Org1-Peer3:'
+  export_peer_context org1 peer3
+  peer chaincode query -n $cc_name -C $CHANNEL_NAME -c $args
 }
 
 function invoke_chaincode() {
   local cc_name=$1
   shift
 
-  export_peer_context org1 peer1
+  export_peer_context org1 peer3
 
   peer chaincode invoke \
     -n              $cc_name \
@@ -312,8 +322,10 @@ function launch_chaincode() {
   local cc_id=$2
   local cc_image=$3
 
+  launch_chaincode_service ${org} peer0 ${cc_name} ${cc_id} ${cc_image}
   launch_chaincode_service ${org} peer1 ${cc_name} ${cc_id} ${cc_image}
   launch_chaincode_service ${org} peer2 ${cc_name} ${cc_id} ${cc_image}
+  launch_chaincode_service ${org} peer3 ${cc_name} ${cc_id} ${cc_image}
 }
 
 function install_chaincode_for() {
@@ -334,8 +346,10 @@ function install_chaincode() {
   local org=org1
   local cc_package=$1
 
+  install_chaincode_for ${org} peer0 ${cc_package}
   install_chaincode_for ${org} peer1 ${cc_package}
   install_chaincode_for ${org} peer2 ${cc_package}
+  install_chaincode_for ${org} peer3 ${cc_package}
 }
 
 # approve the chaincode package for an org and assign a name

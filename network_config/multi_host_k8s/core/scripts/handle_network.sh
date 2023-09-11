@@ -22,13 +22,19 @@ function launch_orderers() {
 function launch_peers() {
   push_fn "Launching peers"
 
+  # apply_template kube/org1/org1-peer1.yaml $ORG1_NS
+  # apply_template kube/org1/org1-peer2.yaml $ORG1_NS
+
+
+  # kubectl -n $ORG1_NS rollout status deploy/org1-peer1
+  # kubectl -n $ORG1_NS rollout status deploy/org1-peer2
+  #addpeers
+
+  apply_template kube/org1/org1-peer0.yaml $ORG1_NS
   apply_template kube/org1/org1-peer1.yaml $ORG1_NS
   apply_template kube/org1/org1-peer2.yaml $ORG1_NS
+  apply_template kube/org1/org1-peer3.yaml $ORG1_NS
 
-
-  kubectl -n $ORG1_NS rollout status deploy/org1-peer1
-  kubectl -n $ORG1_NS rollout status deploy/org1-peer2
-  #addpeers
 
 
   pop_fn
@@ -115,9 +121,10 @@ function create_local_MSP() {
   create_orderer_local_MSP org0 orderer2
   create_orderer_local_MSP org0 orderer3
 
+  create_peer_local_MSP org1 peer0 $ORG1_NS
   create_peer_local_MSP org1 peer1 $ORG1_NS
   create_peer_local_MSP org1 peer2 $ORG1_NS
-  #addpeers
+  create_peer_local_MSP org1 peer3 $ORG1_NS
 
   pop_fn
 }

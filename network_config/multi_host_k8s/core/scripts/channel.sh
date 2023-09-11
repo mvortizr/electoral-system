@@ -252,8 +252,11 @@ function join_org_peers() {
   push_fn "Joining ${org} peers to channel ${CHANNEL_NAME}"
 
   # Join peers to channel
+  join_channel_peer $org peer0
   join_channel_peer $org peer1
   join_channel_peer $org peer2
+  join_channel_peer $org peer3
+  
 
   pop_fn
 }

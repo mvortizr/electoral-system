@@ -1,3 +1,52 @@
+# PASOS para red de prueba
+
+```
+./network.sh down
+
+```
+
+```
+./network.sh up 
+
+```
+
+```
+./create_election_channels.sh
+
+```
+
+```
+./chaincode_package.sh
+./chaincode_package.sh -p ../../../chaincode/fabric_example_code/chaincode-javascript/ -lang node -label basic -v 0.1 
+
+```
+```
+./peer_chaincode_install.sh
+
+```
+```
+./chaincode_approve_all_channels.sh
+
+```
+
+```
+./chaincode_commit_all_channels.sh
+
+```
+
+```
+peer_chaincode_invoke_basic_all-channels.sh
+(to invoke basic chaincode)
+
+```
+
+# Para info
+./channel_list.sh
+./peer_query.sh
+./chaincode_check_commit_all_channels.sh
+
+
+
 # Running the test network
 
 You can use the `./network.sh` script to stand up a simple Fabric test network. The test network has two peer organizations with one peer each and a single node raft ordering service. You can also use the `./network.sh` script to create channels and deploy chaincode. For more information, see [Using the Fabric test network](https://hyperledger-fabric.readthedocs.io/en/latest/test_network.html). The test network is being introduced in Fabric v2.0 as the long term replacement for the `first-network` sample.

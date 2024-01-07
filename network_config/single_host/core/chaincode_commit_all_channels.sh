@@ -1,4 +1,6 @@
-ELECTION_NAME="$1"
+CC_NAME="$1"
+ELECTION_NAME="$2"
+: ${CC_NAME:="basic"}
 : ${ELECTION_NAME:="election"}
 
 # channel 1 - electoral roll (patrón electoral)
@@ -12,10 +14,10 @@ CHANNEL_3_NAME="${ELECTION_NAME}-ch3-ballot"
 
 ### BASIC chaincode (for testing)
 # Commit  chaincode for channel 1 using peer 0
-source peer_chaincode_commit_for_channel.sh -p 0 -ccname basic -ccver 0.1 -ccseq 1 -ch "$CHANNEL_1_NAME"
+source peer_chaincode_commit_for_channel.sh -p 0 -ccname  ${CC_NAME}  -ccver 0.1 -ccseq 1 -ch "$CHANNEL_1_NAME"
 
 # Commit chaincode for channel 2 using peer 1
-source peer_chaincode_commit_for_channel.sh -p 1 -ccname basic -ccver 0.1 -ccseq 1 -ch "$CHANNEL_2_NAME"
+source peer_chaincode_commit_for_channel.sh -p 1 -ccname  ${CC_NAME}  -ccver 0.1 -ccseq 1 -ch "$CHANNEL_2_NAME"
 
 # Commit chaincode for channel 3 using peer 1
-source peer_chaincode_commit_for_channel.sh -p 1 -ccname basic -ccver 0.1 -ccseq 1 -ch "$CHANNEL_3_NAME"
+source peer_chaincode_commit_for_channel.sh -p 1 -ccname  ${CC_NAME}  -ccver 0.1 -ccseq 1 -ch "$CHANNEL_3_NAME"

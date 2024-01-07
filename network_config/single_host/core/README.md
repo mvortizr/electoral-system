@@ -2,6 +2,7 @@
 
 ```
 ./network.sh down
+./network_prune.sh
 
 ```
 
@@ -17,20 +18,26 @@
 
 ```
 ./chaincode_package.sh
-./chaincode_package.sh -p ../../../chaincode/fabric_example_code/chaincode-javascript/ -lang node -label basic -v 0.1 
+./chaincode_package.sh -p ../../../chaincode/chaincode-typescript/ -lang node -label basic -v 0.1 
+./chaincode_package.sh -p ../../../chaincode/ch1 -lang node -label ch1_cc -v 0.1 
 
 ```
 ```
 ./peer_chaincode_install.sh
+./peer_chaincode_install.sh ch1_cc //install in all
+./peer_chaincode_install_p0.sh
+./peer_chaincode_install_p0.sh ch1_cc
 
 ```
 ```
 ./chaincode_approve_all_channels.sh
+./chaincode_approve_all_channels.sh ch1_cc
 
 ```
 
 ```
 ./chaincode_commit_all_channels.sh
+./chaincode_commit_all_channels.sh  ch1_cc
 
 ```
 
@@ -43,7 +50,18 @@ peer_chaincode_invoke_basic_all-channels.sh
 # Para info
 ./channel_list.sh
 ./peer_query.sh
-./chaincode_check_commit_all_channels.sh
+./chaincode_check_commit_all_channels.sh 
+./chaincode_check_commit_all_channels.sh ch1_cc
+./monitordocker.sh
+
+# invokes
+
+## Test
+    
+## ch1
+./invokes/ch1/initLedger.sh
+./invokes/ch1/createPosition.sh
+./invokes/ch1/readElectionRoll.sh
 
 
 

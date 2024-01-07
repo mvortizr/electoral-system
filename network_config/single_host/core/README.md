@@ -7,6 +7,7 @@
 ```
 
 ```
+nvm use default 16.4.0
 ./network.sh up 
 
 ```
@@ -17,6 +18,7 @@
 ```
 
 ```
+// si se quiere cambiar el chaincode se borrar el tar, de lo contrario conserva el empacado nuevo
 ./chaincode_package.sh
 ./chaincode_package.sh -p ../../../chaincode/chaincode-typescript/ -lang node -label basic -v 0.1 
 ./chaincode_package.sh -p ../../../chaincode/ch1 -lang node -label ch1_cc -v 0.1 
@@ -62,6 +64,14 @@ peer_chaincode_invoke_basic_all-channels.sh
 ./invokes/ch1/initLedger.sh
 ./invokes/ch1/createPosition.sh
 ./invokes/ch1/readElectionRoll.sh
+
+
+## correr api
+nvm use default 18.17.0
+cd api/ch1
+npm install
+npm start
+
 
 
 

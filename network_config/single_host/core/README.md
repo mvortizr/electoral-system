@@ -16,7 +16,9 @@ nvm use default 16.4.0
 ./create_election_channels.sh
 
 ```
-
+```
+correr en la carpeta del chaincode: npm install
+```
 ```
 // si se quiere cambiar el chaincode se borrar el tar, de lo contrario conserva el empacado nuevo
 ./chaincode_package.sh

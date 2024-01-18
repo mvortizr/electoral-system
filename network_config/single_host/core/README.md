@@ -52,20 +52,20 @@ peer_chaincode_invoke_basic_all-channels.sh
 ```
 
 # Para info
-./channel_list.sh
-./peer_query.sh
-./chaincode_check_commit_all_channels.sh 
-./chaincode_check_commit_all_channels.sh ch1_cc
-./monitordocker.sh
+```./channel_list.sh```
+```./peer_query.sh```
+```./chaincode_check_commit_all_channels.sh``` 
+```./chaincode_check_commit_all_channels.sh ch1_cc```
+```./monitordocker.sh``
 
 # invokes
 
 ## Test
     
 ## ch1
-./invokes/ch1/initLedger.sh
-./invokes/ch1/createPosition.sh
-./invokes/ch1/readElectionRoll.sh
+```./invokes/ch1/initLedger.sh```
+```./invokes/ch1/createPosition.sh```
+```./invokes/ch1/readElectionRoll.sh```
 
 
 ## correr api

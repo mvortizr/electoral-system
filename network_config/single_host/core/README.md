@@ -56,7 +56,7 @@ peer_chaincode_invoke_basic_all-channels.sh
 ```./peer_query.sh```
 ```./chaincode_check_commit_all_channels.sh``` 
 ```./chaincode_check_commit_all_channels.sh ch1_cc```
-```./monitordocker.sh``
+```./monitordocker.sh```
 
 # invokes
 

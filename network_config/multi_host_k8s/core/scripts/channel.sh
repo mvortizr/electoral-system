@@ -12,8 +12,8 @@ function channel_command_group() {
   shift
 
   if [ "${COMMAND}" == "create" ]; then
-    log "Creating channel \"${CHANNEL_NAME}\":"
-    channel_up
+    log "Creating channel election channels"
+    create_election_channels
     log "🏁 - Channel is ready."
 
   else
@@ -31,7 +31,7 @@ function channel_up() {
   create_genesis_block
 
   join_channel_orderers
-  join_channel_peers
+  # join_channel_peers
 }
 
 function register_org_admins() {
@@ -243,23 +243,72 @@ function join_channel_orderer() {
     --config-block    ${TEMP_DIR}/genesis_block.pb
 }
 
-function join_channel_peers() {
-  join_org_peers org1
+# function join_channel_peers() {
+#   join_org_peers org1
+# }
+
+# function join_org_peers() {
+#   local org=$1
+#   push_fn "Joining ${org} peers to channel ${CHANNEL_NAME}"
+
+#   # Join peers to channel
+#   join_channel_peer $org peer0
+#   join_channel_peer $org peer1
+#   join_channel_peer $org peer2
+#   join_channel_peer $org peer3
+  
+
+#   pop_fn
+# }
+
+function join_channel1_org_peers() {
+  join_channel1_peers org1
 }
 
-function join_org_peers() {
+
+function join_channel2_org_peers() {
+  join_channel2_peers org1
+}
+
+function join_channel3_org_peers() {
+  join_channel3_peers org1
+}
+
+function join_channel1_peers() {
   local org=$1
-  push_fn "Joining ${org} peers to channel ${CHANNEL_NAME}"
+  push_fn "Joining ${org} peers to channel ${CHANNEL1_NAME}"
 
   # Join peers to channel
   join_channel_peer $org peer0
   join_channel_peer $org peer1
-  join_channel_peer $org peer2
-  join_channel_peer $org peer3
-  
 
   pop_fn
 }
+
+function join_channel2_peers (){
+   ocal org=$1
+  push_fn "Joining ${org} peers to channel ${CHANNEL2_NAME}"
+
+  # Join peers to channel
+  join_channel_peer $org peer1
+  join_channel_peer $org peer2
+
+  pop_fn
+}
+
+function join_channel3_peers (){
+   ocal org=$1
+  push_fn "Joining ${org} peers to channel ${CHANNEL3_NAME}"
+
+  # Join peers to channel
+  join_channel_peer $org peer1
+  join_channel_peer $org peer2
+  join_channel_peer $org peer3
+
+  pop_fn
+}
+
+
 
 function join_channel_peer() {
   local org=$1
@@ -274,3 +323,31 @@ function join_channel_peer() {
     --tls         \
     --cafile      ${TEMP_DIR}/channel-msp/ordererOrganizations/org0/orderers/org0-orderer1/tls/signcerts/tls-cert.pem
 }
+
+function create_election_channels() {
+  CHANNEL_NAME = CHANNEL1_NAME
+  push_fn "Creating channel ${CHANNEL_NAME}"
+  channel_up
+  join_channel1_org_peers
+
+  CHANNEL_NAME = CHANNEL2_NAME
+  push_fn "Creating channel ${CHANNEL_NAME}"
+  channel_up
+  join_channel2_peers
+
+  CHANNEL_NAME = CHANNEL3_NAME
+  push_fn "Creating channel ${CHANNEL_NAME}"
+  channel_up
+  join_channel2_peers
+
+
+
+
+
+//join peers to election channel
+}
+
+function join_peers_to_election_channels(){
+  ///
+}
+

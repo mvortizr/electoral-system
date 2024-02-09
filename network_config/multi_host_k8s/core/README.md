@@ -45,6 +45,7 @@ Launch the network, create a channel, and deploy the [basic-asset-transfer](../a
 ```shell
 ./network up
 
+
 ./network channel create
 
 ./network chaincode deploy asset-transfer-basic ../../../asset-transfer-basic/chaincode-java

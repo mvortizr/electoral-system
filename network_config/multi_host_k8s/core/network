@@ -44,12 +44,16 @@ context NS                            ${KUBE_NAMESPACE}
 context ORG0_NS                       ${NS}
 context ORG1_NS                       ${NS}
 context DOMAIN                        localho.st
-context CHANNEL_NAME                  mychannel
+# context CHANNEL_NAME                  mychannel
 context ORDERER_TIMEOUT               10s                   # see https://github.com/hyperledger/fabric/issues/3372
 context TEMP_DIR                      ${PWD}/build
 context CHAINCODE_BUILDER             ccaas                 # see https://github.com/hyperledgendary/fabric-builder-k8s/blob/main/docs/TEST_NETWORK_K8S.md
 context K8S_CHAINCODE_BUILDER_IMAGE   ghcr.io/hyperledger-labs/fabric-builder-k8s/k8s-fabric-peer
 context K8S_CHAINCODE_BUILDER_VERSION 0.11.0 # For Fabric v2.5+, 0.11.0 or later should be specified
+context ELECTION_NAME                 election
+context CHANNEL1_NAME                 ${ELECTION_NAME}-ch1-roll
+context CHANNEL2_NAME                 ${ELECTION_NAME}-ch2-notebook
+context CHANNEL3_NAME                 ${ELECTION_NAME}-ch3-ballot
 
 context LOG_FILE                      network.log
 context DEBUG_FILE                    network-debug.log

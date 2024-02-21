@@ -12,10 +12,11 @@ function channel_command_group() {
   shift
 
   if [ "${COMMAND}" == "create" ]; then
-    log "Creating channel election channels"
+    log "Creating election channels"
     create_election_channels
     log "🏁 - Channel is ready."
-
+  elif [ "${COMMAND}" == "check" ]; then
+  //peer channel list para todos
   else
     print_help
     exit 1
@@ -23,9 +24,6 @@ function channel_command_group() {
 }
 
 function channel_up() {
-
-  register_org_admins
-  enroll_org_admins
 
   create_channel_MSP
   create_genesis_block
@@ -286,7 +284,7 @@ function join_channel1_peers() {
 }
 
 function join_channel2_peers (){
-   ocal org=$1
+  local org=$1
   push_fn "Joining ${org} peers to channel ${CHANNEL2_NAME}"
 
   # Join peers to channel
@@ -297,7 +295,7 @@ function join_channel2_peers (){
 }
 
 function join_channel3_peers (){
-   ocal org=$1
+  local org=$1
   push_fn "Joining ${org} peers to channel ${CHANNEL3_NAME}"
 
   # Join peers to channel
@@ -325,29 +323,22 @@ function join_channel_peer() {
 }
 
 function create_election_channels() {
-  CHANNEL_NAME = CHANNEL1_NAME
+  register_org_admins
+  enroll_org_admins
+
+  CHANNEL_NAME=$CHANNEL1_NAME
   push_fn "Creating channel ${CHANNEL_NAME}"
   channel_up
   join_channel1_org_peers
 
-  CHANNEL_NAME = CHANNEL2_NAME
+  CHANNEL_NAME=$CHANNEL2_NAME
   push_fn "Creating channel ${CHANNEL_NAME}"
   channel_up
-  join_channel2_peers
+  join_channel2_org_peers
 
-  CHANNEL_NAME = CHANNEL3_NAME
+  CHANNEL_NAME=$CHANNEL3_NAME
   push_fn "Creating channel ${CHANNEL_NAME}"
   channel_up
-  join_channel2_peers
-
-
-
-
-
-//join peers to election channel
-}
-
-function join_peers_to_election_channels(){
-  ///
+  join_channel3_org_peers
 }
 

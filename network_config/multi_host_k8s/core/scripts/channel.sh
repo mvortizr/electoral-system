@@ -14,7 +14,7 @@ function channel_command_group() {
   if [ "${COMMAND}" == "create" ]; then
     log "Creating election channels"
     create_election_channels
-    log "🏁 - Channel is ready."
+    log "🏁 - Channels are ready."
   elif [ "${COMMAND}" == "check" ]; then
   //peer channel list para todos
   else

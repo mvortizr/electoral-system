@@ -57,8 +57,8 @@ function chaincode_command_group() {
   elif [ "${COMMAND}" == "query" ]; then
     query_chaincode $@ >> ${LOG_FILE}
 
-  elif [ "${COMMAND}" == "metadata" ]; then
-    query_chaincode_metadata $@ >> ${LOG_FILE}
+  # elif [ "${COMMAND}" == "metadata" ]; then
+  #   query_chaincode_metadata $@ >> ${LOG_FILE}
 
   else
     print_help
@@ -73,16 +73,19 @@ function deploy_chaincode() {
   local cc_folder=$(absolute_path $2)
   local temp_folder=$(mktemp -d)
   local cc_package=${temp_folder}/${cc_name}.tgz
+  local channel_to_deploy=$3
+  local org=org1
 
+  
   prepare_chaincode_image ${cc_folder} ${cc_name}
   package_chaincode       ${cc_name} ${cc_label} ${cc_package}
 
   if [ "${CHAINCODE_BUILDER}" == "ccaas" ]; then
     set_chaincode_id      ${cc_package}
-    launch_chaincode      ${cc_name} ${CHAINCODE_ID} ${CHAINCODE_IMAGE}
+    launch_chaincode      ${cc_name} ${CHAINCODE_ID} ${CHAINCODE_IMAGE} ${channel_to_deploy} ${org}
   fi
 
-  activate_chaincode      ${cc_name} ${cc_package}
+  activate_chaincode      ${cc_name} ${cc_package} ${channel_to_deploy} ${org}
 }
 
 # Prepare a chaincode image for use in a builder package.
@@ -106,6 +109,7 @@ function prepare_chaincode_image() {
 function build_chaincode_image() {
   local cc_folder=$1
   local cc_name=$2
+  echo $cc_name
 
   push_fn "Building chaincode image ${cc_name}"
 
@@ -134,17 +138,23 @@ function publish_chaincode_image() {
 function activate_chaincode() {
   local cc_name=$1
   local cc_package=$2
+  local channel_to_deploy=$3
+  local org=$4
 
   set_chaincode_id    ${cc_package}
 
-  install_chaincode   ${cc_package}
-  approve_chaincode   ${cc_name} ${CHAINCODE_ID}
-  commit_chaincode    ${cc_name}
+  install_chaincode   ${cc_package} ${channel_to_deploy} ${org}
+  approve_chaincode   ${cc_name} ${CHAINCODE_ID} ${org} ${channel_to_deploy}
+  commit_chaincode    ${cc_name} ${org} ${channel_to_deploy}
 }
 
 function query_chaincode() {
   local cc_name=$1
+  local channel_to_invoke=$2
   shift
+  shift
+
+  calculate_channel_name $channel_to_invoke
 
   set -x
 
@@ -156,39 +166,44 @@ function query_chaincode() {
     -c  $@
 }
 
-function query_chaincode_metadata() {
-  local cc_name=$1
-  shift
+# function query_chaincode_metadata() {
+#   local cc_name=$1
+#   shift
 
-  set -x
-  local args='{"Args":["org.hyperledger.fabric:GetMetadata"]}'
+#   set -x
+#   local args='{"Args":["org.hyperledger.fabric:GetMetadata"]}'
 
-  log ''
-  log 'Org1-Peer0:'
-  export_peer_context org1 peer0
-  peer chaincode query -n $cc_name -C $CHANNEL_NAME -c $args
+#   log ''
+#   log 'Org1-Peer0:'
+#   export_peer_context org1 peer0
+#   peer chaincode query -n $cc_name -C $CHANNEL_NAME -c $args
 
-  log ''
-  log 'Org1-Peer1:'
-  export_peer_context org1 peer1
-  peer chaincode query -n $cc_name -C $CHANNEL_NAME -c $args
+#   log ''
+#   log 'Org1-Peer1:'
+#   export_peer_context org1 peer1
+#   peer chaincode query -n $cc_name -C $CHANNEL_NAME -c $args
 
-  log ''
-  log 'Org1-Peer2:'
-  export_peer_context org1 peer2
-  peer chaincode query -n $cc_name -C $CHANNEL_NAME -c $args
+#   log ''
+#   log 'Org1-Peer2:'
+#   export_peer_context org1 peer2
+#   peer chaincode query -n $cc_name -C $CHANNEL_NAME -c $args
   
-  log ''
-  log 'Org1-Peer3:'
-  export_peer_context org1 peer3
-  peer chaincode query -n $cc_name -C $CHANNEL_NAME -c $args
-}
+#   log ''
+#   log 'Org1-Peer3:'
+#   export_peer_context org1 peer3
+#   peer chaincode query -n $cc_name -C $CHANNEL_NAME -c $args
+# }
 
 function invoke_chaincode() {
   local cc_name=$1
+  local channel_to_invoke=$2
+  shift
   shift
 
-  export_peer_context org1 peer3
+  calculate_channel_name $channel_to_invoke
+  
+
+  export_peer_context org1 peer1
 
   peer chaincode invoke \
     -n              $cc_name \
@@ -317,15 +332,37 @@ function launch_chaincode_service() {
 }
 
 function launch_chaincode() {
-  local org=org1
+  local org=$5
   local cc_name=$1
   local cc_id=$2
   local cc_image=$3
+  local channel_to_deploy=$4
 
-  launch_chaincode_service ${org} peer0 ${cc_name} ${cc_id} ${cc_image}
-  launch_chaincode_service ${org} peer1 ${cc_name} ${cc_id} ${cc_image}
-  launch_chaincode_service ${org} peer2 ${cc_name} ${cc_id} ${cc_image}
-  launch_chaincode_service ${org} peer3 ${cc_name} ${cc_id} ${cc_image}
+  #channel 1
+
+  if [ $channel_to_deploy -eq 1 ]; then
+    launch_chaincode_service ${org} peer0 ${cc_name} ${cc_id} ${cc_image}
+    launch_chaincode_service ${org} peer1 ${cc_name} ${cc_id} ${cc_image}
+    
+  fi
+ 
+
+  #channel 2
+  if [ $channel_to_deploy -eq 2 ]; then
+    launch_chaincode_service ${org} peer1 ${cc_name} ${cc_id} ${cc_image}
+    launch_chaincode_service ${org} peer2 ${cc_name} ${cc_id} ${cc_image}
+    
+  fi
+
+  #channel 3
+  if [ $channel_to_deploy -eq 3 ]; then
+    launch_chaincode_service ${org} peer1 ${cc_name} ${cc_id} ${cc_image}
+    launch_chaincode_service ${org} peer2 ${cc_name} ${cc_id} ${cc_image}
+    launch_chaincode_service ${org} peer3 ${cc_name} ${cc_id} ${cc_image}
+    
+  fi
+
+
 }
 
 function install_chaincode_for() {
@@ -343,24 +380,64 @@ function install_chaincode_for() {
 
 # Package and install the chaincode, but do not activate.
 function install_chaincode() {
-  local org=org1
+  local org=$3
   local cc_package=$1
+  local channel_to_deploy=$2
 
-  install_chaincode_for ${org} peer0 ${cc_package}
-  install_chaincode_for ${org} peer1 ${cc_package}
-  install_chaincode_for ${org} peer2 ${cc_package}
-  install_chaincode_for ${org} peer3 ${cc_package}
+
+  #channel 1
+  if [ $channel_to_deploy -eq 1 ]; then
+    install_chaincode_for ${org} peer0 ${cc_package}
+    install_chaincode_for ${org} peer1 ${cc_package}
+    
+  fi
+ 
+
+  #channel 2
+  if [ $channel_to_deploy -eq 2 ]; then
+    install_chaincode_for ${org} peer1 ${cc_package}
+    install_chaincode_for ${org} peer2 ${cc_package}
+    
+  fi
+
+  #channel 3
+  if [ $channel_to_deploy -eq 3 ]; then
+      install_chaincode_for ${org} peer1 ${cc_package}
+      install_chaincode_for ${org} peer2 ${cc_package}
+      install_chaincode_for ${org} peer3 ${cc_package}
+    
+  fi
+
+}
+
+function calculate_channel_name () {
+  local channel_to_deploy=$1
+  if [ $channel_to_deploy -eq 1 ]; then
+    CHANNEL_NAME=${CHANNEL1_NAME}
+  fi
+
+  if [ $channel_to_deploy -eq 2 ]; then
+    CHANNEL_NAME=${CHANNEL2_NAME}
+  fi
+
+  if [ $channel_to_deploy -eq 3 ]; then
+    CHANNEL_NAME=${CHANNEL3_NAME}
+  fi
 }
 
 # approve the chaincode package for an org and assign a name
 function approve_chaincode() {
-  local org=org1
+  local org=$3
   local peer=peer1
   local cc_name=$1
   local cc_id=$2
+  local channel_to_deploy=$4
+  
   push_fn "Approving chaincode ${cc_name} with ID ${cc_id}"
 
   export_peer_context $org $peer
+
+  calculate_channel_name $channel_to_deploy
 
   peer lifecycle \
     chaincode approveformyorg \
@@ -378,12 +455,16 @@ function approve_chaincode() {
 
 # commit the named chaincode for an org
 function commit_chaincode() {
-  local org=org1
+  local org=$2
   local peer=peer1
   local cc_name=$1
+  local channel_to_deploy=$3
+
   push_fn "Committing chaincode ${cc_name}"
 
   export_peer_context $org $peer
+
+  calculate_channel_name $channel_to_deploy
 
   peer lifecycle \
     chaincode commit \

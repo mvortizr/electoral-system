@@ -156,7 +156,7 @@ function query_chaincode() {
 
   calculate_channel_name $channel_to_invoke
 
-  set -x
+  #set -x
 
   export_peer_context org1 peer1
 

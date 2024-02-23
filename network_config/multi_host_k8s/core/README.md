@@ -48,9 +48,14 @@ Launch the network, create a channel, and deploy the [basic-asset-transfer](../a
 
 ./network channel create
 
-```./network chaincode deploy [nombre cc] [path cc] [channel #]```
+```./network chaincode deploy [nombre cc] [path cc] [channel num]```
 
-./network chaincode deploy asset-transfer-basic ../../../asset-transfer-basic/chaincode-java 3
+# ./network chaincode deploy asset-transfer-basic ../../../asset-transfer-basic/chaincode-java 3
+
+```./network chaincode deploy channel1cc ../../../chaincode/ch1 3```
+
+
+
 
 # in the future, when dockerfile is done
 #./network chaincode deploy asset-transfer-basic ../../../chaincode/fabric_example_code/chaincode-javascript/
@@ -59,9 +64,12 @@ Launch the network, create a channel, and deploy the [basic-asset-transfer](../a
 
 Invoke and query chaincode:
 ```shell
-./network chaincode invoke asset-transfer-basic 3 '{"Args":["InitLedger"]}'
-./network chaincode query  asset-transfer-basic 1 '{"Args":["ReadAsset","asset1"]}'
+./network chaincode invoke channel1cc 3 '{"Args":["InitLedger"]}'
+
+./network chaincode query  channel1cc 3 '{"function":"readEntireElectoralChannel","Args":[]}'
 ```
+
+
 
 Access the blockchain with a [REST API](https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic/rest-api-typescript): 
 ```shell

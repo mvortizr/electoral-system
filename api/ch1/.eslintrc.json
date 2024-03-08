@@ -1,45 +1,32 @@
 {
-    "env": {
-      "node": true,
-      "es6": true
-    },
-    "root": true,
-    "ignorePatterns": [
-      "dist/"
-    ],
-    "extends": [
-      "eslint:recommended"
-    ],
-    "rules": {
-      "indent": [
-        "error",
-        4
-      ],
-      "quotes": [
-        "error",
-        "single"
-      ]
-    },
-    "overrides": [
+  "env": {
+    "node": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": [
+      "error",
       {
-        "files": [
-          "**/*.ts"
-        ],
-        "parser": "@typescript-eslint/parser",
-        "parserOptions": {
-          "sourceType": "module",
-          "ecmaFeatures": {
-            "impliedStrict": true
-          }
-        },
-        "plugins": [
-          "@typescript-eslint"
-        ],
-        "extends": [
-          "eslint:recommended",
-          "plugin:@typescript-eslint/eslint-recommended",
-          "plugin:@typescript-eslint/recommended"
-        ]
+        "argsIgnorePattern": "^_"
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.ts"],
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
+      }
+    }
+  ]
+}

@@ -42,25 +42,16 @@ Create a KIND cluster:
 
 Launch the network, create a channel, and deploy the [basic-asset-transfer](../asset-transfer-basic) smart contract: 
 
-```shell
+```shell=
 ./network up
 
 
-./network channel create
-
-```./network chaincode deploy [nombre cc] [path cc] [channel num]```
-
-# ./network chaincode deploy asset-transfer-basic ../../../asset-transfer-basic/chaincode-java 3
-
-```./network chaincode deploy channel1cc ../../../chaincode/ch1 3```
+./network channel create ##crear canales
 
 
+```./network chaincode deploy channel1cc ../../../chaincode/ch1 3```###
 
 
-# in the future, when dockerfile is done
-#./network chaincode deploy asset-transfer-basic ../../../chaincode/fabric_example_code/chaincode-javascript/
-
-```
 
 Invoke and query chaincode:
 ```shell

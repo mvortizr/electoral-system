@@ -81,8 +81,8 @@ data:
   fabric_channel: ${CHANNEL_NAME}
   fabric_contract: ${CHAINCODE_NAME}
   fabric_wallet_dir: /fabric/application/wallet
-  fabric_gateway_hostport: org1-peer-gateway-svc:7051
-  fabric_gateway_sslHostOverride: org1-peer-gateway-svc
+  fabric_gateway_hostport: org1-peer0-gateway-svc:7051
+  fabric_gateway_sslHostOverride: org1-peer0-gateway-svc
   fabric_user: appuser_org1
   fabric_gateway_tlsCertPath: /fabric/tlscacerts/tlsca-signcert.pem
 EOF

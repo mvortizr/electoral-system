@@ -19,8 +19,8 @@ spec:
     - org1-peer0
     - org1-peer0.${ORG1_NS}.svc.cluster.local
     - org1-peer0.${DOMAIN}
-    - org1-peer-gateway-svc
-    - org1-peer-gateway-svc.${DOMAIN}
+    - org1-peer0-gateway-svc
+    - org1-peer0-gateway-svc.${DOMAIN}
   ipAddresses:
     - 127.0.0.1
   secretName: org1-peer0-tls-cert

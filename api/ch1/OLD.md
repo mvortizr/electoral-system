@@ -97,3 +97,24 @@ curl --include --header "Content-Type: application/json" --header "X-Api-Key: ${
 ```shell
 curl --include --header "X-Api-Key: ${SAMPLE_APIKEY}" --request DELETE http://localhost:3000/api/assets/asset7
 ```
+
+### Docker image
+
+It's also possible to use the [published docker image](https://github.com/hyperledger/fabric-samples/pkgs/container/fabric-rest-sample) to run the sample
+
+Clone the `fabric-samples` repository and change to the `fabric-samples/asset-transfer-basic/rest-api-typescript` directory before running the following commands
+
+Create a `.env` file to configure the server for the test network (make sure `TEST_NETWORK_HOME` is set to the fully qualified `test-network` directory and `AS_LOCAL_HOST` is set to `false` so that the server works inside the Docker Compose network)
+
+```shell
+TEST_NETWORK_HOME=$HOME/fabric-samples/test-network AS_LOCAL_HOST=false npm run generateEnv
+```
+
+**Note:** see [src/config.ts](src/config.ts) for details of configuring the sample
+
+Start the sample REST server and Redis server
+
+```shell
+export REDIS_PASSWORD=$(uuidgen)
+docker-compose up -d
+```

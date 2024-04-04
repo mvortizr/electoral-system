@@ -14,11 +14,15 @@ import { jobsRouter } from './routes/jobs.router';
 import { logger } from './config/logger';
 import { transactionsRouter } from './routes/transactions.router';
 import cors from 'cors';
+import morganBody from 'morgan-body';
+import bodyParser from 'body-parser';
 
 const { BAD_REQUEST, INTERNAL_SERVER_ERROR, NOT_FOUND } = StatusCodes;
 
 export const createServer = async (): Promise<Application> => {
   const app = express();
+  app.use(bodyParser.json());
+  morganBody(app);
 
   app.use(
     pinoMiddleware({

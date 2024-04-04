@@ -17,7 +17,7 @@ spec:
   dnsNames:
     - localhost
     - org1-peer2
-    - org1-peer-gateway-svc
+    - org1-peer2-gateway-svc
     - org1-peer2.${ORG1_NS}.svc.cluster.local
     - org1-peer2.${DOMAIN}
     - org1-peer2-gateway-svc.${DOMAIN}

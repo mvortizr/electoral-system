@@ -8,10 +8,10 @@ services:
     ports:
       - 6379:6379
     networks:
-      - voting-system-bchain-api
+      - voting_system
 
   nodeapp:
-    image: 'ghcr.io/hyperledger/fabric-rest-sample:latest'
+    image: 'docker.io/mvortizr/ch1_api:v1.0'
     command: ['start:dotenv']
     ports:
       - 3000:3000
@@ -20,8 +20,8 @@ services:
     environment:
       - REDIS_PASSWORD
     networks:
-      - voting-system-bchain-api
+      - voting_system
 
 networks:
-  voting-system-bchain-api:
+  voting_system:
     external: true

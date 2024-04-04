@@ -134,8 +134,8 @@ export const channelName = env
  */
 export const chaincodeName = env
   .get('HLF_CHAINCODE_NAME')
-  .default('election-ch1-roll')
-  .example('election-ch1-roll')
+  .default('channel1cc')
+  .example('channel1cc')
   .asString();
 
 /**

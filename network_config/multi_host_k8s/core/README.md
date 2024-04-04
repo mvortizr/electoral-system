@@ -34,6 +34,12 @@ if Apache is running:
 sudo systemctl disable apache2 && sudo systemctl stop apache2
 ```
 
+if port is occupied
+```
+docker container ls
+docker rm -f <container-name>
+```
+
 Create a KIND cluster:  
 ```shell
 ./network kind
@@ -49,31 +55,34 @@ Launch the network, create a channel, and deploy the [basic-asset-transfer](../a
 ./network channel create ##crear canales
 
 
-```./network chaincode deploy channel1cc ../../../chaincode/ch1 3```###
+```./network chaincode deploy channel1cc ../../../chaincode/ch1 1```###
 
 
 
 Invoke and query chaincode:
 ```shell
-./network chaincode invoke channel1cc 3 '{"Args":["InitLedger"]}'
+./network chaincode invoke channel1cc 1 '{"Args":["InitLedger"]}'
 
-./network chaincode query  channel1cc 3 '{"function":"readEntireElectoralChannel","Args":[]}'
+./network chaincode query  channel1cc 1 '{"function":"readEntireElectoralChannel","Args":[]}'
 ```
 
 
 
 Access the blockchain with a [REST API](https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic/rest-api-typescript): 
 ```shell
-./network rest-easy
+./network rest
 ```
 
 ```shell
-SAMPLE_APIKEY=97834158-3224-4CE7-95F9-A148C886653E
-
-curl -s --header "X-Api-Key:97834158-3224-4CE7-95F9-A148C886653E" http://fabric-rest-sample.localho.st/api/assets
+APIKEY=97834158-3224-4CE7-95F9-A148C886653E
 
 ```
 
+```
+curl  http://ch1-api.localho.st/ready
+```
+
+curl --header "X-Api-Key: ${APIKEY}" http://ch1-api.localho.st/api/positions/readAll
 Shut down the test network: 
 ```shell
 ./network down 
@@ -130,3 +139,14 @@ options: timeout 2
 - Compile the [fabric binaries](https://github.com/hyperledger/fabric) on a Mac and copy `build/bin/*` outputs to 
   `test-network-k8s/bin`.  Mac native builds are linked against the `netdns=cgo` DNS resolver, and are not
   subject to the timeouts associated with the Golang DNS resolver.
+
+
+////
+
+kubectl get namespaces
+
+kubectl config set-context --current --namespace=voting-system-bchain-network
+
+kubectl get deployments
+kubectl delete deployment ch1-api --cascade=true
+

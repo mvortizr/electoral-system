@@ -1,68 +1,81 @@
 # PASOS para red de prueba
 
-```
+TODO SE CORRE COMO BASE CARPETA /core
+
+### Borrar ejecuciones pasadas
+```bash
 ./network.sh down
 ./network_prune.sh
-
 ```
 
-```
-nvm use default 16.4.0
+### Iniciar red
+```bash
 ./network.sh up 
-
 ```
 
-```
+### Iniciar canales
+```bash
 ./create_election_channels.sh
 
 ```
-```
-correr en la carpeta del chaincode: npm install
-```
-```
-// si se quiere cambiar el chaincode se borrar el tar, de lo contrario conserva el empacado nuevo
-./chaincode_package.sh
-./chaincode_package.sh -p ../../../chaincode/chaincode-typescript/ -lang node -label basic -v 0.1 
-./chaincode_package.sh -p ../../../chaincode/ch1 -lang node -label ch1_cc -v 0.1 
 
+### Prep chaincode 
+(correr en la carpeta chaincode)
+```bash
+nvm use default 16.4.0
+npm install
+npm run build
 ```
+
+### Empacar chaincode
+(Si se quiere cambiar el chaincode se borrar el tar, de lo contrario conserva el empacado nuevo)
+```bash
+./chaincode_package.sh -p ../../../chaincode/ch1 -lang node -label channel1cc -v 0.1 
 ```
-./peer_chaincode_install.sh
-./peer_chaincode_install.sh ch1_cc //install in all
+
+
+### Instalar chaincode
+```bash
+./peer_chaincode_install.sh channel1cc #install in all peers
 ./peer_chaincode_install_p0.sh
-./peer_chaincode_install_p0.sh ch1_cc
+./peer_chaincode_install_p0.sh channel1cc
 
 ```
-```
+
+### Aprobar chaincode
+```bash
 ./chaincode_approve_all_channels.sh
-./chaincode_approve_all_channels.sh ch1_cc
+./chaincode_approve_all_channels.sh channel1cc
 
 ```
 
-```
+### Commit chaincode
+```bash
 ./chaincode_commit_all_channels.sh
-./chaincode_commit_all_channels.sh  ch1_cc
+./chaincode_commit_all_channels.sh  channel1cc
 
 ```
 
-```
+
+### Invoke (basic)
+```bash
 peer_chaincode_invoke_basic_all-channels.sh
 (to invoke basic chaincode)
 
 ```
 
-# Para info
+## Para info
 ```./channel_list.sh```
 ```./peer_query.sh```
 ```./chaincode_check_commit_all_channels.sh``` 
-```./chaincode_check_commit_all_channels.sh ch1_cc```
+```./chaincode_check_commit_all_channels.sh channel1cc```
 ```./monitordocker.sh```
 
-# invokes
+## invokes
 
-## Test
+### Test
     
-## ch1
+ch1
 ```./invokes/ch1/initLedger.sh```
 ```./invokes/ch1/createPosition.sh```
 ```./invokes/ch1/readElectionRoll.sh```

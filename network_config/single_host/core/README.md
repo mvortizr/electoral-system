@@ -1,6 +1,6 @@
-# PASOS para red de prueba
+# RED PRUEBA SINGLE HOST
 
-TODO SE CORRE COMO BASE CARPETA /core
+TODO SE CORRE COMO BASE CARPETA network_config/single_host/core
 
 ### Borrar ejecuciones pasadas
 ```bash
@@ -37,6 +37,8 @@ npm run build
 ### Instalar chaincode
 ```bash
 ./peer_chaincode_install.sh channel1cc #install in all peers
+
+#optionals
 ./peer_chaincode_install_p0.sh
 ./peer_chaincode_install_p0.sh channel1cc
 

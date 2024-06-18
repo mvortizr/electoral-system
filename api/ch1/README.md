@@ -131,7 +131,7 @@ npm run start:redis
 ```
 
 si el proceso está corriendo
-```
+```shell
 docker container stop {ID}
 docker container rm {ID}
 ```
@@ -150,7 +150,7 @@ npx prettier . --write
 
 ## RUN
 
-```
+```shell
 APIKEY=$(grep ORG1_APIKEY .env | cut -d '=' -f 2-)
 ```
 
@@ -297,6 +297,8 @@ Start a Redis server (Redis is used to store the queue of submit transactions)
 export REDIS_PASSWORD=$(uuidgen)
 npm run start:redis
 ```
+
+-----------------------------------------
 
 si el proceso está corriendo
 ```

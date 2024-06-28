@@ -9,7 +9,6 @@ export class LoggerMiddleware implements NestMiddleware {
     const { method, headers, originalUrl } = req;
     const message = `${method} ${originalUrl} - RUNTIME: ${headers['user-agent']}`;
     Logger.log(message);
-    //Logger.debug('Request body:', req.body);
     next();
   }
 }

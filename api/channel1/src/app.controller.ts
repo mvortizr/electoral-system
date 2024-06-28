@@ -1,6 +1,8 @@
-import { Controller, Get, Res } from '@nestjs/common';
+import { Controller, Get, Res, Post, Body } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Response } from 'express';
+
+
 
 @Controller()
 export class AppController {
@@ -10,4 +12,6 @@ export class AppController {
   checkHealth(@Res() res: Response): object {
     return res.status(200).json({ statusCode: 200, message: 'success' });
   }
+
+  
 }

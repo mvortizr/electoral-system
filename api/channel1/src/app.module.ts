@@ -3,10 +3,16 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LoggerMiddleware } from './middleware/logger.middleware';
 import { ConfigModule as ConfigurationModule } from './modules/config/config.module';
-
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [ConfigurationModule],
+  imports: [
+    ConfigModule.forRoot({
+      envFilePath: '.env',
+      isGlobal:true
+    }),
+    ConfigurationModule
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

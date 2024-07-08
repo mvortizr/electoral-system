@@ -19,6 +19,7 @@ export class ConfigController {
 
   @Post('/setElectionConfig')
   setElectionConfig(@Body() electionConfig: DTOElectionConfig, @Res() res: Response): object {
+    console.log('electionConfig', electionConfig)
     return res.status(200).json({ statusCode: 200, message: 'success' });
   }
 }

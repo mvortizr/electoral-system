@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { LoggerMiddleware } from './middleware/logger.middleware';
 import { ConfigModule as ConfigurationModule } from './modules/config/config.module';
 import { ConfigModule } from '@nestjs/config';
+import { FabricService } from './fabric/fabric.service';
 
 @Module({
   imports: [
@@ -14,7 +15,7 @@ import { ConfigModule } from '@nestjs/config';
     ConfigurationModule
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, FabricService],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

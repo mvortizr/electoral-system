@@ -7,19 +7,20 @@ import { TextDecoder } from 'util';
 import * as crypto from 'crypto';
 
 
+
 @Injectable()
 export class FabricService {
 
-    gateway: Gateway;
-    client!: grpc.Client | null;
-    channelName: string = process.env.CHANNEL_NAME!
-    chaincodeName: string = process.env.CHAINCODE_NAME!
+    gateway: Gateway | null = null;
+    client: grpc.Client | null = null;
     mspID: string = process.env.MSP_ID!
     cryptoPath: string = process.env.CRYPTO_PATH!
     keyDirectoryPath: string =  path.resolve(this.cryptoPath, 'users', 'User1@org1.example.com', 'msp', 'keystore')
+    certDirectoryPath: string=  path.resolve(this.cryptoPath, 'users', 'User1@org1.example.com', 'msp', 'signcerts')
     tlsCertPath:string = path.resolve(this.cryptoPath, 'peers', 'peer0.org1.example.com', 'tls', 'ca.crt')
     peerEndpoint: string = process.env.PEER_ENDPOINT!
     peerHostAlias: string = process.env.PEER_HOST_ALIAS!
+    utf8Decoder = new TextDecoder();
 
     async onModuleInit(): Promise<void> {
         await this.connect();
@@ -29,15 +30,27 @@ export class FabricService {
         await this.disconnect();
     }
 
+    async displayInputParameters(): Promise<void> {
+        console.log(`mspId:             ${this.mspID}`);
+        console.log(`cryptoPath:        ${this.cryptoPath}`);
+        console.log(`keyDirectoryPath:  ${this.keyDirectoryPath}`);
+        console.log(`certDirectoryPath: ${this.certDirectoryPath}`);
+        console.log(`tlsCertPath:       ${this.tlsCertPath}`);
+        console.log(`peerEndpoint:      ${this.peerEndpoint}`);
+        console.log(`peerHostAlias:     ${this.peerHostAlias}`);
+    }
+
     async connect(): Promise<void> {
-        this.client = await this.newGrpcConnection()
+        this.displayInputParameters();
+        
         const identity = await this.newIdentity();
         const signer = await this.newSigner();
-        let c = this.client
+        const client = await this.newGrpcConnection();
+        this.client = client
 
         
         this.gateway = await connect({
-            c,
+            client,
             identity,
             signer,
             evaluateOptions: () => ({ deadline: Date.now() + 5000 }),
@@ -49,7 +62,7 @@ export class FabricService {
     }
 
     async disconnect(): Promise<void> {
-        this.gateway.close();
+        this.gateway!.close();
         if (this.client !== null) {
             this.client.close();
         }
@@ -69,6 +82,20 @@ export class FabricService {
         const certPath = await this.getFirstDirFileName(certDirectoryPath);
         const credentials = await fs.readFile(certPath);
         return { mspId: this.mspID, credentials };
+    }
+
+    async submitTransaction(chaincodeName: string, functionName: string, ...args: string[]): Promise<any> {
+        // Get the network (channel) our contract is deployed to.
+        const network = await this.gateway!.getNetwork('election-ch1-roll'); 
+
+        // Get the contract from the network.
+        const contract = network.getContract(chaincodeName);
+
+        // Submit the specified transaction.
+        const result = await contract.submitTransaction(functionName, ...args);
+        console.log(`Transaction has been submitted, result is: ${result.toString()}`);
+
+        return result;
     }
 
     async getFirstDirFileName(dirPath: string): Promise<string> {

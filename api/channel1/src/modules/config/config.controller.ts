@@ -32,12 +32,12 @@ export class ConfigController {
     return res.status(200).json({ statusCode: 200, message: 'success' });
   }
 
-  @Get('/testInitLedger')
-  async testInitLedger( @Res() res: Response): Promise<object> {
+  @Get('/readAllAssets') /// DEBUG ONLY
+  async readAllAssets( @Res() res: Response): Promise<object> {
     // async submitTransaction(chaincodeName: string, functionName: string, ...args: string[])
     const chaincode = 'channel1cc'
-    const functionName = "InitLedger"
-    const result = await this.fabricService.submitTransaction(chaincode, functionName)
+    const functionName = "readEntireElectoralChannel"
+    const result = await this.fabricService.evaluateTransaction(chaincode, functionName)
     return res.status(200).json({ statusCode: 200, result: result });
   }
 }

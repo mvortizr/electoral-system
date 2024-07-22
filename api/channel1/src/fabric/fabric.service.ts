@@ -15,12 +15,13 @@ export class FabricService {
     client: grpc.Client | null = null;
     mspID: string = process.env.MSP_ID!
     cryptoPath: string = process.env.CRYPTO_PATH!
-    keyDirectoryPath: string =  path.resolve(this.cryptoPath, 'users', 'User1@org1.example.com', 'msp', 'keystore')
-    certDirectoryPath: string=  path.resolve(this.cryptoPath, 'users', 'User1@org1.example.com', 'msp', 'signcerts')
-    tlsCertPath:string = path.resolve(this.cryptoPath, 'peers', 'peer0.org1.example.com', 'tls', 'ca.crt')
+    keyDirectoryPath: string =  path.resolve(this.cryptoPath, 'users', 'User1@org1.voting_system.com', 'msp', 'keystore')
+    certDirectoryPath: string=  path.resolve(this.cryptoPath, 'users', 'User1@org1.voting_system.com', 'msp', 'signcerts')
+    tlsCertPath:string = path.resolve(this.cryptoPath, 'peers', 'peer0.org1.voting_system.com', 'tls', 'ca.crt')
     peerEndpoint: string = process.env.PEER_ENDPOINT!
     peerHostAlias: string = process.env.PEER_HOST_ALIAS!
     utf8Decoder = new TextDecoder();
+    channelName: string = process.env.CHANNEL_NAME!
 
     async onModuleInit(): Promise<void> {
         await this.connect();
@@ -30,8 +31,8 @@ export class FabricService {
         await this.disconnect();
     }
 
-    async displayInputParameters(): Promise<void> {
-        console.log(`mspId:             ${this.mspID}`);
+    async displayInputParameters(): Promise<void> { //DEBUG ONLY
+        console.log(`mspID:             ${this.mspID}`);
         console.log(`cryptoPath:        ${this.cryptoPath}`);
         console.log(`keyDirectoryPath:  ${this.keyDirectoryPath}`);
         console.log(`certDirectoryPath: ${this.certDirectoryPath}`);
@@ -78,7 +79,7 @@ export class FabricService {
     }
 
     private async newIdentity(): Promise<Identity> {
-        const certDirectoryPath = path.join(this.cryptoPath, 'users', 'User1@org1.example.com', 'msp', 'signcerts');
+        const certDirectoryPath = path.join(this.cryptoPath, 'users', 'User1@org1.voting_system.com', 'msp', 'signcerts');
         const certPath = await this.getFirstDirFileName(certDirectoryPath);
         const credentials = await fs.readFile(certPath);
         return { mspId: this.mspID, credentials };
@@ -86,7 +87,7 @@ export class FabricService {
 
     async submitTransaction(chaincodeName: string, functionName: string, ...args: string[]): Promise<any> {
         // Get the network (channel) our contract is deployed to.
-        const network = await this.gateway!.getNetwork('election-ch1-roll'); 
+        const network = await this.gateway!.getNetwork(this.channelName); 
 
         // Get the contract from the network.
         const contract = network.getContract(chaincodeName);
@@ -97,6 +98,21 @@ export class FabricService {
 
         return result;
     }
+
+    async evaluateTransaction(chaincodeName: string, functionName: string): Promise<any> {
+        // Get the network (channel) our contract is deployed to.
+        const network = await this.gateway!.getNetwork(this.channelName); 
+        // Get the contract from the network.
+        const contract = network.getContract(chaincodeName);
+
+        // Submit the specified transaction.
+        const resultBytes = await contract.evaluateTransaction(functionName);
+        const resultJson = this.utf8Decoder.decode(resultBytes);
+        const result = JSON.parse(resultJson);
+
+        return result;
+    }
+
 
     async getFirstDirFileName(dirPath: string): Promise<string> {
         const files = await fs.readdir(dirPath);

@@ -45,6 +45,18 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Docker APP
+
+```bash
+# crear imagen channel1 desde current directory
+$ docker build -t channel1_api .
+
+# correr
+docker run -p 3000:3000 channel1_api
+
+```
+
+
 ## Test
 
 ```bash

@@ -49,10 +49,28 @@ $ npm run start:prod
 
 ```bash
 # crear imagen channel1 desde current directory
-$ docker build -t channel1_api .
+docker build -t mvortizr/channel1_api:v1.1 .
+#(docker tag my-image:latest your-docker-hub-username/repository-name:tag
+#)
 
 # correr
-docker run -p 3000:3000 channel1_api
+docker run -p 3000:3000 mvortizr/channel1_api:v1.1
+
+
+# pushear a dockerhub
+docker login
+docker push mvortizr/channel1_api:v1.1
+
+# Tener el IP de un docker
+docker inspect 4b966d84e9596cf21b0b5a33081c47229517a5987dc436ecdfcdb6d1367884e1 | grep IPAddress
+
+
+```
+
+# Docker Composer
+```bash
+docker-compose up
+
 
 ```
 

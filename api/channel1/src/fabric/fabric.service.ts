@@ -14,10 +14,9 @@ export class FabricService {
     gateway: Gateway | null = null;
     client: grpc.Client | null = null;
     mspID: string = process.env.MSP_ID!
-    cryptoPath: string = process.env.CRYPTO_PATH!
-    keyDirectoryPath: string =  path.resolve(this.cryptoPath, 'users', 'User1@org1.voting_system.com', 'msp', 'keystore')
-    certDirectoryPath: string=  path.resolve(this.cryptoPath, 'users', 'User1@org1.voting_system.com', 'msp', 'signcerts')
-    tlsCertPath:string = path.resolve(this.cryptoPath, 'peers', 'peer0.org1.voting_system.com', 'tls', 'ca.crt')
+    keyDirectory: string = process.env.KEY_DIRECTORY!
+    certDirectory: string= process.env.CERT_DIRECTORY!
+    peerTlsCert: string = process.env.PEER_TLS_CERT!
     peerEndpoint: string = process.env.PEER_ENDPOINT!
     peerHostAlias: string = process.env.PEER_HOST_ALIAS!
     utf8Decoder = new TextDecoder();
@@ -33,10 +32,9 @@ export class FabricService {
 
     async displayInputParameters(): Promise<void> { //DEBUG ONLY
         console.log(`mspID:             ${this.mspID}`);
-        console.log(`cryptoPath:        ${this.cryptoPath}`);
-        console.log(`keyDirectoryPath:  ${this.keyDirectoryPath}`);
-        console.log(`certDirectoryPath: ${this.certDirectoryPath}`);
-        console.log(`tlsCertPath:       ${this.tlsCertPath}`);
+        console.log(`keyDirectory:  ${this.keyDirectory}`);
+        console.log(`certDirectory: ${this.certDirectory}`);
+        console.log(`tlsCert:       ${this.peerTlsCert}`);
         console.log(`peerEndpoint:      ${this.peerEndpoint}`);
         console.log(`peerHostAlias:     ${this.peerHostAlias}`);
     }
@@ -71,17 +69,15 @@ export class FabricService {
     }
 
     async  newGrpcConnection(): Promise<grpc.Client> {
-        const tlsRootCert = await fs.readFile(this.tlsCertPath);
-        const tlsCredentials = grpc.credentials.createSsl(tlsRootCert);
-        return new grpc.Client(this.peerEndpoint, tlsCredentials, {
+        const pemBuffer = Buffer.from(this.peerTlsCert)
+        const tlsCredentials = grpc.credentials.createSsl(pemBuffer);
+        return new grpc.Client(this.peerEndpoint, tlsCredentials, { 
             'grpc.ssl_target_name_override': this.peerHostAlias,
         });
     }
 
     private async newIdentity(): Promise<Identity> {
-        const certDirectoryPath = path.join(this.cryptoPath, 'users', 'User1@org1.voting_system.com', 'msp', 'signcerts');
-        const certPath = await this.getFirstDirFileName(certDirectoryPath);
-        const credentials = await fs.readFile(certPath);
+        const credentials = new TextEncoder().encode(this.certDirectory);
         return { mspId: this.mspID, credentials };
     }
 
@@ -124,9 +120,7 @@ export class FabricService {
     }
 
     async newSigner(): Promise<Signer> {
-        const keyPath = await this.getFirstDirFileName(this.keyDirectoryPath);
-        const privateKeyPem = await fs.readFile(keyPath);
-        const privateKey = crypto.createPrivateKey(privateKeyPem);
+        const privateKey = crypto.createPrivateKey(this.keyDirectory);
         return signers.newPrivateKeySigner(privateKey);
     }
 

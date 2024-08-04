@@ -48,7 +48,7 @@ Create a KIND cluster:
 
 Launch the network, create a channel, and deploy the [basic-asset-transfer](../asset-transfer-basic) smart contract: 
 
-```shell=
+```shell
 ./network up
 
 
@@ -73,17 +73,27 @@ Access the blockchain with a [REST API](https://github.com/hyperledger/fabric-sa
 ./network rest
 ```
 
+
+
 ```shell
 APIKEY=97834158-3224-4CE7-95F9-A148C886653E
 
 ```
 
 ```
-curl  http://ch1-api.localho.st/ready
+curl  http://channel1-api.localho.st/checkHealth
+```
+```
+curl --header "X-Api-Key: 10060b68-340b-4b8d-8844-c94a1afe3a04" http://channel1-api.localho.st/config/checkAuthorization
 ```
 
-curl --header "X-Api-Key: ${APIKEY}" http://ch1-api.localho.st/api/positions/readAll
+
 Shut down the test network: 
+
+```shell
+./network unrest
+```
+
 ```shell
 ./network down 
 ```

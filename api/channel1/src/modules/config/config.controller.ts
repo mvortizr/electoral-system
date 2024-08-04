@@ -40,7 +40,7 @@ export class ConfigController {
   async createPosition( @Res() res: Response): Promise<object> {
     const chaincode = 'channel1cc'
     const functionName = "createPosition"
-    const result = await this.fabricService.submitTransaction(chaincode,functionName, "1111", "presidente")
+    const result = await this.fabricService.submitTransaction(chaincode,functionName, "12345678910", "presidente")
    
     return res.status(200).json({ statusCode: 200, message: 'success' });
   }

@@ -62,7 +62,7 @@ docker login
 docker push mvortizr/channel1_api:v1.1
 
 # Tener el IP de un docker
-docker inspect 4b966d84e9596cf21b0b5a33081c47229517a5987dc436ecdfcdb6d1367884e1 | grep IPAddress
+docker inspect 2802b898fe0a9cce4a2df7cfcba8b2fd8511adb41235207645ddf316305c15c0 | grep IPAddress
 
 
 ```

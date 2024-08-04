@@ -160,7 +160,11 @@ elif [ "${MODE}" == "anchor" ]; then
 elif [ "${MODE}" == "rest" ]; then
   log "Launching chaincode application:"
   launch_rest_api_ch1
-  log "🏁 - Fabric REST sample is ready."
+  log "🏁 - Fabric REST API is ready."
+elif [ "${MODE}" == "unrest" ]; then
+  log "Bringing down Rest API chaincode application:"
+  bring_down_rest_api_ch1
+  log "🏁 - Fabric REST API is down."
 
 elif [ "${MODE}" == "application" ]; then
   log "Getting application connection information:"

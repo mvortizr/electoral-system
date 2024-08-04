@@ -1,0 +1,77 @@
+# Mudar a secret el configmap despues
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: channel1-configmap
+data:
+  API_KEY : "10060b68-340b-4b8d-8844-c94a1afe3a04"
+  MSP_ID: "Org1MSP"
+  CRYPTO_PATH : "cryptoPathCopy/peerOrganizations/org1.voting_system.com"
+  PEER_ENDPOINT: "172.19.0.3:7051" 
+  PEER_HOST_ALIAS: "peer0.org1.voting_system.com"
+  CHANNEL_NAME: "election-ch1-roll"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: channel1-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: channel1-api
+  template:
+    metadata:
+      labels:
+        app: channel1-api
+    spec:
+      containers:
+        - name: main
+          image: docker.io/mvortizr/channel1_api:v1.1
+          command: ["npm", "run", "start:prod"]
+          imagePullPolicy: IfNotPresent 
+          envFrom:
+            - configMapRef:
+                name: channel1-configmap
+          ports:
+            - containerPort: 3000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: channel1-api
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 80
+      targetPort: 3000
+      protocol: TCP
+  selector:
+    app: channel1-api
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: 60s
+  labels:
+    app: channel1-api
+  name: channel1-api
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: channel1-api.${DOMAIN}
+      http:
+        paths:
+          - backend:
+              service:
+                name: channel1-api
+                port:
+                  name: http
+            path: /
+            pathType: ImplementationSpecific

@@ -57,13 +57,24 @@ function rollout_rest_api_ch1() {
   pop_fn
 }
 
+function bring_down_rest_api_ch1() {
+  local ns=$ORG1_NS
+  push_fn "Bringing down API ch1"
+  kubectl -n $ns delete configmap channel1-configmap
+  kubectl -n $ns delete deployment channel1-api
+  kubectl -n $ns  delete service channel1-api
+  kubectl -n $ns delete ingress channel1-api
+  pop_fn
+
+}
+
 function launch_rest_api_ch1() {
   local ns=$ORG1_NS
   construct_rest_configmap_ch1
 
-  apply_template kube/ch1-api.yaml $ns
+  apply_template kube/channel1-api.yaml $ns
 
-  kubectl -n $ns rollout status deploy/ch1-api
+  kubectl -n $ns rollout status deploy/channel1-api
 
 
 }

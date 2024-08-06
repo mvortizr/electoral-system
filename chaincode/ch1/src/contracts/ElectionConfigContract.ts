@@ -19,4 +19,9 @@ export class ElectionConfigContract extends Contract {
         await ctx.stub.putState("1", Buffer.from(stringify(newElectionConfig)));
     }
 
+    @Transaction()
+    public testConnection(ctx: Context): string {
+        return "{\"message\": \"Successfully Connected\"}"
+    }
+
 }

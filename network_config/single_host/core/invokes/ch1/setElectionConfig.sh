@@ -4,7 +4,7 @@ ELECTION_NAME="$1"
 # channel 1 - electoral roll (patrón electoral)
 CHANNEL_1_NAME="${ELECTION_NAME}-ch1-roll"
 
-CALL='{"function":"setElectionConfig","Args":["1","2","3","4"]}'
+CALL='{"function":"ElectionConfigContract:setElectionConfig","Args":["1","2","3","4"]}'
 
 
 #channel 1

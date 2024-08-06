@@ -81,7 +81,7 @@ ch1
 ```./invokes/ch1/initLedger.sh```
 ```./invokes/ch1/createPosition.sh```
 ```./invokes/ch1/readElectionRoll.sh``` 
-```./invokes/ch1/setElectionConfig.sh``` (doesn't work)
+```./invokes/ch1/setElectionConfig.sh``` 
 
 
 ## correr api

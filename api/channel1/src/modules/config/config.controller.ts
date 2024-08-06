@@ -32,31 +32,38 @@ export class ConfigController {
     return res.status(200).json({ statusCode: 200, message: 'success' });
   }
 
-  // @Post('/setElectionConfig')
-  // async setElectionConfig(@Body() electionConfig: DTOElectionConfig, @Res() res: Response): Promise<object> {
-  //   const chaincode = 'channel1cc'
-  //   const functionName = "setElectionConfig"
-  //   const result = await this.fabricService.submitTransaction(
-  //     chaincode,
-  //     functionName,"1","2","3","4") ///ESTA FALLANDO
-  //   return res.status(200).json({ statusCode: 200, message: 'success' });
-  // }
+  @Get('/checkChannelConnection')
+  @ApiOperation({ summary: 'Checks if the API key is properly communicating with the chaincode' })
+  async checkChannelConnection(@Res() res: Response): Promise<object> {
+    const chaincode = 'channel1cc'
+    const functionName = "ElectionConfigContract:testConnection"
+    const result = await this.fabricService.evaluateTransaction(chaincode, functionName)
+    return res.status(200).json({ statusCode: 200, message: 'success' });
+  }
 
-  // @Post('/createPosition') //MOVE AFTER k8S DONE
-  // async createPosition( @Res() res: Response): Promise<object> {
-  //   const chaincode = 'channel1cc'
-  //   const functionName = "createPosition"
-  //   const result = await this.fabricService.submitTransaction(chaincode,functionName, "12345678910", "presidente")
-   
-  //   return res.status(200).json({ statusCode: 200, message: 'success' });
-  // }
+  @Post('/setElectionConfig')
+  @ApiOperation({ summary: 'Sets election configuration' })
+  async setElectionConfig(@Body() electionConfig: DTOElectionConfig, @Res() res: Response): Promise<object> {
+    const chaincode = 'channel1cc'
+    const functionName = "ElectionConfigContract:setElectionConfig"
+    const result = await this.fabricService.submitTransaction(
+      chaincode,
+      functionName,
+      electionConfig.parties.toString(),
+      electionConfig.positions.toString(),
+      electionConfig.candidates.toString(),
+      electionConfig.electors.toString()) 
+    return res.status(200).json({ statusCode: 200, message: 'success' });
+  }
 
-  // @Get('/readAllAssets') /// DEBUG ONLY
-  // async readAllAssets( @Res() res: Response): Promise<object> {
-  //   // async submitTransaction(chaincodeName: string, functionName: string, ...args: string[])
-  //   const chaincode = 'channel1cc'
-  //   const functionName = "readEntireElectoralChannel"
-  //   const result = await this.fabricService.evaluateTransaction(chaincode, functionName)
-  //   return res.status(200).json({ statusCode: 200, result: result });
-  // }
+
+  @Get('/readAllAssets') /// DEBUG ONLY
+  @ApiOperation({ summary: '(DEBUG ONLY) Dumps every data inside the channel unordered' })
+  async readAllAssets( @Res() res: Response): Promise<object> {
+    // async submitTransaction(chaincodeName: string, functionName: string, ...args: string[])
+    const chaincode = 'channel1cc'
+    const functionName = "readEntireElectoralChannel"
+    const result = await this.fabricService.evaluateTransaction(chaincode, functionName)
+    return res.status(200).json({ statusCode: 200, result: result });
+  }
 }

@@ -1,21 +1,27 @@
 import { IsNotEmpty, IsInt, IsPositive } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class DTOElectionConfig {
+   
+    @ApiProperty({ description: 'number of parties to register' })
     @IsInt()
     @IsPositive()
     @IsNotEmpty()
     parties!: number;
 
+    @ApiProperty({ description: 'number of positions to register' })
     @IsInt()
     @IsPositive()
     @IsNotEmpty()
     positions!:number;
 
+    @ApiProperty({ description: 'number of candidates to register' })
     @IsInt()
     @IsPositive()
     @IsNotEmpty()
     candidates!: number;
 
+    @ApiProperty({ description: 'number of electors to register' })
     @IsInt()
     @IsPositive()
     @IsNotEmpty()

@@ -4,6 +4,7 @@ import { Response } from 'express';
 import { ConfigService } from './config.service';
 import { ApiKeyGuard } from 'src/middleware/auth.middleware';
 import { FabricService } from '../../fabric/fabric.service';
+import { ApiHeader, ApiOperation } from '@nestjs/swagger';
 
 // DTOS
 import { DTOElectionConfig } from './dtos/dto_election_config';
@@ -22,6 +23,12 @@ export class ConfigController {
   
 
   @Get('/checkAuthorization')
+  @ApiOperation({ summary: 'Get example' })
+  @ApiHeader({
+    name: 'authorization',
+    description: 'A custom header for the request',
+    required: true,
+  })
   checkHealth(@Res() res: Response): object {
     return res.status(200).json({ statusCode: 200, message: 'success' });
   }

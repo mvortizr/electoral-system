@@ -4,12 +4,16 @@ import { Response } from 'express';
 import { ConfigService } from './config.service';
 import { ApiKeyGuard } from 'src/middleware/auth.middleware';
 import { FabricService } from '../../fabric/fabric.service';
-import { ApiHeader, ApiOperation } from '@nestjs/swagger';
+import { ApiHeader, ApiOperation, ApiBearerAuth} from '@nestjs/swagger';
 
 // DTOS
 import { DTOElectionConfig } from './dtos/dto_election_config';
 
-
+@ApiHeader({
+  name: 'auth',
+  description: 'Api key token',
+  required: true,
+})
 @Controller('config')
 @UseGuards(ApiKeyGuard)
 export class ConfigController {
@@ -23,41 +27,36 @@ export class ConfigController {
   
 
   @Get('/checkAuthorization')
-  @ApiOperation({ summary: 'Get example' })
-  @ApiHeader({
-    name: 'authorization',
-    description: 'A custom header for the request',
-    required: true,
-  })
+  @ApiOperation({ summary: 'Checks if the API key is properly sent to the api' })
   checkHealth(@Res() res: Response): object {
     return res.status(200).json({ statusCode: 200, message: 'success' });
   }
 
-  @Post('/setElectionConfig')
-  async setElectionConfig(@Body() electionConfig: DTOElectionConfig, @Res() res: Response): Promise<object> {
-    const chaincode = 'channel1cc'
-    const functionName = "setElectionConfig"
-    const result = await this.fabricService.submitTransaction(
-      chaincode,
-      functionName,"1","2","3","4") ///ESTA FALLANDO
-    return res.status(200).json({ statusCode: 200, message: 'success' });
-  }
+  // @Post('/setElectionConfig')
+  // async setElectionConfig(@Body() electionConfig: DTOElectionConfig, @Res() res: Response): Promise<object> {
+  //   const chaincode = 'channel1cc'
+  //   const functionName = "setElectionConfig"
+  //   const result = await this.fabricService.submitTransaction(
+  //     chaincode,
+  //     functionName,"1","2","3","4") ///ESTA FALLANDO
+  //   return res.status(200).json({ statusCode: 200, message: 'success' });
+  // }
 
-  @Post('/createPosition') //MOVE AFTER k8S DONE
-  async createPosition( @Res() res: Response): Promise<object> {
-    const chaincode = 'channel1cc'
-    const functionName = "createPosition"
-    const result = await this.fabricService.submitTransaction(chaincode,functionName, "12345678910", "presidente")
+  // @Post('/createPosition') //MOVE AFTER k8S DONE
+  // async createPosition( @Res() res: Response): Promise<object> {
+  //   const chaincode = 'channel1cc'
+  //   const functionName = "createPosition"
+  //   const result = await this.fabricService.submitTransaction(chaincode,functionName, "12345678910", "presidente")
    
-    return res.status(200).json({ statusCode: 200, message: 'success' });
-  }
+  //   return res.status(200).json({ statusCode: 200, message: 'success' });
+  // }
 
-  @Get('/readAllAssets') /// DEBUG ONLY
-  async readAllAssets( @Res() res: Response): Promise<object> {
-    // async submitTransaction(chaincodeName: string, functionName: string, ...args: string[])
-    const chaincode = 'channel1cc'
-    const functionName = "readEntireElectoralChannel"
-    const result = await this.fabricService.evaluateTransaction(chaincode, functionName)
-    return res.status(200).json({ statusCode: 200, result: result });
-  }
+  // @Get('/readAllAssets') /// DEBUG ONLY
+  // async readAllAssets( @Res() res: Response): Promise<object> {
+  //   // async submitTransaction(chaincodeName: string, functionName: string, ...args: string[])
+  //   const chaincode = 'channel1cc'
+  //   const functionName = "readEntireElectoralChannel"
+  //   const result = await this.fabricService.evaluateTransaction(chaincode, functionName)
+  //   return res.status(200).json({ statusCode: 200, result: result });
+  // }
 }

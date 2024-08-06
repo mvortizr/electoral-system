@@ -84,7 +84,7 @@ APIKEY=97834158-3224-4CE7-95F9-A148C886653E
 curl  http://channel1-api.localho.st/checkHealth
 ```
 ```
-curl --header "X-Api-Key: 10060b68-340b-4b8d-8844-c94a1afe3a04" http://channel1-api.localho.st/config/checkAuthorization
+curl --header "auth: 10060b68-340b-4b8d-8844-c94a1afe3a04" http://channel1-api.localho.st/config/checkAuthorization
 ```
 
 

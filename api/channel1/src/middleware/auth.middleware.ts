@@ -10,7 +10,7 @@ import {
     async canActivate(context: ExecutionContext): Promise<boolean> {
       const request = context.switchToHttp().getRequest();
   
-      const apiKey = request.headers['authorization']; 
+      const apiKey = request.headers['auth']; 
       
       if (!apiKey) {
         throw new UnauthorizedException('API key is missing.');

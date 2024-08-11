@@ -5,6 +5,7 @@ import { LoggerMiddleware } from './middleware/logger.middleware';
 import { ConfigModule as ConfigurationModule } from './modules/config/config.module';
 import { ConfigModule } from '@nestjs/config';
 import { FabricService } from './fabric/fabric.service';
+import { PositionModule } from './modules/position/position.module';
 
 @Module({
   imports: [
@@ -12,7 +13,8 @@ import { FabricService } from './fabric/fabric.service';
       envFilePath: '.env',
       isGlobal:true
     }),
-    ConfigurationModule
+    ConfigurationModule,
+    PositionModule
   ],
   controllers: [AppController],
   providers: [AppService, FabricService],

@@ -81,7 +81,7 @@ export class FabricService {
         return { mspId: this.mspID, credentials };
     }
 
-    async submitTransaction(chaincodeName: string, functionName: string, ...args: string[]): Promise<any> {
+    async submitTransaction(chaincodeName: string, functionName: string, ...args: any[]): Promise<any> {
         // Get the network (channel) our contract is deployed to.
         const network = await this.gateway!.getNetwork(this.channelName); 
 

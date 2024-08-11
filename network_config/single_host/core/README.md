@@ -84,6 +84,17 @@ ch1
 ```./invokes/ch1/setElectionConfig.sh``` 
 
 
+## All commands
+```
+./network.sh down
+./network.sh up
+./create_election_channels.sh
+./chaincode_package.sh -p ../../../chaincode/ch1 -lang node -label channel1cc -v 0.1 
+./peer_chaincode_install.sh channel1cc
+./chaincode_approve_all_channels.sh channel1cc
+./chaincode_commit_all_channels.sh  channel1cc
+./invokes/ch1/readElectionRoll.sh
+```
 ## correr api
 nvm use default 18.17.0
 cd api/ch1

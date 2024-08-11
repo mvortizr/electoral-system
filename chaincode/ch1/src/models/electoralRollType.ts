@@ -1,5 +1,6 @@
 export enum electoralRollType {
     POSITION =  'position',
     CANDIDATE ='candidate',
-    ELECTOR = 'elector'
+    ELECTOR = 'elector',
+    PARTY = 'party'
 }

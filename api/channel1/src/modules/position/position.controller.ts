@@ -7,7 +7,7 @@ import { ApiHeader, ApiOperation} from '@nestjs/swagger';
 import { PositionService } from './position.service';
 import { DTOPosition } from './dtos/dto_position';
 import { v4 as uuidv4 } from 'uuid';
-
+import { TiebreakerConfigItem } from './dtos/tiebreaker';
 
 
 
@@ -37,12 +37,17 @@ export class PositionController {
     const chaincode = 'channel1cc'
     const functionName = "PositionContract:createPosition"
     const internalUID: string = uuidv4();
+
+    if (position.tiebreakerConfig != null){
+      position.tiebreakerConfig = this.positionService.processTieBreaker(position.tiebreakerConfig)
+    }
+    
     const result = await this.fabricService.submitTransaction(
       chaincode,
       functionName,
       internalUID,// position ID
       JSON.stringify({
-        externalUID: position.positionID,
+        positionExternalID: position.positionID,
         positionName: position.positionName,
         positionVacancies: position.vacancies,
         tiebreaker: position.tiebreakerConfig

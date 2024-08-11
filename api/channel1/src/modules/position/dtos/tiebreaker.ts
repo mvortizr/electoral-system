@@ -1,4 +1,4 @@
-import {  IsNotEmpty,  IsString, IsEnum } from 'class-validator';
+import {  IsNotEmpty,  IsString, IsEnum, IsOptional } from 'class-validator';
 
 
 enum Datatype {
@@ -16,6 +16,10 @@ enum Comparator {
 export class TiebreakerConfigItem {
     @IsString()
     @IsNotEmpty()
+    tiebreakerID!: string;
+
+    @IsString()
+    @IsNotEmpty()
     name!: string;
   
     @IsEnum(Datatype)
@@ -25,4 +29,9 @@ export class TiebreakerConfigItem {
     @IsEnum(Comparator)
     @IsNotEmpty()
     comparator!: Comparator;
+
+     // Add this new property
+     @IsString()
+     @IsOptional()
+     tiebreakerExternalID?: string;
 }

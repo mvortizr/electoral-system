@@ -14,14 +14,6 @@ export class PositionContract extends Contract {
 
     ): Promise<void> {
         let data = JSON.parse(positionInfo)
-        // const newPosition  = {
-        //     electoralRollType: electoralRollType.POSITION, 
-        //     positionID: positionID,
-        //     externalPositionID: externalPositionID,
-        //     vacancies: vacancies,
-        //     positionName: positionName,
-        //     tieBreakerConfig: tieBreakerConfig
-        // };
         const newPosition = {
             positionID: positionID,
             electoralRollType: electoralRollType.POSITION,
@@ -32,6 +24,29 @@ export class PositionContract extends Contract {
         // we insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
         await ctx.stub.putState(positionID, Buffer.from(stringify(newPosition)));
     }
+
+    // create a positions in batch
+    @Transaction()
+    public async createPositionsBatch(ctx: Context, 
+        positions: string, 
+    ): Promise<void> {
+        const positionsArray = JSON.parse(positions); // Assuming `positions` is a JSON array string
+
+        for (const position of positionsArray) {
+            const { positionID, ...data } = position;
+            const newPosition = {
+                positionID: positionID,
+                electoralRollType: electoralRollType.POSITION,
+                creationDate: new Date().toISOString(),
+                ...data
+            };
+
+            // Insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
+            await ctx.stub.putState(positionID, Buffer.from(stringify((newPosition))));
+        }
+    }
+
+    
 
     @Transaction()
     @Returns('string')
@@ -63,11 +78,6 @@ export class PositionContract extends Contract {
             positions.push(record);
             result = await iterator.next();
         }
-
-        // for await (const res of iterator) {
-        //     const position = JSON.parse(res.value.toString('utf8'));
-        //     positions.push(position);
-        // }
     
         return JSON.stringify({
             positions: positions,
@@ -75,41 +85,41 @@ export class PositionContract extends Contract {
         });
     }
 
-    // @Transaction()
-    // @Returns('string')
-    // public async queryPositionByExternalID(ctx: Context, externalID: string): Promise<string> {
-    //     // Create a query string to filter by the "camp" field
-    //     const queryString = {
-    //         selector: {
-    //             positionExternalID: externalID,
-    //             electoralRollType: electoralRollType.POSITION  // Optional: If you also want to filter by electoralRollType
-    //         }
-    //     };
+    @Transaction()
+    @Returns('string')
+    public async queryPositionByExternalID(ctx: Context, externalID: string): Promise<string> {
+        // Create a query string to filter by the "camp" field
+        const queryString = {
+            selector: {
+                positionExternalID: externalID
+                //electoralRollType: electoralRollType.POSITION  // Optional: If you also want to filter by electoralRollType
+            }
+        };
 
-    //     // Perform the query
-    //     const iterator = await ctx.stub.getQueryResult(JSON.stringify(queryString));
+        // Perform the query
+        const iterator = await ctx.stub.getQueryResult(JSON.stringify(queryString));
 
-    //     const positions: any[] = [];
+        const positions: any[] = [];
 
-    //     let result = await iterator.next();
-    //     while (!result.done) {
-    //         const strValue = Buffer.from(result.value.value.toString()).toString('utf8');
-    //         let record;
-    //         try {
-    //             record = JSON.parse(strValue);
-    //         } catch (err) {
-    //             console.log(err);
-    //             record = strValue;
-    //         }
-    //         positions.push(record);
-    //         result = await iterator.next();
-    //     }
+        let result = await iterator.next();
+        while (!result.done) {
+            const strValue = Buffer.from(result.value.value.toString()).toString('utf8');
+            let record;
+            try {
+                record = JSON.parse(strValue);
+            } catch (err) {
+                console.log(err);
+                record = strValue;
+            }
+            positions.push(record);
+            result = await iterator.next();
+        }
 
-    //     // Close the iterator
-    //     await iterator.close();
+        // Close the iterator
+        await iterator.close();
 
-    //     // Return the positions as a JSON string
-    //     return JSON.stringify(positions);
-    // }
+        // Return the positions as a JSON string
+        return JSON.stringify(positions);
+    }
 
 }

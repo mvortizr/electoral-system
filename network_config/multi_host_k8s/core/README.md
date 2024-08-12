@@ -61,11 +61,12 @@ Launch the network, create a channel, and deploy the [basic-asset-transfer](../a
 
 Invoke and query chaincode:
 ```shell
-./network chaincode invoke channel1cc 1 '{"Args":["createIndexes"]}'
-
 ./network chaincode query  channel1cc 1 '{"function":"readEntireElectoralChannel","Args":[]}'
 ```
 
+```shell
+./network chaincode query  channel1cc-5 1 '{"function":"PositionContract:queryPositionByExternalID","Args":[""a12b3c4d-e5f6-7890-1234-567890abcdef""]}'
+```
 
 
 Access the blockchain with a [REST API](https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic/rest-api-typescript): 

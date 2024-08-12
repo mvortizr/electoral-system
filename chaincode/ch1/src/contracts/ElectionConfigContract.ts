@@ -11,6 +11,7 @@ export class ElectionConfigContract extends Contract {
       
         const newElectionConfig = {
             "parties": numParties,
+            "electoralRollType": electoralRollType.CONFIG,
             "positions": numPositions,
             "candidates": numCandidates,
             "electors": numElectors

@@ -34,6 +34,7 @@ function   construct_rest_configmap_ch1() {
   ENROLLMENT_DIR=${TEMP_DIR}/enrollments
   CHANNEL_MSP_DIR=${TEMP_DIR}/channel-msp
   CONFIG_DIR=${TEMP_DIR}/channel1-config
+  CHAINCODE_NAME="$1"
 
   mkdir -p $CONFIG_DIR
 
@@ -45,6 +46,7 @@ function   construct_rest_configmap_ch1() {
   printf "org1-peer0.${ORG1_NS}.svc.cluster.local:7051" > $CONFIG_DIR/PEER_ENDPOINT
   printf "election-ch1-roll" > $CONFIG_DIR/CHANNEL_NAME
   printf "org1-peer0"> $CONFIG_DIR/PEER_HOST_ALIAS
+  printf "channel1cc-3"> $CONFIG_DIR/CHAINCODE_NAME
 
 
   cp $ENROLLMENT_DIR/org1/users/org1admin/msp/signcerts/cert.pem $CONFIG_DIR/CERT_DIRECTORY
@@ -81,8 +83,10 @@ function bring_down_rest_api_ch1() {
 
 
 function launch_rest_api_ch1() {
-  local ns=$ORG1_NS
-  construct_rest_configmap_ch1
+  local ns=$ORG1_NS  
+  # push_fn "this is number one $1"
+  # pop_fn
+  construct_rest_configmap_ch1 $1
 
   apply_template kube/channel1-api.yaml $ns
 

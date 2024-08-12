@@ -35,7 +35,7 @@ export class ConfigController {
   @Get('/checkChannelConnection')
   @ApiOperation({ summary: 'Checks if the API key is properly communicating with the chaincode' })
   async checkChannelConnection(@Res() res: Response): Promise<object> {
-    const chaincode = 'channel1cc'
+    const chaincode = process.env.CHAINCODE_NAME!.toString()
     const functionName = "ElectionConfigContract:testConnection"
     const result = await this.fabricService.evaluateTransaction(chaincode, functionName)
     return res.status(200).json({ statusCode: 200, message: 'success' });
@@ -44,7 +44,7 @@ export class ConfigController {
   @Post('/setElectionConfig')
   @ApiOperation({ summary: 'Sets election configuration' })
   async setElectionConfig(@Body() electionConfig: DTOElectionConfig, @Res() res: Response): Promise<object> {
-    const chaincode = 'channel1cc'
+    const chaincode = process.env.CHAINCODE_NAME!.toString()
     const functionName = "ElectionConfigContract:setElectionConfig"
     const result = await this.fabricService.submitTransaction(
       chaincode,
@@ -61,7 +61,7 @@ export class ConfigController {
   @ApiOperation({ summary: '(DEBUG ONLY) Dumps every data inside the channel unordered' })
   async readAllAssets( @Res() res: Response): Promise<object> {
     // async submitTransaction(chaincodeName: string, functionName: string, ...args: string[])
-    const chaincode = 'channel1cc'
+    const chaincode = process.env.CHAINCODE_NAME!.toString()
     const functionName = "readEntireElectoralChannel"
     const result = await this.fabricService.evaluateTransaction(chaincode, functionName)
     return res.status(200).json({ statusCode: 200, result: result });

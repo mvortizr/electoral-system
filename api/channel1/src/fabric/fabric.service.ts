@@ -95,18 +95,28 @@ export class FabricService {
         return result;
     }
 
-    async evaluateTransaction(chaincodeName: string, functionName: string): Promise<any> {
+    async evaluateTransaction(chaincodeName: string, functionName: string, params?: any): Promise<any> {
         // Get the network (channel) our contract is deployed to.
         const network = await this.gateway!.getNetwork(this.channelName); 
         // Get the contract from the network.
         const contract = network.getContract(chaincodeName);
 
         // Submit the specified transaction.
-        const resultBytes = await contract.evaluateTransaction(functionName);
-        const resultJson = this.utf8Decoder.decode(resultBytes);
-        const result = JSON.parse(resultJson);
+        if (!params) {
+            const resultBytes = await contract.evaluateTransaction(functionName);
+            const resultJson = this.utf8Decoder.decode(resultBytes);
+            const result = JSON.parse(resultJson);
 
-        return result;
+            return result;
+        } else {
+            const resultBytes = await contract.evaluateTransaction(functionName, params);
+            const resultJson = this.utf8Decoder.decode(resultBytes);
+            const result = JSON.parse(resultJson);
+
+            return result;
+        }
+        
+        
     }
 
 

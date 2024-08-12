@@ -61,7 +61,7 @@ Launch the network, create a channel, and deploy the [basic-asset-transfer](../a
 
 Invoke and query chaincode:
 ```shell
-./network chaincode invoke channel1cc 1 '{"Args":["InitLedger"]}'
+./network chaincode invoke channel1cc 1 '{"Args":["createIndexes"]}'
 
 ./network chaincode query  channel1cc 1 '{"function":"readEntireElectoralChannel","Args":[]}'
 ```

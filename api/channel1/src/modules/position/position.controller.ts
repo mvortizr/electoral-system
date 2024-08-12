@@ -34,7 +34,7 @@ export class PositionController {
   @Post('/createPosition')
   @ApiOperation({ summary: 'Creates a new position' })
   async createPosition(@Body() position: DTOPosition, @Res() res: Response): Promise<object> {
-    const chaincode = 'channel1cc'
+    const chaincode = process.env.CHAINCODE_NAME!.toString()
     const functionName = "PositionContract:createPosition"
     const internalUID: string = uuidv4();
 
@@ -55,6 +55,19 @@ export class PositionController {
       
     )
     return res.status(201).json({ statusCode: 201, message: 'success' });
+  }
+
+  @Get('/getPositions') /// DEBUG ONLY
+  async readPositions( @Res() res: Response): Promise<object> {
+    // async submitTransaction(chaincodeName: string, functionName: string, ...args: string[])
+    const chaincode = process.env.CHAINCODE_NAME!.toString()
+    const functionName = "PositionContract:queryPositionsWithPagination"
+    const params = JSON.stringify({
+      pageSize: 10,
+      bookmark: ''
+    })
+    const result = await this.fabricService.evaluateTransaction(chaincode, functionName, params)
+    return res.status(200).json({ statusCode: 200, result: result });
   }
 
 

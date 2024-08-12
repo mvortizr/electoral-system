@@ -323,12 +323,12 @@ function join_channel_peer() {
 }
 
 function create_election_channels() {
-  register_org_admins
-  enroll_org_admins
+  # register_org_admins
+  # enroll_org_admins
 
-  CHANNEL_NAME=$CHANNEL1_NAME
-  push_fn "Creating channel ${CHANNEL_NAME}"
-  channel_up
+  # CHANNEL_NAME=$CHANNEL1_NAME
+  # push_fn "Creating channel ${CHANNEL_NAME}"
+  # channel_up
   join_channel1_org_peers
 
   CHANNEL_NAME=$CHANNEL2_NAME

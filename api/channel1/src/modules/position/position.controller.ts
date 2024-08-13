@@ -58,7 +58,7 @@ export class PositionController {
   }
 
   @Post('/createPositionBatch')
-  @ApiOperation({ summary: 'Creates a new position' })
+  @ApiOperation({ summary: 'Creates positions in batch, swagger doesnt pick it up but receives a positions array' })
   async createPositionBatch(@Body() positions: DTOPosition[], @Res() res: Response): Promise<object> {
     const chaincode = process.env.CHAINCODE_NAME!.toString();
     const functionName = "PositionContract:createPositionsBatch";
@@ -93,6 +93,7 @@ export class PositionController {
   }
 
   @Post('/getPositions') 
+  @ApiOperation({ summary: 'Get all positions paginated' })
   async readPositions(@Body() queryParams: DTOPositionPagination, @Res() res: Response): Promise<object> {
     // async submitTransaction(chaincodeName: string, functionName: string, ...args: string[])
     const chaincode = process.env.CHAINCODE_NAME!.toString()
@@ -106,6 +107,7 @@ export class PositionController {
   }
 
   @Post('/getPositionByExtID') 
+  @ApiOperation({ summary: 'Get a position by ID' })
   async readPositionByExternalID(@Body() queryParams: DTOPositionByExtID, @Res() res: Response): Promise<object> {
     // async submitTransaction(chaincodeName: string, functionName: string, ...args: string[])
     const chaincode = process.env.CHAINCODE_NAME!.toString()

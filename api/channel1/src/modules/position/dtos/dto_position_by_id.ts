@@ -16,7 +16,7 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class DTOPositionByExtID {
    
-    @ApiProperty({ description: 'query ID' })
+    @ApiProperty({ description: 'ID to query' })
     @IsNotEmpty()
     @IsString()
     queryID!: string;

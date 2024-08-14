@@ -6,7 +6,7 @@ import { ApiProperty } from '@nestjs/swagger';
 
 
 
-export class DTOPositionByExtID {
+export class DTOPartyByExtID {
    
     @ApiProperty({ description: 'ID to query' })
     @IsNotEmpty()

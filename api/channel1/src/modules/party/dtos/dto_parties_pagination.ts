@@ -9,7 +9,7 @@ import { ApiProperty } from '@nestjs/swagger';
 
 
 
-export class DTOPositionPagination {
+export class DTOPartyPagination {
    
     @ApiProperty({ description: 'pagesize' })
     @IsNotEmpty()

@@ -6,6 +6,7 @@ import { ConfigModule as ConfigurationModule } from './modules/config/config.mod
 import { ConfigModule } from '@nestjs/config';
 import { FabricService } from './fabric/fabric.service';
 import { PositionModule } from './modules/position/position.module';
+import { PartyModule } from './modules/party/party.module';
 
 @Module({
   imports: [
@@ -14,7 +15,8 @@ import { PositionModule } from './modules/position/position.module';
       isGlobal:true
     }),
     ConfigurationModule,
-    PositionModule
+    PositionModule,
+    PartyModule
   ],
   controllers: [AppController],
   providers: [AppService, FabricService],

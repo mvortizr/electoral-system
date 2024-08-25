@@ -7,6 +7,8 @@ import { ConfigModule } from '@nestjs/config';
 import { FabricService } from './fabric/fabric.service';
 import { PositionModule } from './modules/position/position.module';
 import { PartyModule } from './modules/party/party.module';
+import { ElectorModule } from './modules/elector/elector.module';
+import { CandidateModule } from './modules/candidate/candidate.module';
 
 @Module({
   imports: [
@@ -16,7 +18,9 @@ import { PartyModule } from './modules/party/party.module';
     }),
     ConfigurationModule,
     PositionModule,
-    PartyModule
+    PartyModule,
+    CandidateModule,
+    ElectorModule
   ],
   controllers: [AppController],
   providers: [AppService, FabricService],

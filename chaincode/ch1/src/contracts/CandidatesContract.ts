@@ -14,7 +14,7 @@ export class CandidatesContract extends Contract {
 
     ): Promise<void> {
         let data = JSON.parse(candidateInfo)
-        const newPosition = {
+        const newCandidate = {
             candidateID: candidateID,
             electoralRollType: electoralRollType.CANDIDATE,
             creationDate: new Date().toISOString(),
@@ -22,7 +22,7 @@ export class CandidatesContract extends Contract {
         }
 
         // we insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
-        await ctx.stub.putState(candidateID, Buffer.from(stringify(newPosition)));
+        await ctx.stub.putState(candidateID, Buffer.from(stringify(newCandidate)));
     }
 
      // create candidates in batch

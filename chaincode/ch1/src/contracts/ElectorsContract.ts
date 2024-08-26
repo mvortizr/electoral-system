@@ -27,7 +27,7 @@ export class ElectorsContract extends Contract {
 
     // create a positions in batch
     @Transaction()
-    public async createPositionsBatch(ctx: Context, 
+    public async createElectorsBatch(ctx: Context, 
         electors: string, 
     ): Promise<void> {
         const electorsArray = JSON.parse(electors); // Assuming `positions` is a JSON array string
@@ -36,7 +36,7 @@ export class ElectorsContract extends Contract {
             const { electorID, ...data } = elector;
             const newElector = {
                 electorID: electorID,
-                electoralRollType: electoralRollType.POSITION,
+                electoralRollType: electoralRollType.ELECTOR,
                 creationDate: new Date().toISOString(),
                 ...data
             };

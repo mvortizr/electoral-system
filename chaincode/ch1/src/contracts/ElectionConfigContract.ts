@@ -16,8 +16,18 @@ export class ElectionConfigContract extends Contract {
             "candidates": numCandidates,
             "electors": numElectors
         };
+
+        const newElectionConfigRunningCopy = {
+            "parties": numParties,
+            "electoralRollType": electoralRollType.CONFIGCOUNTER,
+            "positions": numPositions,
+            "candidates": numCandidates,
+            "electors": numElectors
+
+        }
         // we insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
         await ctx.stub.putState("1", Buffer.from(stringify(newElectionConfig)));
+        await ctx.stub.putState("2", Buffer.from(stringify(newElectionConfigRunningCopy)));
     }
 
     @Transaction()

@@ -56,6 +56,7 @@ Launch the network, create a channel, and deploy the [basic-asset-transfer](../a
 
 
 ```./network chaincode deploy channel1cc ../../../chaincode/ch1 1```###
+```./network chaincode deploy channel1cc-3 ../../../chaincode/ch1 1```###
 
 
 

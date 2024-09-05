@@ -3,5 +3,6 @@ export enum electoralRollType {
     CANDIDATE ='candidate',
     ELECTOR = 'elector',
     PARTY = 'party',
-    CONFIG = 'config'
+    CONFIG = 'config',
+    CONFIGCOUNTER = 'config_counter'
 }

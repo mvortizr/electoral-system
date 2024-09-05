@@ -44,7 +44,15 @@ import { DTOPartyByExtID } from './dtos/dto_party_by_id';
             )
           )
 
-        return res.status(201).json({ statusCode: 201, message: 'success' });
+        let parsedResults = new TextDecoder().decode(result);
+        let finalResult  = JSON.parse(parsedResults);
+
+        if (finalResult.success) {
+            return res.status(201).json({ statusCode: 201, ...finalResult });
+        } else {
+            return res.status(400).json({ statusCode: 400, ...finalResult });
+        }
+        
     }
 
     @Post('/createPartyBatch')
@@ -71,7 +79,7 @@ import { DTOPartyByExtID } from './dtos/dto_party_by_id';
             JSON.stringify(partyBatchArray)
         )
 
-        return res.status(201).json({ statusCode: 201, message: 'success' });
+        return res.status(201).json({ statusCode: 201, success: true });
     }
 
     @Post('/getParties') 

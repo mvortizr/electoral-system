@@ -1,26 +1,63 @@
 import {Context, Contract, Info, Returns, Transaction} from 'fabric-contract-api';
 import stringify from 'json-stringify-deterministic';
 import { electoralRollType } from '../models/electoralRollType';
+import { isExternalPartyIDDuplicated } from '../validations/party/noDuplicatedExternalID';
+import { bringElectionConfig } from '../validations/general/bringElectionConfig';
+
 
 
 
 @Info({title: 'Parties contract', description: 'Smart contract for parties'})
 export class PartiesContract extends Contract {
+
+
     @Transaction()
+    @Returns('string')
     public async createParty(ctx: Context, 
         partyID: string, 
         partyInfo: string
-    ): Promise<void> {
+    ): Promise<String> {
         let data = JSON.parse(partyInfo)
-      
+
+        // check that election config exists and bring the number of parties
+        let electionConfig = await bringElectionConfig(ctx);
+        if (electionConfig.length === 0) {
+            return JSON.stringify({success: false, error:`election config not set`});
+        } 
+
+
+        //  check that there's not another party with same extID
+        let doesExternalPartyIDExists = await isExternalPartyIDDuplicated(data, ctx)
+        if (doesExternalPartyIDExists === true) {
+            return JSON.stringify({success: false, error:`party ID ${data.partyExternalID} already exists`});
+        }
+        
+
+        //check it doesnt overflow the number of parties
+        let currentPartyLimit = electionConfig[0].parties
+        if (currentPartyLimit <=0) {
+            return JSON.stringify({success: false, error: "max party limit reached" });
+        }
+
+        // take one from the limit of parties 
+        let newElectionConfigRunningCopy = {
+            ...electionConfig[0],
+            parties : currentPartyLimit-1
+        }
+        await ctx.stub.putState("2", Buffer.from(stringify(newElectionConfigRunningCopy)));
+       
+       
+        // all ok, create new party
         const newParty  = {
             electoralRollType: electoralRollType.PARTY, 
             partyID: partyID,
             creationDate: new Date().toISOString(),
             ...data
         };
-        // we insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
+        
         await ctx.stub.putState(partyID, Buffer.from(stringify(newParty)));
+
+        return JSON.stringify({success: true});
     }
 
     @Transaction()

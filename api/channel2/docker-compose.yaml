@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nodeapp:
+    image: 'docker.io/mvortizr/channel1_api:v1.2'
+    command: 'npm run start:prod'
+    ports:
+      - 3000:3000
+    env_file:
+      - ./.env
+    networks:
+      - voting_system
+
+networks:
+  voting_system:
+    external: true

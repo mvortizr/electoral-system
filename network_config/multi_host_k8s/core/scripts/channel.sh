@@ -290,6 +290,8 @@ function join_channel2_peers (){
   # Join peers to channel
   join_channel_peer $org peer1
   join_channel_peer $org peer2
+  # join_channel_peer $org peer0
+  # join_channel_peer $org peer2
 
   pop_fn
 }

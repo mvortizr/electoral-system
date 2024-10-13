@@ -109,6 +109,8 @@ function print_help() {
 . scripts/chaincode.sh
 . scripts/rest.sh
 . scripts/application_connection.sh
+. scripts/rest2.sh
+
 
 # check for kind, kubectl, etc.
 check_prereqs
@@ -161,6 +163,14 @@ elif [ "${MODE}" == "rest" ]; then
   log "Launching chaincode application:"
   launch_rest_api_ch1
   log "🏁 - Fabric REST API is ready."
+elif [ "${MODE}" == "rest2" ]; then
+  log "Launching chaincode application:"
+  launch_rest_api_ch2
+  log "🏁 - Fabric REST API 2 is ready."
+elif [ "${MODE}" == "unrest2" ]; then
+  log "Bringing down Rest API chaincode application:"
+  bring_down_rest_api_ch2
+  log "🏁 - Fabric REST API 2 is down."
 elif [ "${MODE}" == "unrest" ]; then
   log "Bringing down Rest API chaincode application:"
   bring_down_rest_api_ch1

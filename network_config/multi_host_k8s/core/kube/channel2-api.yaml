@@ -1,0 +1,65 @@
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: channel2-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: channel2-api
+  template:
+    metadata:
+      labels:
+        app: channel2-api
+    spec:
+      containers:
+        - name: main
+          image: docker.io/mvortizr/channel2_api:v1.1
+          command: ["npm", "run", "start:prod"]
+          imagePullPolicy: IfNotPresent 
+          envFrom:
+            - configMapRef:
+                name: channel2-configmap
+          ports:
+            - containerPort: 3000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: channel2-api
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 80
+      targetPort: 3000
+      protocol: TCP
+  selector:
+    app: channel2-api
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: 60s
+  labels:
+    app: channel2-api
+  name: channel2-api
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: channel2-api.${DOMAIN}
+      http:
+        paths:
+          - backend:
+              service:
+                name: channel2-api
+                port:
+                  name: http
+            path: /
+            pathType: ImplementationSpecific

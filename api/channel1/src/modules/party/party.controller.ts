@@ -61,6 +61,12 @@ import { DTOPartyByExtID } from './dtos/dto_party_by_id';
         const chaincode = process.env.CHAINCODE_NAME!.toString()
         const functionName = "PartiesContract:createPartyBatch"
 
+        //check inside the provided array aren't repeated ids
+        const areUnique: boolean = this.partyService.checkUniquePartyIDs(parties)
+        if (!areUnique) {
+            return res.status(400).json({ statusCode: 400,  error: "party ids in the array aren't unique " });
+        }
+
         const partyBatchArray = parties.map( party => {
             const internalUID: string = uuidv4();
 
@@ -79,7 +85,14 @@ import { DTOPartyByExtID } from './dtos/dto_party_by_id';
             JSON.stringify(partyBatchArray)
         )
 
-        return res.status(201).json({ statusCode: 201, success: true });
+        let parsedResults = new TextDecoder().decode(result);
+        let finalResult  = JSON.parse(parsedResults);
+
+        if (finalResult.success) {
+            return res.status(201).json({ statusCode: 201, ...finalResult });
+        } else {
+            return res.status(400).json({ statusCode: 400, ...finalResult });
+        }
     }
 
     @Post('/getParties') 

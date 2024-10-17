@@ -58,8 +58,8 @@ Launch the network, create a channel, and deploy the [basic-asset-transfer](../a
 ```./network chaincode deploy channel1cc ../../../chaincode/ch1 1```###
 ```./network chaincode deploy channel2cc ../../../chaincode/ch2 2```###
 
-```./network chaincode deploy channel2cc-4 ../../../chaincode/ch2 2```###
 
+```./network chaincode deploy channel1cc-3 ../../../chaincode/ch1 1```###
 
 
 Invoke and query chaincode:

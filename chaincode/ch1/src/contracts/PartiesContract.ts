@@ -61,11 +61,44 @@ export class PartiesContract extends Contract {
     }
 
     @Transaction()
+    @Returns('string')
     public async createPartyBatch(ctx: Context, 
         parties: string, 
-    ): Promise<void> {
+    ): Promise<String> {
         const partiesArray = JSON.parse(parties); // Assuming `positions` is a JSON array string
 
+        let numofPartiesToInput : number = partiesArray.length
+
+         // check that election config exists and bring the number of parties
+         let electionConfig = await bringElectionConfig(ctx);
+         if (electionConfig.length === 0) {
+             return JSON.stringify({success: false, error:`election config not set`});
+         } 
+
+        //check it doesnt overflow the number of parties
+        let currentPartyLimit = electionConfig[0].parties
+        if (currentPartyLimit < numofPartiesToInput) {
+            return JSON.stringify({success: false, error: "max party limit reached" });
+        }
+
+        // check they aren't duplicated external IDs  
+        for (const party of partiesArray) {
+            const { partyID, ...data } = party;
+            let doesExternalPartyIDExists = await isExternalPartyIDDuplicated(data, ctx)
+            if (doesExternalPartyIDExists === true) {
+                return JSON.stringify({success: false, error:`party ID ${data.partyExternalID} already exists`});
+            }
+        }
+        
+        // take one from the limit of parties 
+        let newElectionConfigRunningCopy = {
+            ...electionConfig[0],
+            parties : currentPartyLimit-numofPartiesToInput
+        }
+        await ctx.stub.putState("2", Buffer.from(stringify(newElectionConfigRunningCopy)));
+       
+
+        // all ok, create parties
         for (const party of partiesArray) {
             const { partyID, ...data } = party;
             const newParty = {
@@ -78,6 +111,8 @@ export class PartiesContract extends Contract {
             // Insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
             await ctx.stub.putState(partyID, Buffer.from(stringify((newParty))));
         }
+
+        return JSON.stringify({success: true});
     }
 
     @Transaction()

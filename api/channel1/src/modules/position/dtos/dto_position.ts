@@ -8,7 +8,8 @@ import {
     IsArray,
     ValidateNested,
     IsOptional,
-    ValidateIf
+    ValidateIf,
+    IsUUID
  } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
@@ -19,7 +20,7 @@ import { TiebreakerConfigItem } from './tiebreaker';
 export class DTOPosition {
    
     @ApiProperty({ description: 'UID of the position that is going to be elected' })
-    @IsString()
+    @IsUUID()
     @IsNotEmpty()
     positionID!: string;
 

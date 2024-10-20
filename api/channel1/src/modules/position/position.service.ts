@@ -4,6 +4,12 @@ import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class PositionService {
+    
+    checkUniqueTiebreakers(tiebreakers: TiebreakerConfigItem[]): boolean {
+        const tiebreakerIDs = tiebreakers.map(tiebreaker => tiebreaker.tiebreakerID);
+        const uniqueTiebreakers = new Set(tiebreakerIDs)
+        return tiebreakerIDs.length === uniqueTiebreakers.size
+    }
 
     processTieBreaker( tiebreakers: TiebreakerConfigItem[]): TiebreakerConfigItem[] {
         tiebreakers.forEach(item => {

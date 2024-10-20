@@ -1,12 +1,13 @@
 import { 
     IsNotEmpty, 
-    IsString, 
+    IsString,
+    IsUUID, 
  } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class DTOParty {
     @ApiProperty({ description: 'UID of the party' })
-    @IsString()
+    @IsUUID()
     @IsNotEmpty()
     partyID!: string
 

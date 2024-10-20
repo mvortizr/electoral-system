@@ -39,6 +39,10 @@ export class PositionController {
     const internalUID: string = uuidv4();
 
     if (position.tiebreakerConfig != null){
+      let areUniqueIDTiebreakers = this.positionService.checkUniqueTiebreakers(position.tiebreakerConfig)
+      if (!areUniqueIDTiebreakers) {
+        return res.status(400).json({ statusCode: 400, error: "error repeated tiebreaker ID in position" });
+      }
       position.tiebreakerConfig = this.positionService.processTieBreaker(position.tiebreakerConfig)
     }
     
@@ -54,7 +58,15 @@ export class PositionController {
       })
       
     )
-    return res.status(201).json({ statusCode: 201, message: 'success' });
+
+    let parsedResults = new TextDecoder().decode(result);
+        let finalResult  = JSON.parse(parsedResults);
+
+        if (finalResult.success) {
+            return res.status(201).json({ statusCode: 201, ...finalResult });
+        } else {
+            return res.status(400).json({ statusCode: 400, ...finalResult });
+        }
   }
 
   @Post('/createPositionBatch')
@@ -68,7 +80,11 @@ export class PositionController {
       const internalUID: string = uuidv4();
 
       if (position.tiebreakerConfig != null) {
-          position.tiebreakerConfig = this.positionService.processTieBreaker(position.tiebreakerConfig);
+        let areUniqueIDTiebreakers = this.positionService.checkUniqueTiebreakers(position.tiebreakerConfig)
+        if (!areUniqueIDTiebreakers) {
+          return res.status(400).json({ statusCode: 400, error: `error repeated tiebreaker ID in position ${position.positionID}` });
+        }
+        position.tiebreakerConfig = this.positionService.processTieBreaker(position.tiebreakerConfig);
       }
 
       return {
@@ -86,10 +102,15 @@ export class PositionController {
       functionName,
       JSON.stringify(positionsArray) // Send the array as a JSON string
     );
-    
 
+    let parsedResults = new TextDecoder().decode(result);
+    let finalResult  = JSON.parse(parsedResults);
 
-    return res.status(201).json({ statusCode: 201, message: 'success' });
+    if (finalResult.success) {
+        return res.status(201).json({ statusCode: 201, ...finalResult });
+    } else {
+        return res.status(400).json({ statusCode: 400, ...finalResult });
+    }
   }
 
   @Post('/getPositions') 

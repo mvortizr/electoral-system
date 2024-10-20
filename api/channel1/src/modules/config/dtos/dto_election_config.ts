@@ -1,11 +1,12 @@
-import { IsNotEmpty, IsInt, IsPositive } from 'class-validator';
+import { IsNotEmpty, IsInt, IsPositive, Min, Max } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class DTOElectionConfig {
    
     @ApiProperty({ description: 'number of parties to register' })
     @IsInt()
-    @IsPositive()
+    @Min(0)
+    @Max(999)
     @IsNotEmpty()
     parties!: number;
 

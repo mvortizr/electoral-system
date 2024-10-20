@@ -3,17 +3,59 @@ import stringify from 'json-stringify-deterministic';
 import { Position } from '../models/position';
 import { electoralRollType } from '../models/electoralRollType';
 import { TiebreakerConfig } from '../models/tiebreaker';
+import { bringElectionConfig } from '../validations/general/bringElectionConfig';
+import { isExternalPositionIDDuplicated } from '../validations/position/noDuplicatedExternalID';
+
+
 
 @Info({title: 'Position Contract', description: 'Smart contract for positions'})
 export class PositionContract extends Contract {
     // create a new Position
     @Transaction()
+    @Returns('string')
     public async createPosition(ctx: Context, 
         positionID: string, 
         positionInfo: string
 
-    ): Promise<void> {
+    ): Promise<String> {
+
         let data = JSON.parse(positionInfo)
+
+        // check that election config exists and bring the number of parties
+        let electionConfig = await bringElectionConfig(ctx);
+        if (electionConfig.length === 0) {
+            return JSON.stringify({success: false, error:`election config not set`});
+        } 
+
+        // check all parties are inputed before starting with positions
+        let currentPartiesMissing = electionConfig[0].parties
+        if (currentPartiesMissing >0) {
+            return JSON.stringify({success: false, error: "please input all the parties before introducing position data" });
+        }
+
+        // check to not input more positions than the ones in the config
+        let currentPositionLimit = electionConfig[0].positions 
+        if (currentPositionLimit <=0) {
+            return JSON.stringify({success: false, error: "max position limit reached" });
+        }
+
+        //check that there's not another position with the same extID
+        let doesExternalPosIDExists = await isExternalPositionIDDuplicated(data, ctx)
+        if (doesExternalPosIDExists === true) {
+            return JSON.stringify({success: false, error:`party ID ${data.positionExternalID} already exists`});
+        }
+
+
+        // take one from the limit of parties 
+          let newElectionConfigRunningCopy = {
+            ...electionConfig[0],
+            positions : currentPositionLimit-1
+        }
+        await ctx.stub.putState("2", Buffer.from(stringify(newElectionConfigRunningCopy)));
+
+       
+
+        // create the position
         const newPosition = {
             positionID: positionID,
             electoralRollType: electoralRollType.POSITION,
@@ -23,14 +65,55 @@ export class PositionContract extends Contract {
 
         // we insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
         await ctx.stub.putState(positionID, Buffer.from(stringify(newPosition)));
+    
+        return JSON.stringify({success: true});
+
     }
 
     // create a positions in batch
     @Transaction()
+    @Returns('string')
     public async createPositionsBatch(ctx: Context, 
         positions: string, 
-    ): Promise<void> {
+    ): Promise<string> {
         const positionsArray = JSON.parse(positions); // Assuming `positions` is a JSON array string
+
+        // check that election config exists and bring the number of parties
+        let electionConfig = await bringElectionConfig(ctx);
+        if (electionConfig.length === 0) {
+            return JSON.stringify({success: false, error:`election config not set`});
+        } 
+
+        // check all parties are inputed before starting with positions
+        let currentPartiesMissing = electionConfig[0].parties
+        if (currentPartiesMissing >0) {
+            return JSON.stringify({success: false, error: "please input all the parties before introducing position data" });
+        }
+
+        // check to not input more positions than the ones in the config
+        let currentPositionLimit = electionConfig[0].positions 
+        let numofPositionsToInput: number = positionsArray.length
+        
+        if (currentPositionLimit < numofPositionsToInput) {
+            return JSON.stringify({success: false, error: "max position limit reached" });
+        }
+
+        //check there is not another position with same extID
+        for (const position of positionsArray) {
+            const { positionID, ...data } = position;
+            let doesExternalPosIDExists = await isExternalPositionIDDuplicated(data, ctx)
+            if (doesExternalPosIDExists === true) {
+                return JSON.stringify({success: false, error:`position ID ${data.positionExternalID} already exists`});
+            }
+        }
+
+        // take one from the limit of parties 
+        let newElectionConfigRunningCopy = {
+            ...electionConfig[0],
+            positions : currentPositionLimit-numofPositionsToInput
+        }
+        await ctx.stub.putState("2", Buffer.from(stringify(newElectionConfigRunningCopy)));
+
 
         for (const position of positionsArray) {
             const { positionID, ...data } = position;
@@ -44,6 +127,8 @@ export class PositionContract extends Contract {
             // Insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
             await ctx.stub.putState(positionID, Buffer.from(stringify((newPosition))));
         }
+
+        return JSON.stringify({success: true});
     }
 
     

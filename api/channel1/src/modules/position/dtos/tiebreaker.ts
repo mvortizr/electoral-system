@@ -1,4 +1,4 @@
-import {  IsNotEmpty,  IsString, IsEnum, IsOptional } from 'class-validator';
+import {  IsNotEmpty,  IsString, IsEnum, IsOptional, IsUUID } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 enum Datatype {
@@ -16,7 +16,7 @@ enum Comparator {
 export class TiebreakerConfigItem {
     
     @ApiProperty({ description: 'Tiebreaker ID' })
-    @IsString()
+    @IsUUID()
     @IsNotEmpty()
     tiebreakerID!: string;
 

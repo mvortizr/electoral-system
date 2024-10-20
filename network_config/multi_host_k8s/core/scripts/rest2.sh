@@ -30,7 +30,7 @@ function   construct_rest_configmap_ch2() {
   printf "org1-peer1.${ORG1_NS}.svc.cluster.local:7051" > $CONFIG_DIR/PEER_ENDPOINT
   printf "election-ch2-notebook" > $CONFIG_DIR/CHANNEL_NAME
   printf "org1-peer1"> $CONFIG_DIR/PEER_HOST_ALIAS
-  printf "channel2cc-5"> $CONFIG_DIR/CHAINCODE_NAME
+  printf "channel2cc"> $CONFIG_DIR/CHAINCODE_NAME
 
 
   cp $ENROLLMENT_DIR/org1/users/org1admin/msp/signcerts/cert.pem $CONFIG_DIR/CERT_DIRECTORY

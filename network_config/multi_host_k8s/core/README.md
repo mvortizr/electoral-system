@@ -59,9 +59,6 @@ Launch the network, create a channel, and deploy the [basic-asset-transfer](../a
 ```./network chaincode deploy channel2cc ../../../chaincode/ch2 2```###
 
 
-```./network chaincode deploy channel1cc-3 ../../../chaincode/ch1 1```###
-
-
 Invoke and query chaincode:
 ```shell
 ./network chaincode query  channel1cc 1 '{"function":"readEntireElectoralChannel","Args":[]}'

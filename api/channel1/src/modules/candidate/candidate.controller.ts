@@ -49,7 +49,14 @@ import { DTOCandidateByExtID } from './dtos/dto_candidate_by_ext_id';
         })
         
       )
-      return res.status(201).json({ statusCode: 201, message: 'success' });
+      let parsedResults = new TextDecoder().decode(result);
+      let finalResult  = JSON.parse(parsedResults);
+
+      if (finalResult.success) {
+          return res.status(201).json({ statusCode: 201, ...finalResult });
+      } else {
+          return res.status(400).json({ statusCode: 400, ...finalResult });
+      }
     }
 
     @Post('/createCandidateBatch')
@@ -65,7 +72,7 @@ import { DTOCandidateByExtID } from './dtos/dto_candidate_by_ext_id';
   
         if (candidate.postulations != null){
             candidate.postulations = this.candidateService.processPostulations(candidate.postulations)
-        }
+        } 
   
         return {
             candidateID: internalUID, // Unique ID for each position
@@ -80,7 +87,14 @@ import { DTOCandidateByExtID } from './dtos/dto_candidate_by_ext_id';
         functionName,
         JSON.stringify(candidatesArray) // Send the array as a JSON string
       );
-      return res.status(201).json({ statusCode: 201, message: 'success' });
+      let parsedResults = new TextDecoder().decode(result);
+      let finalResult  = JSON.parse(parsedResults);
+
+      if (finalResult.success) {
+          return res.status(201).json({ statusCode: 201, ...finalResult });
+      } else {
+          return res.status(400).json({ statusCode: 400, ...finalResult });
+      }
     }
 
     @Post('/getCandidates') 

@@ -10,17 +10,26 @@ import { TiebreakerValueDTO } from './dto_tiebreaker_value';
 export class PostulationDTO {
 
     @IsUUID()
-    postulationID!: string
+    postulationID: string
 
     @IsUUID()
     @IsOptional()
     postulationExternalID?: string
 
     @IsOptional()
+    @IsUUID()
     partyID?: string | null;
 
+    @IsOptional()
     @IsUUID()
-    positionID: string;
+    partyExternalID?: string | null;
+
+    @IsUUID()
+    positionID?: string;
+
+    @IsUUID()
+    @IsOptional()
+    positionExternalID?: string;
 
     @IsArray()
     @ValidateNested({ each: true })

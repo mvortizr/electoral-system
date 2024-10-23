@@ -21,7 +21,7 @@ export class PositionContract extends Contract {
 
         let data = JSON.parse(positionInfo)
 
-        // check that election config exists and bring the number of parties
+        // check that election config exists 
         let electionConfig = await bringElectionConfig(ctx);
         if (electionConfig.length === 0) {
             return JSON.stringify({success: false, error:`election config not set`});

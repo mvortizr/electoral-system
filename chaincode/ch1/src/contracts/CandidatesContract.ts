@@ -3,7 +3,7 @@ import stringify from 'json-stringify-deterministic';
 import { electoralRollType } from '../models/electoralRollType';
 import { bringElectionConfig } from '../validations/general/bringElectionConfig';
 import { isExternalCandidateIDDuplicated } from '../validations/candidates/noDuplicatedExternalID';
-import { doesPositionExists } from '../validations/candidates/checkIfPositionExists';
+import { doesPositionExists } from '../validations/general/checkIfPositionExists';
 import { doesPartyExists } from '../validations/candidates/checkIfPartyExists';
 
 
@@ -34,19 +34,19 @@ export class CandidatesContract extends Contract {
         let currentPartiesMissing = electionConfig[0].parties
         let currentPositionMissing = electionConfig[0].positions
         if (currentPartiesMissing >0) {
-            return JSON.stringify({success: false, error: "please input all the parties before introducing position data" });
+            return JSON.stringify({success: false, error: "please input all the parties before introducing candidate data" });
         }
         if (currentPositionMissing>0) {
             return JSON.stringify({success: false, error: "please input all the positions before introducing candidate data" });
         }
 
-         // check to not input more positions than the ones in the config
+         // check to not input more candidates than the ones in the config
          let currentCandidateLimit = electionConfig[0].candidates
          if (currentCandidateLimit <=0) {
              return JSON.stringify({success: false, error: "max candidate limit reached" });
          }
  
-         //check that there's not another position with the same extID
+         //check that there's not another candidate with the same extID
          let doesExtCandIDExists = await isExternalCandidateIDDuplicated(data, ctx)
          if (doesExtCandIDExists === true) {
              return JSON.stringify({success: false, error:`candidate ID ${data.candidateExternalID} already exists`});
@@ -64,10 +64,12 @@ export class CandidatesContract extends Contract {
                 return JSON.stringify({success: false, error:`Position ID ${post.positionExternalID} doesn't exists`});
             }
             //check that party exists
-            let party = await doesPartyExists(post.partyExternalID, ctx);
-            if (!party) {
-                return JSON.stringify({success: false, error:`Party ID ${post.partyExternalID} doesn't exists`});
-            }
+            if (post.partyExternalID != null) {
+                let party = await doesPartyExists(post.partyExternalID, ctx);
+                if (!party) {
+                    return JSON.stringify({success: false, error:`Party ID ${post.partyExternalID} doesn't exists`});
+                }
+            } 
 
             //check compatibility of tiebreaker values
             
@@ -130,12 +132,112 @@ export class CandidatesContract extends Contract {
 
      // create candidates in batch
      @Transaction()
+     @Returns('string')
      public async createCandidateBatch(ctx: Context, 
          candidates: string, 
-     ): Promise<void> {
+     ): Promise<String> {
          const candidatesArray = JSON.parse(candidates); 
- 
-         for (const candidate of candidatesArray) {
+
+        //VALIDATIONS
+        // check that election config exists and bring the number of parties
+        let electionConfig = await bringElectionConfig(ctx);
+        if (electionConfig.length === 0) {
+            return JSON.stringify({success: false, error:`election config not set`});
+        } 
+
+        // check all parties are inputed before starting with positions
+        let currentPartiesMissing = electionConfig[0].parties
+        let currentPositionMissing = electionConfig[0].positions
+        if (currentPartiesMissing >0) {
+            return JSON.stringify({success: false, error: "please input all the parties before introducing position data" });
+        }
+        if (currentPositionMissing>0) {
+            return JSON.stringify({success: false, error: "please input all the positions before introducing candidate data" });
+        }
+
+        // check to not input more candidates than the ones in the config
+        let currentCandidateLimit = electionConfig[0].candidates
+        let numofCandToInput: number = candidatesArray.length
+        if (currentCandidateLimit < numofCandToInput ) {
+            return JSON.stringify({success: false, error: "max candidate limit reached" });
+        }
+
+        for (const candidate of candidatesArray) {
+            const { candidateID, ...data } = candidate;
+            //check that there's not another candidate with the same extID
+            let doesExtCandIDExists = await isExternalCandidateIDDuplicated(data, ctx)
+            if (doesExtCandIDExists === true) {
+                return JSON.stringify({success: false, error:`candidate ID ${data.candidateExternalID} already exists`});
+            }
+
+        // CHECK POSTULATIONS
+        let postulations = data.postulations
+
+        
+        for (const post of postulations) {
+             //check that position exists
+            let position = await doesPositionExists(post.positionExternalID, ctx);
+            if (!position) {
+                return JSON.stringify({success: false, error:`Position ID ${post.positionExternalID} doesn't exists`});
+            }
+            //check that party exists
+            if (post.partyExternalID != null) {
+                let party = await doesPartyExists(post.partyExternalID, ctx);
+                if (!party) {
+                    return JSON.stringify({success: false, error:`Party ID ${post.partyExternalID} doesn't exists`});
+                }
+            } 
+          
+
+            //check compatibility of tiebreaker values
+            
+            let tiebreakers = position.tiebreaker
+            let candidateTiebreakers = post.tiebreakerValues
+
+            for (const candidateTiebreaker of candidateTiebreakers) {
+                const tie = tiebreakers.find(t => t.tiebreakerExternalID === candidateTiebreaker.tiebreakerID);
+                if (!tie) {
+                    return JSON.stringify({success: false, error:`Tiebreaker with ID ${candidateTiebreaker.tiebreakerID} not found`});
+                }
+
+                const value = candidateTiebreaker.tiebreakerValue;
+                const { datatype } = tie;
+                
+                if (datatype === 'number') {
+                    if (typeof value !== 'number') {
+                        return JSON.stringify({success: false, error:`Tiebreaker with ID ${tie.tiebreakerExternalID} expects a number, but got ${typeof value}`});
+                    }
+                } else if (datatype === 'date') {
+                    // Regular expression to match the "YYYY-MM-DD" ISO date format
+                    const isoDateRegex = /^\d{4}-\d{2}-\d{2}$/;
+
+                    // Check if the value matches the ISO format
+                    if (!isoDateRegex.test(value)) {
+                        return JSON.stringify({ success: false, error: `Tiebreaker with ID ${tie.tiebreakerExternalID} expects a date in YYYY-MM-DD format, but got ${value}` });
+                    }
+                    if (isNaN(Date.parse(value))) {
+                        return JSON.stringify({success: false, error:`Tiebreaker with ID ${tie.tiebreakerExternalID} expects a date, but got ${typeof value}`});
+                    }
+                }
+
+            }
+         }
+
+        }
+
+
+        ///// CREATE CANDIDATES
+
+        // take one from the limit of candidates 
+        let newElectionConfigRunningCopy = {
+            ...electionConfig[0],
+            candidates : currentCandidateLimit-numofCandToInput
+        }
+
+        await ctx.stub.putState("2", Buffer.from(stringify(newElectionConfigRunningCopy)));
+
+        for (const candidate of candidatesArray) {
+
              const { candidateID, ...data } = candidate;
              const newCandidate = {
                  candidateID: candidateID,
@@ -146,7 +248,10 @@ export class CandidatesContract extends Contract {
  
              // Insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
              await ctx.stub.putState(candidateID, Buffer.from(stringify((newCandidate))));
-         }
+
+        }
+
+        return JSON.stringify({success: true});
      }
 
      @Transaction()

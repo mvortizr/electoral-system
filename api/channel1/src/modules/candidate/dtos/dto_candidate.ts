@@ -10,12 +10,14 @@ export class CandidateDTO {
   candidateFirstName!: string;
 
   @IsString()
+  @IsOptional()
   candidateSecondName!: string;
 
   @IsString()
   candidateFirstLastName!: string;
 
   @IsString()
+  @IsOptional()
   candidateSecondLastName!: string;
 
   @IsArray()

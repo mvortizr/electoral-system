@@ -107,7 +107,7 @@ export class PositionContract extends Contract {
             }
         }
 
-        // take one from the limit of parties 
+        // take one from the limit of  positions
         let newElectionConfigRunningCopy = {
             ...electionConfig[0],
             positions : currentPositionLimit-numofPositionsToInput

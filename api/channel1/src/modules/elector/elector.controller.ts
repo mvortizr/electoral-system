@@ -44,7 +44,14 @@ import { DTOElectorByExtID } from './dtos/elector_by_ext_id_dto';
         })
         
       )
-      return res.status(201).json({ statusCode: 201, message: 'success' });
+      let parsedResults = new TextDecoder().decode(result);
+      let finalResult  = JSON.parse(parsedResults);
+
+      if (finalResult.success) {
+          return res.status(201).json({ statusCode: 201, ...finalResult });
+      } else {
+          return res.status(400).json({ statusCode: 400, ...finalResult });
+      }
     }
 
 
@@ -73,7 +80,14 @@ import { DTOElectorByExtID } from './dtos/elector_by_ext_id_dto';
         functionName,
         JSON.stringify(electorsArray) // Send the array as a JSON string
       );
-      return res.status(201).json({ statusCode: 201, message: 'success' });
+      let parsedResults = new TextDecoder().decode(result);
+      let finalResult  = JSON.parse(parsedResults);
+
+      if (finalResult.success) {
+          return res.status(201).json({ statusCode: 201, ...finalResult });
+      } else {
+          return res.status(400).json({ statusCode: 400, ...finalResult });
+      }
     }
 
     @Post('/getElectors') 

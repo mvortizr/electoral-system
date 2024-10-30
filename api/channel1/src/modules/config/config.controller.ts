@@ -46,14 +46,31 @@ export class ConfigController {
   async setElectionConfig(@Body() electionConfig: DTOElectionConfig, @Res() res: Response): Promise<object> {
     const chaincode = process.env.CHAINCODE_NAME!.toString()
     const functionName = "ElectionConfigContract:setElectionConfig"
+
+    this.configService.validateVotingDates(electionConfig.startVotingDate, electionConfig.endVotingDate)
     const result = await this.fabricService.submitTransaction(
       chaincode,
       functionName,
       electionConfig.parties.toString(),
       electionConfig.positions.toString(),
       electionConfig.candidates.toString(),
-      electionConfig.electors.toString()) 
-    return res.status(200).json({ statusCode: 200, message: 'success' });
+      electionConfig.electors.toString(), 
+      JSON.stringify({
+        startVotingDate: electionConfig.startVotingDate,
+        endVotingDate: electionConfig.endVotingDate,
+        liveResults: electionConfig.liveResults,
+        liveVotingTurnout: electionConfig.liveVotingTurnout
+      }) 
+    ) 
+
+      let parsedResults = new TextDecoder().decode(result);
+      let finalResult  = JSON.parse(parsedResults);
+
+      if (finalResult.success) {
+          return res.status(201).json({ statusCode: 201, ...finalResult });
+      } else {
+          return res.status(400).json({ statusCode: 400, ...finalResult });
+      }
   }
 
 

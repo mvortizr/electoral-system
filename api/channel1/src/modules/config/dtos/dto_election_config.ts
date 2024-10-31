@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsInt, IsPositive, Min, Max, IsDateString, IsBoolean } from 'class-validator';
+import { IsNotEmpty, IsInt, IsPositive, Min, Max, IsDateString, IsBoolean, Matches } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class DTOElectionConfig {
@@ -28,12 +28,14 @@ export class DTOElectionConfig {
     @IsNotEmpty()
     electors!: number;
 
-    @ApiProperty({ description: 'start date of voting in yyyy-mm-dd format' })
-    @IsDateString({ strict: true }, { message: 'startVotingDate must be a valid date in yyyy-mm-dd format' })
+    @ApiProperty({ description: 'start datetime of voting in ISO 8601 format' })
+    @IsDateString({}, { message: 'startVotingDate must be a valid datetime in ISO 8601 format' })
+    @Matches(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{3})?Z$/, { message: 'startVotingDate must include both date and time in ISO format' })
     startVotingDate!: string;
 
-    @ApiProperty({ description: 'closing date of voting in yyyy-mm-dd format' })
-    @IsDateString({ strict: true }, { message: 'closeVotingDate must be a valid date in yyyy-mm-dd format' })
+    @ApiProperty({ description: 'closing datetime of voting in ISO 8601 format' })
+    @IsDateString({}, { message: 'endVotingDate must be a valid datetime in ISO 8601 format' })
+    @Matches(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{3})?Z$/, { message: 'endVotingDate must include both date and time in ISO format' })
     endVotingDate!: string;
 
     @ApiProperty({ description: 'enable live results display', type: Boolean })

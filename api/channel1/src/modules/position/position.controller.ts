@@ -74,6 +74,11 @@ export class PositionController {
   async createPositionBatch(@Body() positions: DTOPosition[], @Res() res: Response): Promise<object> {
     const chaincode = process.env.CHAINCODE_NAME!.toString();
     const functionName = "PositionContract:createPositionsBatch";
+
+    const areUnique: boolean = this.positionService.checkUniquePositionIDs(positions)
+    if (!areUnique) {
+        return res.status(400).json({ statusCode: 400,  error: "position ids in the array aren't unique " });
+    }
     
     // Process each position in the array
     const positionsArray = positions.map(position => {

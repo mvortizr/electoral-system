@@ -64,6 +64,11 @@ import { DTOCandidateByExtID } from './dtos/dto_candidate_by_ext_id';
     async createCandidateBatch(@Body() candidates: CandidateDTO[], @Res() res: Response): Promise<object> {
       const chaincode = process.env.CHAINCODE_NAME!.toString();
       const functionName = "CandidatesContract:createCandidateBatch";
+
+      const areUnique: boolean = this.candidateService.checkUniqueCandidateIDs(candidates)
+      if (!areUnique) {
+          return res.status(400).json({ statusCode: 400,  error: "candidates ids in the array aren't unique " });
+      }
       
       // Process each position in the array
       const candidatesArray = candidates.map(candidate => {

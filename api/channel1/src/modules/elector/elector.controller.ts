@@ -60,6 +60,11 @@ import { DTOElectorByExtID } from './dtos/elector_by_ext_id_dto';
     async createElectorBatch(@Body() electors: ElectorDTO[], @Res() res: Response): Promise<object> {
       const chaincode = process.env.CHAINCODE_NAME!.toString();
       const functionName = "ElectorsContract:createElectorsBatch";
+
+      const areUnique: boolean = this.electorService.checkUniqueElectorIDs(electors)
+      if (!areUnique) {
+          return res.status(400).json({ statusCode: 400,  error: "elector ids in the array aren't unique " });
+      }
       
       // Process each position in the array
       const electorsArray = electors.map(elector => {

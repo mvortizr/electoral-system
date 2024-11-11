@@ -35,20 +35,32 @@ export class VoteController {
     const functionName = "VoteRegistryContract:createVoteRegistry"
     const internalRegistryUID: string = uuidv4();
 
-
+  
     // #1 escribir en el cuaderno de votacion
     const result = await this.fabricService.submitTransaction(
       chaincode,
       functionName,
       internalRegistryUID,
       voteInfo.electorID,
-      voteInfo.postulationID
+      voteInfo.postulationID,
+      voteInfo.candidateID
     )
 
+    
+    let parsedResults = new TextDecoder().decode(result);
+    let finalResult  = JSON.parse(parsedResults);
+
+    if (!finalResult.success) {
+      return res.status(400).json({ statusCode: 400, ...finalResult });
+    } 
+
     // #2 guardar el registro del voto (API #3 llamada)
+    
+    
 
+    // return if not problems
+    return res.status(201).json({ statusCode: 201, 'vote salved correctly' });
 
-    return res.status(200).json({ statusCode: 200, message: 'success' });
   }
 
 

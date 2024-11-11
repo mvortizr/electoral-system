@@ -19,7 +19,38 @@ export class VoteRegistryContract extends Contract {
         registryID: string, 
         electorExtID: string,
         postulationExtID: string,
+        candidateExtID: string
     ): Promise<void> {
+
+        //check if candidate exists
+            // const targetChaincodeName = 'ch';
+            // const targetChannelName = 'targetChannel';
+
+            // // Prepare the arguments for the target chaincode function
+            // const args = ['targetFunctionName', arg1, arg2];
+
+            // // Invoke the chaincode on the target channel
+            // const response = await ctx.stub.invokeChaincode(targetChaincodeName, args, targetChannelName);
+
+            // // Check if the response has an error
+            // if (response.status !== 200) {
+            //     throw new Error(`Error calling chaincode on another channel: ${response.message}`);
+            // }
+
+        // Validaciones (en api #1)
+        const targetChaincodeName = 'channel1cc';
+        const targetChannelName = 'election-ch1-roll';
+
+        // Prepare the arguments for the target chaincode function
+        const args = ['ElectorsContract:checkVotingRequirements', electorExtID, postulationExtID, candidateExtID];
+
+        // Invoke the chaincode on the target channel
+        const response = await ctx.stub.invokeChaincode(targetChaincodeName, args, targetChannelName);
+
+        // Check if the response has an error
+        if (response.status !== 200) {
+            throw new Error(`Error calling chaincode on another channel: ${response.message}`);
+        }
         
         // TODO: search for internal id's
         const newVoteRegistry = {
@@ -29,7 +60,6 @@ export class VoteRegistryContract extends Contract {
             postulationExtID: postulationExtID,
            // postulationIntID: postulationIntID,
             voteRegistryType: voteRegistryType.VOTE_REGISTRY,
-            creationDate: new Date().toISOString(),
         }
 
         // we insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'

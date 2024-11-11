@@ -14,13 +14,18 @@ export class VoteInfoDTO {
     @IsUUID()
     electorID!: string
 
+    @IsUUID()
+    candidateID!: string
+
 
 
     constructor(
         postulationID: string,
-        electorID: string
+        electorID: string,
+        candidateID: string
     ) {
         this.postulationID = postulationID
         this.electorID = electorID
+        this.candidateID = candidateID
     }
 }

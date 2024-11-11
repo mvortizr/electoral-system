@@ -4,6 +4,7 @@ import { electoralRollType } from '../models/electoralRollType';
 import { bringElectionConfig } from '../validations/general/bringElectionConfig';
 import { isExtElectorIDDuplicated } from '../validations/electors/noDuplicatedExternalID';
 import { doesPositionExists } from '../validations/general/checkIfPositionExists';
+import { getElectorWithID } from '../utils/electors/getElectorWithID';
 
 @Info({title: 'Electors contract', description: 'Smart contract for electors'})
 export class ElectorsContract extends Contract {
@@ -236,6 +237,27 @@ export class ElectorsContract extends Contract {
         // Return the positions as a JSON string
         return JSON.stringify(electors);
     }
+
+
+    // Function called by API #2
+    @Transaction()
+    @Returns('string')
+    public async checkVotingRequirements(ctx: Context, 
+        electorExtID: string, 
+        postulacionExtID: string,
+        candidateExtID: string
+
+    ): Promise<String> {
+        /// check if elector exists
+        const electorArray = await getElectorWithID(electorExtID,ctx)
+        if (electorArray.length <= 0) {
+            return JSON.stringify({success: false, error: `elector with ID ${electorExtID} doesn't exists` });
+        } 
+
+        return JSON.stringify({success: true});
+
+    }
+
    
 
 }

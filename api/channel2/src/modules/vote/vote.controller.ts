@@ -30,7 +30,7 @@ export class VoteController {
   
 
   @Post('/register')
-  @ApiOperation({ summary: "Let's user vote for a candidate" })
+  @ApiOperation({ summary: "Lets user vote for a candidate" })
   async setVote(@Body() voteInfo: VoteInfoDTO, @Res() res: Response): Promise<object> {
     const chaincode = process.env.CHAINCODE_NAME!.toString()
     const functionName = "VoteRegistryContract:createVoteRegistry"

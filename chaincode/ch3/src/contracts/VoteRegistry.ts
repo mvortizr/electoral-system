@@ -4,105 +4,28 @@ import { electoralRollType } from '../models/electoralRollType';
 import { voteRegistryType } from '../models/voteRegistryType';
 
 @Info({title: 'Vote Registry Contract', description: 'Smart contract for registering which people already voted for a position'})
-export class VoteRegistryContract extends Contract {
-
-    //Vote registry
-    // Registry ID
-    // Votante ID
-    // Votante Posicion por la que voto 
-
-
+export class VoteContract extends Contract {
 
     //Adds voter registry
     @Transaction()
-    public async createVoteRegistry(ctx: Context, 
+    @Returns('string')
+    public async createVote(ctx: Context, 
         registryID: string, 
-        electorExtID: string,
-        postulationExtID: string,
-        candidateExtID: string
-    ): Promise<void> {
+        registryData: string,
+       
+    ): Promise<String> {
+        let data = JSON.parse(registryData)
 
-        //check if candidate exists
-            // const targetChaincodeName = 'ch';
-            // const targetChannelName = 'targetChannel';
-
-            // // Prepare the arguments for the target chaincode function
-            // const args = ['targetFunctionName', arg1, arg2];
-
-            // // Invoke the chaincode on the target channel
-            // const response = await ctx.stub.invokeChaincode(targetChaincodeName, args, targetChannelName);
-
-            // // Check if the response has an error
-            // if (response.status !== 200) {
-            //     throw new Error(`Error calling chaincode on another channel: ${response.message}`);
-            // }
-
-        // Validaciones (en api #1)
-        const targetChaincodeName = 'channel1cc';
-        const targetChannelName = 'election-ch1-roll';
-
-        // Prepare the arguments for the target chaincode function
-        const args = ['ElectorsContract:checkVotingRequirements', electorExtID, postulationExtID, candidateExtID];
-
-        // Invoke the chaincode on the target channel
-        const response = await ctx.stub.invokeChaincode(targetChaincodeName, args, targetChannelName);
-
-        // Check if the response has an error
-        if (response.status !== 200) {
-            throw new Error(`Error calling chaincode on another channel: ${response.message}`);
-        }
-        
-        // TODO: search for internal id's
         const newVoteRegistry = {
             registryID: registryID,
-           // electorIntID: electorIntID,
-            electorExtID: electorExtID,
-            postulationExtID: postulationExtID,
-           // postulationIntID: postulationIntID,
-            voteRegistryType: voteRegistryType.VOTE_REGISTRY,
+           ...data
         }
 
         // we insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
         await ctx.stub.putState(registryID, Buffer.from(stringify(newVoteRegistry)));
+   
+        return JSON.stringify({success: true});
     }
-
-    // Read registry paginated 
-    @Transaction()
-     @Returns('string')
-     public async queryVoterRegistry(ctx: Context, params: string): Promise<string> {
-         const {pageSize, bookmark} = JSON.parse(params)
-         // Create a query string to filter by electoralRollType
-         const queryString = {
-             selector: {
-                voteRegistryType: voteRegistryType.VOTE_REGISTRY
-             },
-            // sort: [{ "creationDate": "desc" }]  // Sort by creation date in descending order
-         };
-     
-         // Perform the paginated query using getQueryResultWithPagination
-         const { iterator, metadata } = await ctx.stub.getQueryResultWithPagination(JSON.stringify(queryString), pageSize, bookmark);
-     
-         const vote_registries: any[] = [];
- 
-         let result = await iterator.next();
-         while (!result.done) {
-             const strValue = Buffer.from(result.value.value.toString()).toString('utf8');
-             let record;
-             try {
-                 record = JSON.parse(strValue);
-             } catch (err) {
-                 console.log(err);
-                 record = strValue;
-             }
-             vote_registries.push(record);
-             result = await iterator.next();
-         }
-     
-         return JSON.stringify({
-             voteRegistries: vote_registries,
-             bookmark: metadata.bookmark  // Return the bookmark for the next page
-         });
-     }
     
 
 }

@@ -171,6 +171,14 @@ elif [ "${MODE}" == "unrest2" ]; then
   log "Bringing down Rest API chaincode application:"
   bring_down_rest_api_ch2
   log "🏁 - Fabric REST API 2 is down."
+elif [ "${MODE}" == "rest3" ]; then
+  log "Launching chaincode application:"
+  launch_rest_api_ch3
+  log "🏁 - Fabric REST API 3 is ready."
+elif [ "${MODE}" == "unrest3" ]; then
+  log "Bringing down Rest API chaincode application:"
+  bring_down_rest_api_ch3
+  log "🏁 - Fabric REST API 23 is down."
 elif [ "${MODE}" == "unrest" ]; then
   log "Bringing down Rest API chaincode application:"
   bring_down_rest_api_ch1

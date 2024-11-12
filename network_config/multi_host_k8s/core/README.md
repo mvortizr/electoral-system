@@ -57,6 +57,7 @@ Launch the network, create a channel, and deploy the [basic-asset-transfer](../a
 
 ```./network chaincode deploy channel1cc ../../../chaincode/ch1 1```###
 ```./network chaincode deploy channel2cc ../../../chaincode/ch2 2```###
+```./network chaincode deploy channel3cc ../../../chaincode/ch3 3```###
 
 
 Invoke and query chaincode:
@@ -72,6 +73,7 @@ Access the blockchain with a [REST API](https://github.com/hyperledger/fabric-sa
 ```shell
 ./network rest
 ./network rest2
+./network rest3
 ```
 
 
@@ -94,6 +96,7 @@ Shut down the test network:
 ```shell
 ./network unrest
 ./network unrest2
+./network unrest3
 ```
 
 ```shell

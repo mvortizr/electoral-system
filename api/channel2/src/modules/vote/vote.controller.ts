@@ -9,6 +9,7 @@ import { VoteInfoDTO } from './dtos/dto_vote_info';
 import { v4 as uuidv4 } from 'uuid';
 
 // DTOS
+// cambiar a vote registry 
 
 
 @ApiHeader({

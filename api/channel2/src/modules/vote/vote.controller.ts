@@ -35,9 +35,25 @@ export class VoteController {
     const chaincode = process.env.CHAINCODE_NAME!.toString()
     const functionName = "VoteRegistryContract:createVoteRegistry"
     const internalRegistryUID: string = uuidv4();
+    const API_1_URL = process.env.API_1_URL;
 
+
+    // Llamar api #1 y revisar que es valido
+    const postDataToSend = {
+      electorID: voteInfo.electorID,
+      postulationID: voteInfo.postulationID,
+      candidateID: voteInfo.candidateID
+    };
+    
+    
+    
+    const response = await this.voteService.postData(API_1_URL,postDataToSend)
+    
+    if (!response.success) {
+      return res.status(400).json({ statusCode: 400, ...response });
+    }
   
-    // #1 escribir en el cuaderno de votacion
+    // Escribir en el cuaderno de votacion
     const result = await this.fabricService.submitTransaction(
       chaincode,
       functionName,
@@ -60,7 +76,7 @@ export class VoteController {
     
 
     // return if not problems
-    return res.status(201).json({ statusCode: 201, 'vote salved correctly' });
+    return res.status(201).json({ statusCode: 201, message: 'vote saved correctly' });
 
   }
 

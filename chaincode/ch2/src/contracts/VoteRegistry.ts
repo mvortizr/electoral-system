@@ -22,35 +22,20 @@ export class VoteRegistryContract extends Contract {
         candidateExtID: string
     ): Promise<void> {
 
-        //check if candidate exists
-            // const targetChaincodeName = 'ch';
-            // const targetChannelName = 'targetChannel';
+        // // Validaciones (en api #1)
+        // const targetChaincodeName = 'channel1cc';
+        // const targetChannelName = 'election-ch1-roll';
 
-            // // Prepare the arguments for the target chaincode function
-            // const args = ['targetFunctionName', arg1, arg2];
+        // // Prepare the arguments for the target chaincode function
+        // const args = ['ElectorsContract:checkVotingRequirements', electorExtID, postulationExtID, candidateExtID];
 
-            // // Invoke the chaincode on the target channel
-            // const response = await ctx.stub.invokeChaincode(targetChaincodeName, args, targetChannelName);
+        // // Invoke the chaincode on the target channel
+        // const response = await ctx.stub.invokeChaincode(targetChaincodeName, args, targetChannelName);
 
-            // // Check if the response has an error
-            // if (response.status !== 200) {
-            //     throw new Error(`Error calling chaincode on another channel: ${response.message}`);
-            // }
-
-        // Validaciones (en api #1)
-        const targetChaincodeName = 'channel1cc';
-        const targetChannelName = 'election-ch1-roll';
-
-        // Prepare the arguments for the target chaincode function
-        const args = ['ElectorsContract:checkVotingRequirements', electorExtID, postulationExtID, candidateExtID];
-
-        // Invoke the chaincode on the target channel
-        const response = await ctx.stub.invokeChaincode(targetChaincodeName, args, targetChannelName);
-
-        // Check if the response has an error
-        if (response.status !== 200) {
-            throw new Error(`Error calling chaincode on another channel: ${response.message}`);
-        }
+        // // Check if the response has an error
+        // if (response.status !== 200) {
+        //     throw new Error(`Error calling chaincode on another channel: ${response.message}`);
+        // }
         
         // TODO: search for internal id's
         const newVoteRegistry = {

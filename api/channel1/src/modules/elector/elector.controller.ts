@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Response } from 'express';
 import { ElectorPaginationDTO } from './dtos/elector_pagination_dto';
 import { DTOElectorByExtID } from './dtos/elector_by_ext_id_dto';
+import { ElectorPreVoteValidationDTO } from './dtos/elector_validation_dto';
 
 @ApiHeader({
     name: 'auth',
@@ -119,6 +120,30 @@ import { DTOElectorByExtID } from './dtos/elector_by_ext_id_dto';
         const result = await this.fabricService.evaluateTransaction(chaincode, functionName, params)
         return res.status(200).json({ statusCode: 200, result: result });
     }
+
+    @Post('/validatePreVoteElector')
+    async validateElector(@Body() electorValidationData: ElectorPreVoteValidationDTO, @Res() res: Response): Promise<object> {
+      const chaincode = process.env.CHAINCODE_NAME!.toString()
+      const functionName = "ElectorsContract:checkVotingRequirements"
+     
+      
+      const result = await this.fabricService.submitTransaction(
+        chaincode,
+        functionName,
+        electorValidationData.electorID,
+        electorValidationData.postulationID,
+        electorValidationData.candidateID    
+      )
+      let parsedResults = new TextDecoder().decode(result);
+      let finalResult  = JSON.parse(parsedResults);
+
+      if (finalResult.success) {
+          return res.status(201).json({ statusCode: 201, ...finalResult });
+      } else {
+          return res.status(400).json({ statusCode: 400, ...finalResult });
+      }
+
+    }     
 
 
 

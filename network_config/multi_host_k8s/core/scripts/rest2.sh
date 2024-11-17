@@ -31,6 +31,9 @@ function   construct_rest_configmap_ch2() {
   printf "election-ch2-notebook" > $CONFIG_DIR/CHANNEL_NAME
   printf "org1-peer1"> $CONFIG_DIR/PEER_HOST_ALIAS
   printf "channel2cc"> $CONFIG_DIR/CHAINCODE_NAME
+  printf "http://channel1-api:80" > $CONFIG_DIR/API_1_URL
+  printf "http://channel3-api:80" > $CONFIG_DIR/API_3_URL
+
 
 
   cp $ENROLLMENT_DIR/org1/users/org1admin/msp/signcerts/cert.pem $CONFIG_DIR/CERT_DIRECTORY

@@ -35,7 +35,7 @@ export class VoteController {
     const chaincode = process.env.CHAINCODE_NAME!.toString()
     const functionName = "VoteRegistryContract:createVoteRegistry"
     const internalRegistryUID: string = uuidv4();
-    const API_1_URL = process.env.API_1_URL;
+    const API_1_URL = process.env.API_1_URL!;
 
 
     // Llamar api #1 y revisar que es valido
@@ -45,9 +45,8 @@ export class VoteController {
       candidateID: voteInfo.candidateID
     };
     
-    
-    
-    const response = await this.voteService.postData(API_1_URL,postDataToSend)
+  
+    const response = await this.voteService.postData(`${API_1_URL}/elector/validatePreVoteElector`,postDataToSend)
     
     if (!response.success) {
       return res.status(400).json({ statusCode: 400, ...response });
@@ -71,7 +70,7 @@ export class VoteController {
       return res.status(400).json({ statusCode: 400, ...finalResult });
     } 
 
-    // #2 guardar el registro del voto (API #3 llamada)
+    // guardar el registro del voto (API #3 llamada)
     
     
 

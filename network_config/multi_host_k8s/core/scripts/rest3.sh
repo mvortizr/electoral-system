@@ -27,9 +27,9 @@ function   construct_rest_configmap_ch3() {
   # static envs
   printf "10060b68-340b-4b8d-8844-c94a1afe3a04"> $CONFIG_DIR/API_KEY
   printf "Org1MSP" > $CONFIG_DIR/MSP_ID 
-  printf "org1-peer1.${ORG1_NS}.svc.cluster.local:7051" > $CONFIG_DIR/PEER_ENDPOINT
+  printf "org1-peer3.${ORG1_NS}.svc.cluster.local:7051" > $CONFIG_DIR/PEER_ENDPOINT
   printf "election-ch3-ballot" > $CONFIG_DIR/CHANNEL_NAME
-  printf "org1-peer1"> $CONFIG_DIR/PEER_HOST_ALIAS
+  printf "org1-peer3"> $CONFIG_DIR/PEER_HOST_ALIAS
   printf "channel3cc"> $CONFIG_DIR/CHAINCODE_NAME
 
 

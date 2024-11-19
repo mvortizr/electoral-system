@@ -5,6 +5,7 @@ import { bringElectionConfig } from '../validations/general/bringElectionConfig'
 import { isExtElectorIDDuplicated } from '../validations/electors/noDuplicatedExternalID';
 import { doesPositionExists } from '../validations/general/checkIfPositionExists';
 import { getElectorWithID } from '../utils/electors/getElectorWithID';
+import { getCandidateWithID } from '../utils/candidates/getCandidateWithID';
 
 @Info({title: 'Electors contract', description: 'Smart contract for electors'})
 export class ElectorsContract extends Contract {
@@ -254,7 +255,46 @@ export class ElectorsContract extends Contract {
             return JSON.stringify({success: false, error: `elector with ID ${electorExtID} doesn't exists` });
         } 
 
-        return JSON.stringify({success: true});
+        let electorIntID = electorArray[0].electorID
+
+        //check if candidate exists
+        const candidateArray = await getCandidateWithID(candidateExtID, ctx)
+        if (candidateArray.length <= 0) {
+            return JSON.stringify({success: false, error: `candidate with ID ${electorExtID} doesn't exists` });
+        }
+        let candidateIntID = electorArray[0].candidateIntID
+
+        //check if postulation exist
+        let postulations = electorArray[0].postulations
+        let currentPostulation = postulations.find(postulation => postulation.postulationID === postulacionExtID) || null;
+        if (currentPostulation === null) {
+            return JSON.stringify({success: false, error: `Postulation with ID ${postulacionExtID} doesn't exists` });
+        }
+        let postulacionIntID = currentPostulation.postulationID
+        //let postulacionExtID
+        let positionExtID = currentPostulation.positionExtID
+        let positionIntID = currentPostulation.positionIntID
+
+        //elector has permit to vote for that postulation
+        let elector = electorArray[0]
+        let positionsAllowedToVote = elector.positionsToVote
+        let position = positionsAllowedToVote.find(position => position.positionExtID == positionExtID )
+        if (position === null) {
+            return JSON.stringify({success: false, error: `Elector ID ${electorExtID} isn't allowed to vote for position ${positionExtID} ` });
+        }
+
+        
+
+        return JSON.stringify({
+            success: true,
+            electorIntID: electorIntID,
+            postulacionIntID: postulacionIntID,
+            candidateIntID: candidateIntID,
+            positionExtID: positionExtID,
+            positionIntID: positionIntID
+        });
+
+        
 
     }
 

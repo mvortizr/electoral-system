@@ -52,14 +52,18 @@ export class VoteController {
       return res.status(400).json({ statusCode: 400, ...response });
     }
   
+    let electorIntID = response.electorIntID
+    let positionExtID = response.positionExtID
+    let positionIntID = response.positionIntID
     // Escribir en el cuaderno de votacion
     const result = await this.fabricService.submitTransaction(
       chaincode,
       functionName,
       internalRegistryUID,
-      voteInfo.electorID,
-      voteInfo.postulationID,
-      voteInfo.candidateID
+      electorIntID,
+      voteInfo.electorID,   
+      positionIntID,
+      positionExtID
     )
 
     

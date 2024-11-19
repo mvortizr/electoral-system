@@ -1,7 +1,7 @@
 import {Context, Contract, Info, Returns, Transaction} from 'fabric-contract-api';
 import stringify from 'json-stringify-deterministic';
-import { electoralRollType } from '../models/electoralRollType';
 import { voteRegistryType } from '../models/voteRegistryType';
+import { didElectorVoteForPosition } from '../validations/registry/validateNoPreviousVotes';
 
 @Info({title: 'Vote Registry Contract', description: 'Smart contract for registering which people already voted for a position'})
 export class VoteRegistryContract extends Contract {
@@ -15,40 +15,34 @@ export class VoteRegistryContract extends Contract {
 
     //Adds voter registry
     @Transaction()
+    @Returns('string')
     public async createVoteRegistry(ctx: Context, 
         registryID: string, 
-        electorExtID: string,
-        postulationExtID: string,
-        candidateExtID: string
-    ): Promise<void> {
+        electorIntID: string,
+        electorExtID: string,  
+        positionIntID: string,
+        positionExtID: string
+    ): Promise<String> {
 
-        // // Validaciones (en api #1)
-        // const targetChaincodeName = 'channel1cc';
-        // const targetChannelName = 'election-ch1-roll';
-
-        // // Prepare the arguments for the target chaincode function
-        // const args = ['ElectorsContract:checkVotingRequirements', electorExtID, postulationExtID, candidateExtID];
-
-        // // Invoke the chaincode on the target channel
-        // const response = await ctx.stub.invokeChaincode(targetChaincodeName, args, targetChannelName);
-
-        // // Check if the response has an error
-        // if (response.status !== 200) {
-        //     throw new Error(`Error calling chaincode on another channel: ${response.message}`);
-        // }
+        // Search for repeated keys
+        let previousVote = await didElectorVoteForPosition(electorIntID,positionIntID, ctx)
+        if (previousVote === true) {
+            return JSON.stringify({success: false, error:`elector ID ${electorExtID} already voted for position ${positionExtID}`});
+        }
         
-        // TODO: search for internal id's
+        
         const newVoteRegistry = {
             registryID: registryID,
-           // electorIntID: electorIntID,
-            electorExtID: electorExtID,
-            postulationExtID: postulationExtID,
-           // postulationIntID: postulationIntID,
+            electorID: electorIntID,
+            electorExternalID: electorExtID,
+            positionID: positionIntID,
+            positionExternalID: positionExtID,
             voteRegistryType: voteRegistryType.VOTE_REGISTRY,
         }
 
         // we insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
         await ctx.stub.putState(registryID, Buffer.from(stringify(newVoteRegistry)));
+        return JSON.stringify({success: true});
     }
 
     // Read registry paginated 

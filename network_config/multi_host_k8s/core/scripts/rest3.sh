@@ -59,7 +59,7 @@ function bring_down_rest_api_ch3() {
   push_fn "Bringing down API ch3"
   kubectl -n $ns delete configmap channel3-configmap
   kubectl -n $ns delete deployment channel3-api
-  kubectl -n $ns  delete service channe3-api
+  kubectl -n $ns  delete service channel3-api
   kubectl -n $ns delete ingress channel3-api
   pop_fn
 

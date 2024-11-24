@@ -3,9 +3,9 @@ import {
     IsOptional, 
     IsInt,
     Min,
-    Transform
+    //Transform
 } from 'class-validator';
-import { Type } from 'class-transformer';
+import { Transform } from 'class-transformer';
 
 export class storeVoteDTO {
 
@@ -27,11 +27,11 @@ export class storeVoteDTO {
     @IsUUID()
     partyExtID!: string
 
+    @IsOptional()
     @IsInt()
     @Min(1)
-    @IsOptional()
-    @Transform(({ value }) => value !== undefined ? value : 1)
-    multiplier?: number = 1;
+    @Transform(({ value }) => (value !== undefined ? parseInt(value, 10) : 1))
+    multiplier?: number;
 
 
 

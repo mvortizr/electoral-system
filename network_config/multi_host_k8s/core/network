@@ -110,6 +110,7 @@ function print_help() {
 . scripts/rest.sh
 . scripts/application_connection.sh
 . scripts/rest2.sh
+. scripts/rest3.sh
 
 
 # check for kind, kubectl, etc.
@@ -178,7 +179,7 @@ elif [ "${MODE}" == "rest3" ]; then
 elif [ "${MODE}" == "unrest3" ]; then
   log "Bringing down Rest API chaincode application:"
   bring_down_rest_api_ch3
-  log "🏁 - Fabric REST API 23 is down."
+  log "🏁 - Fabric REST API 3 is down."
 elif [ "${MODE}" == "unrest" ]; then
   log "Bringing down Rest API chaincode application:"
   bring_down_rest_api_ch1

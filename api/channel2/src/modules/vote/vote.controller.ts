@@ -48,6 +48,8 @@ export class VoteController {
   
     const response = await this.voteService.postData(`${API_1_URL}/elector/validatePreVoteElector`,postDataToSend)
     
+    //TODO a este le falta retornar el multiplier 
+
     if (!response.success) {
       return res.status(400).json({ statusCode: 400, ...response });
     }

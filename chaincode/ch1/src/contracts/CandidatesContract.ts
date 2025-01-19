@@ -4,7 +4,8 @@ import { electoralRollType } from '../models/electoralRollType';
 import { bringElectionConfig } from '../validations/general/bringElectionConfig';
 import { isExternalCandidateIDDuplicated } from '../validations/candidates/noDuplicatedExternalID';
 import { doesPositionExists } from '../validations/general/checkIfPositionExists';
-import { doesPartyExists } from '../validations/candidates/checkIfPartyExists';
+//import { doesPartyExists } from '../validations/candidates/checkIfPartyExists';
+import { getInternalPartyID } from '../validations/candidates/getInternalPartyID';
 
 
 
@@ -65,10 +66,14 @@ export class CandidatesContract extends Contract {
             }
             //check that party exists
             if (post.partyExternalID != null) {
-                let party = await doesPartyExists(post.partyExternalID, ctx);
-                if (!party) {
+                let {partyExists, partyInternalID} = await getInternalPartyID(post.partyExternalID, ctx);
+
+                //get internal party ID
+                if (!partyExists) {
                     return JSON.stringify({success: false, error:`Party ID ${post.partyExternalID} doesn't exists`});
                 }
+
+                post.partyInternalID = partyInternalID
             } 
 
             //check compatibility of tiebreaker values
@@ -182,12 +187,15 @@ export class CandidatesContract extends Contract {
             }
             //check that party exists
             if (post.partyExternalID != null) {
-                let party = await doesPartyExists(post.partyExternalID, ctx);
-                if (!party) {
+                let {partyExists, partyInternalID} = await getInternalPartyID(post.partyExternalID, ctx);
+
+                //get internal party ID
+                if (!partyExists) {
                     return JSON.stringify({success: false, error:`Party ID ${post.partyExternalID} doesn't exists`});
                 }
+
+                post.partyInternalID = partyInternalID
             } 
-          
 
             //check compatibility of tiebreaker values
             

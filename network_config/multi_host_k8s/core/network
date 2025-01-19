@@ -45,7 +45,7 @@ context ORG0_NS                       ${NS}
 context ORG1_NS                       ${NS}
 context DOMAIN                        localho.st
 # context CHANNEL_NAME                  mychannel
-context ORDERER_TIMEOUT               10s                   # see https://github.com/hyperledger/fabric/issues/3372
+context ORDERER_TIMEOUT               100s                   # see https://github.com/hyperledger/fabric/issues/3372
 context TEMP_DIR                      ${PWD}/build
 context CHAINCODE_BUILDER             ccaas                 # see https://github.com/hyperledgendary/fabric-builder-k8s/blob/main/docs/TEST_NETWORK_K8S.md
 context K8S_CHAINCODE_BUILDER_IMAGE   ghcr.io/hyperledger-labs/fabric-builder-k8s/k8s-fabric-peer

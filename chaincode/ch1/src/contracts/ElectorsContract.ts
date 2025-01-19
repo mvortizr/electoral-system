@@ -256,6 +256,7 @@ export class ElectorsContract extends Contract {
         } 
 
         let electorIntID = electorArray[0].electorID
+        let multiplier = electorArray[0].multiplier
 
         //check if candidate exists
         const candidateArray = await getCandidateWithID(candidateExtID, ctx)
@@ -283,7 +284,10 @@ export class ElectorsContract extends Contract {
             return JSON.stringify({success: false, error: `Elector ID ${electorExtID} isn't allowed to vote for position ${positionExtID} ` });
         }
 
-        
+
+        //get the party of that postulation if it has one
+        let partyExtID = currentPostulation.partyExternalID
+        let partyIntID = currentPostulation.partyInternalID
 
         return JSON.stringify({
             success: true,
@@ -291,7 +295,10 @@ export class ElectorsContract extends Contract {
             postulacionIntID: postulacionIntID,
             candidateIntID: candidateIntID,
             positionExtID: positionExtID,
-            positionIntID: positionIntID
+            positionIntID: positionIntID,
+            multiplier: multiplier,
+            partyExtID: partyExtID,
+            partyIntID: partyIntID
         });
 
         

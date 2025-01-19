@@ -10,6 +10,12 @@ import { Transform } from 'class-transformer';
 export class storeVoteDTO {
 
     @IsUUID()
+    positionID!: string
+
+    @IsUUID()
+    positionExtID!: string
+
+    @IsUUID()
     postulationID!: string
 
     @IsUUID()

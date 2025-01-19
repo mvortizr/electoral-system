@@ -36,6 +36,7 @@ export class VoteController {
     const functionName = "VoteRegistryContract:createVoteRegistry"
     const internalRegistryUID: string = uuidv4();
     const API_1_URL = process.env.API_1_URL!;
+    const API_3_URL = process.env.API_3_URL!;
 
 
     // Llamar api #1 y revisar que es valido
@@ -46,9 +47,9 @@ export class VoteController {
     };
     
   
+    //HACER: este endpoint deberia no estar expuesto al publico
     const response = await this.voteService.postData(`${API_1_URL}/elector/validatePreVoteElector`,postDataToSend)
     
-    //TODO a este le falta retornar el multiplier 
 
     if (!response.success) {
       return res.status(400).json({ statusCode: 400, ...response });
@@ -57,7 +58,9 @@ export class VoteController {
     let electorIntID = response.electorIntID
     let positionExtID = response.positionExtID
     let positionIntID = response.positionIntID
-    // Escribir en el cuaderno de votacion
+    let multiplier = response.multiplier
+
+    ////////// Escribir en el cuaderno de votacion ////////////
     const result = await this.fabricService.submitTransaction(
       chaincode,
       functionName,
@@ -76,9 +79,25 @@ export class VoteController {
       return res.status(400).json({ statusCode: 400, ...finalResult });
     } 
 
-    // guardar el registro del voto (API #3 llamada)
-    
-    
+    //////////// guardar el registro del voto (API #3 llamada) /////////
+    const postDataToSendApi3 = {
+      positionID: positionIntID,
+      positionExtID: positionExtID,
+      postulationID: response.postulacionIntID,
+      postulationExtID:voteInfo.postulationID,
+      candidateID: response.candidateIntID,
+      candidateExtID:voteInfo.candidateID,
+      partyID: response.partyIntID,
+      partyExtID: response.partyExtID,
+      multiplier: multiplier
+    };
+
+    //
+    const responseStoreVote = await this.voteService.postData(`${API_3_URL}/vote/register`,postDataToSendApi3)
+
+    if (!responseStoreVote.success) {
+      return res.status(400).json({ statusCode: 400, ...responseStoreVote });
+    }
 
     // return if not problems
     return res.status(201).json({ statusCode: 201, message: 'vote saved correctly' });

@@ -7,7 +7,7 @@ import { CandidateDTO } from './dtos/dto_candidate';
 export class CandidateService {
     processPostulations( postulations: PostulationDTO[]): any {
         postulations.forEach(item => {
-            // Generate a new UUID for tiebreakerID
+            // Generate a new UUID for postulationID
 
             item.postulationExternalID = item.postulationID
             item.postulationID = uuidv4();

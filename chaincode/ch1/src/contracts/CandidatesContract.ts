@@ -70,39 +70,6 @@ export class CandidatesContract extends Contract {
                     return JSON.stringify({success: false, error:`Party ID ${post.partyExternalID} doesn't exists`});
                 }
             } 
-
-            //check compatibility of tiebreaker values
-            
-            let tiebreakers = position.tiebreaker
-            let candidateTiebreakers = post.tiebreakerValues
-
-            for (const candidateTiebreaker of candidateTiebreakers) {
-                const tie = tiebreakers.find(t => t.tiebreakerExternalID === candidateTiebreaker.tiebreakerID);
-                if (!tie) {
-                    return JSON.stringify({success: false, error:`Tiebreaker with ID ${candidateTiebreaker.tiebreakerID} not found`});
-                }
-
-                const value = candidateTiebreaker.tiebreakerValue;
-                const { datatype } = tie;
-                
-                if (datatype === 'number') {
-                    if (typeof value !== 'number') {
-                        return JSON.stringify({success: false, error:`Tiebreaker with ID ${tie.tiebreakerExternalID} expects a number, but got ${typeof value}`});
-                    }
-                } else if (datatype === 'date') {
-                    // Regular expression to match the "YYYY-MM-DD" ISO date format
-                    const isoDateRegex = /^\d{4}-\d{2}-\d{2}$/;
-
-                    // Check if the value matches the ISO format
-                    if (!isoDateRegex.test(value)) {
-                        return JSON.stringify({ success: false, error: `Tiebreaker with ID ${tie.tiebreakerExternalID} expects a date in YYYY-MM-DD format, but got ${value}` });
-                    }
-                    if (isNaN(Date.parse(value))) {
-                        return JSON.stringify({success: false, error:`Tiebreaker with ID ${tie.tiebreakerExternalID} expects a date, but got ${typeof value}`});
-                    }
-                }
-
-            }
          }
 
  
@@ -187,40 +154,6 @@ export class CandidatesContract extends Contract {
                     return JSON.stringify({success: false, error:`Party ID ${post.partyExternalID} doesn't exists`});
                 }
             } 
-          
-
-            //check compatibility of tiebreaker values
-            
-            let tiebreakers = position.tiebreaker
-            let candidateTiebreakers = post.tiebreakerValues
-
-            for (const candidateTiebreaker of candidateTiebreakers) {
-                const tie = tiebreakers.find(t => t.tiebreakerExternalID === candidateTiebreaker.tiebreakerID);
-                if (!tie) {
-                    return JSON.stringify({success: false, error:`Tiebreaker with ID ${candidateTiebreaker.tiebreakerID} not found`});
-                }
-
-                const value = candidateTiebreaker.tiebreakerValue;
-                const { datatype } = tie;
-                
-                if (datatype === 'number') {
-                    if (typeof value !== 'number') {
-                        return JSON.stringify({success: false, error:`Tiebreaker with ID ${tie.tiebreakerExternalID} expects a number, but got ${typeof value}`});
-                    }
-                } else if (datatype === 'date') {
-                    // Regular expression to match the "YYYY-MM-DD" ISO date format
-                    const isoDateRegex = /^\d{4}-\d{2}-\d{2}$/;
-
-                    // Check if the value matches the ISO format
-                    if (!isoDateRegex.test(value)) {
-                        return JSON.stringify({ success: false, error: `Tiebreaker with ID ${tie.tiebreakerExternalID} expects a date in YYYY-MM-DD format, but got ${value}` });
-                    }
-                    if (isNaN(Date.parse(value))) {
-                        return JSON.stringify({success: false, error:`Tiebreaker with ID ${tie.tiebreakerExternalID} expects a date, but got ${typeof value}`});
-                    }
-                }
-
-            }
          }
 
         }

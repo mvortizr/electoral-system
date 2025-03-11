@@ -1,7 +1,7 @@
 import {Context, Contract, Info, Returns, Transaction} from 'fabric-contract-api';
 import stringify from 'json-stringify-deterministic';
-import { electoralRollType } from '../models/electoralRollType';
-import { voteRegistryType } from '../models/voteRegistryType';
+//import { electoralRollType } from '../models/electoralRollType';
+//import { voteRegistryType } from '../models/voteRegistryType';
 
 @Info({title: 'Vote Registry Contract', description: 'Smart contract for registering which people already voted for a position'})
 export class VoteContract extends Contract {

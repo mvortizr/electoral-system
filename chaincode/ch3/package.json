@@ -1,5 +1,5 @@
 {
-    "name": "vote_storage_chaincode",
+    "name": "vote-storage-chaincode",
     "version": "1.0.0",
     "description": "Chaincode for the vote storage channel implemented in TypeScript",
     "main": "dist/index.js",
@@ -17,7 +17,7 @@
         "update-wrap":"npm shrinkwrap",
         "build:watch": "tsc -w",
         "prepublishOnly": "npm run build",
-        "docker": "docker build -f ./Dockerfile -t ch1_cc .",
+        "docker": "docker build -f ./Dockerfile -t ch3_cc .",
         "package": "npm run build && npm shrinkwrap",
         "start:server-nontls": "set -x && fabric-chaincode-node server --chaincode-address=$CHAINCODE_SERVER_ADDRESS --chaincode-id=$CHAINCODE_ID",
         "start:server-debug": "set -x && NODE_OPTIONS='--inspect=0.0.0.0:9229' fabric-chaincode-node server --chaincode-address=$CHAINCODE_SERVER_ADDRESS --chaincode-id=$CHAINCODE_ID",

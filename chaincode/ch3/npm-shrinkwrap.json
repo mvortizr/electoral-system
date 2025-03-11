@@ -1,11 +1,11 @@
 {
-    "name": "vote_storage_chaincode",
+    "name": "vote-storage-chaincode",
     "version": "1.0.0",
     "lockfileVersion": 2,
     "requires": true,
     "packages": {
         "": {
-            "name": "vote_storage_chaincode",
+            "name": "vote-storage-chaincode",
             "version": "1.0.0",
             "license": "Apache-2.0",
             "dependencies": {

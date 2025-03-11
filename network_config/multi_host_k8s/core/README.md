@@ -67,6 +67,9 @@ Invoke and query chaincode:
 ```shell
 ./network chaincode query  channel2cc 2 '{"function":"readEntireElectoralChannel","Args":[]}'
 ```
+```shell
+./network chaincode query  channel3cc 3 '{"function":"readEntireElectoralChannel","Args":[]}'
+```
 
 
 Access the blockchain with a [REST API](https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic/rest-api-typescript): 

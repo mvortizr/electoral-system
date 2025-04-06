@@ -13,8 +13,6 @@ import {
  } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
-import { TiebreakerConfigItem } from './tiebreaker';
-
 
 
 export class DTOPosition {
@@ -37,24 +35,14 @@ export class DTOPosition {
     @Max(99)
     vacancies!: number;
 
-    @ApiProperty({ description: 'Tiebreaker comparator configuration' })
-    @IsOptional()
-    @ValidateIf(o => o.tiebreakerConfig !== null)
-    @IsArray()
-    @ValidateNested({ each: true })
-    @Type(() => TiebreakerConfigItem)
-        tiebreakerConfig: TiebreakerConfigItem[]  | null;
-
     constructor(
         positionID: string,
         positionName: string,
         vacancies: number,
-        tiebreakerConfig: TiebreakerConfigItem[] | null
     ) {
         this.positionID = positionID
         this.positionName = positionName
         this.vacancies = vacancies
-        this.tiebreakerConfig = tiebreakerConfig
         
     }
 

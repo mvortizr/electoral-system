@@ -7,7 +7,6 @@ import { ApiHeader, ApiOperation} from '@nestjs/swagger';
 import { PositionService } from './position.service';
 import { DTOPosition } from './dtos/dto_position';
 import { v4 as uuidv4 } from 'uuid';
-import { TiebreakerConfigItem } from './dtos/tiebreaker';
 import { DTOPositionPagination } from './dtos/dto_position_pagination';
 import { DTOPositionByExtID } from './dtos/dto_position_by_id';
 
@@ -37,14 +36,6 @@ export class PositionController {
     const chaincode = process.env.CHAINCODE_NAME!.toString()
     const functionName = "PositionContract:createPosition"
     const internalUID: string = uuidv4();
-
-    if (position.tiebreakerConfig != null){
-      let areUniqueIDTiebreakers = this.positionService.checkUniqueTiebreakers(position.tiebreakerConfig)
-      if (!areUniqueIDTiebreakers) {
-        return res.status(400).json({ statusCode: 400, error: "error repeated tiebreaker ID in position" });
-      }
-      position.tiebreakerConfig = this.positionService.processTieBreaker(position.tiebreakerConfig)
-    }
     
     const result = await this.fabricService.submitTransaction(
       chaincode,
@@ -54,7 +45,6 @@ export class PositionController {
         positionExternalID: position.positionID,
         positionName: position.positionName,
         positionVacancies: position.vacancies,
-        tiebreaker: position.tiebreakerConfig
       })
       
     )
@@ -84,20 +74,11 @@ export class PositionController {
     const positionsArray = positions.map(position => {
       const internalUID: string = uuidv4();
 
-      if (position.tiebreakerConfig != null) {
-        let areUniqueIDTiebreakers = this.positionService.checkUniqueTiebreakers(position.tiebreakerConfig)
-        if (!areUniqueIDTiebreakers) {
-          return res.status(400).json({ statusCode: 400, error: `error repeated tiebreaker ID in position ${position.positionID}` });
-        }
-        position.tiebreakerConfig = this.positionService.processTieBreaker(position.tiebreakerConfig);
-      }
-
       return {
           positionID: internalUID, // Unique ID for each position
           positionExternalID: position.positionID,
           positionName: position.positionName,
           positionVacancies: position.vacancies,
-          tiebreaker: position.tiebreakerConfig
       };
     });
 

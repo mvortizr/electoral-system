@@ -1,8 +1,6 @@
 
 import {Object, Property} from 'fabric-contract-api';
 import { electoralRollType } from './electoralRollType';
-import {TiebreakerConfig} from './tiebreaker';
-
 
 
 @Object()
@@ -21,8 +19,5 @@ export class Position {
 
     @Property()
     public positionName: string;
-
-    @Property()
-    tieBreakerConfig: TiebreakerConfig[]
 
 }

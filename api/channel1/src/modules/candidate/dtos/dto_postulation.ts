@@ -5,7 +5,6 @@ import {
     ValidateNested, 
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { TiebreakerValueDTO } from './dto_tiebreaker_value';
 
 export class PostulationDTO {
 
@@ -31,22 +30,16 @@ export class PostulationDTO {
     @IsOptional()
     positionExternalID?: string;
 
-    @IsArray()
-    @ValidateNested({ each: true })
-    @Type(() => TiebreakerValueDTO)
-    tiebreakerValues?: TiebreakerValueDTO[];
 
     constructor(
         postulationID: string,
         positionID: string,
         partyID?: string | null,
-        tiebreakerValues?: TiebreakerValueDTO[],
         postulationExternalID?: string
     ) {
         this.postulationID = postulationID
         this.positionID = positionID;
         this.partyID = partyID ?? null;  // Set to null if undefined
-        this.tiebreakerValues = tiebreakerValues ?? [];
         this.postulationExternalID = postulationExternalID; // Initialize as an empty array if undefined
     }
 }

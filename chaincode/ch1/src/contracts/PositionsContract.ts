@@ -2,7 +2,6 @@ import {Context, Contract, Info, Returns, Transaction} from 'fabric-contract-api
 import stringify from 'json-stringify-deterministic';
 import { Position } from '../models/position';
 import { electoralRollType } from '../models/electoralRollType';
-import { TiebreakerConfig } from '../models/tiebreaker';
 import { bringElectionConfig } from '../validations/general/bringElectionConfig';
 import { isExternalPositionIDDuplicated } from '../validations/position/noDuplicatedExternalID';
 

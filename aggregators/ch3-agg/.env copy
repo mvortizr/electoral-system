@@ -1,0 +1,50 @@
+API_KEY = "10060b68-340b-4b8d-8844-c94a1afe3a04"
+MSP_ID = "Org1MSP"
+CRYPTO_PATH = "../../network_config/single_host/core/organizations/peerOrganizations/org1.voting_system.com"
+#CRYPTO_PATH = "cryptoPathCopy/peerOrganizations/org1.voting_system.com"
+# keyDirectoryPath: string =  path.resolve(this.cryptoPath, 'users', 'User1@org1.voting_system.com', 'msp', 'keystore')
+# certDirectoryPath: string=  path.resolve(this.cryptoPath, 'users', 'User1@org1.voting_system.com', 'msp', 'signcerts')
+# tlsCertPath:string = path.resolve(this.cryptoPath, 'peers', 'peer0.org1.voting_system.com', 'tls', 'ca.crt')
+
+KEY_DIRECTORY = "-----BEGIN PRIVATE KEY-----
+MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgyMTKm3DdG+pB4fxF
+KtanJB5MLuD3CD2l2rf/zcYoPrihRANCAAQr2FqJLHU67NhZmg8m9YfNP9B8uHsG
+C7E2nmYYw1wk6vfC17HdNfTOFx3y3pKgcyMBCFGso5DE6juni4rQJF1p
+-----END PRIVATE KEY-----
+"
+CERT_DIRECTORY = "-----BEGIN CERTIFICATE-----
+MIICPDCCAeOgAwIBAgIRAI5spqpEOSiW4HCptLBtS9cwCgYIKoZIzj0EAwIwfzEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xHzAdBgNVBAoMFm9yZzEudm90aW5nX3N5c3RlbS5jb20xIjAgBgNV
+BAMMGWNhLm9yZzEudm90aW5nX3N5c3RlbS5jb20wHhcNMjQwODA2MjIwMTAwWhcN
+MzQwODA0MjIwMTAwWjByMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5p
+YTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEPMA0GA1UECxMGY2xpZW50MSUwIwYD
+VQQDDBxVc2VyMUBvcmcxLnZvdGluZ19zeXN0ZW0uY29tMFkwEwYHKoZIzj0CAQYI
+KoZIzj0DAQcDQgAEK9haiSx1OuzYWZoPJvWHzT/QfLh7BguxNp5mGMNcJOr3wtex
+3TX0zhcd8t6SoHMjAQhRrKOQxOo7p4uK0CRdaaNNMEswDgYDVR0PAQH/BAQDAgeA
+MAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgVqaF5GS3Myqk6IWVNOUB5DCvo7sZ
+qUxgySaVbTS4AVEwCgYIKoZIzj0EAwIDRwAwRAIgAlUgd+6LtRW8RmisrdGwyyzC
+eP8TaOxBTk8pjEkfm+cCIAwcmg7xpDxlxKr43Ts2jkWq64OQWse2ZAQmleDeedXE
+-----END CERTIFICATE-----"
+#peer endpoint es localhost:7051 si inicias normal 
+#pero si usas compose usas el comando docker inspect que esta en el readme
+PEER_ENDPOINT = "localhost:7051" 
+PEER_TLS_CERT = "-----BEGIN CERTIFICATE-----
+MIICcTCCAhigAwIBAgIRAJ+9CFSssdGxKKUePmp2kG0wCgYIKoZIzj0EAwIwgYIx
+CzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g
+RnJhbmNpc2NvMR8wHQYDVQQKDBZvcmcxLnZvdGluZ19zeXN0ZW0uY29tMSUwIwYD
+VQQDDBx0bHNjYS5vcmcxLnZvdGluZ19zeXN0ZW0uY29tMB4XDTI0MDgwNjIyMDEw
+MFoXDTM0MDgwNDIyMDEwMFowgYIxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxp
+Zm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJhbmNpc2NvMR8wHQYDVQQKDBZvcmcxLnZv
+dGluZ19zeXN0ZW0uY29tMSUwIwYDVQQDDBx0bHNjYS5vcmcxLnZvdGluZ19zeXN0
+ZW0uY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEyvuZricrdGjQGtSqOaIS
+mSsQZGEAm5QgVmOf1/V2wClPKHNEaZAIvjpS9F5+xfu0GuqEqEXxNdXk13h7+rkO
+tqNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEF
+BQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCCs8dvz06xsam9AyH/0RUnP
+PiZd883yMh8p4qJQnTamwTAKBggqhkjOPQQDAgNHADBEAiB1egeTX7iVarl/9T+h
+7dVOGewO5Rs2rkRKKtSTq7IasgIgcxAowviKhUXnKAONVC9O/wPsAHYghbSQ44Ub
+qvCkVyo=
+-----END CERTIFICATE-----
+"
+PEER_HOST_ALIAS = "peer0.org1.voting_system.com"
+CHANNEL_NAME = "election-ch1-roll"

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Gateway, Identity, Signer, connect, signers } from '@hyperledger/fabric-gateway';
+import { Gateway, Identity, Signer, connect, signers, ChaincodeEvent, CloseableAsyncIterable, GatewayError} from '@hyperledger/fabric-gateway';
 import * as grpc from '@grpc/grpc-js';
 import { promises as fs } from 'fs';
 import * as path from 'path';
@@ -21,6 +21,7 @@ export class FabricService {
     peerHostAlias: string = process.env.PEER_HOST_ALIAS!
     utf8Decoder = new TextDecoder();
     channelName: string = process.env.CHANNEL_NAME!
+    events: CloseableAsyncIterable<ChaincodeEvent> | undefined;
 
     async onModuleInit(): Promise<void> {
         await this.connect();
@@ -65,6 +66,10 @@ export class FabricService {
         if (this.client !== null) {
             this.client.close();
         }
+
+        if(this.events != undefined) {
+            this.events?.close()
+        }
         
     }
 
@@ -81,43 +86,90 @@ export class FabricService {
         return { mspId: this.mspID, credentials };
     }
 
-    async submitTransaction(chaincodeName: string, functionName: string, ...args: any[]): Promise<any> {
-        // Get the network (channel) our contract is deployed to.
-        const network = await this.gateway!.getNetwork(this.channelName); 
+    // async submitTransaction(chaincodeName: string, functionName: string, ...args: any[]): Promise<any> {
+    //     // Get the network (channel) our contract is deployed to.
+    //     const network = await this.gateway!.getNetwork(this.channelName); 
 
-        // Get the contract from the network.
-        const contract = network.getContract(chaincodeName);
+    //     // Get the contract from the network.
+    //     const contract = network.getContract(chaincodeName);
 
-        // Submit the specified transaction.
-        const result = await contract.submitTransaction(functionName, ...args);
-        console.log(`Transaction has been submitted, result is: ${result.toString()}`);
+    //     // Submit the specified transaction.
+    //     const result = await contract.submitTransaction(functionName, ...args);
+    //     console.log(`Transaction has been submitted, result is: ${result.toString()}`);
 
-        return result;
-    }
+    //     return result;
+    // }
 
-    async evaluateTransaction(chaincodeName: string, functionName: string, params?: any): Promise<any> {
-        // Get the network (channel) our contract is deployed to.
-        const network = await this.gateway!.getNetwork(this.channelName); 
-        // Get the contract from the network.
-        const contract = network.getContract(chaincodeName);
+    // async evaluateTransaction(chaincodeName: string, functionName: string, params?: any): Promise<any> {
+    //     // Get the network (channel) our contract is deployed to.
+    //     const network = await this.gateway!.getNetwork(this.channelName); 
+    //     // Get the contract from the network.
+    //     const contract = network.getContract(chaincodeName);
 
-        // Submit the specified transaction.
-        if (!params) {
-            const resultBytes = await contract.evaluateTransaction(functionName);
-            const resultJson = this.utf8Decoder.decode(resultBytes);
-            const result = JSON.parse(resultJson);
+    //     // Submit the specified transaction.
+    //     if (!params) {
+    //         const resultBytes = await contract.evaluateTransaction(functionName);
+    //         const resultJson = this.utf8Decoder.decode(resultBytes);
+    //         const result = JSON.parse(resultJson);
 
-            return result;
-        } else {
-            const resultBytes = await contract.evaluateTransaction(functionName, params);
-            const resultJson = this.utf8Decoder.decode(resultBytes);
-            const result = JSON.parse(resultJson);
+    //         return result;
+    //     } else {
+    //         const resultBytes = await contract.evaluateTransaction(functionName, params);
+    //         const resultJson = this.utf8Decoder.decode(resultBytes);
+    //         const result = JSON.parse(resultJson);
 
-            return result;
+    //         return result;
+    //     }
+        
+        
+    // }
+
+
+    async readEvents(events: CloseableAsyncIterable<ChaincodeEvent>): Promise<void> {
+        try {
+            for await (const event of events) {
+                const payloadJSON = this.utf8Decoder.decode(event.payload);
+                const payload = JSON.parse(payloadJSON);
+                console.log(`\n<-- Chaincode event received: ${event.eventName} -`, payload);
+            }
+        } catch (error: unknown) {
+            // Ignore the read error when events.close() is called explicitly
+            if (!(error instanceof GatewayError) || error.code !== grpc.status.CANCELLED.valueOf()) {
+                throw error;
+            }
         }
-        
-        
     }
+
+    
+
+    async listenToEvents(chaincodeName: string) {
+          // Get the network (channel) our contract is deployed to.
+          const network = await this.gateway!.getNetwork(this.channelName); 
+
+          const events = await network.getChaincodeEvents(chaincodeName);
+
+          void this.readEvents(events); 
+        
+        
+        
+          //   const listener = async (event) => {
+        //     const eventName = event.eventName;
+        //     const payload = event.payload.toString();
+      
+        //     console.log(`📢 Chaincode Event Received: ${eventName}`);
+        //     console.log(`🧾 Payload: ${payload}`);
+      
+        //     // You can emit it through a NestJS EventEmitter here
+        //   };
+
+
+      
+          //await contract.addContractListener(listener);
+          //console.log('🚀 Listening to chaincode events...');
+
+    }
+
+ 
 
 
     async getFirstDirFileName(dirPath: string): Promise<string> {

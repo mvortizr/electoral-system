@@ -23,6 +23,13 @@ export class VoteContract extends Contract {
 
         // we insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
         await ctx.stub.putState(registryID, Buffer.from(stringify(newVoteRegistry)));
+
+        let exampleEvent = {
+            type: "hello",
+            reason: "world"
+        }
+        await ctx.stub.setEvent('TESTEVENT', Buffer.from(stringify(exampleEvent)));
+
    
         return JSON.stringify({success: true});
     }

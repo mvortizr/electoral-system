@@ -54,7 +54,7 @@ Launch the network, create a channel, and deploy the [basic-asset-transfer](../a
 
 ./network channel create ##crear canales
 
-
+# npm install + npm run build on ch1, ch2 and ch3 folder
 ```./network chaincode deploy channel1cc ../../../chaincode/ch1 1```###
 ```./network chaincode deploy channel2cc ../../../chaincode/ch2 2```###
 ```./network chaincode deploy channel3cc ../../../chaincode/ch3 3```###

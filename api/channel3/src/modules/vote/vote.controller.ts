@@ -30,7 +30,7 @@ export class VoteController {
   }
 
   
-  @Post('/register')
+  @Post('/save')
   @ApiOperation({ summary: "Lets user vote for a candidate" })
   async setVote(@Body() vote: storeVoteDTO, @Res() res: Response): Promise<object> {
 
@@ -57,7 +57,7 @@ export class VoteController {
     if (!(finalResult.success)) {
       return res.status(400).json({ statusCode: 400, ...finalResult });
     } 
-    return res.status(201).json({ statusCode: 201, message: 'vote salved correctly', success: true });
+    return res.status(201).json({ statusCode: 201, message: 'vote saved correctly', success: true });
   
   }
 

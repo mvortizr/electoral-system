@@ -21,8 +21,6 @@ async function sendVote(payload: any, index: number) {
     return;
   }
 
-  console.log('server url', SERVER_URL);
-
   try {
     const response = await axios.post(`${SERVER_URL}/vote/save`, instance, {
         headers: {

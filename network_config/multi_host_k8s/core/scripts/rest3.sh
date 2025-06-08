@@ -37,6 +37,11 @@ function   construct_rest_configmap_ch3() {
   cp $ENROLLMENT_DIR/org1/users/org1admin/msp/keystore/key.pem $CONFIG_DIR/KEY_DIRECTORY 
   cp $CHANNEL_MSP_DIR/peerOrganizations/org1/msp/tlscacerts/tlsca-signcert.pem $CONFIG_DIR/PEER_TLS_CERT
 
+  # TESTING!
+  # cp $ENROLLMENT_DIR/org1/users/org1super1/msp/signcerts/cert.pem $CONFIG_DIR/CERT_DIRECTORY
+  # cp $ENROLLMENT_DIR/org1/users/org1super1/msp/keystore/key.pem $CONFIG_DIR/KEY_DIRECTORY 
+  # cp $CHANNEL_MSP_DIR/peerOrganizations/org1/msp/tlscacerts/tlsca-signcert.pem $CONFIG_DIR/PEER_TLS_CERT
+
 
   kubectl -n $ns delete configmap channel3-configmap || true
   kubectl -n $ns create configmap channel3-configmap --from-file=$CONFIG_DIR

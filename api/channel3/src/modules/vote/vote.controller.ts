@@ -8,6 +8,8 @@ import { ApiHeader, ApiOperation} from '@nestjs/swagger';
 import { v4 as uuidv4 } from 'uuid';
 import { storeVoteDTO } from './dtos/storeVoteDTO';
 import { stringify } from 'querystring';
+import { SuperAdminService } from 'src/fabric/superadmin.service';
+import { storeVoteDTOSA } from './dtos/storeVoteDTOSA';
 
 // DTOS
 // cambiar a vote registry 
@@ -24,7 +26,8 @@ export class VoteController {
   
   constructor(
     private readonly voteService: VoteService, 
-    private readonly fabricService: FabricService
+    private readonly fabricService: FabricService,
+    private readonly superAdminService: SuperAdminService
   ) {
     this.fabricService.connect();
   }
@@ -57,7 +60,43 @@ export class VoteController {
     if (!(finalResult.success)) {
       return res.status(400).json({ statusCode: 400, ...finalResult });
     } 
-    return res.status(201).json({ statusCode: 201, message: 'vote salved correctly', success: true });
+    return res.status(201).json({ statusCode: 201, message: 'vote saved correctly', success: true });
+  
+  }
+
+
+  ////// JUST TO CHECK, DELETE LATER
+
+  @Post('/register_superadmin') //para probar 
+  @ApiOperation({ summary: "Lets user vote for a candidate" })
+  async setVoteSA(@Body() vote: storeVoteDTOSA, @Res() res: Response): Promise<object> {
+
+    // #0 antes de enviar, revisar que datos esten correctos
+
+    // #1 llenar la urna
+    const chaincode = process.env.CHAINCODE_NAME!.toString()
+    const functionName = "VoteContract:createVote"
+    const internalRegistryUID: string = uuidv4();
+  
+    
+    const result = await this.superAdminService.submitTransaction(
+      vote.tlscert,
+      vote.keydir,
+      vote.certDir,
+      chaincode,
+      functionName,
+      internalRegistryUID,
+      JSON.stringify({...vote})
+    )
+
+    
+    let parsedResults = new TextDecoder().decode(result);
+    let finalResult  = JSON.parse(parsedResults);
+  
+    if (!(finalResult.success)) {
+      return res.status(400).json({ statusCode: 400, ...finalResult });
+    } 
+    return res.status(201).json({ statusCode: 201, message: 'vote saved correctly', success: true });
   
   }
 

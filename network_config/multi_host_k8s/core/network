@@ -111,6 +111,7 @@ function print_help() {
 . scripts/application_connection.sh
 . scripts/rest2.sh
 . scripts/rest3.sh
+. scripts/superadmin.sh
 
 
 # check for kind, kubectl, etc.
@@ -145,6 +146,8 @@ elif [ "${MODE}" == "up" ]; then
   log "Launching network \"${NETWORK_NAME}\":"
   network_up
   log "🏁 - Network is ready."
+elif [ "${MODE}" == "superadmin" ]; then
+  superadmin_command_group  $@
 
 elif [ "${MODE}" == "down" ]; then
   log "Shutting down test network  \"${NETWORK_NAME}\":"

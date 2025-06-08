@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { FabricService } from './fabric/fabric.service';
 import { VoteModule } from './modules/vote/vote.module';
 import { ResultModule } from './modules/result/result.module';
+import { SuperAdminService } from './fabric/superadmin.service';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { ResultModule } from './modules/result/result.module';
     ResultModule
   ],
   controllers: [AppController],
-  providers: [AppService, FabricService],
+  providers: [AppService, FabricService, SuperAdminService],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

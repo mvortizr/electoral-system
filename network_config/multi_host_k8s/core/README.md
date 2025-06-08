@@ -54,6 +54,8 @@ Launch the network, create a channel, and deploy the [basic-asset-transfer](../a
 
 ./network channel create ##crear canales
 
+./network superadmin create
+
 
 ```./network chaincode deploy channel1cc ../../../chaincode/ch1 1```###
 ```./network chaincode deploy channel2cc ../../../chaincode/ch2 2```###
@@ -110,6 +112,19 @@ Tear down the cluster (KIND):
 ```shell
 ./network unkind
 ```
+
+
+Ver logs cluster
+kind get clusters
+kubectl config use-context kind-voting-system-bchain-cluster
+
+list clusters
+kubectl get pods -A
+
+kubectl logs -f <pod-name> -n <namespace>
+
+kubectl logs -f channel3-api-6d5568c8c4-lc64r  -n voting-system-bchain-network
+
 
 <!-- For Rancher: Preferences -> Kubernetes Settings -> Reset Kubernetes  OR ...
 ```shell

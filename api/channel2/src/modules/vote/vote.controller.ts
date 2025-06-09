@@ -39,6 +39,9 @@ export class VoteController {
     const API_3_URL = process.env.API_3_URL!;
 
 
+    //TODO esta abierta la votacion? (a api 3)
+
+
     // Llamar api #1 y revisar que es valido
     const postDataToSend = {
       electorID: voteInfo.electorID,
@@ -47,7 +50,6 @@ export class VoteController {
     };
     
   
-    //HACER: este endpoint deberia no estar expuesto al publico
     const response = await this.voteService.postData(`${API_1_URL}/elector/validatePreVoteElector`,postDataToSend)
     
 

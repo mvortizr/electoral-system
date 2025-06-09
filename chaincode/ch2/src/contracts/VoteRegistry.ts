@@ -24,11 +24,22 @@ export class VoteRegistryContract extends Contract {
         positionExtID: string
     ): Promise<String> {
 
-        // Search for repeated keys
+        //TODO: change this logic, Search for repeated keys
         let previousVote = await didElectorVoteForPosition(electorIntID,positionIntID, ctx)
         if (previousVote === true) {
             return JSON.stringify({success: false, error:`elector ID ${electorExtID} already voted for position ${positionExtID}`});
         }
+
+        /// TODO: vote registry #2 (unico)
+        // lo busco, si no existe lo creo. Luego esto lo contamos el resultado.
+        // const newVoteRegistry = {
+        //     registryID: registryID,
+        //     electorID: electorIntID,
+        //     electorExternalID: electorExtID,
+        //     positionID: positionIntID,
+        //     positionExternalID: positionExtID,
+        //     voteRegistryType: voteRegistryType.VOTE_REGISTRY_UNIQUE,
+        // }
         
         
         const newVoteRegistry = {

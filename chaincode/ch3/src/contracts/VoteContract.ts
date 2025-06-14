@@ -3,7 +3,7 @@ import stringify from 'json-stringify-deterministic';
 //import { electoralRollType } from '../models/electoralRollType';
 //import { voteRegistryType } from '../models/voteRegistryType';
 
-@Info({title: 'Vote Registry Contract', description: 'Smart contract for registering which people already voted for a position'})
+@Info({title: 'Vote Registry Contract', description: 'Smart contract to record votes, partial and final tallies'})
 export class VoteContract extends Contract {
 
     //Adds voter registry

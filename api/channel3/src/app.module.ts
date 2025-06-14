@@ -7,6 +7,7 @@ import { FabricService } from './fabric/fabric.service';
 import { VoteModule } from './modules/vote/vote.module';
 import { ResultModule } from './modules/result/result.module';
 import { SuperAdminService } from './fabric/superadmin.service';
+import { LifecycleModule } from './modules/lifecycle/lifecycle.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { SuperAdminService } from './fabric/superadmin.service';
       isGlobal:true
     }),
     VoteModule,
-    ResultModule
+    ResultModule,
+    LifecycleModule
   ],
   controllers: [AppController],
   providers: [AppService, FabricService, SuperAdminService],

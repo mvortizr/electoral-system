@@ -16,7 +16,7 @@ export class SuperAdminService {
     mspID: string = process.env.MSP_ID!
     keyDirectory: string = ""
     certDirectory: string= ""
-    peerTlsCert: string = ""
+    peerTlsCert: string = process.env.PEER_TLS_CERT!
     peerEndpoint: string = process.env.PEER_ENDPOINT!
     peerHostAlias: string = process.env.PEER_HOST_ALIAS!
     utf8Decoder = new TextDecoder();
@@ -78,13 +78,18 @@ export class SuperAdminService {
         return { mspId: this.mspID, credentials };
     }
 
-    async submitTransaction(tlscert: string, keydir: string, certDir: string, chaincodeName: string, functionName: string, ...args: any[]): Promise<any> {
-        
-        this.peerTlsCert = tlscert;
+    async submitTransaction(keydir: string, certDir: string, chaincodeName: string, functionName: string, ...args: any[]): Promise<any> {
         this.certDirectory = certDir;
         this.keyDirectory = keydir;
         
+        console.log(`certDir:             ${this.certDirectory}`);
+        console.log(`keyDir:             ${this.keyDirectory}`);
+
+        console.log(`submit trans`);
         await this.connect();
+
+        console.log(`connected`);
+
         
         // Get the network (channel) our contract is deployed to.
         const network = await this.gateway!.getNetwork(this.channelName); 
@@ -99,8 +104,8 @@ export class SuperAdminService {
         return result;
     }
 
-    async evaluateTransaction(tlscert: string, keydir: string, certDir: string, chaincodeName: string, functionName: string, params?: any): Promise<any> {
-        this.peerTlsCert = tlscert;
+    async evaluateTransaction(keydir: string, certDir: string, chaincodeName: string, functionName: string, params?: any): Promise<any> {
+       
         this.certDirectory = certDir;
         this.keyDirectory = keydir;
         

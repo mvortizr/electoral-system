@@ -26,7 +26,7 @@
 # ## These scripts are similar to normal enroll
 # function register_org_admins() {
 #   push_fn "Registering org superadmins"
-#   register_org_admin org1 org1super1 org1superadmin1pw
+#   register_org_admin org1 org1super6 org1superadmin5pw
 
 #   pop_fn
 # }
@@ -34,7 +34,7 @@
 # function enroll_org_admins() {
 #   push_fn "Enrolling org Admin users"
 
-#   enroll_org_admin superadmin org1 org1super1 org1superadmin1pw
+#   enroll_org_admin superadmin org1 org1super6 org1superadmin5pw
  
 #   pop_fn
 # }

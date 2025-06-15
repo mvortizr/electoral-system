@@ -27,7 +27,13 @@ export class ResultController {
     this.fabricService.connect();
   }
 
-
-
+  @Get('/readAllAssets') /// DEBUG ONLY
+  @ApiOperation({ summary: '(DEBUG ONLY) Dumps every data inside the channel unordered' })
+  async readAllAssets( @Res() res: Response): Promise<object> {
+    const chaincode = process.env.CHAINCODE_NAME!.toString()
+    const functionName = "readEntireElectoralChannel"
+    const result = await this.fabricService.evaluateTransaction(chaincode, functionName)
+    return res.status(200).json({ statusCode: 200, result: result });
+  }
  
 }

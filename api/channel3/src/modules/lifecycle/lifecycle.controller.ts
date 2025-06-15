@@ -80,7 +80,7 @@ export class LifecycleController {
         statusCode: 200,
         message: 'Opening request made successfully',
         success: true,
-        data: finalResult,
+        ...finalResult
       });
     } catch (err) {
       return res.status(500).json({ success: false, message: err });

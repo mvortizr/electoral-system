@@ -59,12 +59,36 @@ export class ConfigController {
         startVotingDate: electionConfig.startVotingDate,
         endVotingDate: electionConfig.endVotingDate,
         liveResults: electionConfig.liveResults,
-        liveVotingTurnout: electionConfig.liveVotingTurnout
+        liveVotingTurnout: electionConfig.liveVotingTurnout,
+        minimum_approvals: electionConfig.minimum_approvals
       }) 
     ) 
 
       let parsedResults = new TextDecoder().decode(result);
       let finalResult  = JSON.parse(parsedResults);
+
+      if (finalResult.success) {
+          return res.status(201).json({ statusCode: 201, ...finalResult });
+      } else {
+          return res.status(400).json({ statusCode: 400, ...finalResult });
+      }
+  }
+
+  @Post('/getMinimumApproval')
+  @ApiOperation({ summary: 'get minimum approvals of election' })
+  async getMinimumApproval( @Res() res: Response): Promise<object> {
+    const chaincode = process.env.CHAINCODE_NAME!.toString()
+    const functionName = "ElectionConfigContract:getMinimunApprovals"
+
+    const result = await this.fabricService.submitTransaction(
+      chaincode,
+      functionName
+    ) 
+
+      let parsedResults = new TextDecoder().decode(result);
+      let finalResult  = JSON.parse(parsedResults);
+
+      console.log('final Result', finalResult)
 
       if (finalResult.success) {
           return res.status(201).json({ statusCode: 201, ...finalResult });

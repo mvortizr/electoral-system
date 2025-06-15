@@ -2,6 +2,7 @@ import {Context, Contract, Info, Returns, Transaction} from 'fabric-contract-api
 import stringify from 'json-stringify-deterministic';
 import { electoralRollType } from '../models/electoralRollType';
 import { isElectionConfigDuplicated } from '../validations/config/noDuplicatedConfig';
+import { bringElectionConfig } from '../validations/general/bringElectionConfig';
 
 @Info({title: 'Config contract', description: 'Smart contract for handling election configuration'})
 export class ElectionConfigContract extends Contract {
@@ -36,7 +37,8 @@ export class ElectionConfigContract extends Contract {
             "electoralRollType": electoralRollType.CONFIGCOUNTER,
             "positions": numPositions,
             "candidates": numCandidates,
-            "electors": numElectors
+            "electors": numElectors,
+            ...parsedElectionData
 
         }
         // we insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
@@ -49,5 +51,21 @@ export class ElectionConfigContract extends Contract {
     public testConnection(ctx: Context): string {
         return "{\"message\": \"Successfully Connected\"}"
     }
+
+    @Transaction()
+    @Returns('string')
+    public async getMinimunApprovals(ctx: Context): Promise<String> {
+
+        let electionConfig = await bringElectionConfig(ctx);
+        
+        if (electionConfig.length === 0) {
+            return JSON.stringify({success: false, error:`election config not set`});
+        } 
+        
+        
+        return JSON.stringify({success: true, minimum_approvals: electionConfig[0].minimum_approvals});
+    }
+
+
 
 }

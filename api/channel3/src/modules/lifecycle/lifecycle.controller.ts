@@ -19,7 +19,8 @@ import { SuperAdminService } from 'src/fabric/superadmin.service';
 export class LifecycleController {
   
   constructor(
-    private superAdminService: SuperAdminService
+    private superAdminService: SuperAdminService,
+    private lifecycleService: LifecycleService
   ) {
     
   }
@@ -48,25 +49,28 @@ export class LifecycleController {
       const keyPem = keyFile.buffer.toString('utf-8');
 
       //TODO: REPLACE
+      
 
       const chaincode = process.env.CHAINCODE_NAME!.toString()
       const functionName = "LifecycleContract:requestOpening"
 
-      console.log(`call done`);
-     
+      const response = await this.lifecycleService.getMinimumApprovals()
+      if (!response.success) {
+        return res.status(400).json({ statusCode: 400, ...response });
+      }
+      let minimum_approvals = response.minimum_approvals
 
       const resultBuffer = await this.superAdminService.submitTransaction(
         keyPem,
         certPem,
         chaincode,
         functionName,
-        ""
+        JSON.stringify(minimum_approvals)
       );
 
       const parsedResult = new TextDecoder().decode(resultBuffer);
       const finalResult = JSON.parse(parsedResult);
 
-      console.log('final result', finalResult);
 
       if (!finalResult.success) {
         return res.status(400).json({ statusCode: 400, ...finalResult });

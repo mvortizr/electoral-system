@@ -32,7 +32,7 @@ export class LifecycleController {
       { name: 'keyFile', maxCount: 1 },
     ])
   )
-  async handleVote(
+  async handleVotePhaseOpening(
     @UploadedFiles()
     files: { certFile?: Express.Multer.File[]; keyFile?: Express.Multer.File[] },
     @Res() res: Response,
@@ -48,8 +48,6 @@ export class LifecycleController {
       const certPem = certFile.buffer.toString('utf-8');
       const keyPem = keyFile.buffer.toString('utf-8');
 
-      //TODO: REPLACE
-      
 
       const chaincode = process.env.CHAINCODE_NAME!.toString()
       const functionName = "LifecycleContract:requestOpening"
@@ -84,6 +82,67 @@ export class LifecycleController {
       });
     } catch (err) {
       return res.status(500).json({ success: false, message: err });
+    }
+  }
+
+  @Post('/close')
+  @UseInterceptors(
+    FileFieldsInterceptor([
+      { name: 'certFile', maxCount: 1 },
+      { name: 'keyFile', maxCount: 1 },
+    ])
+  )
+  async handleVotePhaseClosing(
+    @UploadedFiles()
+    files: { certFile?: Express.Multer.File[]; keyFile?: Express.Multer.File[] },
+    @Res() res: Response,
+  ) {
+    try {
+      const certFile = files.certFile?.[0];
+      const keyFile = files.keyFile?.[0];
+
+      if (!certFile || !keyFile) {
+        return res.status(400).json({ success: false, message: 'Both certFile and keyFile are required.' });
+      }
+
+      const certPem = certFile.buffer.toString('utf-8');
+      const keyPem = keyFile.buffer.toString('utf-8');
+
+      console.log('post file')
+
+      const chaincode = process.env.CHAINCODE_NAME!.toString()
+      const functionName = "LifecycleContract:requestClosing"
+
+      const response = await this.lifecycleService.getMinimumApprovals()
+      if (!response.success) {
+        return res.status(400).json({ statusCode: 400, ...response });
+      }
+      let minimum_approvals = response.minimum_approvals
+
+      const resultBuffer = await this.superAdminService.submitTransaction(
+        keyPem,
+        certPem,
+        chaincode,
+        functionName,
+        JSON.stringify(minimum_approvals)
+      );
+
+      const parsedResult = new TextDecoder().decode(resultBuffer);
+      const finalResult = JSON.parse(parsedResult);
+
+
+      if (!finalResult.success) {
+        return res.status(400).json({ statusCode: 400, ...finalResult });
+      }
+
+      return res.status(200).json({
+        statusCode: 200,
+        message: 'Closing request made successfully',
+        success: true,
+        ...finalResult
+      });
+    } catch (err) {
+      return res.status(500).json({ success: false, message: "An error has ocurred" });
     }
   }
 

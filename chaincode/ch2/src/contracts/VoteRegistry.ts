@@ -11,7 +11,44 @@ export class VoteRegistryContract extends Contract {
     // Votante ID
     // Votante Posicion por la que voto 
 
+    
+    @Transaction()
+    @Returns('string') // To test counters of vote registry
+    public async dummyVoteRegister(ctx: Context, 
+        registryID: string, 
+        electorIntID: string,
+        electorExtID: string
+    ): Promise<String> {
+        
+        const newVoteRegistry = {
+            registryID: registryID,
+            electorID: electorIntID,
+            electorExternalID: electorExtID,
+            voteRegistryType: voteRegistryType.VOTE_REGISTRY_UNIQUE
+        }
+        await ctx.stub.putState(`${registryID}_unique`, Buffer.from(stringify(newVoteRegistry)));
 
+
+        const noise = {
+            registryID: registryID,
+            electorID: electorIntID,
+            electorExternalID: electorExtID,
+            voteRegistryType: voteRegistryType.VOTE_REGISTRY
+        }
+        await ctx.stub.putState(`${registryID}_noise1`, Buffer.from(stringify(noise)));
+        
+        const noise2 = {
+            registryID: registryID,
+            electorID: electorIntID,
+            electorExternalID: electorExtID,
+            voteRegistryType: voteRegistryType.VOTE_REGISTRY
+        }
+        await ctx.stub.putState(`${registryID}_noise2`, Buffer.from(stringify(noise2)));
+
+        // we insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
+        // await ctx.stub.putState(registryID, Buffer.from(stringify(newVoteRegistry)));
+        return JSON.stringify({success: true});
+    }
 
     //Adds voter registry
     @Transaction()
@@ -93,6 +130,78 @@ export class VoteRegistryContract extends Contract {
              bookmark: metadata.bookmark  // Return the bookmark for the next page
          });
      }
+
+     // precount participation
+     @Transaction()
+     @Returns('string')
+     public async makePrecount(ctx: Context, params: string): Promise<string> {
+        const iterator = await ctx.stub.getStateByRange('', '');
+        //const batchSize = 500;
+        const batchSize = 5;
+        let batchCount = 0;
+        let totalCount = 0;
+        let partialIndex = 1;
+        //let precount: any = {};
+        
+        while (true) {
+            const res = await iterator.next();
+            if (res.value && res.value.value.toString()) {
+                const record = JSON.parse(res.value.value.toString());
+
+                if (record.voteRegistryType === voteRegistryType.VOTE_REGISTRY_UNIQUE) {
+                    totalCount++;
+                    batchCount++;
+                }
+
+                if (batchCount === batchSize) {
+                    const partialKey = `precount_${partialIndex}`;
+                    await ctx.stub.putState(partialKey, Buffer.from(JSON.stringify({ count: batchCount })));
+                    partialIndex++;
+                    batchCount = 0;
+                }
+            }
+
+            if (res.done) {
+                break;
+            }
+        }
+
+        // Save remaining batch if any
+        if (batchCount > 0) {
+            const partialKey = `precount_${partialIndex}`;
+            await ctx.stub.putState(partialKey, Buffer.from(JSON.stringify({ count: batchCount })));
+        }
+
+        return JSON.stringify({ success: true, totalPartipants: totalCount });
+        
+     }
+
+    @Transaction()
+    @Returns('string')
+    public async finalCount(ctx: Context): Promise<string> {
+        const iterator = await ctx.stub.getStateByRange('', '');
+        let finalCount = 0;
+
+        while (true) {
+        const res = await iterator.next();
+            if (res.value && res.value.value.toString()) {
+                const key = res.value.key;
+                if (key.startsWith('precount_')) {
+                    const partial = JSON.parse(res.value.value.toString());
+                    finalCount += partial.count || 0;
+                }
+            }
+
+            if (res.done) {
+                break;
+            }
+        }
+
+        const result = { totalVotes: finalCount };
+        await ctx.stub.putState('final_participation_result', Buffer.from(JSON.stringify(result)));
+
+        return JSON.stringify({ success: true, totalVotes: finalCount });
+    }
     
 
 }

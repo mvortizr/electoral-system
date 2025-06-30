@@ -123,7 +123,7 @@ kubectl get pods -A
 
 kubectl logs -f <pod-name> -n <namespace>
 
-kubectl logs -f channel3-api-596db8d94b-nd4pg -n voting-system-bchain-network
+kubectl logs -f channel3-api-76cd555855-svt5h -n voting-system-bchain-network
 kubectl logs -f org1-peer3-85ddd8c989-4kz7t -n voting-system-bchain-network
 
 <!-- For Rancher: Preferences -> Kubernetes Settings -> Reset Kubernetes  OR ...

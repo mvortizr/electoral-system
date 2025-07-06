@@ -1,0 +1,182 @@
+# 1. Definición del Secret para las credenciales de CouchDB
+apiVersion: v1
+data:
+  password: bWljb250cmFzZW5hU2VndXJh # Contraseña "micontrasenaSegura" codificada en Base64
+  username: YWRtaW4= # Usuario "admin" codificada en Base64
+kind: Secret
+metadata:
+  name: couchdb-creds
+  namespace: default
+type: Opaque
+
+---
+# 2. Definición del PersistentVolumeClaim (PVC) para los datos de CouchDB
+apiVersion: v1
+kind: PersistentVolumeClaim # Solicitud de un volumen persistente
+metadata:
+  name: couchdb-data-pvc # Nombre de la solicitud de almacenamiento
+spec:
+  accessModes:
+    - ReadWriteOnce # El volumen puede ser montado como lectura/escritura por un único nodo.
+  resources:
+    requests:
+      storage: 1Gi # Solicitamos 1 Gigabyte de almacenamiento.
+
+---
+# 3. Definición del Deployment de CouchDB
+apiVersion: apps/v1
+kind: Deployment # Define un conjunto deseado de Pods idénticos
+metadata:
+  name: couchdb-deployment # Nombre del Deployment
+spec:
+  replicas: 1 # Queremos 1 copia (Pod) de CouchDB.
+  selector:
+    matchLabels:
+      app: my-couchdb # Esto coincide con los labels de los Pods que gestiona este Deployment
+  template:
+    metadata:
+      labels:
+        app: my-couchdb # Etiquetas para identificar los Pods de CouchDB
+    spec:
+      # Contexto de seguridad para asegurar los permisos de escritura en el volumen
+      securityContext:
+        fsGroup: 5984 # Asegura que el volumen tenga el ID de grupo de CouchDB (UID/GID por defecto de CouchDB)
+      containers:
+        - name: my-couchdb # Nombre del contenedor
+          image: couchdb:3.3.3 # Usando una versión estable de CouchDB
+          ports:
+            - containerPort: 5984 # El puerto en el que CouchDB escucha dentro del contenedor
+          env: # Variables de entorno para el contenedor
+            - name: COUCHDB_USER
+              valueFrom: # Obtener el valor de un Secret
+                secretKeyRef:
+                  name: couchdb-creds # Nombre del Secret
+                  key: username # La clave dentro del Secret (username)
+            - name: COUCHDB_PASSWORD
+              valueFrom: # Obtener el valor de un Secret
+                secretKeyRef:
+                  name: couchdb-creds
+                  key: password # La clave dentro del Secret (password)
+          volumeMounts: # Cómo montar el almacenamiento persistente
+            - name: couchdb-persistent-storage # Nombre de la definición del volumen (abajo)
+              mountPath: /opt/couchdb/data # Ruta dentro del contenedor donde CouchDB almacena sus datos
+      volumes: # Definición de los volúmenes para los Pods (debe estar al mismo nivel que 'containers')
+        - name: couchdb-persistent-storage
+          persistentVolumeClaim:
+            claimName: couchdb-data-pvc # Referencia a la solicitud de almacenamiento
+
+---
+# 4. Definición del Service de CouchDB (Ahora ClusterIP, expuesto por Ingress)
+apiVersion: v1
+kind: Service # Define cómo acceder a un conjunto de Pods
+metadata:
+  name: my-couchdb # Nombre del Service (este será el nombre de host para NestJS)
+spec:
+  selector:
+    app: my-couchdb # ¡¡¡CRÍTICO!!! Coincide con la etiqueta 'app' del Deployment de CouchDB.
+  ports:
+    - protocol: TCP
+      port: 5984 # El puerto del Service (accesible por otros Pods en el clúster)
+      targetPort: 5984 # El puerto del contenedor al que se redirige el tráfico
+  type: ClusterIP # De NodePort a ClusterIP para usar Ingress.
+
+---
+# 5. Definición del Deployment de la API de NestJS
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nestjs-api-deployment
+spec:
+  replicas: 1 # Una copia de tu API.
+  selector:
+    matchLabels:
+      app: nestjs-api
+  template:
+    metadata:
+      labels:
+        app: nestjs-api
+    spec:
+      containers:
+        - name: nestjs-api
+          # ¡IMPORTANTE! Aquí usamos la imagen de Docker que construirás.
+          # Asegúrate de que esta imagen esté disponible para tu clúster de Kubernetes.
+          image: nestjs-couchdb-api:latest
+          imagePullPolicy: Never # Asegura que Kubernetes no intente descargar la imagen de un registro externo
+          ports:
+            - containerPort: 3000 # El puerto que NestJS expone
+          env: # Variables de entorno para que NestJS se conecte a CouchDB
+            - name: COUCHDB_HOST
+              value: my-couchdb # ¡El nombre del Service de CouchDB dentro de Kubernetes!
+            - name: COUCHDB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: couchdb-creds
+                  key: username
+            - name: COUCHDB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: couchdb-creds
+                  key: password
+
+---
+# 6. Definición del Service de la API de NestJS (Ahora ClusterIP, expuesto por Ingress)
+apiVersion: v1
+kind: Service
+metadata:
+  name: nestjs-api-service # Nombre del Service de tu API
+spec:
+  selector:
+    app: nestjs-api # Coincide con los Pods de tu API
+  ports:
+    - protocol: TCP
+      port: 3000 # Puerto del Service
+      targetPort: 3000 # Puerto del contenedor
+  type: ClusterIP # De NodePort a ClusterIP para usar Ingress.
+
+---
+# 7. Definición del Ingress para CouchDB
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: couchdb-ingress
+  annotations:
+    # Esta anotación es crucial para que el Ingress Controller de Nginx reescriba la URL.
+    nginx.ingress.kubernetes.io/rewrite-target: /$2 # <--- ¡CAMBIO AQUÍ!
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx # Asegúrate de que este nombre coincida con el Ingress Controller desplegado
+  rules:
+    - host: localhost # Puedes usar localhost para acceso local
+      http:
+        paths:
+          - path: /couchdb(/|$)(.*) # <--- ¡CAMBIO AQUÍ! Regex más robusta.
+            pathType: ImplementationSpecific # Necesario para regex en path.
+            backend:
+              service:
+                name: my-couchdb # Nombre del Service de CouchDB
+                port:
+                  number: 5984 # Puerto del Service de CouchDB
+
+---
+# 8. Definición del Ingress para la API de NestJS
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nestjs-api-ingress
+  annotations:
+    # ¡¡¡CORRECCIÓN CLAVE AQUÍ!!!
+    nginx.ingress.kubernetes.io/rewrite-target: /$2 # <--- ¡CAMBIO AQUÍ!
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx # Asegúrate de que este nombre coincida con el Ingress Controller desplegado
+  rules:
+    - host: localhost # Puedes usar localhost para acceso local
+      http:
+        paths:
+          - path: /api(/|$)(.*) # <--- ¡CAMBIO AQUÍ! Regex más robusta.
+            pathType: ImplementationSpecific # Necesario para regex en path.
+            backend:
+              service:
+                name: nestjs-api-service # Nombre del Service de la API
+                port:
+                  number: 3000 # Puerto del Service de la API

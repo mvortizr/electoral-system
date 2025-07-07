@@ -1,7 +1,7 @@
 # 1. Definición del Secret para las credenciales de CouchDB
 apiVersion: v1
 data:
-  password: bWljb250cmFzZW5hU2VndXJh # Contraseña "micontrasenaSegura" codificada en Base64
+  password: Q205N0Fmdm5OSzUmdVk= # Contraseña "Cm97AfvnNK5&uY" codificada en Base64
   username: YWRtaW4= # Usuario "admin" codificada en Base64
 kind: Secret
 metadata:

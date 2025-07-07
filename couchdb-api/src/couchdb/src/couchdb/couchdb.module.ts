@@ -8,7 +8,7 @@ import * as nano from 'nano';
     {
       provide: 'COUCHDB_CONNECTION',
       useFactory: () =>
-        nano('http://admin:micontrasenaSegura@my-couchdb:5984'),
+        nano('http://admin:Cm97AfvnNK5&uY@my-couchdb:5984'),
     },
     CouchdbService,
   ],

@@ -10,7 +10,7 @@ services:
       - "5984:5984" # Mapea el puerto 5984 de tu máquina al 5984 del contenedor
     environment: # Variables de entorno para configurar CouchDB
       COUCHDB_USER: admin
-      COUCHDB_PASSWORD: micontrasenaSegura # ¡USA LA MISMA CONTRASEÑA QUE YA CONFIGURASTE!
+      COUCHDB_PASSWORD: Cm97AfvnNK5&uY # ¡USA LA MISMA CONTRASEÑA QUE YA CONFIGURASTE!
     volumes: # Definición de volúmenes para persistir datos
       - couchdb-data:/opt/couchdb/data # Almacena los datos de CouchDB fuera del contenedor
 
@@ -29,7 +29,7 @@ services:
       # Dentro de la red de Docker Compose, los servicios se ven por sus nombres.
       COUCHDB_HOST: my-couchdb
       COUCHDB_USER: admin
-      COUCHDB_PASSWORD: micontrasenaSegura # ¡LA MISMA CONTRASEÑA!
+      COUCHDB_PASSWORD: Cm97AfvnNK5&uY # ¡LA MISMA CONTRASEÑA!
 
 volumes:
   couchdb-data: # Definición del volumen persistente para CouchDB

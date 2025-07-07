@@ -30,11 +30,8 @@ export class VoteController {
   @ApiOperation({ summary: "Lets user vote for a candidate" })
   async setVote(@Body() vote: storeVoteDTO, @Res() res: Response): Promise<object> {
 
-    // #0 antes de enviar, revisar que datos esten correctos
-
-    // #1 llenar la urna
     const chaincode = process.env.CHAINCODE_NAME!.toString()
-    const functionName = "VoteContract:createVote"
+    const functionName = "VoteResultContract:createVote"
     const internalRegistryUID: string = uuidv4();
 
   
@@ -56,5 +53,63 @@ export class VoteController {
     return res.status(201).json({ statusCode: 201, message: 'vote saved correctly', success: true });
   
   }
+
+  @Get('/general_results')
+  @ApiOperation({ summary: 'Returns general voting results grouped by position' })
+  async getGeneralResults(@Res() res: Response): Promise<any> {
+    const chaincode = process.env.CHAINCODE_NAME!.toString();
+    const functionName = 'VoteResultContract:getFinalResult';
+  
+    try {
+      const resultBuffer = await this.fabricService.evaluateTransaction(chaincode, functionName);
+      const decoded = new TextDecoder().decode(resultBuffer);
+      const parsed = JSON.parse(decoded);
+  
+      if (!parsed.success) {
+        return res.status(404).json({ statusCode: 404, message: 'No results found.' });
+      }
+  
+      const rawResults = parsed.results;
+      const groupedResults: Record<string, any> = {};
+  
+      for (const key of Object.keys(rawResults)) {
+        const { info, totalVotes } = rawResults[key];
+  
+        const positionID = info.positionID;
+        const positionExtID = info.positionExtID ?? 'unknown';
+        const positionName = info.positionName ?? 'unknown';
+  
+        if (!groupedResults[positionID]) {
+          groupedResults[positionID] = {
+            positionID,
+            positionExtID,
+            positionName,
+            results: [],
+          };
+        }
+  
+        groupedResults[positionID].results.push({
+          Party: info.partyName ?? 'None',
+          Candidate: info.candidateFullName,
+          totalVotes,
+          partyID: info.partyID ?? 'None',
+          partyExtID: info.partyExtID ?? 'None',
+          candidateID: info.candidateID,
+          candidateExtID: info.candidateExtID,
+          postulationID: info.postulationID ?? 'None',
+          postulationExtID: info.postulationExtID ?? 'None',
+        });
+      }
+  
+      const finalOutput = Object.values(groupedResults);
+  
+      return res.status(200).json(finalOutput);
+  
+    } catch (error) {
+      console.error('Error retrieving results:', error);
+      return res.status(500).json({ statusCode: 500, message: 'Failed to get results'});
+    }
+  }
+  
  
 }

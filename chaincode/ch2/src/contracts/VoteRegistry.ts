@@ -197,10 +197,10 @@ export class VoteRegistryContract extends Contract {
             }
         }
 
-        const result = { totalVotes: finalCount };
+        const result = { totalParticipants: finalCount };
         await ctx.stub.putState('final_participation_result', Buffer.from(JSON.stringify(result)));
 
-        return JSON.stringify({ success: true, totalVotes: finalCount });
+        return JSON.stringify({ success: true, totalParticipants: finalCount });
     }
     
 

@@ -98,15 +98,12 @@ spec:
     spec:
       containers:
         - name: nestjs-api
-          # ¡IMPORTANTE! Aquí usamos la imagen de Docker que construirás.
-          # Asegúrate de que esta imagen esté disponible para tu clúster de Kubernetes.
-          image: nestjs-couchdb-api:latest
-          imagePullPolicy: Never # Asegura que Kubernetes no intente descargar la imagen de un registro externo
+          image: docker.io/marianangelic/live-count:1.0
           ports:
-            - containerPort: 3000 # El puerto que NestJS expone
-          env: # Variables de entorno para que NestJS se conecte a CouchDB
+            - containerPort: 3000
+          env:
             - name: COUCHDB_HOST
-              value: my-couchdb # ¡El nombre del Service de CouchDB dentro de Kubernetes!
+              value: my-couchdb
             - name: COUCHDB_USER
               valueFrom:
                 secretKeyRef:

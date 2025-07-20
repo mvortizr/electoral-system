@@ -1,0 +1,33 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  couchdb:
+    image: couchdb:latest
+    container_name: my-couchdb
+    restart: unless-stopped
+    ports:
+      - "5984:5984"
+    environment:
+      COUCHDB_USER: admin
+      COUCHDB_PASSWORD: Cm97AfvnNK5&uY
+    volumes:
+      - couchdb-data:/opt/couchdb/data
+
+  nestjs-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my-nestjs-api-compose
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - couchdb
+    environment:
+      COUCHDB_HOST: my-couchdb
+      COUCHDB_USER: admin
+      COUCHDB_PASSWORD: Cm97AfvnNK5&uY
+
+volumes:
+  couchdb-data:

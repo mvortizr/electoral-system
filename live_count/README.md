@@ -96,3 +96,9 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+
+
+
+docker build -t nestjs-couchdb-api:latest .
+kind load docker-image nestjs-couchdb-api:latest --name voting-system-bchain-cluster

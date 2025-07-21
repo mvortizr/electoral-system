@@ -4,7 +4,7 @@ const axios = require('axios');
 const { v4: uuidv4 } = require('uuid');
 const { faker } = require('@faker-js/faker');
 
-const API_3_ENDPOINT = "http://channel3-api.localho.st/vote/save"
+const API_3_ENDPOINT = "http://channel3-api.localho.st/vote/register"
 
 // --- Registry setup
 const positions = Array.from({ length: 10 }).map(() => ({
@@ -93,9 +93,13 @@ async function sendVote() {
   const { positionID, candidateFullName, partyName = null , multiplier } = payload;
 
   try {
-    await axios.post(API_3_ENDPOINT, payload);
+    await axios.post(API_3_ENDPOINT, payload, {
+      headers: {
+        auth: "10060b68-340b-4b8d-8844-c94a1afe3a04"
+      }
+    });
     console.log(`✅ Sent vote for ${payload.positionName} → ${candidateFullName}`);
-
+    
     // Update results tracking
     if (!voteResults.has(positionID)) voteResults.set(positionID, new Map());
 

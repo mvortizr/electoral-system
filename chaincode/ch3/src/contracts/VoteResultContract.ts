@@ -62,6 +62,10 @@ export class VoteResultContract extends Contract {
                                 postulationID: record.postulationID,
                                 partyID: record.partyID ?? 'None',
                                 partyName: record.partyName ?? 'None',
+                                partyExtID: record.partyExtID?? 'None',
+                                positionExtID: record.positionExtID,
+                                postulationExtID: record.postulationExtID,
+                                candidateExtID: record.candidateExtID,
                             },
                         };
                     }

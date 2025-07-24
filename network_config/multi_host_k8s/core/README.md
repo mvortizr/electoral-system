@@ -39,6 +39,9 @@ if port is occupied
 docker container ls
 docker rm -f <container-name>
 ```
+```shell
+./network unkind ##delete any previous config
+```
 
 Create a KIND cluster:  
 ```shell
@@ -60,7 +63,6 @@ Launch the network, create a channel, and deploy the [basic-asset-transfer](../a
 ```./network chaincode deploy channel1cc ../../../chaincode/ch1 1```###
 ```./network chaincode deploy channel2cc ../../../chaincode/ch2 2```###
 ```./network chaincode deploy channel3cc ../../../chaincode/ch3 3```###
-
 
 Invoke and query chaincode:
 ```shell

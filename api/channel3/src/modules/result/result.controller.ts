@@ -115,7 +115,7 @@ export class ResultController {
           candidateID: info.candidateID,
           candidateExtID: info.candidateExtID,
           postulationID: info.postulationID ?? 'None',
-          postulationExtID: info.postulationExtID ?? 'None',
+          postulationExtID: info.postulationExtID ?? 'None'
         });
       }
   

@@ -48,10 +48,6 @@ export class DTOElectionConfig {
     @IsNotEmpty()
     minimum_approvals!: number;
 
-    @ApiProperty({ description: 'enable live voting turnout display', type: Boolean })
-    @IsBoolean()
-    liveVotingTurnout!: boolean;
-
     constructor(
         parties: number,
         positions: number,
@@ -60,7 +56,6 @@ export class DTOElectionConfig {
         startVotingDate: string,
         endVotingDate: string,
         liveResults: boolean,
-        liveVotingTurnout: boolean,
         minimum_approvals: number
     ) {
         this.parties = parties;
@@ -70,7 +65,6 @@ export class DTOElectionConfig {
         this.startVotingDate = startVotingDate;
         this.endVotingDate = endVotingDate;
         this.liveResults = liveResults;
-        this.liveVotingTurnout = liveVotingTurnout;
         this.minimum_approvals = minimum_approvals;
     }
 }

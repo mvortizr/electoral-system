@@ -6,6 +6,8 @@ import { isExtElectorIDDuplicated } from '../validations/electors/noDuplicatedEx
 import { doesPositionExists } from '../validations/general/checkIfPositionExists';
 import { getElectorWithID } from '../utils/electors/getElectorWithID';
 import { getCandidateWithID } from '../utils/candidates/getCandidateWithID';
+import { getPositionWithExternalID } from '../validations/position/getPositionWithID';
+import { getPartyWithID } from '../validations/party/getPartyWithID';
 
 @Info({title: 'Electors contract', description: 'Smart contract for electors'})
 export class ElectorsContract extends Contract {
@@ -249,60 +251,85 @@ export class ElectorsContract extends Contract {
         candidateExtID: string
 
     ): Promise<String> {
-        /// check if elector exists
-        const electorArray = await getElectorWithID(electorExtID,ctx)
-        if (electorArray.length <= 0) {
-            return JSON.stringify({success: false, error: `elector with ID ${electorExtID} doesn't exists` });
-        } 
-
-        let electorIntID = electorArray[0].electorID
-        let multiplier = electorArray[0].multiplier
-
-        //check if candidate exists
-        const candidateArray = await getCandidateWithID(candidateExtID, ctx)
-        if (candidateArray.length <= 0) {
-            return JSON.stringify({success: false, error: `candidate with ID ${electorExtID} doesn't exists` });
-        }
-        let candidateIntID = electorArray[0].candidateIntID
-
-        //check if postulation exist
-        let postulations = electorArray[0].postulations
-        let currentPostulation = postulations.find(postulation => postulation.postulationID === postulacionExtID) || null;
-        if (currentPostulation === null) {
-            return JSON.stringify({success: false, error: `Postulation with ID ${postulacionExtID} doesn't exists` });
-        }
-        let postulacionIntID = currentPostulation.postulationID
-        //let postulacionExtID
-        let positionExtID = currentPostulation.positionExtID
-        let positionIntID = currentPostulation.positionIntID
-
-        //elector has permit to vote for that postulation
-        let elector = electorArray[0]
-        let positionsAllowedToVote = elector.positionsToVote
-        let position = positionsAllowedToVote.find(position => position.positionExtID == positionExtID )
-        if (position === null) {
-            return JSON.stringify({success: false, error: `Elector ID ${electorExtID} isn't allowed to vote for position ${positionExtID} ` });
-        }
-
-
-        //get the party of that postulation if it has one
-        let partyExtID = currentPostulation.partyExternalID
-        let partyIntID = currentPostulation.partyInternalID
-
-        return JSON.stringify({
-            success: true,
-            electorIntID: electorIntID,
-            postulacionIntID: postulacionIntID,
-            candidateIntID: candidateIntID,
-            positionExtID: positionExtID,
-            positionIntID: positionIntID,
-            multiplier: multiplier,
-            partyExtID: partyExtID,
-            partyIntID: partyIntID
-        });
-
         
+        try {
+            /// check if elector exists
+            const electorArray = await getElectorWithID(electorExtID,ctx)
+            if (electorArray.length <= 0) {
+                return JSON.stringify({success: false, error: `Elector with ID ${electorExtID} doesn't exists` });
+            } 
 
+            let electorIntID = electorArray[0].electorID
+            let multiplier = electorArray[0].multiplier
+
+            //check if candidate exists
+            const candidateArray = await getCandidateWithID(candidateExtID, ctx)
+            if (candidateArray.length <= 0) {
+                return JSON.stringify({success: false, error: `Candidate with ID ${electorExtID} doesn't exists` });
+            }
+            let candidateIntID = candidateArray[0].candidateID
+            let candidate = candidateArray[0]
+            let candidateFullName = `${candidate.candidateFirstName??""} ${candidate.candidateSecondName??""} ${candidate.candidateFirstLastName??""} ${candidate.candidateSecondLastName??""} `
+
+            //check if postulation exist
+            let postulations = candidateArray[0].postulations
+            let currentPostulation = postulations.find(postulation => postulation.postulationExternalID === postulacionExtID) || null;
+            if (currentPostulation == null) {
+                return JSON.stringify({success: false, error: `Postulation with ID ${postulacionExtID} doesn't exists` });
+            }
+            let postulacionIntID = currentPostulation.postulationID
+            let positionExtID = currentPostulation.positionExternalID
+            let positionIntID = currentPostulation.positionInternalID 
+
+            //get vacancies of position
+            const positionArray = await getPositionWithExternalID(positionExtID,ctx)
+            if (positionArray.length <= 0) {
+                return JSON.stringify({success: false, error: `Position with ID ${positionExtID} doesn't exists` });
+            }
+            let position = positionArray[0]
+            let vacancies = position.positionVacancies
+            let positionName = position.positionName
+
+
+            //elector has permission to vote for that postulation
+            let elector = electorArray[0]
+            let positionsAllowedToVote = elector.positionsToVote
+            let pos = positionsAllowedToVote.find(position => position == positionExtID )
+            if (pos == null) {
+                return JSON.stringify({success: false, error: `Elector ID ${electorExtID} isn't allowed to vote for position ${positionExtID} ` });
+            }
+
+            //get the party of that postulation if it has one
+            let partyExtID = currentPostulation.partyExternalID?? null
+            let partyIntID = currentPostulation.partyInternalID?? null
+
+            //get party name
+            const partyArray = await getPartyWithID(partyExtID, ctx)
+            if (partyArray.length <= 0) {
+                return JSON.stringify({success: false, error: `Party with ID ${partyExtID} doesn't exists` });
+            }
+            let partyName = partyArray[0].partyName
+
+
+            return JSON.stringify({
+                success: true,
+                electorIntID: electorIntID,
+                postulacionIntID: postulacionIntID,
+                candidateIntID: candidateIntID,
+                positionExtID: positionExtID,
+                positionIntID: positionIntID,
+                multiplier: multiplier,
+                partyExtID: partyExtID,
+                partyIntID: partyIntID,
+                positionVacancies: vacancies,
+                candidateFullName: candidateFullName,
+                positionName: positionName,
+                partyName: partyName
+            });
+        } catch (error: any) {
+            console.error("Error in checkVotingRequirements:", error);
+            return JSON.stringify({ success: false, error: error || "Unknown error" });
+        }
     }
 
    

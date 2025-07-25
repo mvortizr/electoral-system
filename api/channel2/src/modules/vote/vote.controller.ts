@@ -121,7 +121,7 @@ export class VoteController {
     //TODO esta abierta la votacion? (a api 3)
 
 
-    // Llamar api #1 y revisar que es valido
+    ////// Get information from channel 1
     const postDataToSend = {
       electorID: voteInfo.electorID,
       postulationID: voteInfo.postulationID,
@@ -140,8 +140,14 @@ export class VoteController {
     let positionExtID = response.positionExtID
     let positionIntID = response.positionIntID
     let multiplier = response.multiplier
+    let positionVacancies = response.positionVacancies
+    let candidateFullName = response.candidateFullName
+    let positionName = response.positionName
+    let partyName = response.partyName??null
 
-    ////////// Escribir en el cuaderno de votacion ////////////
+    console.log('LLegue a aqui')
+
+    ////////// Write in electoral book ////////////
     const result = await this.fabricService.submitTransaction(
       chaincode,
       functionName,
@@ -149,8 +155,11 @@ export class VoteController {
       electorIntID,
       voteInfo.electorID,   
       positionIntID,
-      positionExtID
+      positionExtID,
+      JSON.stringify(positionVacancies)
     )
+
+    console.log('LLegue a aqui x2')
 
     
     let parsedResults = new TextDecoder().decode(result);
@@ -160,7 +169,9 @@ export class VoteController {
       return res.status(400).json({ statusCode: 400, ...finalResult });
     } 
 
-    //////////// guardar el registro del voto (API #3 llamada) /////////
+    console.log('LLegue a aqui x3')
+
+    //////////// Save vote /////////
     const postDataToSendApi3 = {
       positionID: positionIntID,
       positionExtID: positionExtID,
@@ -170,10 +181,13 @@ export class VoteController {
       candidateExtID:voteInfo.candidateID,
       partyID: response.partyIntID,
       partyExtID: response.partyExtID,
-      multiplier: multiplier
+      multiplier: multiplier,
+      candidateFullName: candidateFullName,
+      positionName: positionName,
+      partyName:partyName
     };
 
-    //
+    console.log('LLegue a aqui x4')
     const responseStoreVote = await this.voteService.postData(`${API_3_URL}/vote/register`,postDataToSendApi3)
 
     if (!responseStoreVote.success) {

@@ -2,6 +2,7 @@ import {Context, Contract, Info, Returns, Transaction} from 'fabric-contract-api
 import stringify from 'json-stringify-deterministic';
 import { voteRegistryType } from '../models/voteRegistryType';
 import { didElectorVoteForPosition } from '../validations/registry/validateNoPreviousVotes';
+import { isElectorFirstTimeVoting } from '../validations/registry/validateFirstTimeVoting';
 
 @Info({title: 'Vote Registry Contract', description: 'Smart contract for registering which people already voted for a position'})
 export class VoteRegistryContract extends Contract {
@@ -58,27 +59,37 @@ export class VoteRegistryContract extends Contract {
         electorIntID: string,
         electorExtID: string,  
         positionIntID: string,
-        positionExtID: string
+        positionExtID: string,
+        vacancy: string
     ): Promise<String> {
 
-        //TODO: change this logic, Search for repeated keys
-        let previousVote = await didElectorVoteForPosition(electorIntID,positionIntID, ctx)
+        console.log('Here 1')
+       
+        let parsedVacancy: Number = JSON.parse(vacancy)
+        console.log('parsedVacancy', parsedVacancy)
+        
+        //Check if elector voted previously for position
+        let previousVote = await didElectorVoteForPosition(electorIntID,positionIntID, parsedVacancy, ctx)
         if (previousVote === true) {
-            return JSON.stringify({success: false, error:`elector ID ${electorExtID} already voted for position ${positionExtID}`});
+            return JSON.stringify({success: false, error:`elector ID ${electorExtID} already voted for position ${positionExtID} the maximum amount of allowed times`});
         }
 
-        /// TODO: vote registry #2 (unico)
-        // lo busco, si no existe lo creo. Luego esto lo contamos el resultado.
-        // const newVoteRegistry = {
-        //     registryID: registryID,
-        //     electorID: electorIntID,
-        //     electorExternalID: electorExtID,
-        //     positionID: positionIntID,
-        //     positionExternalID: positionExtID,
-        //     voteRegistryType: voteRegistryType.VOTE_REGISTRY_UNIQUE,
-        // }
-        
-        
+        console.log('Here 2')
+
+        /// Vote registry unique (unique per elector voting in an election)
+        let firstTimeVoting = isElectorFirstTimeVoting(electorIntID,ctx)
+        if (firstTimeVoting) {
+            const newVoteRegistryUnique = {
+                registryID: `${registryID}_unique`,
+                electorID: electorIntID,
+                electorExtID: electorExtID,
+                voteRegistryType: voteRegistryType.VOTE_REGISTRY_UNIQUE,
+            }
+            console.log('Here 3')
+            await ctx.stub.putState(`${registryID}_unique`, Buffer.from(stringify(newVoteRegistryUnique)));
+        }
+        console.log('Here 4')
+
         const newVoteRegistry = {
             registryID: registryID,
             electorID: electorIntID,

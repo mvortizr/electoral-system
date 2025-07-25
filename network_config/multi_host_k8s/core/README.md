@@ -64,6 +64,8 @@ Launch the network, create a channel, and deploy the [basic-asset-transfer](../a
 ```./network chaincode deploy channel2cc ../../../chaincode/ch2 2```###
 ```./network chaincode deploy channel3cc ../../../chaincode/ch3 3```###
 
+./network chaincode deploy channel2cc-6 ../../../chaincode/ch2 2
+
 Invoke and query chaincode:
 ```shell
 ./network chaincode query  channel1cc 1 '{"function":"readEntireElectoralChannel","Args":[]}'
@@ -125,7 +127,8 @@ kubectl get pods -A
 
 kubectl logs -f <pod-name> -n <namespace>
 
-kubectl logs -f channel3-api-76cd555855-svt5h -n voting-system-bchain-network
+kubectl logs -f channel2-api-5449fdf777-4rjps -n voting-system-bchain-network
+kubectl logs -f channel2-api-66fffdd59-jflbz -n voting-system-bchain-network
 kubectl logs -f org1-peer3-85ddd8c989-4kz7t -n voting-system-bchain-network
 
 <!-- For Rancher: Preferences -> Kubernetes Settings -> Reset Kubernetes  OR ...

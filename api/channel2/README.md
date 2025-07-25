@@ -55,7 +55,7 @@ docker build -t mvortizr/channel2_api:v1.13 .
 
 
 #pull from dockerhub
-docker pull docker.io/mvortizr/channel2_api:v1.4
+docker pull docker.io/mvortizr/channel2_api:v1.13
 
 # correr
 docker run -p 3000:3000 mvortizr/channel2_api:v1.1
@@ -63,7 +63,7 @@ docker run -p 3000:3000 mvortizr/channel2_api:v1.1
 
 # pushear a dockerhub
 docker login
-docker push mvortizr/channel2_api:v1.13
+docker push mvortizr/channel2_api:v1.18
 
 # Tener el IP de un docker
 docker inspect 2802b898fe0a9cce4a2df7cfcba8b2fd8511adb41235207645ddf316305c15c0 | grep IPAddress

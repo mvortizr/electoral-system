@@ -62,11 +62,8 @@ export class VoteRegistryContract extends Contract {
         positionExtID: string,
         vacancy: string
     ): Promise<String> {
-
-        console.log('Here 1')
        
         let parsedVacancy: Number = JSON.parse(vacancy)
-        console.log('parsedVacancy', parsedVacancy)
         
         //Check if elector voted previously for position
         let previousVote = await didElectorVoteForPosition(electorIntID,positionIntID, parsedVacancy, ctx)
@@ -74,10 +71,8 @@ export class VoteRegistryContract extends Contract {
             return JSON.stringify({success: false, error:`elector ID ${electorExtID} already voted for position ${positionExtID} the maximum amount of allowed times`});
         }
 
-        console.log('Here 2')
-
         /// Vote registry unique (unique per elector voting in an election)
-        let firstTimeVoting = isElectorFirstTimeVoting(electorIntID,ctx)
+        let firstTimeVoting = await isElectorFirstTimeVoting(electorIntID,ctx)
         if (firstTimeVoting) {
             const newVoteRegistryUnique = {
                 registryID: `${registryID}_unique`,
@@ -85,10 +80,8 @@ export class VoteRegistryContract extends Contract {
                 electorExtID: electorExtID,
                 voteRegistryType: voteRegistryType.VOTE_REGISTRY_UNIQUE,
             }
-            console.log('Here 3')
             await ctx.stub.putState(`${registryID}_unique`, Buffer.from(stringify(newVoteRegistryUnique)));
         }
-        console.log('Here 4')
 
         const newVoteRegistry = {
             registryID: registryID,

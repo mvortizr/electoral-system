@@ -145,7 +145,6 @@ export class VoteController {
     let positionName = response.positionName
     let partyName = response.partyName??null
 
-    console.log('LLegue a aqui')
 
     ////////// Write in electoral book ////////////
     const result = await this.fabricService.submitTransaction(
@@ -159,8 +158,6 @@ export class VoteController {
       JSON.stringify(positionVacancies)
     )
 
-    console.log('LLegue a aqui x2')
-
     
     let parsedResults = new TextDecoder().decode(result);
     let finalResult  = JSON.parse(parsedResults);
@@ -168,8 +165,6 @@ export class VoteController {
     if (!finalResult.success) {
       return res.status(400).json({ statusCode: 400, ...finalResult });
     } 
-
-    console.log('LLegue a aqui x3')
 
     //////////// Save vote /////////
     const postDataToSendApi3 = {
@@ -187,7 +182,6 @@ export class VoteController {
       partyName:partyName
     };
 
-    console.log('LLegue a aqui x4')
     const responseStoreVote = await this.voteService.postData(`${API_3_URL}/vote/register`,postDataToSendApi3)
 
     if (!responseStoreVote.success) {

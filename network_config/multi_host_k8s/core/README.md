@@ -39,6 +39,9 @@ if port is occupied
 docker container ls
 docker rm -f <container-name>
 ```
+```shell
+./network unkind ##delete any previous config
+```
 
 Create a KIND cluster:  
 ```shell
@@ -123,7 +126,8 @@ kubectl get pods -A
 
 kubectl logs -f <pod-name> -n <namespace>
 
-kubectl logs -f channel3-api-76cd555855-svt5h -n voting-system-bchain-network
+kubectl logs -f channel2-api-5449fdf777-4rjps -n voting-system-bchain-network
+kubectl logs -f channel2-api-66fffdd59-jflbz -n voting-system-bchain-network
 kubectl logs -f org1-peer3-85ddd8c989-4kz7t -n voting-system-bchain-network
 
 <!-- For Rancher: Preferences -> Kubernetes Settings -> Reset Kubernetes  OR ...

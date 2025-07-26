@@ -1,8 +1,11 @@
+import { electoralRollType } from "../../models/electoralRollType";
+
 export const getElectorWithID = async (electorExtID, ctx) => {
     
         const queryString = {
             selector: {
-                electorExternalID: electorExtID
+                electorExternalID: electorExtID,
+                electoralRollType: electoralRollType.ELECTOR
             }
         };
 

@@ -59,7 +59,6 @@ export class ConfigController {
         startVotingDate: electionConfig.startVotingDate,
         endVotingDate: electionConfig.endVotingDate,
         liveResults: electionConfig.liveResults,
-        liveVotingTurnout: electionConfig.liveVotingTurnout,
         minimum_approvals: electionConfig.minimum_approvals
       }) 
     ) 

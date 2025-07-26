@@ -64,6 +64,8 @@ export class CandidatesContract extends Contract {
             if (!position) {
                 return JSON.stringify({success: false, error:`Position ID ${post.positionExternalID} doesn't exists`});
             }
+            post.positionInternalID = position.positionID
+
             //check that party exists
             if (post.partyExternalID != null) {
                 let {partyExists, partyInternalID} = await getInternalPartyID(post.partyExternalID, ctx);

@@ -30,11 +30,8 @@ export class VoteController {
   @ApiOperation({ summary: "Lets user vote for a candidate" })
   async setVote(@Body() vote: storeVoteDTO, @Res() res: Response): Promise<object> {
 
-    // #0 antes de enviar, revisar que datos esten correctos
-
-    // #1 llenar la urna
     const chaincode = process.env.CHAINCODE_NAME!.toString()
-    const functionName = "VoteContract:createVote"
+    const functionName = "VoteResultContract:createVote"
     const internalRegistryUID: string = uuidv4();
 
   
@@ -56,5 +53,8 @@ export class VoteController {
     return res.status(201).json({ statusCode: 201, message: 'vote saved correctly', success: true });
   
   }
+
+ 
+  
  
 }

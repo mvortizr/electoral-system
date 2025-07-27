@@ -332,6 +332,94 @@ export class ElectorsContract extends Contract {
         }
     }
 
-   
+    @Transaction()
+    @Returns('string')
+    public async createImpugnatedElector(
+        ctx: Context, 
+        electorID: string, 
+        electorInfo: string
+    ): Promise<String> {
+
+        const role = ctx.clientIdentity.getAttributeValue('role');
+        const userID = ctx.clientIdentity.getID(); 
+        let data = JSON.parse(electorInfo)
+
+        //TODO check that election is open
+
+        //check User has to be a superadmin
+        if (role !== 'superadmin') {
+            return JSON.stringify({success: false, error:`User has to be superadmin to create an impugnated elector`});
+        }
+
+        //check there isnt another elector with the same ID
+        let doesExtIDElectorExists = await isExtElectorIDDuplicated(data, ctx)
+        if (doesExtIDElectorExists === true) {
+            return JSON.stringify({success: false, error:`elector ID ${data.electorExternalID} already exists`});
+        }
+
+        //check all the positions are valid
+        let positionsToVote = data.positionsToVote
+
+        for (const post of positionsToVote) {
+            let position = await doesPositionExists(post, ctx);
+            if (!position) {
+                return JSON.stringify({success: false, error:`Position ID ${post} doesn't exists`});
+            }
+        }
+
+        // introduce new impugnated elector
+        const newElector = {
+            electorID: electorID,
+            electoralRollType: electoralRollType.ELECTOR,
+            creationDate: new Date().toISOString(),
+            isElectorImpugnated: true,
+            approvedBySuperadmin: userID,
+            ...data
+        }
+        await ctx.stub.putState(electorID, Buffer.from(stringify(newElector)));
+
+        return JSON.stringify({
+            success: true
+        });
+    }
+
+
+    @Transaction()
+    @Returns('string')
+    public async queryImpugnatedElectorsWithPagination(ctx: Context, params: string): Promise<string> {
+        const { pageSize, bookmark } = JSON.parse(params);
+
+        
+        const queryString = {
+            selector: {
+                electoralRollType: electoralRollType.ELECTOR,
+                isElectorImpugnated: true
+            }
+        };
+
+        const { iterator, metadata } = await ctx.stub.getQueryResultWithPagination(JSON.stringify(queryString), pageSize, bookmark);
+
+        const electors: any[] = [];
+
+        let result = await iterator.next();
+
+        while (!result.done) {
+            const strValue = Buffer.from(result.value.value.toString()).toString('utf8');
+            let record;
+            try {
+                record = JSON.parse(strValue);
+            } catch (err) {
+                console.log(err);
+                record = strValue;
+            }
+            electors.push(record);
+            result = await iterator.next();
+        }
+
+        return JSON.stringify({
+            electors: electors,
+            bookmark: metadata.bookmark  // Return the bookmark for the next page
+        });
+    }
 
 }

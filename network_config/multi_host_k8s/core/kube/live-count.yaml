@@ -67,7 +67,7 @@ spec:
 ---
 # 4. Definición del Service de CouchDB (Ahora ClusterIP, expuesto por Ingress)
 apiVersion: v1
-kind: Service # Define cómo acceder a un conjunto de Pods
+kind: Service 
 metadata:
   name: my-couchdb # Nombre del Service (este será el nombre de host para NestJS)
 spec:
@@ -86,7 +86,7 @@ kind: Deployment
 metadata:
   name: nestjs-api-deployment
 spec:
-  replicas: 1 # Una copia de tu API.
+  replicas: 1 
   selector:
     matchLabels:
       app: nestjs-api
@@ -119,10 +119,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nestjs-api-service # Nombre del Service de tu API
+  name: nestjs-api-service 
 spec:
   selector:
-    app: nestjs-api # Coincide con los Pods de tu API
+    app: nestjs-api 
   ports:
     - protocol: TCP
       port: 3000 # Puerto del Service

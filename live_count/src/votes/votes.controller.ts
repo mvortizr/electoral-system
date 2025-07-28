@@ -46,7 +46,6 @@ export class VotesController {
       console.log("Verificación/creación del design document completada.");
     } catch (err) {
       console.error("Error durante la inicialización de la base de datos o el design document:", err.message);
-      // Aquí podrías lanzar una excepción para detener la aplicación si la DB es crítica
       throw err;
     }
   }

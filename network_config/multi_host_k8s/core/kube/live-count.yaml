@@ -6,7 +6,6 @@ data:
 kind: Secret
 metadata:
   name: couchdb-creds
-  namespace: default
 type: Opaque
 
 ---
@@ -131,49 +130,30 @@ spec:
   type: ClusterIP # De NodePort a ClusterIP para usar Ingress.
 
 ---
-# 7. Definición del Ingress para CouchDB
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: couchdb-ingress
+  name: live-count-ingress
   annotations:
-    # Esta anotación es crucial para que el Ingress Controller de Nginx reescriba la URL.
-    nginx.ingress.kubernetes.io/rewrite-target: /$2 # <--- ¡CAMBIO AQUÍ!
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
-  ingressClassName: nginx # Asegúrate de que este nombre coincida con el Ingress Controller desplegado
+  ingressClassName: nginx
   rules:
-    - host: localhost # Puedes usar localhost para acceso local
+    - host: livecount.${DOMAIN}
       http:
         paths:
-          - path: /couchdb(/|$)(.*) # <--- ¡CAMBIO AQUÍ! Regex más robusta.
-            pathType: ImplementationSpecific # Necesario para regex en path.
+          - path: /couchdb(/|$)(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
-                name: my-couchdb # Nombre del Service de CouchDB
+                name: my-couchdb
                 port:
-                  number: 5984 # Puerto del Service de CouchDB
-
----
-# 8. Definición del Ingress para la API de NestJS
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: nestjs-api-ingress
-  annotations:
-    # ¡¡¡CORRECCIÓN CLAVE AQUÍ!!!
-    nginx.ingress.kubernetes.io/rewrite-target: /$2 # <--- ¡CAMBIO AQUÍ!
-    nginx.ingress.kubernetes.io/use-regex: "true"
-spec:
-  ingressClassName: nginx # Asegúrate de que este nombre coincida con el Ingress Controller desplegado
-  rules:
-    - host: localhost # Puedes usar localhost para acceso local
-      http:
-        paths:
-          - path: /api(/|$)(.*) # <--- ¡CAMBIO AQUÍ! Regex más robusta.
-            pathType: ImplementationSpecific # Necesario para regex en path.
+                  number: 5984
+          - path: /api(/|$)(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
-                name: nestjs-api-service # Nombre del Service de la API
+                name: nestjs-api-service
                 port:
-                  number: 3000 # Puerto del Service de la API
+                  number: 3000

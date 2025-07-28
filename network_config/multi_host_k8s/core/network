@@ -198,6 +198,10 @@ elif [ "${MODE}" == "live_count" ]; then
   live_count
   log "🏁 - CouchDB service for live vote counting ready."
 
+elif [ "${MODE}" == "bring_down_live_count" ]; then
+  bring_down_live_count_stack
+  log "🏁 - CouchDB service for live vote counting is down."
+
 else
   print_help
   exit 1

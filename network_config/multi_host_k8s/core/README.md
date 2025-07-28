@@ -76,6 +76,12 @@ Invoke and query chaincode:
 ./network chaincode query  channel3cc 3 '{"function":"readEntireElectoralChannel","Args":[]}'
 ```
 
+Live count service
+```shell
+./network live_count
+```
+
+
 
 Access the blockchain with a [REST API](https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic/rest-api-typescript): 
 ```shell
@@ -111,10 +117,15 @@ Shut down the test network:
 ./network down 
 ```
 
+```shell
+./network bring_down_live_count
+````
+
 Tear down the cluster (KIND): 
 ```shell
 ./network unkind
 ```
+
 
 
 Ver logs cluster
@@ -126,9 +137,12 @@ kubectl get pods -A
 
 kubectl logs -f <pod-name> -n <namespace>
 
-kubectl logs -f channel2-api-5449fdf777-4rjps -n voting-system-bchain-network
-kubectl logs -f channel2-api-66fffdd59-jflbz -n voting-system-bchain-network
+kubectl logs -f nestjs-api-deployment-77895b9d64-zng7s
+kubectl logs -f channel3-api-58b57cb444-d2vgj -n voting-system-bchain-network
 kubectl logs -f org1-peer3-85ddd8c989-4kz7t -n voting-system-bchain-network
+
+kubectl -n voting-system-bchain-network delete ingress couchdb-ingress nestjs-api-ingress
+
 
 <!-- For Rancher: Preferences -> Kubernetes Settings -> Reset Kubernetes  OR ...
 ```shell

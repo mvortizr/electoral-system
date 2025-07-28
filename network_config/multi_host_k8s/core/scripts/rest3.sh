@@ -32,6 +32,10 @@ function   construct_rest_configmap_ch3() {
   printf "org1-peer3"> $CONFIG_DIR/PEER_HOST_ALIAS
   printf "channel3cc"> $CONFIG_DIR/CHAINCODE_NAME
   printf "http://channel1-api:80" > $CONFIG_DIR/API_1_URL
+  #printf "http://localhost:3000" > $CONFIG_DIR/LIVE_COUNT_URL
+  printf "http://nestjs-api-service:3000" > $CONFIG_DIR/LIVE_COUNT_URL
+
+
 
 
   cp $ENROLLMENT_DIR/org1/users/org1admin/msp/signcerts/cert.pem $CONFIG_DIR/CERT_DIRECTORY

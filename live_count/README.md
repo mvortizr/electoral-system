@@ -102,3 +102,5 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 
 docker build -t nestjs-couchdb-api:latest .
 kind load docker-image nestjs-couchdb-api:latest --name voting-system-bchain-cluster
+
+docker compose up --build

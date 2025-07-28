@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class VoteService {
-    async postData(url: string, data: any): Promise<any> {
+    async postVoteOnLiveCount(url: string, data: any): Promise<{ status: number; body: any }> {
         try {
             console.error(`URL ${url}`);
             
@@ -28,7 +28,14 @@ export class VoteService {
             }
 
             // Parse and return the response JSON for successful responses
-            return await response.json();
+            const responseBody = await response.json();
+
+            // Always return status and body
+            return {
+                status: response.status,
+                body: responseBody,
+            };
+
         } catch (error) {
             console.error(`Error posting data: ${url}`, error);
             console.error(`URL ${url}`);

@@ -57,8 +57,7 @@ export class VoteController {
     // save on live counting cache
     //let dataToSend = JSON.stringify({...vote}) 
     let dataToSend = { multiplier: vote.multiplier, positionID: vote.positionID, candidateID: vote.candidateID, partyID: vote.partyID }
-    //before was /api/votes
-    const liveCountResponse = await this.voteService.postData(`${LIVE_COUNT_URL}/votes`,dataToSend)
+    const liveCountResponse = await this.voteService.postVoteOnLiveCount(`${LIVE_COUNT_URL}/votes`,dataToSend)
 
     if (liveCountResponse.status !== 200 && liveCountResponse.status !== 201) {
       console.warn('Live count service responded with unexpected status', liveCountResponse.status);

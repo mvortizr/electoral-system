@@ -1,0 +1,4217 @@
+[
+  {
+    "candidateID": "e78bbe45-9be1-4b2a-8b4b-ab26d8f9a8e4",
+    "candidateFirstName": "Denis",
+    "candidateSecondName": "Parker",
+    "candidateFirstLastName": "Shanahan",
+    "candidateSecondLastName": "Bernhard",
+    "postulations": [
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "3a985397-43e9-4cfb-a896-0b0f4cb59f83"
+      },
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "ff2f40cd-13d5-407b-9df4-e820d6b0d319"
+      },
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "da35bfe2-d766-44a2-9c12-f5965668358e"
+      },
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "ff165f5d-13c2-4a58-81cf-7f083b5fe5a9"
+      }
+    ]
+  },
+  {
+    "candidateID": "fba24179-9b42-41e4-a59b-e9c3f15dd6f5",
+    "candidateFirstName": "Lorenza",
+    "candidateSecondName": "Noah",
+    "candidateFirstLastName": "Weber",
+    "candidateSecondLastName": "Heaney",
+    "postulations": [
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "1bb158e0-e7d3-4e0b-889b-6b62a0c2b96e"
+      },
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "67ee5ffb-380c-4857-a42f-191de854e518"
+      },
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "6d9b89e4-42e6-42a1-b0d3-4b72dc958cb5"
+      }
+    ]
+  },
+  {
+    "candidateID": "b08953be-5638-4a0e-973e-05f451a46430",
+    "candidateFirstName": "Johanna",
+    "candidateSecondName": "Sage",
+    "candidateFirstLastName": "Kulas",
+    "candidateSecondLastName": "Green",
+    "postulations": [
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "aeef018b-022a-4786-b452-fa38968cb13d"
+      },
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "b8c10508-b490-4ed9-9fe2-7e45c7505f0a"
+      },
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "f50000ba-3ead-4505-832c-befa6ac60027"
+      },
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "d7e90c4b-6c5b-4899-89a0-99340b01b0f1"
+      }
+    ]
+  },
+  {
+    "candidateID": "78e17bbd-27e7-4153-853f-d5c29af0920f",
+    "candidateFirstName": "Charles",
+    "candidateSecondName": "Skyler",
+    "candidateFirstLastName": "Dickinson",
+    "candidateSecondLastName": "Schmidt",
+    "postulations": [
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "aa8d170e-9599-46ac-b4b8-5edc42a4cbd7"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "3162011d-a098-45eb-8778-d070b0810abb"
+      },
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "5d236968-1ce9-404b-ae4e-cb1688b96697"
+      },
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "c00ec32c-0daa-44fa-b4b6-9e72b22b1166"
+      }
+    ]
+  },
+  {
+    "candidateID": "73c852ec-f2c7-4a6e-9b08-e284738d3026",
+    "candidateFirstName": "Cameron",
+    "candidateSecondName": "Leslie",
+    "candidateFirstLastName": "Goyette",
+    "candidateSecondLastName": "Grimes",
+    "postulations": [
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "a3668cc8-5d75-4cdf-9973-cedbcb30c17e"
+      }
+    ]
+  },
+  {
+    "candidateID": "d9d0647b-b0b8-4091-8e78-9b09e79197b6",
+    "candidateFirstName": "Cornell",
+    "candidateSecondName": "Logan",
+    "candidateFirstLastName": "Schneider",
+    "candidateSecondLastName": "Boehm",
+    "postulations": [
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "caa7ce38-b1e2-4cb6-a137-ecb0eeada106"
+      },
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "a88d2eef-562e-4317-82b6-143b830b2032"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "2e5ecc4d-4751-4918-93d0-ec75dc6e77ff"
+      }
+    ]
+  },
+  {
+    "candidateID": "0c351dfc-73bf-4bb5-8e9c-b6fbf030878e",
+    "candidateFirstName": "Thalia",
+    "candidateSecondName": "Marlowe",
+    "candidateFirstLastName": "Orn",
+    "candidateSecondLastName": "Dach",
+    "postulations": [
+      {
+        "partyID": "fc0704f8-85f1-486f-b124-c1aac6959c81",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "fbf31e77-a88f-4a45-9d29-1336e2181793"
+      }
+    ]
+  },
+  {
+    "candidateID": "e259e503-cd03-4bce-af20-b6d87f9aee55",
+    "candidateFirstName": "Jayme",
+    "candidateSecondName": "Bailey",
+    "candidateFirstLastName": "Lebsack",
+    "candidateSecondLastName": "Homenick",
+    "postulations": [
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "94a2e033-d640-4da1-9606-e305119b757a"
+      },
+      {
+        "partyID": "fc0704f8-85f1-486f-b124-c1aac6959c81",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "fd9c2107-709d-4f05-9c72-ccfd17ccc5fc"
+      },
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "f40d69a3-c4a6-4b90-875a-32a500613712"
+      }
+    ]
+  },
+  {
+    "candidateID": "13543d14-dc55-473f-8022-dedb7a86c06e",
+    "candidateFirstName": "Greta",
+    "candidateSecondName": "Kennedy",
+    "candidateFirstLastName": "DuBuque",
+    "candidateSecondLastName": "Ritchie",
+    "postulations": [
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "78742f37-90a7-44fa-8a0e-1263f35af491"
+      },
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "8482466f-b095-444c-a4b0-ed2ffe377a9b"
+      },
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "fc73d767-1d0e-424f-ab1b-543383232977"
+      },
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "22664edd-c74c-4981-89d8-6502ce614b12"
+      }
+    ]
+  },
+  {
+    "candidateID": "8a687e8d-3cf1-4ca3-a74c-334874e336a9",
+    "candidateFirstName": "Harley",
+    "candidateSecondName": "Micah",
+    "candidateFirstLastName": "Lindgren",
+    "candidateSecondLastName": "Krajcik",
+    "postulations": [
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "4335c6ae-c23b-4854-8823-ebe5c25ce7c9"
+      },
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "a8fbb9a6-4a23-49fc-9bea-6fac761ed5eb"
+      }
+    ]
+  },
+  {
+    "candidateID": "c7cc4e0e-266d-40ea-97d1-0346807add56",
+    "candidateFirstName": "Gordon",
+    "candidateSecondName": "Sasha",
+    "candidateFirstLastName": "Blanda",
+    "candidateSecondLastName": "O'Reilly",
+    "postulations": [
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "a5be020c-8827-4a2a-9abc-69baf0ef0107"
+      },
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "323d7b95-fa0b-464a-9afd-290b97e24607"
+      },
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "881c5d62-8449-43e9-a26d-a96432b32620"
+      }
+    ]
+  },
+  {
+    "candidateID": "b7575a5f-4950-47dd-b5f7-675f77e5809f",
+    "candidateFirstName": "Vince",
+    "candidateSecondName": "Finley",
+    "candidateFirstLastName": "Gulgowski",
+    "candidateSecondLastName": "Kuhn",
+    "postulations": [
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "6c252b41-bbb4-475c-ae19-fab2458213d5"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "9713a7ab-4f7c-4dba-a41c-6528be94dce6"
+      },
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "cbc94c17-d1f4-4060-857e-c3ebea7f535a"
+      }
+    ]
+  },
+  {
+    "candidateID": "620275ee-f028-4e80-8d49-941f4821b75d",
+    "candidateFirstName": "Dolly",
+    "candidateSecondName": "Avery",
+    "candidateFirstLastName": "Kassulke",
+    "candidateSecondLastName": "Goodwin",
+    "postulations": [
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "e6a97c13-2ed5-4f29-9487-d80dc95cf214"
+      },
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "15aaf66d-a069-431d-bcab-632402f2ed6e"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "dc20cf9f-4ec3-42a7-910d-d4df3f3af00a"
+      },
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "166f272a-36a1-4c9b-ab33-c1f40214618c"
+      }
+    ]
+  },
+  {
+    "candidateID": "ce918491-c05b-4e8b-a08b-fcccf49f4909",
+    "candidateFirstName": "Ines",
+    "candidateSecondName": "Jamie",
+    "candidateFirstLastName": "Ruecker",
+    "candidateSecondLastName": "Wunsch",
+    "postulations": [
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "d32bf5d1-d604-4f64-a3e0-673f9334a1a2"
+      }
+    ]
+  },
+  {
+    "candidateID": "a50519da-c23a-4ed8-ab67-07bed5eb742a",
+    "candidateFirstName": "Breana",
+    "candidateSecondName": "Sasha",
+    "candidateFirstLastName": "Shanahan-Littel",
+    "candidateSecondLastName": "Ryan",
+    "postulations": [
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "4bf561c3-1512-4084-9d36-0cfddfb8efd6"
+      }
+    ]
+  },
+  {
+    "candidateID": "7d07b099-9bb4-4259-a0fb-d9916fc37343",
+    "candidateFirstName": "Violette",
+    "candidateSecondName": "North",
+    "candidateFirstLastName": "Kuhlman",
+    "candidateSecondLastName": "Raynor",
+    "postulations": [
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "a0043627-7ee8-4e4e-9320-f2066b7fde49"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "a68d4e94-9657-4d9d-8fef-09bed7f6a4e1"
+      },
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "51294643-1e46-4443-aef5-6dfe3532115a"
+      }
+    ]
+  },
+  {
+    "candidateID": "ce702cb2-d198-497d-af27-53b7f1d4d979",
+    "candidateFirstName": "Kurtis",
+    "candidateSecondName": "Rory",
+    "candidateFirstLastName": "Rowe",
+    "candidateSecondLastName": "Roob",
+    "postulations": [
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "8cf9284a-4417-4800-9a18-c57124d5ed90"
+      }
+    ]
+  },
+  {
+    "candidateID": "3feedde1-0c2c-4726-a532-15b7ce2b94ec",
+    "candidateFirstName": "Rubye",
+    "candidateSecondName": "Phoenix",
+    "candidateFirstLastName": "Cronin",
+    "candidateSecondLastName": "Greenholt",
+    "postulations": [
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "cd3ebf48-f8c0-44e8-80ba-98c0d5f2003c"
+      }
+    ]
+  },
+  {
+    "candidateID": "e035105b-dab4-4b5d-8926-166879cc4c96",
+    "candidateFirstName": "Johanna",
+    "candidateSecondName": "Kendall",
+    "candidateFirstLastName": "Kertzmann",
+    "candidateSecondLastName": "Emmerich",
+    "postulations": [
+      {
+        "partyID": "fc0704f8-85f1-486f-b124-c1aac6959c81",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "b2e6ff13-8ff4-4146-81a3-5341b1965132"
+      }
+    ]
+  },
+  {
+    "candidateID": "64adccbf-22a4-487f-adc3-38681b6f73db",
+    "candidateFirstName": "Forest",
+    "candidateSecondName": "Taylor",
+    "candidateFirstLastName": "Kuphal",
+    "candidateSecondLastName": "Haag",
+    "postulations": [
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "ba8d5783-4d22-43f0-b9a2-62289c0729ef"
+      }
+    ]
+  },
+  {
+    "candidateID": "f0da877e-26af-4d08-977f-bf42da5dc3e4",
+    "candidateFirstName": "Lyda",
+    "candidateSecondName": "Arden",
+    "candidateFirstLastName": "Harvey-Hodkiewicz",
+    "candidateSecondLastName": "Wuckert",
+    "postulations": [
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "ed079897-706b-47d4-9197-f619c06f6347"
+      }
+    ]
+  },
+  {
+    "candidateID": "3eb9dbad-57e6-4cab-961f-be9080de176b",
+    "candidateFirstName": "Vivian",
+    "candidateSecondName": "Jules",
+    "candidateFirstLastName": "Reynolds",
+    "candidateSecondLastName": "Prosacco",
+    "postulations": [
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "9384c097-8630-4c68-bdfc-a37abad01713"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "df2dca14-9126-4cb1-b0bb-9123079558b3"
+      }
+    ]
+  },
+  {
+    "candidateID": "3cf12a62-c514-47fa-9f57-1317c8afc0fa",
+    "candidateFirstName": "Christiana",
+    "candidateSecondName": "Kendall",
+    "candidateFirstLastName": "Farrell",
+    "candidateSecondLastName": "Ziemann",
+    "postulations": [
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "719a0bc4-02da-4b29-9895-e215b524a653"
+      }
+    ]
+  },
+  {
+    "candidateID": "5c18e186-68ba-4f6c-a84f-ecc8cdaed2f8",
+    "candidateFirstName": "Jayne",
+    "candidateSecondName": "Kennedy",
+    "candidateFirstLastName": "Douglas",
+    "candidateSecondLastName": "Zulauf",
+    "postulations": [
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "d1062f5c-1222-4c81-8d10-21e9d165dbbd"
+      }
+    ]
+  },
+  {
+    "candidateID": "fabfdd04-fc71-4135-a3ed-73d770891024",
+    "candidateFirstName": "Viva",
+    "candidateSecondName": "Ellis",
+    "candidateFirstLastName": "Lubowitz",
+    "candidateSecondLastName": "Ratke",
+    "postulations": [
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "3f769225-1be4-4232-b6b2-7288540d23af"
+      },
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "fc5013a3-a2eb-414c-9262-ccafc75a02f7"
+      },
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "5aa5aa58-56df-49f8-8459-83a319517b6c"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "54586ddf-5658-474e-ae7c-a008430790c1"
+      }
+    ]
+  },
+  {
+    "candidateID": "92d314d3-32e1-4ddb-a1de-23ff7a02ad81",
+    "candidateFirstName": "Ricardo",
+    "candidateSecondName": "Addison",
+    "candidateFirstLastName": "Pouros",
+    "candidateSecondLastName": "Flatley",
+    "postulations": [
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "b8019282-20de-47e3-95d2-09e7f60358fb"
+      }
+    ]
+  },
+  {
+    "candidateID": "cbc1ea6b-5976-4d89-a334-cc021fa3d2da",
+    "candidateFirstName": "Earnest",
+    "candidateSecondName": "Quinn",
+    "candidateFirstLastName": "Abernathy",
+    "candidateSecondLastName": "Lesch",
+    "postulations": [
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "815ffa6d-82e4-4ff9-9386-734d0b799bb6"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "17e3bf7e-6d5f-4029-ba5c-db37da3b197d"
+      }
+    ]
+  },
+  {
+    "candidateID": "e58d6311-900e-4565-8d32-9fe6ad8f1191",
+    "candidateFirstName": "Micheal",
+    "candidateSecondName": "Blake",
+    "candidateFirstLastName": "Ledner",
+    "candidateSecondLastName": "Heller",
+    "postulations": [
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "64ea1d10-a5d1-4012-bb46-7c8c1ef73187"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "3d860358-dbb7-419e-9234-7544fa3707f3"
+      },
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "83b663d4-40b3-4c89-a84e-19c0e0251d2c"
+      },
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "22627044-5d8b-475b-8a95-268491c44296"
+      }
+    ]
+  },
+  {
+    "candidateID": "647a59c6-85fb-4145-b8ea-6b005187c54e",
+    "candidateFirstName": "Libbie",
+    "candidateSecondName": "Corey",
+    "candidateFirstLastName": "Glover",
+    "candidateSecondLastName": "Mohr",
+    "postulations": [
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "af400686-f0d0-44aa-bb4e-bde19d3c0ae8"
+      },
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "61562085-d9eb-460f-892a-1f98454ffa88"
+      },
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "d2e6b392-cb18-4393-b371-cd2105904629"
+      }
+    ]
+  },
+  {
+    "candidateID": "5fdd1511-c709-4fb7-9fc0-3aa8e9847798",
+    "candidateFirstName": "Larry",
+    "candidateSecondName": "Skyler",
+    "candidateFirstLastName": "Weissnat",
+    "candidateSecondLastName": "Kirlin",
+    "postulations": [
+      {
+        "partyID": "fc0704f8-85f1-486f-b124-c1aac6959c81",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "22431b48-e41b-4863-8dbe-1825071dcbf6"
+      },
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "902baaba-42c6-434a-88df-dfcee1b3cedd"
+      },
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "f555900d-c083-4c9f-ab4e-f11e1f44d2da"
+      },
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "f376df95-772a-4e6d-a288-ebd03ddf0df9"
+      }
+    ]
+  },
+  {
+    "candidateID": "3db0a122-492a-4f37-aa24-706ccc14a964",
+    "candidateFirstName": "Ignatius",
+    "candidateSecondName": "Blake",
+    "candidateFirstLastName": "Greenholt",
+    "candidateSecondLastName": "Barton",
+    "postulations": [
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "56bb3b0b-238e-4397-8b34-178b51e9db6a"
+      },
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "e0a29020-dec3-481e-be28-d2a59af0a92b"
+      },
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "a558ce11-588f-4213-b838-97f071f41d3d"
+      },
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "e10bf109-afd5-409c-adbb-2d5b41e98677"
+      }
+    ]
+  },
+  {
+    "candidateID": "9b39c4c1-0140-4308-a64e-a0df8a66b411",
+    "candidateFirstName": "Gillian",
+    "candidateSecondName": "Drew",
+    "candidateFirstLastName": "Tromp",
+    "candidateSecondLastName": "Dach",
+    "postulations": [
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "da442886-07b0-4d99-af2d-7563e54678a8"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "9b5d1673-453c-49d0-999a-ef2929da8a23"
+      }
+    ]
+  },
+  {
+    "candidateID": "3a612d6f-d4cb-47c6-860e-6c7f3ceb4c7e",
+    "candidateFirstName": "Willie",
+    "candidateSecondName": "Kendall",
+    "candidateFirstLastName": "Borer",
+    "candidateSecondLastName": "Stokes",
+    "postulations": [
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "23919b0d-805c-43c6-a88b-6f640ba27551"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "cfc9b5e9-854d-4b70-a1fa-7e9c442e9ba0"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "0b853633-5035-4bf8-896d-dc961eb78c21"
+      }
+    ]
+  },
+  {
+    "candidateID": "46509166-0603-49d9-a65c-ab197343e997",
+    "candidateFirstName": "Chyna",
+    "candidateSecondName": "Leslie",
+    "candidateFirstLastName": "Wunsch",
+    "candidateSecondLastName": "Greenfelder",
+    "postulations": [
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "7ca20386-ee28-4fa2-a629-7b08f9fca22f"
+      },
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "0688765b-0a7a-444e-9a81-3e6fd975d0b5"
+      },
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "48679ae4-be7c-4175-96d8-4fabd4c661ee"
+      }
+    ]
+  },
+  {
+    "candidateID": "155a9920-84f4-400c-b80c-5de4d6d127a9",
+    "candidateFirstName": "Betty",
+    "candidateSecondName": "Rowan",
+    "candidateFirstLastName": "Schultz",
+    "candidateSecondLastName": "Ankunding",
+    "postulations": [
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "4f5df324-735d-42df-8212-6a22a3ae85ef"
+      },
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "5c4ea90d-1533-40cb-9bc2-918d5a55abaf"
+      },
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "d49ceee9-89de-4356-b3ec-a3f74694a29b"
+      }
+    ]
+  },
+  {
+    "candidateID": "667681e8-5772-4c68-88b6-06836e913d5f",
+    "candidateFirstName": "Katheryn",
+    "candidateSecondName": "Addison",
+    "candidateFirstLastName": "O'Conner-Barton",
+    "candidateSecondLastName": "Hickle",
+    "postulations": [
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "e1c195a3-a016-47bb-b08a-56d44852e227"
+      }
+    ]
+  },
+  {
+    "candidateID": "ce6feb9b-61e2-422d-9ceb-3609e0d28736",
+    "candidateFirstName": "Hobart",
+    "candidateSecondName": "Shiloh",
+    "candidateFirstLastName": "Schultz",
+    "candidateSecondLastName": "Howe",
+    "postulations": [
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "9ac8fad1-8a81-4c48-8443-a17a4fdf1e05"
+      }
+    ]
+  },
+  {
+    "candidateID": "a7bc06c3-f9e2-4599-a7ba-4cef99fd4a5b",
+    "candidateFirstName": "Colleen",
+    "candidateSecondName": "Avery",
+    "candidateFirstLastName": "Deckow",
+    "candidateSecondLastName": "Ferry",
+    "postulations": [
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "b6ff538a-8c7d-439f-90e0-e1ca23fccbdb"
+      },
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "7a1ee22f-dd26-4bb4-a8e2-a59d4449adb4"
+      },
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "57375516-33e4-4b10-a5a1-133961428aa6"
+      }
+    ]
+  },
+  {
+    "candidateID": "55d49600-1cfe-4e31-b8c8-439671aab068",
+    "candidateFirstName": "Elias",
+    "candidateSecondName": "London",
+    "candidateFirstLastName": "Breitenberg",
+    "candidateSecondLastName": "Hessel",
+    "postulations": [
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "c588f4f7-5c86-4004-8857-d0f280c47569"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "52a96597-57b5-47f8-a240-d00033693491"
+      },
+      {
+        "partyID": "86423ab6-ea82-4961-af30-991e1bbea890",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "2bb77842-8e81-4dbe-8da2-6a01bbd5b099"
+      },
+      {
+        "partyID": "fc0704f8-85f1-486f-b124-c1aac6959c81",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "bee9b16f-0259-4c10-83ab-a29707f104db"
+      }
+    ]
+  },
+  {
+    "candidateID": "7d7ce638-570e-42ce-9c08-978dd26c01f6",
+    "candidateFirstName": "Clotilde",
+    "candidateSecondName": "Micah",
+    "candidateFirstLastName": "Hansen",
+    "candidateSecondLastName": "Koepp",
+    "postulations": [
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "62da10d3-3af5-460c-a7fa-fb2b81d93628"
+      },
+      {
+        "partyID": "fc0704f8-85f1-486f-b124-c1aac6959c81",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "151ac99f-aba3-4f18-baf7-88e63398b3f4"
+      }
+    ]
+  },
+  {
+    "candidateID": "82d40660-f522-4a6d-8c8c-5a573e12df2b",
+    "candidateFirstName": "Rosalyn",
+    "candidateSecondName": "Leslie",
+    "candidateFirstLastName": "Graham",
+    "candidateSecondLastName": "Paucek",
+    "postulations": [
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "3525eb91-1650-415d-b565-698b4b4ed850"
+      },
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "320f0add-ce93-453d-80a2-d0e72c475830"
+      },
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "3b501343-4066-4c30-8899-1e54f07b51d8"
+      }
+    ]
+  },
+  {
+    "candidateID": "c183fca9-a087-47ea-942f-45c0a4a8f3b3",
+    "candidateFirstName": "Juwan",
+    "candidateSecondName": "Sawyer",
+    "candidateFirstLastName": "Carter",
+    "candidateSecondLastName": "Tillman",
+    "postulations": [
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "9641fb5a-33cd-4774-8932-8069ecf0f9dd"
+      },
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "e503ae4b-5c64-411b-adb3-57d239f99d86"
+      }
+    ]
+  },
+  {
+    "candidateID": "bf5a0e76-fd2a-42dc-b747-99625314e6a6",
+    "candidateFirstName": "Mary",
+    "candidateSecondName": "Blake",
+    "candidateFirstLastName": "Larson",
+    "candidateSecondLastName": "Wunsch",
+    "postulations": [
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "4322a904-f165-416a-b517-ec43dc8bf44d"
+      },
+      {
+        "partyID": "86423ab6-ea82-4961-af30-991e1bbea890",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "3ee3cce1-5136-43b1-a174-74a3759dc97f"
+      },
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "1d5f06fc-bc66-4c73-8541-083dc004642c"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "02c249ff-ecc9-494c-8c24-85e365d51c3f"
+      }
+    ]
+  },
+  {
+    "candidateID": "9299ea69-2e25-40e0-8c86-b03f1661fc2d",
+    "candidateFirstName": "Suzanne",
+    "candidateSecondName": "Skyler",
+    "candidateFirstLastName": "Crist-Rath",
+    "candidateSecondLastName": "Rohan",
+    "postulations": [
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "089e5d02-99fc-4f4b-b861-c38b524c013a"
+      }
+    ]
+  },
+  {
+    "candidateID": "8937a7f2-367c-41ca-acf9-bf6a552092fe",
+    "candidateFirstName": "Aubrey",
+    "candidateSecondName": "Sage",
+    "candidateFirstLastName": "Block",
+    "candidateSecondLastName": "Runolfsson",
+    "postulations": [
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "469e1a2a-1576-4e8c-9069-6bbb677a76b2"
+      }
+    ]
+  },
+  {
+    "candidateID": "a9e44f4d-61a2-48bd-bafe-1b98cbed0b19",
+    "candidateFirstName": "Cynthia",
+    "candidateSecondName": "Quinn",
+    "candidateFirstLastName": "Terry",
+    "candidateSecondLastName": "Toy",
+    "postulations": [
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "c31103d0-4573-42fe-acf4-556d9463aefc"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "4cd9c497-7011-4149-b12b-e4945d4ed50d"
+      },
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "b22d56f4-1fa8-4e65-a044-30bf8025a52b"
+      },
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "87b5c4bd-5970-4f84-9b2e-65fff836d2f8"
+      }
+    ]
+  },
+  {
+    "candidateID": "95db1d45-fdef-49f2-9bf0-843a10c05a46",
+    "candidateFirstName": "Cruz",
+    "candidateSecondName": "Sasha",
+    "candidateFirstLastName": "Hoeger",
+    "candidateSecondLastName": "Braun",
+    "postulations": [
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "e025cdbe-b7bb-45fd-927d-1d582962a084"
+      }
+    ]
+  },
+  {
+    "candidateID": "3f981171-5706-47db-9f6c-e1a92a76f4bb",
+    "candidateFirstName": "Nat",
+    "candidateSecondName": "Alex",
+    "candidateFirstLastName": "Ryan",
+    "candidateSecondLastName": "Johnson",
+    "postulations": [
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "77aac7b6-b863-48fa-aa16-76d209f26295"
+      },
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "14d5ebc5-1254-44ff-9302-1be1cecfa2db"
+      },
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "c4f75d34-84a8-4286-ab95-97a3f1eb3f7d"
+      }
+    ]
+  },
+  {
+    "candidateID": "250f5b72-aa10-4781-ac2c-b825fe8b2231",
+    "candidateFirstName": "Camilla",
+    "candidateSecondName": "Jules",
+    "candidateFirstLastName": "Powlowski",
+    "candidateSecondLastName": "Pacocha",
+    "postulations": [
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "742ed22f-1c10-415a-acd8-7c3e63c3b3c2"
+      }
+    ]
+  },
+  {
+    "candidateID": "f7ff85e3-0d0b-41e0-8ac4-03f3bfbcccb5",
+    "candidateFirstName": "Nicholaus",
+    "candidateSecondName": "Austin",
+    "candidateFirstLastName": "Ziemann",
+    "candidateSecondLastName": "Schinner",
+    "postulations": [
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "18b1ee9c-2396-4def-ae6d-026443888f2c"
+      }
+    ]
+  },
+  {
+    "candidateID": "d88b074e-8ebf-4c04-b2d6-e5a818a627e3",
+    "candidateFirstName": "Kiel",
+    "candidateSecondName": "Emerson",
+    "candidateFirstLastName": "Blanda",
+    "candidateSecondLastName": "Nolan",
+    "postulations": [
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "dbbd3947-dd9d-492f-b066-c0e6d0c4c5c9"
+      },
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "174dbacf-131a-4e80-a04c-956218d0ed27"
+      },
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "2b17b005-b539-4d12-97fd-4d614268bcf9"
+      }
+    ]
+  },
+  {
+    "candidateID": "1c34fb3f-e36c-473b-8d94-4831882fc60f",
+    "candidateFirstName": "Ewald",
+    "candidateSecondName": "Blake",
+    "candidateFirstLastName": "Weber",
+    "candidateSecondLastName": "Runolfsdottir-Gusikowski",
+    "postulations": [
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "b03c2b4a-0c2e-4f1a-aae1-97e39fa72cc2"
+      },
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "12482b54-f7ee-4d9c-8cf7-84894a26e3d8"
+      }
+    ]
+  },
+  {
+    "candidateID": "8ee51d4f-04a4-4581-b2e8-3675b732ca0a",
+    "candidateFirstName": "Tina",
+    "candidateSecondName": "Corey",
+    "candidateFirstLastName": "Mayer",
+    "candidateSecondLastName": "Heathcote",
+    "postulations": [
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "fe3b1e01-e14e-41e1-b629-c4e245a295b7"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "f3bf82ed-6b63-4b92-8cf9-ecf114f8fcfa"
+      },
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "23ed9496-0dd4-4d05-9238-ae0e4d30cdfa"
+      }
+    ]
+  },
+  {
+    "candidateID": "7274f267-bcb3-4463-b149-1c8de75a4ddd",
+    "candidateFirstName": "Woodrow",
+    "candidateSecondName": "Skyler",
+    "candidateFirstLastName": "Halvorson",
+    "candidateSecondLastName": "Torphy",
+    "postulations": [
+      {
+        "partyID": "fc0704f8-85f1-486f-b124-c1aac6959c81",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "ce4fcb3c-f5fd-4f38-98ed-adfd46548188"
+      }
+    ]
+  },
+  {
+    "candidateID": "51ad388d-1254-4b21-9cf1-df73b3026cc8",
+    "candidateFirstName": "Gavin",
+    "candidateSecondName": "Robin",
+    "candidateFirstLastName": "Bradtke",
+    "candidateSecondLastName": "Botsford",
+    "postulations": [
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "81fc678e-b0bd-4d67-9e5f-0201efa27ed5"
+      }
+    ]
+  },
+  {
+    "candidateID": "b890dc49-7df0-4a9a-bd82-ce40cd432156",
+    "candidateFirstName": "Chaz",
+    "candidateSecondName": "Finley",
+    "candidateFirstLastName": "Kovacek",
+    "candidateSecondLastName": "Shields",
+    "postulations": [
+      {
+        "partyID": "86423ab6-ea82-4961-af30-991e1bbea890",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "2e89e975-3cc1-4d15-ba86-817fca64060c"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "760401bf-e6bf-4321-b978-40aac460a0fc"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "8241636b-0ec8-4035-a046-b048975d6fcd"
+      }
+    ]
+  },
+  {
+    "candidateID": "350c0d60-1cea-453f-804c-fd73b5b6272a",
+    "candidateFirstName": "Patience",
+    "candidateSecondName": "Kendall",
+    "candidateFirstLastName": "Bernhard",
+    "candidateSecondLastName": "Blick",
+    "postulations": [
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "797cd1b5-d684-43ad-9e85-ca59b88d4611"
+      }
+    ]
+  },
+  {
+    "candidateID": "048e5358-ee68-4f42-9ce4-7300d2c309e9",
+    "candidateFirstName": "Evan",
+    "candidateSecondName": "Arden",
+    "candidateFirstLastName": "Turcotte",
+    "candidateSecondLastName": "Schmitt",
+    "postulations": [
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "2784cbce-00e0-47bd-a8f3-ab8287880e87"
+      },
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "83b9aba4-75d2-4705-8e8b-76d71c113004"
+      }
+    ]
+  },
+  {
+    "candidateID": "e91bfc28-26b7-428d-b202-1b4e9a77d071",
+    "candidateFirstName": "Eliane",
+    "candidateSecondName": "Noah",
+    "candidateFirstLastName": "VonRueden",
+    "candidateSecondLastName": "Boyle",
+    "postulations": [
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "5ac55bb4-ac3f-46b6-a052-4df788dacefd"
+      },
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "58298154-e14e-4d05-81b9-729dcf223aeb"
+      }
+    ]
+  },
+  {
+    "candidateID": "eaa856aa-8d71-483b-ae14-d938a496a07a",
+    "candidateFirstName": "Lysanne",
+    "candidateSecondName": "Addison",
+    "candidateFirstLastName": "Wiegand",
+    "candidateSecondLastName": "Parisian",
+    "postulations": [
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "b1371cca-abd4-49cd-a7cc-746c90460430"
+      }
+    ]
+  },
+  {
+    "candidateID": "9d66491b-d160-49ed-9326-37f765846f59",
+    "candidateFirstName": "Lempi",
+    "candidateSecondName": "Austin",
+    "candidateFirstLastName": "Marvin",
+    "candidateSecondLastName": "McLaughlin",
+    "postulations": [
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "84515dad-881d-4a3f-bd2a-e8be47650801"
+      },
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "38e8ff40-452c-46f5-97c7-fdd8aa694d17"
+      },
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "947d80b2-bee2-4900-a101-42975ad017f1"
+      }
+    ]
+  },
+  {
+    "candidateID": "2b7bb926-4d56-4afd-aaae-070f7209e5cd",
+    "candidateFirstName": "Milan",
+    "candidateSecondName": "Parker",
+    "candidateFirstLastName": "McDermott",
+    "candidateSecondLastName": "Krajcik-Paucek",
+    "postulations": [
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "483d801e-0f32-47b3-84bb-1cd972f156bb"
+      },
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "131bd4d6-08c0-48ed-a43a-ce63eadf0bce"
+      },
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "f89856b9-d374-4ac0-b2e8-873c083a882c"
+      },
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "2a2d2eaf-f4f5-483f-b804-2d341c96e29f"
+      }
+    ]
+  },
+  {
+    "candidateID": "536f12b1-926d-4797-95c1-31f5928bf7fa",
+    "candidateFirstName": "Garland",
+    "candidateSecondName": "Emerson",
+    "candidateFirstLastName": "Lind",
+    "candidateSecondLastName": "Conroy",
+    "postulations": [
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "332dad8a-a0cc-4ce9-b566-399827dc632e"
+      },
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "7149c9d6-dc81-4d91-a12b-3abb717d6f88"
+      },
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "3a7fa2b6-659d-429e-8cf4-5b437080ad4b"
+      }
+    ]
+  },
+  {
+    "candidateID": "9604037f-a064-4d21-8b31-b0efdd53644d",
+    "candidateFirstName": "Judah",
+    "candidateSecondName": "Gray",
+    "candidateFirstLastName": "Feeney",
+    "candidateSecondLastName": "Lakin",
+    "postulations": [
+      {
+        "partyID": "86423ab6-ea82-4961-af30-991e1bbea890",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "4e0f404c-2543-474d-9802-f5d3f941a890"
+      },
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "fbc12b9b-11c5-41b9-a7b9-cd35c43d3c35"
+      }
+    ]
+  },
+  {
+    "candidateID": "299ea139-9cc7-4ca2-8e08-5ce016a009af",
+    "candidateFirstName": "Vincenzo",
+    "candidateSecondName": "Gray",
+    "candidateFirstLastName": "Schamberger",
+    "candidateSecondLastName": "Nikolaus",
+    "postulations": [
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "c700add4-f451-40b3-9ad8-85656bcf4162"
+      }
+    ]
+  },
+  {
+    "candidateID": "8543c0d6-f099-4f4b-8d8b-4f173fb8ca13",
+    "candidateFirstName": "Alford",
+    "candidateSecondName": "Sasha",
+    "candidateFirstLastName": "Reinger",
+    "candidateSecondLastName": "Grimes",
+    "postulations": [
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "39dbbd88-5add-473a-a4de-dd4ec70e67b1"
+      }
+    ]
+  },
+  {
+    "candidateID": "630e5191-a2e2-4d7f-b7a5-6fa344e52028",
+    "candidateFirstName": "Micaela",
+    "candidateSecondName": "Quinn",
+    "candidateFirstLastName": "Upton",
+    "candidateSecondLastName": "Tromp-Emard",
+    "postulations": [
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "5b636c04-64a6-4ee6-83da-41c88afd7e26"
+      }
+    ]
+  },
+  {
+    "candidateID": "50c94c7b-c23c-417c-b028-a81704d14609",
+    "candidateFirstName": "Bethany",
+    "candidateSecondName": "Avery",
+    "candidateFirstLastName": "Smitham",
+    "candidateSecondLastName": "Nikolaus",
+    "postulations": [
+      {
+        "partyID": "86423ab6-ea82-4961-af30-991e1bbea890",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "6dae8018-ff97-401d-9a0f-b04cd6279593"
+      },
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "0971bf48-6447-4eff-b486-8ee459027885"
+      },
+      {
+        "partyID": "fc0704f8-85f1-486f-b124-c1aac6959c81",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "aa1dfae9-5c89-4f46-a0d2-6e67a04147cc"
+      }
+    ]
+  },
+  {
+    "candidateID": "d3cf2fb7-9a7a-4379-af10-2f707fca7f18",
+    "candidateFirstName": "Arnulfo",
+    "candidateSecondName": "Drew",
+    "candidateFirstLastName": "Wuckert",
+    "candidateSecondLastName": "Berge",
+    "postulations": [
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "f4a1d655-00b5-4cb8-a41a-9b94dfc7615b"
+      },
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "d5b54a1f-43df-410d-82a3-0e0e4b26982a"
+      },
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "c4d1ff1a-a8c1-4d27-a29b-c82e009b6c99"
+      },
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "326c984b-7252-4314-9153-1f9f577a4049"
+      }
+    ]
+  },
+  {
+    "candidateID": "79f1032f-e2f6-41b0-95b4-9df72891d55f",
+    "candidateFirstName": "Emelia",
+    "candidateSecondName": "Ellis",
+    "candidateFirstLastName": "McDermott",
+    "candidateSecondLastName": "Towne",
+    "postulations": [
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "86f6ac7d-8b24-49ef-8aa3-2bcb5b2a196f"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "3cb96213-33e7-4873-9391-b4548b7472da"
+      }
+    ]
+  },
+  {
+    "candidateID": "e23ac0a8-5b84-4cc5-b185-3b7f03a02db8",
+    "candidateFirstName": "Rick",
+    "candidateSecondName": "Gray",
+    "candidateFirstLastName": "Little",
+    "candidateSecondLastName": "Daugherty",
+    "postulations": [
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "52daa5da-4512-40ba-9de9-3811d70ace21"
+      }
+    ]
+  },
+  {
+    "candidateID": "b3d32d0e-74e8-4f26-bd29-1c15892d3995",
+    "candidateFirstName": "Lisette",
+    "candidateSecondName": "Logan",
+    "candidateFirstLastName": "Kassulke",
+    "candidateSecondLastName": "Volkman",
+    "postulations": [
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "d5df2af0-2a69-41e6-82a4-4309666a0bb3"
+      },
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "35eab7a0-7409-4f51-9050-2b1e1632b17b"
+      },
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "1cc8c6c0-6e68-41b1-b061-b5b2034f4389"
+      },
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "13c41e69-94e4-4f89-aa4e-3a5a1b5560ca"
+      }
+    ]
+  },
+  {
+    "candidateID": "713a19de-27c2-40b7-b340-b05839dd01d5",
+    "candidateFirstName": "Macy",
+    "candidateSecondName": "Ellis",
+    "candidateFirstLastName": "West",
+    "candidateSecondLastName": "Sporer",
+    "postulations": [
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "82345c24-e100-4082-adca-ca3fbc248f8a"
+      },
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "30f82439-48d0-465e-9c8b-f51eaf0039de"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "e01393fb-bc16-4615-a09e-36f837e179dc"
+      }
+    ]
+  },
+  {
+    "candidateID": "c35c1db3-2310-4c03-bded-f1e310e3eb9e",
+    "candidateFirstName": "Imani",
+    "candidateSecondName": "Jamie",
+    "candidateFirstLastName": "Schuster",
+    "candidateSecondLastName": "Kiehn",
+    "postulations": [
+      {
+        "partyID": "86423ab6-ea82-4961-af30-991e1bbea890",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "b4f1f4c9-6ce9-48e7-a1e8-b6d424a7d12d"
+      },
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "640bc06c-a1b8-44a2-91c6-d18104758868"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "d3a4e897-3b53-4edd-8735-f8ee1e1364da"
+      },
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "03291852-5dfc-42d3-9bbe-2e94e02f1309"
+      }
+    ]
+  },
+  {
+    "candidateID": "668a99cd-631b-4435-9f8a-30c654ca2561",
+    "candidateFirstName": "Chance",
+    "candidateSecondName": "Reign",
+    "candidateFirstLastName": "Halvorson",
+    "candidateSecondLastName": "Little",
+    "postulations": [
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "c4658f3c-6e21-4f2c-8549-caf8fa209543"
+      },
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "b24fb303-869f-4e5d-9b71-dae8093b5ad4"
+      },
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "900aefd2-6147-4c00-aa6a-b0ceb6d2551c"
+      }
+    ]
+  },
+  {
+    "candidateID": "b02145d5-ab49-4844-9418-4ec3b8886b01",
+    "candidateFirstName": "Ruby",
+    "candidateSecondName": "Reign",
+    "candidateFirstLastName": "Adams",
+    "candidateSecondLastName": "Becker",
+    "postulations": [
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "0f26ba60-b48e-45bd-acb3-dc08b69684ca"
+      },
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "da91543e-e595-4964-b22b-4bb455b6f3f7"
+      },
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "575113fb-328f-4be7-b345-02858df12195"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "ac62e867-2247-4a5c-b60b-f6b084aeebdf"
+      }
+    ]
+  },
+  {
+    "candidateID": "9a2906bf-192b-4c76-b58d-843e00aaab4b",
+    "candidateFirstName": "Mae",
+    "candidateSecondName": "Logan",
+    "candidateFirstLastName": "Parker",
+    "candidateSecondLastName": "Connelly",
+    "postulations": [
+      {
+        "partyID": "fc0704f8-85f1-486f-b124-c1aac6959c81",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "7d431f4e-eb4c-4f4b-a474-125a20ca6b54"
+      },
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "0c0d451f-2f45-4d0d-a1bb-641f41f1afa5"
+      },
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "e8d3848b-2f57-48b2-8436-b3210b68e20a"
+      },
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "c7d80e17-08a0-444f-b34b-3ee755354234"
+      }
+    ]
+  },
+  {
+    "candidateID": "2d4aaf43-1aa9-4f62-959b-da41a20007f5",
+    "candidateFirstName": "Tatyana",
+    "candidateSecondName": "Avery",
+    "candidateFirstLastName": "Zieme",
+    "candidateSecondLastName": "Casper",
+    "postulations": [
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "a8caf656-6ed6-4bd1-bbf1-4d90cdf6c030"
+      }
+    ]
+  },
+  {
+    "candidateID": "c03ade5f-69c2-4d6c-9fa1-37cde2f7e287",
+    "candidateFirstName": "Christiana",
+    "candidateSecondName": "Logan",
+    "candidateFirstLastName": "Stroman",
+    "candidateSecondLastName": "Klocko",
+    "postulations": [
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "6934b1fa-5201-4381-933e-921b92f0aaf2"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "ccbb390d-c9ba-4865-b5be-f499a181128c"
+      },
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "a0969b65-fcac-4e02-889d-6c4d91206d40"
+      },
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "3b5b87e3-154b-4525-a4b4-84dcde7f9f60"
+      }
+    ]
+  },
+  {
+    "candidateID": "9d752a97-ac0d-4163-b9a3-53d6ac192deb",
+    "candidateFirstName": "Bruce",
+    "candidateSecondName": "Quinn",
+    "candidateFirstLastName": "Kshlerin",
+    "candidateSecondLastName": "McClure",
+    "postulations": [
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "86afc458-bf98-44af-bd16-739a9619e8f9"
+      }
+    ]
+  },
+  {
+    "candidateID": "e26a6d61-bfcd-49f7-a774-37271cdf4074",
+    "candidateFirstName": "Ryley",
+    "candidateSecondName": "Sasha",
+    "candidateFirstLastName": "Hilll",
+    "candidateSecondLastName": "Homenick",
+    "postulations": [
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "be00f261-316e-4cb8-9a1b-bd98507d6fa0"
+      },
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "4ba3712d-48f3-41e8-83ce-788bef348dad"
+      },
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "61c52dfe-f51d-40f2-ad24-481ccb13d25e"
+      }
+    ]
+  },
+  {
+    "candidateID": "173cd03b-f82d-4c04-aeb6-e5f84632beca",
+    "candidateFirstName": "Florencio",
+    "candidateSecondName": "Kai",
+    "candidateFirstLastName": "Weissnat",
+    "candidateSecondLastName": "Gottlieb",
+    "postulations": [
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "d54e9b50-455b-480d-a13e-aacb6d93b776"
+      },
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "f6ce54a3-8313-4632-a4c0-24e91497b491"
+      },
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "ca005f7a-67ab-4778-bd88-2e9822c0f6ae"
+      },
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "64fd8d90-fffc-44cb-bece-205401fd842f"
+      }
+    ]
+  },
+  {
+    "candidateID": "41e7c867-6deb-4369-8c58-92e13e5a1460",
+    "candidateFirstName": "Craig",
+    "candidateSecondName": "Dakota",
+    "candidateFirstLastName": "Brekke",
+    "candidateSecondLastName": "Pfannerstill",
+    "postulations": [
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "9043082c-c491-4a34-8de6-ea552ddb2cc8"
+      },
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "bbde2bfe-b117-471b-aa32-35beb27e0de7"
+      }
+    ]
+  },
+  {
+    "candidateID": "5ca96db2-36da-487d-a7ac-e64eb40395d7",
+    "candidateFirstName": "Maybell",
+    "candidateSecondName": "Gray",
+    "candidateFirstLastName": "Reynolds",
+    "candidateSecondLastName": "Rutherford",
+    "postulations": [
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "52b9d35a-22c7-41ff-a306-3fba166f5b76"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "c1fd0c05-7537-4784-a3ec-e2e931416336"
+      }
+    ]
+  },
+  {
+    "candidateID": "20709f4a-7bcd-4a84-8b99-a08471ee8d04",
+    "candidateFirstName": "Lenna",
+    "candidateSecondName": "Corey",
+    "candidateFirstLastName": "Daugherty",
+    "candidateSecondLastName": "Swaniawski",
+    "postulations": [
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "2538e9df-297c-4cd2-bcf0-a7c89da6924a"
+      },
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "3196deb9-508e-4742-8c40-fc246a58500d"
+      },
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "b2e2d647-4c64-4f2b-b7e5-b2656399a817"
+      }
+    ]
+  },
+  {
+    "candidateID": "2dd27958-3885-46bf-b3c5-bb8ee96a2bab",
+    "candidateFirstName": "John",
+    "candidateSecondName": "London",
+    "candidateFirstLastName": "Hirthe",
+    "candidateSecondLastName": "Davis",
+    "postulations": [
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "a2cadba2-d71a-4da3-82a3-21c5d70aa7b9"
+      },
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "1cc3d1e9-d249-41eb-a039-8c1718a418fe"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "f0f68dfa-eb9b-4256-b315-b5ee21527b35"
+      },
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "c4b2d9e0-63d5-45cb-a4ed-f1e8097ec525"
+      }
+    ]
+  },
+  {
+    "candidateID": "7fca7eff-14bf-453b-b22e-b392e2823ab3",
+    "candidateFirstName": "Bryon",
+    "candidateSecondName": "Sawyer",
+    "candidateFirstLastName": "Cummings",
+    "candidateSecondLastName": "Gerhold",
+    "postulations": [
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "1293b3a1-e8da-4fbf-ad86-b9155a984c41"
+      }
+    ]
+  },
+  {
+    "candidateID": "96ff56de-8840-4300-8f9b-6aaba847f066",
+    "candidateFirstName": "Jayda",
+    "candidateSecondName": "Charlie",
+    "candidateFirstLastName": "Brekke",
+    "candidateSecondLastName": "Towne",
+    "postulations": [
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "fb50db31-9507-420a-844a-e6774f3aa220"
+      }
+    ]
+  },
+  {
+    "candidateID": "62f918f5-ed98-46ff-8d4e-e84c9eb3800e",
+    "candidateFirstName": "Charley",
+    "candidateSecondName": "Austin",
+    "candidateFirstLastName": "Blick",
+    "candidateSecondLastName": "Yost",
+    "postulations": [
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "c618b2a1-7054-4a44-b193-b91e5c348f8b"
+      },
+      {
+        "partyID": "fc0704f8-85f1-486f-b124-c1aac6959c81",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "4eeb8462-396c-4c96-96c6-82b0da4604e3"
+      }
+    ]
+  },
+  {
+    "candidateID": "b5cb933d-8a55-4490-a5be-1a1091feb4a0",
+    "candidateFirstName": "Tyler",
+    "candidateSecondName": "London",
+    "candidateFirstLastName": "Schulist",
+    "candidateSecondLastName": "Donnelly",
+    "postulations": [
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "74f2654f-4bb3-4894-9238-232ae389340d"
+      },
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "7ffa804a-ae1e-47be-b4d7-0e0a6b50823f"
+      },
+      {
+        "partyID": "fc0704f8-85f1-486f-b124-c1aac6959c81",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "4a275951-5084-4b30-832d-06111c3b2880"
+      }
+    ]
+  },
+  {
+    "candidateID": "e0417592-108e-4884-ac97-ec48cd6cdd12",
+    "candidateFirstName": "Keshaun",
+    "candidateSecondName": "Rory",
+    "candidateFirstLastName": "Feeney",
+    "candidateSecondLastName": "Herzog",
+    "postulations": [
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "cc77cc3b-5325-45d1-aff0-82f209d26ecb"
+      },
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "bbdd03b0-3a77-41d2-8c7c-ae21eaa4efd9"
+      },
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "565e4f19-53ab-45a8-b4a7-6bbbc1d30a05"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "a87260b1-1770-459b-a579-1266538262c4"
+      }
+    ]
+  },
+  {
+    "candidateID": "8519fb71-3768-4639-b8d6-f0ca61f4a523",
+    "candidateFirstName": "Felton",
+    "candidateSecondName": "Shiloh",
+    "candidateFirstLastName": "Bayer",
+    "candidateSecondLastName": "Donnelly",
+    "postulations": [
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "3d986c6b-d450-4d8c-9ed1-4d419a2d34fd"
+      }
+    ]
+  },
+  {
+    "candidateID": "d9e1691c-37f3-4372-aa49-193f7b955830",
+    "candidateFirstName": "Michaela",
+    "candidateSecondName": "Phoenix",
+    "candidateFirstLastName": "Kertzmann",
+    "candidateSecondLastName": "Vandervort-Cremin",
+    "postulations": [
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "dc8cec38-57a8-42df-8175-e0eb6652a6e8"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "eb8e6280-0605-48ed-960c-db21632e14be"
+      },
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "d3f6f8a9-d638-426d-bffc-65ad7c239fe8"
+      }
+    ]
+  },
+  {
+    "candidateID": "95e9af17-f6b3-4739-ac70-a449507188a8",
+    "candidateFirstName": "Kevin",
+    "candidateSecondName": "Jamie",
+    "candidateFirstLastName": "Schroeder",
+    "candidateSecondLastName": "Littel",
+    "postulations": [
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "f15f6269-bfeb-4461-9e68-5f44c00052c7"
+      },
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "320d8f69-fd44-48b8-ab7d-a06949eea3bc"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "99e44914-81f8-4822-9c59-55a197c77aa8"
+      },
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "3827b9a6-36f5-4489-9eac-24823aa01bd8"
+      }
+    ]
+  },
+  {
+    "candidateID": "06c09861-a509-4a0f-b31b-f27b9be57f61",
+    "candidateFirstName": "Jameson",
+    "candidateSecondName": "Rory",
+    "candidateFirstLastName": "Schumm",
+    "candidateSecondLastName": "Grant-Feeney",
+    "postulations": [
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "0cff9573-fb7e-4757-af2e-fd754a2aceba"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "72509e52-d14a-4522-9ff6-74ce4ea60029"
+      },
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "c6675fd6-81f9-464f-9c7f-c56e129099e2"
+      }
+    ]
+  },
+  {
+    "candidateID": "699764df-549d-4252-8c40-26e8ffa3c117",
+    "candidateFirstName": "Brenda",
+    "candidateSecondName": "Skyler",
+    "candidateFirstLastName": "Luettgen",
+    "candidateSecondLastName": "Daniel",
+    "postulations": [
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "ad4529b6-7e15-47a5-a5d1-3df5b049c16b"
+      }
+    ]
+  },
+  {
+    "candidateID": "606ceac7-2be1-41a5-aa9e-7f97cc8f85e8",
+    "candidateFirstName": "Gilbert",
+    "candidateSecondName": "North",
+    "candidateFirstLastName": "Hackett",
+    "candidateSecondLastName": "Streich",
+    "postulations": [
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "11b07f1c-e350-461c-bc75-d9aa2690a252"
+      },
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "b26498d8-75f7-4ecc-9786-adea8a773cb0"
+      },
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "e682f57e-036a-453c-8e6c-7b48a148cb65"
+      }
+    ]
+  },
+  {
+    "candidateID": "eb2e27d4-5a21-417f-9cde-ee5047a6fec6",
+    "candidateFirstName": "Joesph",
+    "candidateSecondName": "Harper",
+    "candidateFirstLastName": "Heller",
+    "candidateSecondLastName": "Jerde",
+    "postulations": [
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "db120fa9-e566-450e-9fe2-c5770c41f173"
+      },
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "bdabe191-0ecc-49da-b187-bd7104956c26"
+      }
+    ]
+  },
+  {
+    "candidateID": "4625ec2a-1b54-48f6-ae05-330f9a3737ca",
+    "candidateFirstName": "Hailee",
+    "candidateSecondName": "Austin",
+    "candidateFirstLastName": "Bosco",
+    "candidateSecondLastName": "Kertzmann",
+    "postulations": [
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "22c4e6f5-f697-4f1e-aeaa-40dd44619162"
+      }
+    ]
+  },
+  {
+    "candidateID": "e4e0b4ee-9603-4269-8542-a2f6ddf38af2",
+    "candidateFirstName": "Oceane",
+    "candidateSecondName": "Jules",
+    "candidateFirstLastName": "Willms-Heller",
+    "candidateSecondLastName": "Lowe",
+    "postulations": [
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "dac6ebd6-29fe-42c2-a5a9-f9bc141ca0d6"
+      },
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "c9b5c38b-447c-4fc1-b7ea-7789c92c002b"
+      }
+    ]
+  },
+  {
+    "candidateID": "ed8b5e7c-c4d6-4d92-a6d7-8e70b2196e3d",
+    "candidateFirstName": "Daron",
+    "candidateSecondName": "Elliott",
+    "candidateFirstLastName": "Miller",
+    "candidateSecondLastName": "Glover",
+    "postulations": [
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "e62afa0a-d73c-4c4f-97c8-a7f9b8833e58"
+      }
+    ]
+  },
+  {
+    "candidateID": "db8be5ec-dccb-4a8b-8746-4f2ca51d2d2d",
+    "candidateFirstName": "Yvette",
+    "candidateSecondName": "Micah",
+    "candidateFirstLastName": "Armstrong",
+    "candidateSecondLastName": "Funk",
+    "postulations": [
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "f14a6742-d3e8-4cfe-b657-389caaa826d4"
+      }
+    ]
+  },
+  {
+    "candidateID": "b74f1097-be01-4e2b-a9d8-00d1935d2d57",
+    "candidateFirstName": "Fletcher",
+    "candidateSecondName": "Logan",
+    "candidateFirstLastName": "Weber",
+    "candidateSecondLastName": "Robel",
+    "postulations": [
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "136ce664-7713-4d46-849d-e44cc4e5a8c8"
+      },
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "458bff14-2862-48b0-97ba-4f268a3c3f1c"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "fa3a757f-e101-405e-b702-e69b2b7a3590"
+      }
+    ]
+  },
+  {
+    "candidateID": "aa3de529-f6dd-4603-b1ea-a9483fe55f54",
+    "candidateFirstName": "Fred",
+    "candidateSecondName": "Kyle",
+    "candidateFirstLastName": "Yost",
+    "candidateSecondLastName": "Heller",
+    "postulations": [
+      {
+        "partyID": "86423ab6-ea82-4961-af30-991e1bbea890",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "407a6479-11de-4982-b838-d7fdf209341b"
+      },
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "cf6e7c4d-b067-4b98-b8be-039255055705"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "3751317f-c9e5-48c1-b941-47cfd5c77b2d"
+      }
+    ]
+  },
+  {
+    "candidateID": "840a1b40-50ae-4886-9477-bb0b31b676bf",
+    "candidateFirstName": "Lucious",
+    "candidateSecondName": "Charlie",
+    "candidateFirstLastName": "Considine",
+    "candidateSecondLastName": "Quitzon",
+    "postulations": [
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "6a53341e-9cea-421c-8863-9043f6623689"
+      }
+    ]
+  },
+  {
+    "candidateID": "4d6f0d7f-1b97-41ae-9a2d-27814e10f45f",
+    "candidateFirstName": "Hilbert",
+    "candidateSecondName": "Sage",
+    "candidateFirstLastName": "Blanda",
+    "candidateSecondLastName": "Pacocha-Bergstrom",
+    "postulations": [
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "0629bd7e-f28a-4825-a782-5456274f6b92"
+      }
+    ]
+  },
+  {
+    "candidateID": "5ed16d82-a3d9-4bf8-8222-f1daf1a592ba",
+    "candidateFirstName": "Avis",
+    "candidateSecondName": "Rory",
+    "candidateFirstLastName": "Stracke",
+    "candidateSecondLastName": "Zulauf",
+    "postulations": [
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "1a270e03-821f-45de-9cde-080746cb2a92"
+      },
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "df9f3939-ed17-4205-8c4a-0eb89f31e6dd"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "f91f9658-11a7-4c7b-9fb6-7404e2d84539"
+      }
+    ]
+  },
+  {
+    "candidateID": "59027dc7-f4c7-497e-b105-e50bc20e74df",
+    "candidateFirstName": "Hollis",
+    "candidateSecondName": "Jamie",
+    "candidateFirstLastName": "Hackett",
+    "candidateSecondLastName": "Hamill",
+    "postulations": [
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "004f66c1-e32c-465e-8d7c-c76bb8c09508"
+      },
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "37147b50-ed6b-4bb9-adf4-5bf45420acc9"
+      },
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "c29e1d02-3126-4963-af65-3e3c1066012c"
+      }
+    ]
+  },
+  {
+    "candidateID": "ec2b7136-8770-4bcb-886b-059514b751f4",
+    "candidateFirstName": "Columbus",
+    "candidateSecondName": "Kendall",
+    "candidateFirstLastName": "Treutel",
+    "candidateSecondLastName": "McClure",
+    "postulations": [
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "8bc49822-586a-44e4-bbc0-5e4e19f266ac"
+      },
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "e2e9f228-6a3f-40c1-9b41-9c0547ae55fc"
+      },
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "53ba2e82-916c-4355-a5d7-6c4ea88ee718"
+      }
+    ]
+  },
+  {
+    "candidateID": "41761568-be7b-4543-a175-5ddb0f179112",
+    "candidateFirstName": "Idell",
+    "candidateSecondName": "Arden",
+    "candidateFirstLastName": "Schroeder",
+    "candidateSecondLastName": "Pollich",
+    "postulations": [
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "a32647fa-b292-4c33-9a2a-70ea3d5f0332"
+      },
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "b470d1d8-adfd-4152-8c12-1ca76b1d1ee5"
+      },
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "534582d2-eb84-41c7-8acc-ed2d6482ec70"
+      }
+    ]
+  },
+  {
+    "candidateID": "43330ac9-11a4-4514-95cd-da248eedfbc9",
+    "candidateFirstName": "Zelma",
+    "candidateSecondName": "Rowan",
+    "candidateFirstLastName": "Kuvalis",
+    "candidateSecondLastName": "Davis",
+    "postulations": [
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "be74e73c-c190-4508-a702-902b563c2833"
+      },
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "89750adc-c9ad-40e6-b16f-8147e8d8e6a9"
+      },
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "3eab200c-01ff-45ff-9178-f4b40921220a"
+      }
+    ]
+  },
+  {
+    "candidateID": "715199e3-c9a2-4bcc-90a3-60e277943efb",
+    "candidateFirstName": "Mike",
+    "candidateSecondName": "Ryan",
+    "candidateFirstLastName": "Hand",
+    "candidateSecondLastName": "Armstrong",
+    "postulations": [
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "53014ec7-cde4-4838-a55e-c7acda8436d4"
+      }
+    ]
+  },
+  {
+    "candidateID": "62d978f4-75b6-46b0-aa52-a42c5b3a696c",
+    "candidateFirstName": "Kailey",
+    "candidateSecondName": "Addison",
+    "candidateFirstLastName": "Luettgen",
+    "candidateSecondLastName": "Walsh",
+    "postulations": [
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "409a9d4a-e5d8-4717-9055-1920c1abebb5"
+      },
+      {
+        "partyID": "86423ab6-ea82-4961-af30-991e1bbea890",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "564a47c2-8ffe-4060-8061-fc853ac26779"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "90e89868-e82a-4501-a8da-3c33dcfcb6fb"
+      }
+    ]
+  },
+  {
+    "candidateID": "102c5314-52c0-4d01-8656-6d7fd4790289",
+    "candidateFirstName": "Aaliyah",
+    "candidateSecondName": "Sawyer",
+    "candidateFirstLastName": "Reilly",
+    "candidateSecondLastName": "Mayert",
+    "postulations": [
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "63732eef-4fa1-44d6-94c7-4e261e286b30"
+      },
+      {
+        "partyID": "fc0704f8-85f1-486f-b124-c1aac6959c81",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "e87217a6-b23d-4dfb-bf56-a247f46053e2"
+      },
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "8217e721-655a-4656-a97b-208833cd63b2"
+      }
+    ]
+  },
+  {
+    "candidateID": "1331dc33-283c-4cfc-a603-aedb3baa952d",
+    "candidateFirstName": "Ezra",
+    "candidateSecondName": "Gray",
+    "candidateFirstLastName": "Morissette",
+    "candidateSecondLastName": "Beahan",
+    "postulations": [
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "2c8ccd45-bb63-40d5-97c1-668ce3ee6261"
+      }
+    ]
+  },
+  {
+    "candidateID": "b60bf3b1-7754-4b6b-85c1-e448a79149ac",
+    "candidateFirstName": "Milan",
+    "candidateSecondName": "Sage",
+    "candidateFirstLastName": "Luettgen",
+    "candidateSecondLastName": "Lesch",
+    "postulations": [
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "a56e8680-406f-4578-aa17-b173461963b2"
+      },
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "618bbda1-0f56-4d13-a3de-eb49b2bf551a"
+      },
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "5caa9bf9-3e7e-4a98-9c4b-6d1891f82719"
+      }
+    ]
+  },
+  {
+    "candidateID": "0b8619b1-013d-4d3b-b01f-35e0f02c1358",
+    "candidateFirstName": "Jerrod",
+    "candidateSecondName": "Leslie",
+    "candidateFirstLastName": "Parisian-McKenzie",
+    "candidateSecondLastName": "Abbott",
+    "postulations": [
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "715dce11-4f6d-4322-8207-4480aa771f5a"
+      }
+    ]
+  },
+  {
+    "candidateID": "924d90d5-ea31-4401-b94c-db8ccfd7bbb3",
+    "candidateFirstName": "Leo",
+    "candidateSecondName": "Bowie",
+    "candidateFirstLastName": "Erdman",
+    "candidateSecondLastName": "Cummings",
+    "postulations": [
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "edd49220-0347-4285-b5bf-2a7e2ae2be40"
+      },
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "beda2c36-fd6c-44e4-bf58-7187befb8be1"
+      },
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "09093393-5475-498e-b0c0-65381193ca14"
+      },
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "ac1e13d3-6301-4a06-98b2-23b5b43e31b9"
+      }
+    ]
+  },
+  {
+    "candidateID": "89199468-96ec-4826-92bc-cfe447f385df",
+    "candidateFirstName": "Adah",
+    "candidateSecondName": "Jordan",
+    "candidateFirstLastName": "Mitchell",
+    "candidateSecondLastName": "Romaguera",
+    "postulations": [
+      {
+        "partyID": "86423ab6-ea82-4961-af30-991e1bbea890",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "559830be-e39c-4fdd-952d-f1adaf9761f4"
+      }
+    ]
+  },
+  {
+    "candidateID": "17789b79-5754-4011-b813-646a404e31c2",
+    "candidateFirstName": "Raymundo",
+    "candidateSecondName": "Skyler",
+    "candidateFirstLastName": "Reichert",
+    "candidateSecondLastName": "Kerluke",
+    "postulations": [
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "c6cfe496-c66c-4a2e-bbce-b276370c3d07"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "f47b1791-cb16-4779-8bc5-205420a4a7b2"
+      }
+    ]
+  },
+  {
+    "candidateID": "f7823ceb-9ce6-4aac-a98c-15e3d46bcca3",
+    "candidateFirstName": "Kale",
+    "candidateSecondName": "Bowie",
+    "candidateFirstLastName": "Lemke",
+    "candidateSecondLastName": "Ferry",
+    "postulations": [
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "4ade7f15-2b60-4c39-bfcd-d28e4be60a49"
+      }
+    ]
+  },
+  {
+    "candidateID": "b3ae06eb-cf56-4f5e-8b5a-c338c8f169a2",
+    "candidateFirstName": "Kellie",
+    "candidateSecondName": "Brooklyn",
+    "candidateFirstLastName": "Walker",
+    "candidateSecondLastName": "Kessler",
+    "postulations": [
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "aa6ae86e-4400-4fea-a671-91c62be79a0b"
+      }
+    ]
+  },
+  {
+    "candidateID": "4c080b61-2169-443b-b7c5-54aae642724d",
+    "candidateFirstName": "Ceasar",
+    "candidateSecondName": "Marlowe",
+    "candidateFirstLastName": "Watsica",
+    "candidateSecondLastName": "Denesik",
+    "postulations": [
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "77af1df6-d570-4557-a249-fd1cf6e912f3"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "bbaf7f80-f02f-4f3f-84f2-cb7f9f879960"
+      },
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "79b2ebcc-2c58-4ed1-a0dd-5fdd1fd39fa4"
+      }
+    ]
+  },
+  {
+    "candidateID": "bc34cc9a-6635-40dc-8c39-8c614e46c914",
+    "candidateFirstName": "Rhoda",
+    "candidateSecondName": "Charlie",
+    "candidateFirstLastName": "Mills",
+    "candidateSecondLastName": "Stroman",
+    "postulations": [
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "f07c34ec-8e90-4aaf-a7a8-8ec4ab3e05e2"
+      },
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "54b80af9-7113-4f4f-bea1-93c7388eb436"
+      },
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "881ce04d-bbdd-4ad5-b3b6-30394856b4bb"
+      },
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "1f505af8-0b90-4fb0-840c-e7147e4780ea"
+      }
+    ]
+  },
+  {
+    "candidateID": "6444b749-94ec-43ff-b029-462de6f2c44e",
+    "candidateFirstName": "Vincenza",
+    "candidateSecondName": "Charlie",
+    "candidateFirstLastName": "Mraz",
+    "candidateSecondLastName": "Torp",
+    "postulations": [
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "72533463-0a8f-4a5e-8c25-b74a09282d01"
+      },
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "04def33a-9488-4e90-b3ff-127ddad49088"
+      },
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "cab9a6e8-8587-4808-bc48-a506b1e510fc"
+      },
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "2ee91e45-e033-4ece-b39a-6c7d1cfcd659"
+      }
+    ]
+  },
+  {
+    "candidateID": "686d2240-4cd5-4fab-8f9f-16be0d77626c",
+    "candidateFirstName": "Jedidiah",
+    "candidateSecondName": "Billie",
+    "candidateFirstLastName": "Casper",
+    "candidateSecondLastName": "Greenholt",
+    "postulations": [
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "654375ea-dbe6-4de6-96f0-48ce8284e753"
+      }
+    ]
+  },
+  {
+    "candidateID": "1bf4331d-5129-4df3-9ddb-320a0b2e9b75",
+    "candidateFirstName": "Carey",
+    "candidateSecondName": "Alex",
+    "candidateFirstLastName": "Pfeffer",
+    "candidateSecondLastName": "Pfannerstill-Block",
+    "postulations": [
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "b435e6c6-7b36-40e0-9b56-48824f5c65df"
+      }
+    ]
+  },
+  {
+    "candidateID": "0866ba65-d25a-4c07-8d07-6ab452ce642c",
+    "candidateFirstName": "Reece",
+    "candidateSecondName": "Arden",
+    "candidateFirstLastName": "Braun",
+    "candidateSecondLastName": "Gorczany",
+    "postulations": [
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "39585581-e5a7-4ec0-b59b-dba8de4189da"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "37921584-c03c-427d-876e-006941ba2412"
+      },
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "9098dfcb-6342-4e1b-9b3a-67bb78f67fea"
+      },
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "e461f8d5-9410-4019-9af0-58b66bffbe5c"
+      }
+    ]
+  },
+  {
+    "candidateID": "b7954a96-6d6c-464a-b2ff-584d063f8953",
+    "candidateFirstName": "Kara",
+    "candidateSecondName": "Gray",
+    "candidateFirstLastName": "Sanford",
+    "candidateSecondLastName": "Kirlin",
+    "postulations": [
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "c810e536-7cbd-4849-9f6b-013b0ac53d2e"
+      }
+    ]
+  },
+  {
+    "candidateID": "cf04d037-a317-46c1-b705-d4b1fad54115",
+    "candidateFirstName": "Modesto",
+    "candidateSecondName": "Greer",
+    "candidateFirstLastName": "Littel",
+    "candidateSecondLastName": "Braun",
+    "postulations": [
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "fab7af43-8c40-48b5-ac6e-4fb9aaed9d48"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "8ca002f3-444f-42e8-80cc-3a67a037e7ec"
+      },
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "f754e8af-4cea-4ab3-9804-7b1753135d0a"
+      },
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "4e312d1a-b263-4221-8362-a906695b9fc1"
+      }
+    ]
+  },
+  {
+    "candidateID": "dd7b4f21-5f70-4701-b839-ef416b7d4d54",
+    "candidateFirstName": "Libbie",
+    "candidateSecondName": "Jaden",
+    "candidateFirstLastName": "Bahringer",
+    "candidateSecondLastName": "Beer",
+    "postulations": [
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "efd9d006-1dde-4abe-b15f-6ba41bae0828"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "26848fe4-0414-48d1-bc5b-533659bcbd0e"
+      },
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "d79bdbc2-e3d1-4087-9958-ec2a686ac18e"
+      }
+    ]
+  },
+  {
+    "candidateID": "4d3432cc-f3e1-4769-b97b-47e34bcb1cd9",
+    "candidateFirstName": "Anthony",
+    "candidateSecondName": "Leslie",
+    "candidateFirstLastName": "Boyle",
+    "candidateSecondLastName": "Lakin",
+    "postulations": [
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "44922b26-fd3d-439d-bdc1-b41f05d4b5a3"
+      },
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "ca79f4a0-a521-4270-85e4-61a512bdc196"
+      },
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "67a17c39-5f57-4a0f-91e9-523deef1daf4"
+      },
+      {
+        "partyID": "86423ab6-ea82-4961-af30-991e1bbea890",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "5c3b7127-7adf-4f1e-9784-12f7421f96fe"
+      }
+    ]
+  },
+  {
+    "candidateID": "8a62e546-9829-49fd-aa71-2558f78308fa",
+    "candidateFirstName": "Bria",
+    "candidateSecondName": "Shiloh",
+    "candidateFirstLastName": "Homenick",
+    "candidateSecondLastName": "Bauch",
+    "postulations": [
+      {
+        "partyID": "fc0704f8-85f1-486f-b124-c1aac6959c81",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "f1a618b4-7ea3-4f20-9dbb-0a3cfd5939cb"
+      }
+    ]
+  },
+  {
+    "candidateID": "518b44bc-de3a-482b-846b-4c8a68dc911b",
+    "candidateFirstName": "Austen",
+    "candidateSecondName": "Phoenix",
+    "candidateFirstLastName": "Jones",
+    "candidateSecondLastName": "Gottlieb",
+    "postulations": [
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "3e77856b-173f-4a04-9634-a935e9db23a8"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "7ee3e747-1084-4665-b24c-d86819fc9670"
+      },
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "3aecb7d8-e45e-4eb3-b11b-ac015ccff733"
+      }
+    ]
+  },
+  {
+    "candidateID": "9f197ab9-d952-48bd-8f04-5b838a0a0bbb",
+    "candidateFirstName": "Winifred",
+    "candidateSecondName": "Greer",
+    "candidateFirstLastName": "Schmitt",
+    "candidateSecondLastName": "Swaniawski",
+    "postulations": [
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "9272bf42-b453-4249-b675-139bb139d33d"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "62083875-57b9-4684-9ce0-841f4d9565cb"
+      },
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "9b2dc85a-7167-482a-94af-7189b51c9bfc"
+      }
+    ]
+  },
+  {
+    "candidateID": "7f1abbab-d570-4a4c-9223-8cad67b070d8",
+    "candidateFirstName": "Maude",
+    "candidateSecondName": "River",
+    "candidateFirstLastName": "Hane",
+    "candidateSecondLastName": "Ward",
+    "postulations": [
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "14960fd4-1836-4501-8a06-f90bbf8b5fa6"
+      },
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "98c89df6-3f34-4a5f-84d2-68598bbcf453"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "b5012e04-9d9d-4590-b3b7-2793f5426785"
+      }
+    ]
+  },
+  {
+    "candidateID": "294b3cf5-8945-4923-a598-e97c24f17f4c",
+    "candidateFirstName": "Marcia",
+    "candidateSecondName": "Bowie",
+    "candidateFirstLastName": "Feil",
+    "candidateSecondLastName": "Braun",
+    "postulations": [
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "972e93d6-0be4-47c5-bf60-b0e12dfe37fe"
+      }
+    ]
+  },
+  {
+    "candidateID": "6c1623e4-6445-496c-9a74-09970b3db9db",
+    "candidateFirstName": "Guy",
+    "candidateSecondName": "Elliott",
+    "candidateFirstLastName": "Murray",
+    "candidateSecondLastName": "Collins",
+    "postulations": [
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "15fa91a8-a25b-4003-9946-cfce57544cf2"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "5e9ed115-01a3-4344-93c0-596afd0b3759"
+      },
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "d605def4-cecf-4a0f-93fc-3fda4e391de7"
+      },
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "ba71aa5d-4d24-42d1-8af1-63361ac420a2"
+      }
+    ]
+  },
+  {
+    "candidateID": "22345ffc-88bf-42cc-ac5f-47c750be7316",
+    "candidateFirstName": "Maybell",
+    "candidateSecondName": "August",
+    "candidateFirstLastName": "Klein",
+    "candidateSecondLastName": "Huels",
+    "postulations": [
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "213e011b-8a99-4c46-808c-bec813d84639"
+      }
+    ]
+  },
+  {
+    "candidateID": "e885e852-53f3-49d3-9b41-ecc156e5f0f7",
+    "candidateFirstName": "Destinee",
+    "candidateSecondName": "Jules",
+    "candidateFirstLastName": "Paucek-Kling",
+    "candidateSecondLastName": "Lehner",
+    "postulations": [
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "489dd336-e56d-4212-99da-1ea77ce034a8"
+      }
+    ]
+  },
+  {
+    "candidateID": "503bb7f5-cfd8-48ed-ab27-241f6f8da426",
+    "candidateFirstName": "Elsa",
+    "candidateSecondName": "Drew",
+    "candidateFirstLastName": "Bergstrom",
+    "candidateSecondLastName": "Hettinger",
+    "postulations": [
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "add28f41-5388-4100-ae00-95e7f71f3435"
+      },
+      {
+        "partyID": "86423ab6-ea82-4961-af30-991e1bbea890",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "756d9030-e3d9-438b-946f-e6af2ae3495b"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "76c2fe5f-21b0-4d1c-87ec-a10d0c8d7c2b"
+      }
+    ]
+  },
+  {
+    "candidateID": "2852ae6d-0d8d-4676-8d93-48bcbb3f9c34",
+    "candidateFirstName": "Angel",
+    "candidateSecondName": "River",
+    "candidateFirstLastName": "Bednar",
+    "candidateSecondLastName": "Prosacco",
+    "postulations": [
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "d15325e4-f8d5-4750-88a8-245591d02fb5"
+      },
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "52cbf7c8-67a4-4730-b81b-f8b5b651c22d"
+      },
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "7fbdbb06-db61-463b-96a3-0e28a0a2929f"
+      },
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "18fec7db-5f92-4697-99b2-57956aad43d8"
+      }
+    ]
+  },
+  {
+    "candidateID": "7a236eed-27ce-4de5-873c-12fc4ae2664c",
+    "candidateFirstName": "Lennie",
+    "candidateSecondName": "Reagan",
+    "candidateFirstLastName": "Batz",
+    "candidateSecondLastName": "Reynolds",
+    "postulations": [
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "b6ef1767-07bf-43a3-bd29-bba7f01952f1"
+      }
+    ]
+  },
+  {
+    "candidateID": "61091a5e-d43c-4f1e-bffa-c7d52de68855",
+    "candidateFirstName": "Opal",
+    "candidateSecondName": "Arden",
+    "candidateFirstLastName": "Nolan",
+    "candidateSecondLastName": "Becker",
+    "postulations": [
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "067d442e-f089-4cd0-bd89-fe91af80786c"
+      },
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "52f942ac-ae9e-4f15-83c1-9ef1bfee6004"
+      }
+    ]
+  },
+  {
+    "candidateID": "c0133113-3c0f-49c0-a083-5781f1b593d7",
+    "candidateFirstName": "Margarete",
+    "candidateSecondName": "Bailey",
+    "candidateFirstLastName": "Russel",
+    "candidateSecondLastName": "Monahan",
+    "postulations": [
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "862e7771-4493-439e-ab30-648217aedf1b"
+      },
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "b3c63136-2b5e-4c2b-bad8-280b05f732da"
+      }
+    ]
+  },
+  {
+    "candidateID": "13c65a42-b277-44b2-956d-8897d7533cd1",
+    "candidateFirstName": "Harry",
+    "candidateSecondName": "Blake",
+    "candidateFirstLastName": "Yundt",
+    "candidateSecondLastName": "Gutkowski",
+    "postulations": [
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "a496141a-cb4d-48d1-b331-d5d7755a29c0"
+      },
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "d13066c8-d8b1-4499-aa46-0481991d949d"
+      }
+    ]
+  },
+  {
+    "candidateID": "8c7a0f8d-7eac-4c66-a692-234e62880135",
+    "candidateFirstName": "Noemy",
+    "candidateSecondName": "London",
+    "candidateFirstLastName": "Swift",
+    "candidateSecondLastName": "Heaney",
+    "postulations": [
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "cb858301-9cc1-4a64-b395-0ae40549d3c4"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "0e0ac635-6c61-4f58-bf56-dbe384610411"
+      }
+    ]
+  },
+  {
+    "candidateID": "fd0891be-07e9-4a89-b8c2-b118f4615797",
+    "candidateFirstName": "Fanny",
+    "candidateSecondName": "Kennedy",
+    "candidateFirstLastName": "Borer",
+    "candidateSecondLastName": "Leffler",
+    "postulations": [
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "d20dadc7-8e4f-40df-8f11-27f4e9a7eb9b"
+      },
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "275889fd-c677-4765-99eb-044b4f8c2707"
+      },
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "fa6e0a53-6a4b-4e1b-961d-0be09d12d21e"
+      },
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "e88c1c22-105e-4ddd-a747-a5f89adf6076"
+      }
+    ]
+  },
+  {
+    "candidateID": "451bd2a9-6f56-4699-8e7c-1a730cea0203",
+    "candidateFirstName": "Bette",
+    "candidateSecondName": "Parker",
+    "candidateFirstLastName": "Kub",
+    "candidateSecondLastName": "Kutch",
+    "postulations": [
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "810cfbc1-d85a-4e5d-bdce-a66de9c7c060"
+      },
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "ea16707a-aba3-46fa-b908-4cb585ea7ebe"
+      },
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "2f26ebda-d9de-40bd-a785-1fbff82bf1aa"
+      },
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "3e405340-7ce5-4d2f-b40f-787c569ad79f"
+      }
+    ]
+  },
+  {
+    "candidateID": "65cada68-ecfd-430c-9159-87af2c56af94",
+    "candidateFirstName": "Scarlett",
+    "candidateSecondName": "Corey",
+    "candidateFirstLastName": "Cormier",
+    "candidateSecondLastName": "Kertzmann",
+    "postulations": [
+      {
+        "partyID": "fc0704f8-85f1-486f-b124-c1aac6959c81",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "7eb7705a-36e3-4cea-b446-431e8684f9d0"
+      }
+    ]
+  },
+  {
+    "candidateID": "51f471aa-5107-47c6-ae89-61fc37bf4e95",
+    "candidateFirstName": "Daren",
+    "candidateSecondName": "Shawn",
+    "candidateFirstLastName": "Nitzsche",
+    "candidateSecondLastName": "Kiehn",
+    "postulations": [
+      {
+        "partyID": "86423ab6-ea82-4961-af30-991e1bbea890",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "cce23e19-6c56-4350-9780-f6113f900081"
+      },
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "a577e974-5fa2-4f6a-a62e-dee346752890"
+      },
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "96529cdc-67fc-4ad3-bcc9-a3f297ba82b3"
+      }
+    ]
+  },
+  {
+    "candidateID": "88655e2e-cb84-4382-a323-ec456fbe61f6",
+    "candidateFirstName": "Reinhold",
+    "candidateSecondName": "Micah",
+    "candidateFirstLastName": "Breitenberg",
+    "candidateSecondLastName": "Huel",
+    "postulations": [
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "cb2bbc66-e241-4e79-b0e2-729c270a733d"
+      },
+      {
+        "partyID": "86423ab6-ea82-4961-af30-991e1bbea890",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "aee1a654-0c52-4ac8-9938-c11737e5277c"
+      },
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "75bf9e84-00d5-4760-bce1-e893ee60cdc7"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "529bed66-d14b-4846-aa03-7c22ec9d424f"
+      }
+    ]
+  },
+  {
+    "candidateID": "56970d26-36fd-4f6d-8382-b4be335656a4",
+    "candidateFirstName": "Tito",
+    "candidateSecondName": "Shawn",
+    "candidateFirstLastName": "Schuster",
+    "candidateSecondLastName": "Grimes",
+    "postulations": [
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "0175e6ac-2bd2-4123-bfa9-5089a303550f"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "e66be951-6191-4518-875f-a5cc3f956904"
+      },
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "02a5e791-92d7-424d-b4de-060a810d741a"
+      }
+    ]
+  },
+  {
+    "candidateID": "19871012-ea93-4c41-8f98-a25636b3db10",
+    "candidateFirstName": "Katelyn",
+    "candidateSecondName": "Hayden",
+    "candidateFirstLastName": "Reichert",
+    "candidateSecondLastName": "Rau",
+    "postulations": [
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "b6cb6607-489c-4cf4-988d-f3b567df2318"
+      }
+    ]
+  },
+  {
+    "candidateID": "92066c1e-a7c6-4db4-b99f-7d851dbc1fe6",
+    "candidateFirstName": "Britney",
+    "candidateSecondName": "Sage",
+    "candidateFirstLastName": "Trantow",
+    "candidateSecondLastName": "Hodkiewicz",
+    "postulations": [
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "b78282c2-b86c-48d9-9170-a37749a6dfba"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "c73678af-b26a-466a-99a2-bb42b8671bd8"
+      },
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "bcc71aa9-0750-4a04-9d7f-458a1503ca1e"
+      }
+    ]
+  },
+  {
+    "candidateID": "96c4e1f7-7830-4fee-b75c-c7e81f98874c",
+    "candidateFirstName": "Alivia",
+    "candidateSecondName": "Greer",
+    "candidateFirstLastName": "Pagac",
+    "candidateSecondLastName": "Morissette",
+    "postulations": [
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "43767b39-87e8-4f98-9414-a985cbb515fc"
+      },
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "7db50fec-fa79-4d43-aa13-d307739193e1"
+      },
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "087e92e1-133a-4ee6-bf31-0037f6ede288"
+      },
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "e35f22a9-1a33-4aa4-b321-740a76eb8d93"
+      }
+    ]
+  },
+  {
+    "candidateID": "02c0a73c-80d4-45f6-96ca-6269dd5c3b38",
+    "candidateFirstName": "Paul",
+    "candidateSecondName": "Drew",
+    "candidateFirstLastName": "Hauck",
+    "candidateSecondLastName": "Sauer-Schumm",
+    "postulations": [
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "92fd8ca7-566e-4373-abf3-98bd46cdcc53"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "332eadac-53f4-4f6c-8e0a-d8ea97648233"
+      },
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "619e4133-4a44-4d73-80db-2a0d46dcce94"
+      }
+    ]
+  },
+  {
+    "candidateID": "fd55e29f-b9d6-4ef7-bf1a-4809fd89aa8d",
+    "candidateFirstName": "Lexus",
+    "candidateSecondName": "Billie",
+    "candidateFirstLastName": "Lakin",
+    "candidateSecondLastName": "Volkman",
+    "postulations": [
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "ec62a2b6-df5c-49a7-8754-2887475ff269"
+      },
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "5e54d7a8-4880-4b1e-ad9e-8463e987d5de"
+      }
+    ]
+  },
+  {
+    "candidateID": "a0667fd0-3237-427e-b04f-e2c28764de60",
+    "candidateFirstName": "Fritz",
+    "candidateSecondName": "Micah",
+    "candidateFirstLastName": "Walsh",
+    "candidateSecondLastName": "Ratke",
+    "postulations": [
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "8db3b372-9d4e-401e-9029-eef75aeaa509"
+      },
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "16a71059-1bcd-408c-83e5-601dc2b6c719"
+      },
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "84b4c664-ed8a-4619-bd48-9d4b9afdf48f"
+      },
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "0512863c-de62-4e58-b141-5cb1ebfe7c5f"
+      }
+    ]
+  },
+  {
+    "candidateID": "3b535bd7-56ac-4f63-86e9-27101d04e18a",
+    "candidateFirstName": "Arthur",
+    "candidateSecondName": "Jules",
+    "candidateFirstLastName": "Blanda",
+    "candidateSecondLastName": "Harvey",
+    "postulations": [
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "5e87f174-2de1-46ff-8fad-33872b301454"
+      }
+    ]
+  },
+  {
+    "candidateID": "c775224c-ccfd-4c9b-98b6-da612dfb5a41",
+    "candidateFirstName": "Janice",
+    "candidateSecondName": "Drew",
+    "candidateFirstLastName": "Zieme",
+    "candidateSecondLastName": "Hoppe",
+    "postulations": [
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "f26bd791-cab8-4b22-90be-77a1d9c242e3"
+      },
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "f60186d0-784f-48aa-8e6e-3afcd2d52175"
+      },
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "48de2eca-d678-4bf9-a49f-2e5aa763eba1"
+      },
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "a184af0f-d13c-48bb-95d3-19ea9df2c28c"
+      }
+    ]
+  },
+  {
+    "candidateID": "7fbbeec8-e1d5-406d-a2b9-acd017ce726a",
+    "candidateFirstName": "Meghan",
+    "candidateSecondName": "Sage",
+    "candidateFirstLastName": "Koch",
+    "candidateSecondLastName": "King-Torp",
+    "postulations": [
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "feb780a9-2de0-485b-b34c-0ca30a953192"
+      },
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "0971f84f-6a1a-4f45-a2d2-7001eb46aa36"
+      }
+    ]
+  },
+  {
+    "candidateID": "2cb0a41e-d53d-4adc-9ba0-d3ff8c7f1bb7",
+    "candidateFirstName": "Christy",
+    "candidateSecondName": "Brooklyn",
+    "candidateFirstLastName": "Stokes",
+    "candidateSecondLastName": "Wisoky",
+    "postulations": [
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "62a30bc1-dc45-4644-9239-3c86607b00c5"
+      },
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "5ceea855-519e-4722-9118-0500dc23f01c"
+      }
+    ]
+  },
+  {
+    "candidateID": "834a719e-774e-4af3-b4e5-2cbbb103ee5b",
+    "candidateFirstName": "Sandrine",
+    "candidateSecondName": "Jules",
+    "candidateFirstLastName": "Stoltenberg",
+    "candidateSecondLastName": "Sporer",
+    "postulations": [
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "0f596908-0902-444f-8f00-a02fe407dc5e"
+      },
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "271388ae-9974-4bb2-a9f9-f53c73a65fe0"
+      }
+    ]
+  },
+  {
+    "candidateID": "ec22bb70-c24e-449d-93c3-c32ce4da5490",
+    "candidateFirstName": "Juwan",
+    "candidateSecondName": "Riley",
+    "candidateFirstLastName": "Mante",
+    "candidateSecondLastName": "Dach",
+    "postulations": [
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "5ed8e975-85f5-4af1-bd34-ba04ee2d131a"
+      },
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "c4cc2773-f669-457f-95da-755c1ba17337"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "ec44ac8a-de54-4114-b3cb-cb52f481a6e6"
+      },
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "2234e4e7-0cea-4eed-80d2-5ec0189f919d"
+      }
+    ]
+  },
+  {
+    "candidateID": "38262039-3389-4248-8fbc-d254b3927cb8",
+    "candidateFirstName": "Don",
+    "candidateSecondName": "Blake",
+    "candidateFirstLastName": "Paucek",
+    "candidateSecondLastName": "Rogahn",
+    "postulations": [
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "53f332b0-ec7b-40fc-a85b-6a48520a0aaf"
+      },
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "13fb0569-53aa-49be-9724-c47783cf240e"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "d7b2ae35-d48e-4f9b-8db6-af3435205064"
+      }
+    ]
+  },
+  {
+    "candidateID": "1ef36bc9-2afc-410e-80f6-1727e4644985",
+    "candidateFirstName": "Jarrett",
+    "candidateSecondName": "London",
+    "candidateFirstLastName": "McClure",
+    "candidateSecondLastName": "Langosh",
+    "postulations": [
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "b7311e4b-7f7e-41ef-adac-cc0840c464b1"
+      },
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "d234d5aa-c7fb-4cdb-9b21-eeddacb768c5"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "46e2e64f-d309-4e96-9243-0d5afca36665"
+      },
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "eb8ab3a0-61c8-4c26-a7dc-fa871b89f86f"
+      }
+    ]
+  },
+  {
+    "candidateID": "3c51421d-1071-436e-8e93-73d82fce3bf0",
+    "candidateFirstName": "Travon",
+    "candidateSecondName": "Drew",
+    "candidateFirstLastName": "Farrell",
+    "candidateSecondLastName": "Willms",
+    "postulations": [
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "49828d93-1d32-4f55-95cc-31b8242d18fd"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "2f3636b9-df1c-4600-b8d9-55bc16a0a75e"
+      },
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "7a4a4173-adae-4b61-af89-e1b034facb74"
+      }
+    ]
+  },
+  {
+    "candidateID": "86c28c99-bac7-4f32-8e85-a91e2558c830",
+    "candidateFirstName": "Queenie",
+    "candidateSecondName": "Reign",
+    "candidateFirstLastName": "Kuphal",
+    "candidateSecondLastName": "Kovacek",
+    "postulations": [
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "e9f7f695-abdb-4968-9650-8c6fdf6652fd"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "e71a38fb-8382-4b90-b51e-198d227bdb28"
+      },
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "249cf156-0f8e-4eda-987c-cb949b73c23e"
+      }
+    ]
+  },
+  {
+    "candidateID": "8b380d86-e8f7-4898-94ce-c1bcc70b0814",
+    "candidateFirstName": "Arlo",
+    "candidateSecondName": "Shiloh",
+    "candidateFirstLastName": "Fadel",
+    "candidateSecondLastName": "Parisian",
+    "postulations": [
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "060ad158-eecf-4ceb-b7c0-ac1e0622a6ae"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "f0f2ffdb-6d84-41b1-b922-e8631b5a3ba1"
+      },
+      {
+        "partyID": "60c813f6-5b82-4933-af62-779fb6b97384",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "9757359c-4152-4fcc-8179-c9f7b78aefbf"
+      },
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "fdc1f96b-1966-4bc9-837a-bd060d37982f"
+      }
+    ]
+  },
+  {
+    "candidateID": "2a7a96bb-7267-4257-b89a-15e10bf8a7d9",
+    "candidateFirstName": "Janie",
+    "candidateSecondName": "Shiloh",
+    "candidateFirstLastName": "Wisozk",
+    "candidateSecondLastName": "Koss",
+    "postulations": [
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "38c0f69a-6f12-47a1-bc72-a2e9fe896530"
+      },
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "8635010f-dc34-4823-a455-cf0c356b0d28"
+      }
+    ]
+  },
+  {
+    "candidateID": "6b397da9-b63c-450f-b264-43078e087a61",
+    "candidateFirstName": "Quinn",
+    "candidateSecondName": "Blake",
+    "candidateFirstLastName": "Murazik",
+    "candidateSecondLastName": "Wisoky",
+    "postulations": [
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "d23f226f-eb1e-4a7f-9ce2-01c41ae4b034"
+      }
+    ]
+  },
+  {
+    "candidateID": "52815c47-afaf-44ad-b039-cd97585a317d",
+    "candidateFirstName": "Mireya",
+    "candidateSecondName": "North",
+    "candidateFirstLastName": "Sporer",
+    "candidateSecondLastName": "Crooks",
+    "postulations": [
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "50ab3256-0737-4ce9-b516-a4ce47c6a979"
+      }
+    ]
+  },
+  {
+    "candidateID": "374d04a4-e6ee-4a43-a8d9-05b0a5f4961d",
+    "candidateFirstName": "Carlo",
+    "candidateSecondName": "Sage",
+    "candidateFirstLastName": "Larson",
+    "candidateSecondLastName": "Gibson",
+    "postulations": [
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "20821ea0-d0f5-4325-8e61-b96ae4b831e5"
+      },
+      {
+        "partyID": "fc0704f8-85f1-486f-b124-c1aac6959c81",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "f9fd3d4b-bd46-4129-913f-f34c309663c8"
+      },
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "9198fcf4-2ffb-40ec-946e-95439b99f220"
+      },
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "66619a4b-ce1c-47f7-8bcd-0ff11ac3841e"
+      }
+    ]
+  },
+  {
+    "candidateID": "36838be4-c59d-40cc-9818-73937a48f669",
+    "candidateFirstName": "Jose",
+    "candidateSecondName": "Gray",
+    "candidateFirstLastName": "Schinner",
+    "candidateSecondLastName": "Kilback",
+    "postulations": [
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "ce9757fe-ee98-4c9e-832b-949bd41c7687"
+      },
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "f7da0008-ad31-42a3-8a70-776194417629"
+      }
+    ]
+  },
+  {
+    "candidateID": "ac2a97bf-6eda-4972-ade0-1fe217eb36df",
+    "candidateFirstName": "Norma",
+    "candidateSecondName": "Austin",
+    "candidateFirstLastName": "Grimes",
+    "candidateSecondLastName": "Reichel",
+    "postulations": [
+      {
+        "partyID": "86423ab6-ea82-4961-af30-991e1bbea890",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "212d01cd-8106-4dcf-b8e5-ceda3feed2e5"
+      },
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "dc106850-47c4-4f2a-abc9-c42d5824a748"
+      },
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "3a7d31c7-238b-45d7-b8dc-0cbab72fdc5d"
+      },
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "086932c2-d4a9-4c6d-866d-e7fc8d486d95"
+      }
+    ]
+  },
+  {
+    "candidateID": "9e579b46-2414-431e-977c-f70e198e4431",
+    "candidateFirstName": "Milo",
+    "candidateSecondName": "Arden",
+    "candidateFirstLastName": "Johnson",
+    "candidateSecondLastName": "Gerlach",
+    "postulations": [
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "19f2d319-eaf5-4c4c-906b-0c92ab8353c8"
+      }
+    ]
+  },
+  {
+    "candidateID": "a04d738b-9157-427c-99f9-90a497c59e57",
+    "candidateFirstName": "Gregoria",
+    "candidateSecondName": "Riley",
+    "candidateFirstLastName": "Cruickshank",
+    "candidateSecondLastName": "Marks",
+    "postulations": [
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "2e5c19cc-1fa6-4a09-a207-73d4914f4773"
+      },
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "52b4f8d4-b13c-4d51-b776-9634fc40c308"
+      }
+    ]
+  },
+  {
+    "candidateID": "615d62b0-3dd9-4aaa-84c8-da07ffec4178",
+    "candidateFirstName": "Leanna",
+    "candidateSecondName": "Corey",
+    "candidateFirstLastName": "Schowalter",
+    "candidateSecondLastName": "Zemlak",
+    "postulations": [
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "43b8cfc6-6751-4f19-bf02-330c252194ee"
+      },
+      {
+        "partyID": "86423ab6-ea82-4961-af30-991e1bbea890",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "a7ee0f60-ebb2-458e-b93c-ad09a2212b1e"
+      },
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "32cfb6b6-da32-4832-824a-697b3e817165"
+      },
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "a4857432-0728-4448-bf33-0bca8eb53dd5"
+      }
+    ]
+  },
+  {
+    "candidateID": "9d5ae2af-095d-4a5e-adff-2e7478393a96",
+    "candidateFirstName": "Malcolm",
+    "candidateSecondName": "Bailey",
+    "candidateFirstLastName": "Kovacek",
+    "candidateSecondLastName": "Johns-Goyette",
+    "postulations": [
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "0575fa5c-d107-44c6-8c59-d18fcdb7ba94"
+      },
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "775761c6-f044-44e4-a224-3febceda41ec"
+      },
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "a31e02fe-31dc-4903-8d05-f1f8985b915e"
+      }
+    ]
+  },
+  {
+    "candidateID": "a017fbf2-f215-4e14-922b-2c0ab191d996",
+    "candidateFirstName": "Nikolas",
+    "candidateSecondName": "Jaden",
+    "candidateFirstLastName": "Champlin-Walsh",
+    "candidateSecondLastName": "MacGyver",
+    "postulations": [
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "fad5c942-19ef-4981-8f73-b7a8b9e21a7a"
+      },
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "4b6e819d-f982-4987-beff-e8e9af59afd0"
+      },
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "9af57e28-0204-4458-b20b-0a16d4cfb595"
+      }
+    ]
+  },
+  {
+    "candidateID": "e99037da-1338-4724-a806-fa0dc257625c",
+    "candidateFirstName": "Kiley",
+    "candidateSecondName": "Finley",
+    "candidateFirstLastName": "Ledner",
+    "candidateSecondLastName": "Frami",
+    "postulations": [
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "d772a5e6-47e9-4eb7-a301-6926eb3d9fa8"
+      }
+    ]
+  },
+  {
+    "candidateID": "2564676a-9df1-43a6-8b71-3cba4c58dd82",
+    "candidateFirstName": "Crystel",
+    "candidateSecondName": "Corey",
+    "candidateFirstLastName": "Windler",
+    "candidateSecondLastName": "Davis",
+    "postulations": [
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "18645481-d20a-4889-8f48-4069ab789d3e"
+      }
+    ]
+  },
+  {
+    "candidateID": "b4f462d1-bf1c-4fcb-afbd-2d47d328605c",
+    "candidateFirstName": "Lon",
+    "candidateSecondName": "August",
+    "candidateFirstLastName": "Conroy",
+    "candidateSecondLastName": "Weber",
+    "postulations": [
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "828a4a4a-ef98-4f94-9815-181e92570762"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+        "postulationID": "11f336fa-2a34-4595-922e-27bc7bcc92e9"
+      }
+    ]
+  },
+  {
+    "candidateID": "125d1dc8-72b8-4f96-9fd5-24c9d9180ba9",
+    "candidateFirstName": "Amina",
+    "candidateSecondName": "Logan",
+    "candidateFirstLastName": "King-Runolfsson",
+    "candidateSecondLastName": "McClure",
+    "postulations": [
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "a3ac6ad3-6daa-4ced-a958-326b45cf1d72"
+      }
+    ]
+  },
+  {
+    "candidateID": "4e1a0431-8963-4851-841b-a9835da9b05e",
+    "candidateFirstName": "Margie",
+    "candidateSecondName": "Anderson",
+    "candidateFirstLastName": "Leffler",
+    "candidateSecondLastName": "Swaniawski",
+    "postulations": [
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "ea203dbe-f8c2-467c-b7a7-768a1bed40b2"
+      },
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "973b028d-cba1-4116-b2af-7b0a8feb37eb"
+      },
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "db5d7728-69fc-45d7-ad82-a07f79f97c95"
+      }
+    ]
+  },
+  {
+    "candidateID": "3984afc6-f835-4695-83f4-f30639ff7594",
+    "candidateFirstName": "Brooke",
+    "candidateSecondName": "Reese",
+    "candidateFirstLastName": "Reilly",
+    "candidateSecondLastName": "Greenfelder",
+    "postulations": [
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "ccb25c13-3ce2-49a4-8db6-41934c8bfc4a"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "86560556-fc90-4acf-8d95-318478d31ba9"
+      }
+    ]
+  },
+  {
+    "candidateID": "5f9b6e1b-05c3-4694-a039-e0ea94b8b8b7",
+    "candidateFirstName": "Javon",
+    "candidateSecondName": "Shawn",
+    "candidateFirstLastName": "Runolfsdottir",
+    "candidateSecondLastName": "Stiedemann",
+    "postulations": [
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "1b10456a-2674-44b0-b8a6-4ccbcb045120"
+      }
+    ]
+  },
+  {
+    "candidateID": "67388922-df6a-4e28-935d-0017f02b8c7e",
+    "candidateFirstName": "Enoch",
+    "candidateSecondName": "Drew",
+    "candidateFirstLastName": "Price",
+    "candidateSecondLastName": "Dibbert",
+    "postulations": [
+      {
+        "partyID": "545e5df2-12ff-43f2-b3aa-3497c506a2a7",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "b8eaf0b2-9acf-45d0-9cc3-20e98bda80a9"
+      },
+      {
+        "partyID": "ce23a254-066b-4a0f-914c-5239f49073c3",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "8e382053-101f-427a-8f55-dfa4cb60709f"
+      },
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "d0464168-50b5-4b2c-803f-587ee53148a2"
+      },
+      {
+        "partyID": "5bb4964f-6660-4e3e-a9c6-e8783c426805",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "4310cf25-178c-4d4d-82e8-7236203f700b"
+      }
+    ]
+  },
+  {
+    "candidateID": "9c748104-0254-4ba6-b25a-a643b2f3a7a7",
+    "candidateFirstName": "Miracle",
+    "candidateSecondName": "Emerson",
+    "candidateFirstLastName": "Wolf",
+    "candidateSecondLastName": "Kris",
+    "postulations": [
+      {
+        "partyID": "3cdfd73e-cfb8-4b46-9d40-534a190bb6ff",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "d733e504-9b6c-428b-aac3-738dbaf7719f"
+      },
+      {
+        "partyID": "0035b5d2-bcd2-42c1-8269-6755760c3d2f",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "fa2b3f24-e3e4-4102-baee-098da724a382"
+      },
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "3a340421-ab77-4afe-b4fa-db1e1f195e8b"
+      }
+    ]
+  },
+  {
+    "candidateID": "a679f304-9297-4bfb-9481-3bdae2614a84",
+    "candidateFirstName": "Jamal",
+    "candidateSecondName": "Sasha",
+    "candidateFirstLastName": "Dibbert",
+    "candidateSecondLastName": "Ebert",
+    "postulations": [
+      {
+        "partyID": "c16714d3-7e35-4601-b47f-c53361cd5b0c",
+        "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
+        "postulationID": "9dceb59a-20a9-473c-805b-9a1dfc1e4159"
+      },
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "db854ca3-a44b-42c9-8bcd-530f4356ba7f"
+      }
+    ]
+  },
+  {
+    "candidateID": "5d47e569-50b3-4f05-bfaf-0b52b1e8f43b",
+    "candidateFirstName": "Tillman",
+    "candidateSecondName": "Cameron",
+    "candidateFirstLastName": "Braun",
+    "candidateSecondLastName": "Green",
+    "postulations": [
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "cd2440e6-badb-4701-93ad-c29128346e35"
+      },
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "6d1beb76-f7a7-4554-87a6-c384dcb23d90"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "487c4437-5d26-42de-9df0-1c131af94fb6"
+      }
+    ]
+  },
+  {
+    "candidateID": "c7a8e3b3-c1e8-4b9a-b19a-ef1ac5b04ab6",
+    "candidateFirstName": "Judge",
+    "candidateSecondName": "Phoenix",
+    "candidateFirstLastName": "Raynor",
+    "candidateSecondLastName": "Schmidt",
+    "postulations": [
+      {
+        "partyID": "7fa718dd-8aaa-4cae-b67e-42cfbf064f26",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "fa82546a-cbb3-412c-b40f-6842d078f391"
+      }
+    ]
+  },
+  {
+    "candidateID": "4930fcef-0e73-4772-a3c7-3a4bfd2de795",
+    "candidateFirstName": "Zachery",
+    "candidateSecondName": "Blake",
+    "candidateFirstLastName": "Hyatt",
+    "candidateSecondLastName": "Nikolaus",
+    "postulations": [
+      {
+        "partyID": "86423ab6-ea82-4961-af30-991e1bbea890",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "7c669a85-9e26-4fad-9afe-9ad116f6acb8"
+      },
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "785f7e0f-8339-4936-9b72-a5d2f9b706b1"
+      },
+      {
+        "partyID": "02503a91-147d-4a57-bf59-96f758831623",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "2981e28f-6c6c-41cb-8b65-c1c81c97df29"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "ce7091e1-7e6e-472d-b92d-ad5ba82874d5"
+      }
+    ]
+  },
+  {
+    "candidateID": "e7494fbf-70c2-4dbf-b93d-ea9cdb6ff546",
+    "candidateFirstName": "Annamarie",
+    "candidateSecondName": "James",
+    "candidateFirstLastName": "Dach",
+    "candidateSecondLastName": "Altenwerth-Raynor",
+    "postulations": [
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
+        "postulationID": "e02f7fec-b621-466b-8d33-1a8e2639ddb2"
+      }
+    ]
+  },
+  {
+    "candidateID": "19faa545-bb27-45bb-975e-89c7ce6ac5b0",
+    "candidateFirstName": "Rowan",
+    "candidateSecondName": "Cameron",
+    "candidateFirstLastName": "Deckow",
+    "candidateSecondLastName": "Walker",
+    "postulations": [
+      {
+        "partyID": "bb2eaa76-1c2b-4bb2-a191-fa80b345465b",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "31026028-88e0-42b5-8386-492f5ce34626"
+      }
+    ]
+  },
+  {
+    "candidateID": "082ced8a-9d93-41aa-bd8d-7b539e709007",
+    "candidateFirstName": "Baron",
+    "candidateSecondName": "Leslie",
+    "candidateFirstLastName": "Kozey",
+    "candidateSecondLastName": "Wunsch",
+    "postulations": [
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "78b30058-2001-4b15-b6a7-669185b0b493"
+      },
+      {
+        "partyID": "fc0704f8-85f1-486f-b124-c1aac6959c81",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "47d454f4-0edd-4a1f-aa05-866fedd29173"
+      },
+      {
+        "partyID": "4fcb1494-3ca6-4f11-a6cb-3fb27ca3246d",
+        "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
+        "postulationID": "09962ad1-49d7-4ab5-a022-d32363d534f8"
+      }
+    ]
+  },
+  {
+    "candidateID": "14d6270d-ff83-4f15-b287-55ce85d60568",
+    "candidateFirstName": "Jewell",
+    "candidateSecondName": "Brooklyn",
+    "candidateFirstLastName": "Bergstrom",
+    "candidateSecondLastName": "Toy",
+    "postulations": [
+      {
+        "partyID": "8ddd84c5-2004-416e-81f4-ed2196221dd3",
+        "positionID": "fb290b07-87c5-4949-b081-79075531c098",
+        "postulationID": "4839ed8f-50f5-4edf-b609-fc30074e51b3"
+      },
+      {
+        "partyID": "81b60b23-378e-431e-a495-2971f7f36a59",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "5f48d331-9f22-49ee-825a-6e8afedfc1b9"
+      }
+    ]
+  },
+  {
+    "candidateID": "fcf18950-ccfa-4bd6-9b6e-f870f440d56f",
+    "candidateFirstName": "Art",
+    "candidateSecondName": "Bowie",
+    "candidateFirstLastName": "Stanton",
+    "candidateSecondLastName": "Langosh",
+    "postulations": [
+      {
+        "partyID": "fc0704f8-85f1-486f-b124-c1aac6959c81",
+        "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
+        "postulationID": "30208916-0692-49ea-87a1-1ec608e82da5"
+      },
+      {
+        "partyID": "7c04453d-111c-4c4d-8bd3-b0305dd9ed08",
+        "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
+        "postulationID": "d70b1c1e-7813-405a-ae6a-cd0db57a96c2"
+      },
+      {
+        "partyID": "8b36af38-cf33-4162-9938-fa407515a92a",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "b8944946-33e1-4f97-aadf-8a4f8ce2eefa"
+      },
+      {
+        "partyID": "e9a51b93-d0f8-430e-af82-2f1e147946de",
+        "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
+        "postulationID": "1dfca82e-e04a-4c1c-9b10-7a3ae0e49405"
+      }
+    ]
+  },
+  {
+    "candidateID": "6feceddd-7f09-414a-9bf4-e9f76b3ef248",
+    "candidateFirstName": "Rhett",
+    "candidateSecondName": "Marlowe",
+    "candidateFirstLastName": "Weimann",
+    "candidateSecondLastName": "Nienow",
+    "postulations": [
+      {
+        "partyID": "a51fffbb-df2f-4f52-87d3-117e891e459c",
+        "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
+        "postulationID": "f776728d-3f47-4987-ac3e-a09e999fc97e"
+      },
+      {
+        "partyID": "296e9d5d-589b-478e-9e95-a21426539bf0",
+        "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
+        "postulationID": "6ddc9aa4-e1f4-4f3f-8f59-72d624091059"
+      }
+    ]
+  }
+]

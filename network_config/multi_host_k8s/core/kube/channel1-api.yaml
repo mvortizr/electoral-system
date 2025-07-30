@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: main
-          image: docker.io/mvortizr/channel1_api:v1.41
+          image: docker.io/mvortizr/channel1_api:v1.43
           command: ["npm", "run", "start:prod"]
           imagePullPolicy: IfNotPresent  
           envFrom:

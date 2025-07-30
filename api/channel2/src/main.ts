@@ -20,9 +20,9 @@ async function bootstrap() {
   SwaggerModule.setup('docs', app, document);
   
   app.enableCors({
-    origin: '*', 
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    methods: ['GET', 'POST'],
+    origin: '*',
+    methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
+    allowedHeaders: '*',
   });
 
   app.use(helmet());

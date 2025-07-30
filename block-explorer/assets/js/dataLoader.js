@@ -76,12 +76,16 @@ export function loadChannelData(channel, dynamicContentArea) {
 
     $.ajax({
         url: apiUrl,
-        method: 'GET',
-        dataType: 'json',
-        headers: {
-            'auth': header_auth,
-            'Content-Type': 'application/json'
-        },
+            method: 'GET',
+            dataType: 'json',
+            contentType: 'application/json', 
+            headers: {
+                'auth': header_auth
+            },
+            data: JSON.stringify({
+                pageSize: 20,
+                bookmark: ""
+        }),
         success: function(data) {
             renderTable(channel, dynamicContentArea, data);
         },

@@ -1,13 +1,13 @@
 import fs from 'fs/promises';
 import fetch from 'node-fetch';
-import { API_KEY, BASE_URL } from '../consts.js';
+import { API_KEY_1, BASE_URL_1 } from '../consts.js';
 
-async function postElectorsInBatches(batchSize = 25) {
+export async function postElectorsInBatches(batchSize = 25) {
   try {
     const dataRaw = await fs.readFile('../../generated_data/electors.json', 'utf-8');
     const electors = JSON.parse(dataRaw);
 
-    const url = `${BASE_URL}/elector/createElectorBatch`;
+    const url = `${BASE_URL_1}/elector/createElectorBatch`;
 
     // Función para dividir el arreglo en lotes
     function chunkArray(array, size) {
@@ -28,7 +28,7 @@ async function postElectorsInBatches(batchSize = 25) {
       const response = await fetch(url, {
         method: 'POST',
         headers: {
-          'auth': API_KEY,
+          'auth': API_KEY_1,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(batch),

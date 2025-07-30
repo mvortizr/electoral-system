@@ -1,9 +1,9 @@
 {
-  "parties": 20,
-  "positions": 10,
-  "candidates": 200,
-  "electors": 1000,
-  "minimum_approvals": 1,
+  "parties": 5,
+  "positions": 3,
+  "candidates": 50,
+  "electors": 250,
+  "minimum_approvals": 3,
   "liveResults": true,
   "startVotingDate": "2025-11-15T00:00:00Z",
   "endVotingDate": "2025-11-25T00:00:00Z"

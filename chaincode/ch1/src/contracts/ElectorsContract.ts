@@ -287,6 +287,7 @@ export class ElectorsContract extends Contract {
                 return JSON.stringify({success: false, error: `Position with ID ${positionExtID} doesn't exists` });
             }
             let position = positionArray[0]
+            positionIntID = position.positionID
             let vacancies = position.positionVacancies
             let positionName = position.positionName
 

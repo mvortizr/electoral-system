@@ -1,52 +1,17 @@
 [
   {
-    "positionID": "dd07705d-6b04-4fe0-885d-3209a93c431c",
-    "positionName": "Representante ante Organismos Internacionales del concejo municipal",
-    "vacancies": 1
+    "positionID": "7ed68bdb-7ef9-479f-8fbf-1df57cdbf5b8",
+    "positionName": "Senador de la junta de vecinos",
+    "vacancies": 3
   },
   {
-    "positionID": "c165e235-2535-4356-a71d-3e41b7e5bf9d",
+    "positionID": "a1679fd5-29e9-4d68-8ddf-cbfc1f88ed3a",
     "positionName": "Gobernador de la asamblea nacional",
-    "vacancies": 3
-  },
-  {
-    "positionID": "9d485b10-e1a0-4436-91b2-4cc7d3632343",
-    "positionName": "Concejal de la nación",
     "vacancies": 4
   },
   {
-    "positionID": "fb290b07-87c5-4949-b081-79075531c098",
-    "positionName": "Senador de la organización no gubernamental",
+    "positionID": "2da85cb0-f71e-47af-a29d-f1433351b9f2",
+    "positionName": "Consejero Legislativo Regional de la comunidad",
     "vacancies": 1
-  },
-  {
-    "positionID": "26b78c42-bbaf-4e94-80f0-3a8aabaf5496",
-    "positionName": "Alcalde de la gobernación",
-    "vacancies": 3
-  },
-  {
-    "positionID": "0b67c869-ed2d-48e4-baa0-46dc1649d0a5",
-    "positionName": "Senador de la asamblea nacional",
-    "vacancies": 3
-  },
-  {
-    "positionID": "4cee28f9-1c6b-4c97-bf7e-19db18747331",
-    "positionName": "Alcalde de la asamblea nacional",
-    "vacancies": 4
-  },
-  {
-    "positionID": "abab4c69-34c1-4607-83bd-64eeb1e8fdfe",
-    "positionName": "Vicepresidente de la alcaldía",
-    "vacancies": 3
-  },
-  {
-    "positionID": "697e54e1-2a57-48cc-ab17-fbd2fba848be",
-    "positionName": "Consejero Electoral de la nación",
-    "vacancies": 1
-  },
-  {
-    "positionID": "c27f44a6-4f24-49ef-8d1e-80d87d394d35",
-    "positionName": "Gobernador del municipio",
-    "vacancies": 4
   }
 ]

@@ -150,6 +150,17 @@ export class VoteController {
     if (!response.success) {
       return res.status(400).json({ statusCode: 400, ...response });
     }
+
+    console.log('electorIntID:', response.electorIntID);
+    console.log('positionExtID:', response.positionExtID);
+    console.log('positionIntID:', response.positionIntID);
+    console.log('multiplier:', response.multiplier);
+    console.log('positionVacancies:', response.positionVacancies);
+    console.log('candidateFullName:', response.candidateFullName);
+    console.log('positionName:', response.positionName);
+    console.log('partyName:', response.partyName ?? null);
+
+   
   
     let electorIntID = response.electorIntID
     let positionExtID = response.positionExtID
@@ -160,6 +171,7 @@ export class VoteController {
     let positionName = response.positionName
     let partyName = response.partyName??null
 
+  
 
     ////////// Write in electoral book ////////////
     const result = await this.fabricService.submitTransaction(
@@ -181,6 +193,8 @@ export class VoteController {
       return res.status(400).json({ statusCode: 400, ...finalResult });
     } 
 
+    
+
     //////////// Save vote /////////
     const postDataToSendApi3 = {
       positionID: positionIntID,
@@ -196,6 +210,8 @@ export class VoteController {
       positionName: positionName,
       partyName:partyName
     };
+
+    console.log('postDataToSendApi3', postDataToSendApi3)
 
     const responseStoreVote = await this.voteService.postData(`${API_3_URL}/vote/register`,postDataToSendApi3)
 

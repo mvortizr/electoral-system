@@ -1,16 +1,16 @@
-import postElectionConfig from './loadElectionConfig.js';
-import postPartiesInBatches from './loadParties.js';
-import postPositions from './loadPositions.js';
-import postCandidatesInBatches from './loadCandidates.js';
-import postElectorsInBatches from './loadElectors.js';
+import { postElectionConfig } from './loadElectionConfig.js';
+import { postPartiesInBatches } from './loadParties.js';
+import { postPositions } from './loadPositions.js';
+import { postCandidatesInBatches } from './loadCandidates.js';
+import { postElectorsInBatches } from './loadElectors.js';
 
 // load election
-postElectionConfig();
+await postElectionConfig();
 // load parties
-postPartiesInBatches();
+await postPartiesInBatches();
 // load positions
-postPositions();
+await postPositions();
 // load candidates
-postCandidatesInBatches();
+await postCandidatesInBatches();
 // load electors
-postElectorsInBatches();
+await postElectorsInBatches();

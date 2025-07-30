@@ -3,10 +3,12 @@
  */
 
 import { DummyContract } from './contracts/DummyContract';
+import { ExplorerContract } from './contracts/ExplorerContract';
 import { VoteRegistryContract } from './contracts/VoteRegistry';
 
 
 export const contracts: any[] = [
     DummyContract,
-    VoteRegistryContract
+    VoteRegistryContract,
+    ExplorerContract
 ];

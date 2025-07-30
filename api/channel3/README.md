@@ -49,7 +49,11 @@ $ npm run start:prod
 
 ```bash
 # crear imagen channel1 desde current directory
+<<<<<<< HEAD
 docker build -t mvortizr/channel3_api:v1.18 .
+=======
+docker build -t mvortizr/channel3_api:v1.28 .
+>>>>>>> block_explorer
 #(docker tag my-image:latest your-docker-hub-username/repository-name:tag
 #)
 

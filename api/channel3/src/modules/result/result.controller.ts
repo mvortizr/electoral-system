@@ -6,6 +6,7 @@ import { ApiKeyGuard } from 'src/middleware/auth.middleware';
 import { FabricService } from '../../fabric/fabric.service';
 import { ApiHeader, ApiOperation} from '@nestjs/swagger';
 import { v4 as uuidv4 } from 'uuid';
+import { DTOPagination } from './dtos/dto_pagination';
 
 // DTOS
 // cambiar a vote registry 
@@ -69,6 +70,20 @@ export class ResultController {
     const chaincode = process.env.CHAINCODE_NAME!.toString()
     const functionName = "readEntireElectoralChannel"
     const result = await this.fabricService.evaluateTransaction(chaincode, functionName)
+    return res.status(200).json({ statusCode: 200, result: result });
+  }
+
+  @Post('/explore') 
+  @ApiOperation({ summary: 'get all data inside the channel' })
+  async explore(@Body() queryParams: DTOPagination, @Res() res: Response): Promise<object> {
+    // async submitTransaction(chaincodeName: string, functionName: string, ...args: string[])
+    const chaincode = process.env.CHAINCODE_NAME!.toString()
+    const functionName = "ExplorerContract:getAllAssetsWithPagination"
+    const params = JSON.stringify({
+      pageSize: queryParams.pageSize,
+      bookmark: queryParams.bookmark
+    })
+    const result = await this.fabricService.evaluateTransaction(chaincode, functionName, params)
     return res.status(200).json({ statusCode: 200, result: result });
   }
 

@@ -8,6 +8,7 @@ import { PositionContract } from './contracts/PositionsContract';
 import { ElectorsContract } from './contracts/ElectorsContract';
 import { PartiesContract } from './contracts/PartiesContract';
 import { CandidatesContract } from './contracts/CandidatesContract';
+import { ExplorerContract } from './contracts/ExplorerContract';
 
 
 export const contracts: any[] = [
@@ -16,5 +17,6 @@ export const contracts: any[] = [
     PositionContract,
     ElectorsContract,
     PartiesContract,
-    CandidatesContract
+    CandidatesContract,
+    ExplorerContract
 ];

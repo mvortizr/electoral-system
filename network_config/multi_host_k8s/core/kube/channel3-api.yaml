@@ -16,11 +16,7 @@ spec:
     spec:
       containers:
         - name: main
-<<<<<<< HEAD
-          image: docker.io/mvortizr/channel3_api:v1.27
-=======
           image: docker.io/mvortizr/channel3_api:v1.28
->>>>>>> block_explorer
           command: ["npm", "run", "start:prod"]
           imagePullPolicy: IfNotPresent 
           envFrom:

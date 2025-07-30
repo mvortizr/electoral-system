@@ -112,6 +112,7 @@ function print_help() {
 . scripts/rest2.sh
 . scripts/rest3.sh
 . scripts/superadmin.sh
+. scripts/live_count.sh
 
 
 # check for kind, kubectl, etc.
@@ -192,6 +193,14 @@ elif [ "${MODE}" == "application" ]; then
   log "Getting application connection information:"
   application_connection
   log "🏁 - Application connection information ready."
+
+elif [ "${MODE}" == "live_count" ]; then
+  live_count
+  log "🏁 - CouchDB service for live vote counting ready."
+
+elif [ "${MODE}" == "bring_down_live_count" ]; then
+  bring_down_live_count_stack
+  log "🏁 - CouchDB service for live vote counting is down."
 
 else
   print_help

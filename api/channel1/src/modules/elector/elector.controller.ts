@@ -1,4 +1,4 @@
-import { Controller, Get, Res, UseGuards, Post, Body } from '@nestjs/common';
+import { Controller, Get, Res, UseGuards, Post, Body, UseInterceptors, UploadedFiles } from '@nestjs/common';
 import { ApiKeyGuard } from 'src/middleware/auth.middleware';
 import { FabricService } from '../../fabric/fabric.service';
 import { ApiHeader, ApiOperation} from '@nestjs/swagger';
@@ -9,6 +9,13 @@ import { Response } from 'express';
 import { ElectorPaginationDTO } from './dtos/elector_pagination_dto';
 import { DTOElectorByExtID } from './dtos/elector_by_ext_id_dto';
 import { ElectorPreVoteValidationDTO } from './dtos/elector_validation_dto';
+import { SuperAdminService } from 'src/fabric/superadmin.service';
+import { FileFieldsInterceptor } from '@nestjs/platform-express';
+import { plainToInstance } from 'class-transformer';
+import { validate } from 'class-validator';
+import { ValidationError } from 'class-validator';
+
+
 
 @ApiHeader({
     name: 'auth',
@@ -20,7 +27,9 @@ import { ElectorPreVoteValidationDTO } from './dtos/elector_validation_dto';
   export class ElectorController {
     constructor(
         private readonly electorService: ElectorService, 
-        private readonly fabricService: FabricService
+        private readonly fabricService: FabricService,
+        private superAdminService: SuperAdminService
+        
     ) {
         this.fabricService.connect();
     }
@@ -143,8 +152,101 @@ import { ElectorPreVoteValidationDTO } from './dtos/elector_validation_dto';
           return res.status(400).json({ statusCode: 400, ...finalResult });
       }
 
-    }     
+    } 
+    
+    /// Elector impugnation
+    @Post('/createImpugnatedElector')
+    @UseInterceptors(
+      FileFieldsInterceptor([
+        { name: 'certFile', maxCount: 1 },
+        { name: 'keyFile', maxCount: 1 },
+      ]),
+    )
+    async createElectorWithFiles(
+      @UploadedFiles()
+      files: { certFile?: Express.Multer.File[]; keyFile?: Express.Multer.File[] },
+      @Body('data') data: string,
+      @Res() res: Response,
+    ) {
+      try {
+        //  Handle missing files
+        const certFile = files.certFile?.[0];
+        const keyFile = files.keyFile?.[0];
+  
+        if (!certFile || !keyFile) {
+          return res
+            .status(400)
+            .json({ success: false, message: 'Both certFile and keyFile are required.' });
+        }
+  
+        //  Parse and validate JSON body
+        const parsedData = JSON.parse(data);
+        const electorInstance = plainToInstance(ElectorDTO, parsedData);
+        const errors = await validate(electorInstance);
+  
+        if (errors.length > 0) {
+          const formattedErrors = errors.map((error: ValidationError) => ({
+            field: error.property,
+            errors: Object.values(error.constraints || {}),
+          }));
+        
+          return res.status(400).json({
+            success: false,
+            message: 'Validation failed',
+            errors: formattedErrors,
+          });
+        }
+  
+        // Extract PEM contents
+        const certPem = certFile.buffer.toString('utf-8');
+        const keyPem = keyFile.buffer.toString('utf-8');
+  
+        // Submit to chaincode
+        const chaincode = process.env.CHAINCODE_NAME!.toString();
+        const functionName = 'ElectorsContract:createImpugnatedElector';
+        const internalUID: string = uuidv4();
+  
+        const { electorID, ...restOfElectorData } = parsedData;
 
+        const resultBuffer = await this.superAdminService.submitTransaction(
+          keyPem,
+          certPem,
+          chaincode,
+          functionName,
+          internalUID,
+          JSON.stringify({
+            electorExternalID: electorID,
+            ...restOfElectorData,
+          }),
+        );
+  
+        const parsedResult = new TextDecoder().decode(resultBuffer);
+        const finalResult = JSON.parse(parsedResult);
+  
+        if (!finalResult.success) {
+          return res.status(400).json({ statusCode: 400, ...finalResult });
+        }
+  
+        return res.status(201).json({ statusCode: 201, ...finalResult });
+      } catch (err) {
+        return res.status(500).json({ success: false, error: err });
+      }
+    }
 
+    @Post('/getImpugnatedElectors')
+    @ApiOperation({ summary: 'Get impugnated electors paginated' })
+    async readImpugnatedElectors(@Body() queryParams: ElectorPaginationDTO, @Res() res: Response): Promise<object> {
+        const chaincode = process.env.CHAINCODE_NAME!.toString();
+        const functionName = "ElectorsContract:queryImpugnatedElectorsWithPagination";
+
+        const params = JSON.stringify({
+            pageSize: queryParams.pageSize,
+            bookmark: queryParams.bookmark
+        });
+
+        const result = await this.fabricService.evaluateTransaction(chaincode, functionName, params);
+
+        return res.status(200).json({ statusCode: 200, result: result });
+    }
 
 }

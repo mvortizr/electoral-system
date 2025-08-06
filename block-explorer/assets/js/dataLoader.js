@@ -1,27 +1,24 @@
 import { CHANNEL_API_KEYS, CHANNEL_URLS, CHANNELS_NAME } from './consts.js';
 
+// Objeto para almacenar el estado de paginación de cada canal
 const paginationState = {};
-let isLoading = false;
+let isLoading = false; // Flag para evitar múltiples llamadas simultáneas
 
 /**
- * @param {string} channel Channel name.
- * @param {object[]} dataArray Array of data to render in the table.
- * @returns {string} HTML string representing the table.
+ * Renderiza la tabla de datos y el selector de página.
+ * @param {string} channel El nombre del canal.
+ * @param {object[]} dataArray Los datos a mostrar en la tabla.
+ * @returns {string} El HTML de la tabla.
  */
 export function renderTable(channel, dataArray) {
-    // Initialize pagination state for the channel if it doesn't exist
-    if (!paginationState[channel]) {
-        paginationState[channel] = {
-            bookmarks: [''],
-            currentPageIndex: 0
-        };
-    }
+    // Si el estado del canal no existe, se inicializa.
+    // NOTA: Esta inicialización se ha movido a loadChannelData para evitar el error.
     const { bookmarks, currentPageIndex } = paginationState[channel];
     let tableHtml = `
         <div class="card">
             <div class="card-header d-flex align-items-center">
                 <h3 class="card-title mb-0">${CHANNELS_NAME[channel]} Data</h3>
-                <div class="page-selector-container d-flex align-items-center ml-auto">
+                <div class="pxage-selector-container d-flex align-items-center ml-auto">
                     <span class="mr-2">Go to page:</span>
                     <select id="pageSelector" class="form-control d-inline-block w-auto">
                         ${bookmarks.map((bookmark, index) => `
@@ -114,6 +111,13 @@ export function loadChannelData(channel, dynamicContentArea) {
     isLoading = true;
     renderLoader(channel, dynamicContentArea);
 
+    // FIX: Se inicializa el estado del canal AQUI, antes de usarlo.
+    if (!paginationState[channel]) {
+        paginationState[channel] = {
+            bookmarks: [''],
+            currentPageIndex: 0
+        };
+    }
 
     const { bookmarks, currentPageIndex } = paginationState[channel];
     const apiUrl = CHANNEL_URLS[channel];

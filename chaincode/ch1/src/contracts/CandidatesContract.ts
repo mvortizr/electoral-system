@@ -10,6 +10,7 @@ import { getInternalPartyID } from '../validations/candidates/getInternalPartyID
 
 
 
+
 @Info({title: 'Candidates contract', description: 'Smart contract for candidates'})
 export class CandidatesContract extends Contract {
     // create a new candidate
@@ -23,69 +24,79 @@ export class CandidatesContract extends Contract {
         // parsing candidate info
         let data = JSON.parse(candidateInfo)
 
+        // // ---------- Check duplicate candidateExternalID ----------
+        const extIDKey = `extID-${data.candidateExternalID}`;
+        const existing = await ctx.stub.getState(extIDKey);
+        if (existing && existing.length > 0) {
+            return JSON.stringify({
+                success: false,
+                error: `candidate ID ${data.candidateExternalID} already exists`
+            });
+        }
+
         //// VALIDATIONS
 
         // check that election config exists and bring the number of parties
-        let electionConfig = await bringElectionConfig(ctx);
-        if (electionConfig.length === 0) {
-            return JSON.stringify({success: false, error:`election config not set`});
-        } 
+        // let electionConfig = await bringElectionConfig(ctx);
+        // if (electionConfig.length === 0) {
+        //     return JSON.stringify({success: false, error:`election config not set`});
+        // } 
 
-        // check all parties are inputed before starting with positions
-        let currentPartiesMissing = electionConfig[0].parties
-        let currentPositionMissing = electionConfig[0].positions
-        if (currentPartiesMissing >0) {
-            return JSON.stringify({success: false, error: "please input all the parties before introducing candidate data" });
-        }
-        if (currentPositionMissing>0) {
-            return JSON.stringify({success: false, error: "please input all the positions before introducing candidate data" });
-        }
+        // // check all parties are inputed before starting with positions
+        // let currentPartiesMissing = electionConfig[0].parties
+        // let currentPositionMissing = electionConfig[0].positions
+        // if (currentPartiesMissing >0) {
+        //     return JSON.stringify({success: false, error: "please input all the parties before introducing candidate data" });
+        // }
+        // if (currentPositionMissing>0) {
+        //     return JSON.stringify({success: false, error: "please input all the positions before introducing candidate data" });
+        // }
 
-         // check to not input more candidates than the ones in the config
-         let currentCandidateLimit = electionConfig[0].candidates
-         if (currentCandidateLimit <=0) {
-             return JSON.stringify({success: false, error: "max candidate limit reached" });
-         }
+        //  // check to not input more candidates than the ones in the config
+        //  let currentCandidateLimit = electionConfig[0].candidates
+        //  if (currentCandidateLimit <=0) {
+        //      return JSON.stringify({success: false, error: "max candidate limit reached" });
+        //  }
  
          //check that there's not another candidate with the same extID
-         let doesExtCandIDExists = await isExternalCandidateIDDuplicated(data, ctx)
-         if (doesExtCandIDExists === true) {
-             return JSON.stringify({success: false, error:`candidate ID ${data.candidateExternalID} already exists`});
-         }
+        //  let doesExtCandIDExists = await isExternalCandidateIDDuplicated(data, ctx)
+        //  if (doesExtCandIDExists === true) {
+        //      return JSON.stringify({success: false, error:`candidate ID ${data.candidateExternalID} already exists`});
+        //  }
 
 
          //for every postulation
-         let postulations = data.postulations
+        //  let postulations = data.postulations
 
         
-         for (const post of postulations) {
-             //check that position exists
-            let position = await doesPositionExists(post.positionExternalID, ctx);
-            if (!position) {
-                return JSON.stringify({success: false, error:`Position ID ${post.positionExternalID} doesn't exists`});
-            }
-            post.positionInternalID = position.positionID
+        //  for (const post of postulations) {
+        //      //check that position exists
+        //     let position = await doesPositionExists(post.positionExternalID, ctx);
+        //     if (!position) {
+        //         return JSON.stringify({success: false, error:`Position ID ${post.positionExternalID} doesn't exists`});
+        //     }
+        //     post.positionInternalID = position.positionID
 
-            //check that party exists
-            if (post.partyExternalID != null) {
-                let {partyExists, partyInternalID} = await getInternalPartyID(post.partyExternalID, ctx);
+        //     //check that party exists
+        //     if (post.partyExternalID != null) {
+        //         let {partyExists, partyInternalID} = await getInternalPartyID(post.partyExternalID, ctx);
 
-                //get internal party ID
-                if (!partyExists) {
-                    return JSON.stringify({success: false, error:`Party ID ${post.partyExternalID} doesn't exists`});
-                }
+        //         //get internal party ID
+        //         if (!partyExists) {
+        //             return JSON.stringify({success: false, error:`Party ID ${post.partyExternalID} doesn't exists`});
+        //         }
 
-                post.partyInternalID = partyInternalID
-            } 
-         }
+        //         post.partyInternalID = partyInternalID
+        //     } 
+        //  }
 
  
          // all in order, take one from the limit of candidates 
-           let newElectionConfigRunningCopy = {
-             ...electionConfig[0],
-             candidates : currentCandidateLimit-1
-         }
-         await ctx.stub.putState("2", Buffer.from(stringify(newElectionConfigRunningCopy)));
+        //    let newElectionConfigRunningCopy = {
+        //      ...electionConfig[0],
+        //      candidates : currentCandidateLimit-1
+        //  }
+        //  await ctx.stub.putState("2", Buffer.from(stringify(newElectionConfigRunningCopy)));
  
 
         //////////CREATE CANDIDATE/////////// 
@@ -98,8 +109,13 @@ export class CandidatesContract extends Contract {
             ...data
         }
 
+        console.log(`[CONCURRENCY_WRITE_ATTEMPT] CandidateID: ${candidateID}, ExternalID Key: ${extIDKey}`);
+
         // we insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
         await ctx.stub.putState(candidateID, Buffer.from(stringify(newCandidate)));
+
+        // ---------- Map candidateExternalID to candidateID ----------
+        await ctx.stub.putState(extIDKey, Buffer.from(stringify(candidateID)));
 
         return JSON.stringify({success: true});
     }
@@ -114,71 +130,81 @@ export class CandidatesContract extends Contract {
 
         //VALIDATIONS
         // check that election config exists and bring the number of parties
-        let electionConfig = await bringElectionConfig(ctx);
-        if (electionConfig.length === 0) {
-            return JSON.stringify({success: false, error:`election config not set`});
-        } 
+        // let electionConfig = await bringElectionConfig(ctx);
+        // if (electionConfig.length === 0) {
+        //     return JSON.stringify({success: false, error:`election config not set`});
+        // } 
 
-        // check all parties are inputed before starting with positions
-        let currentPartiesMissing = electionConfig[0].parties
-        let currentPositionMissing = electionConfig[0].positions
-        if (currentPartiesMissing >0) {
-            return JSON.stringify({success: false, error: "please input all the parties before introducing position data" });
-        }
-        if (currentPositionMissing>0) {
-            return JSON.stringify({success: false, error: "please input all the positions before introducing candidate data" });
-        }
+        // // check all parties are inputed before starting with positions
+        // let currentPartiesMissing = electionConfig[0].parties
+        // let currentPositionMissing = electionConfig[0].positions
+        // if (currentPartiesMissing >0) {
+        //     return JSON.stringify({success: false, error: "please input all the parties before introducing position data" });
+        // }
+        // if (currentPositionMissing>0) {
+        //     return JSON.stringify({success: false, error: "please input all the positions before introducing candidate data" });
+        // }
 
-        // check to not input more candidates than the ones in the config
-        let currentCandidateLimit = electionConfig[0].candidates
-        let numofCandToInput: number = candidatesArray.length
-        if (currentCandidateLimit < numofCandToInput ) {
-            return JSON.stringify({success: false, error: "max candidate limit reached" });
-        }
+        // // check to not input more candidates than the ones in the config
+        // let currentCandidateLimit = electionConfig[0].candidates
+        // let numofCandToInput: number = candidatesArray.length
+        // if (currentCandidateLimit < numofCandToInput ) {
+        //     return JSON.stringify({success: false, error: "max candidate limit reached" });
+        // }
 
         for (const candidate of candidatesArray) {
             const { candidateID, ...data } = candidate;
-            //check that there's not another candidate with the same extID
-            let doesExtCandIDExists = await isExternalCandidateIDDuplicated(data, ctx)
-            if (doesExtCandIDExists === true) {
-                return JSON.stringify({success: false, error:`candidate ID ${data.candidateExternalID} already exists`});
+            // //check that there's not another candidate with the same extID
+            // let doesExtCandIDExists = await isExternalCandidateIDDuplicated(data, ctx)
+            // if (doesExtCandIDExists === true) {
+            //     return JSON.stringify({success: false, error:`candidate ID ${data.candidateExternalID} already exists`});
+
+                    // ---------- Check duplicate candidateExternalID ----------
+            const extIDKey = `extID-${data.candidateExternalID}`;
+            const existing = await ctx.stub.getState(extIDKey);
+            if (existing && existing.length > 0) {
+                return JSON.stringify({
+                    success: false,
+                    error: `candidate ID ${data.candidateExternalID} already exists`
+                });
             }
+        }
 
         // CHECK POSTULATIONS
-        let postulations = data.postulations
+        //let postulations = data.postulations
 
         
-        for (const post of postulations) {
-             //check that position exists
-            let position = await doesPositionExists(post.positionExternalID, ctx);
-            if (!position) {
-                return JSON.stringify({success: false, error:`Position ID ${post.positionExternalID} doesn't exists`});
-            }
-            //check that party exists
-            if (post.partyExternalID != null) {
-                let {partyExists, partyInternalID} = await getInternalPartyID(post.partyExternalID, ctx);
+        // for (const post of postulations) {
+        //      //check that position exists
+        //     let position = await doesPositionExists(post.positionExternalID, ctx);
+        //     if (!position) {
+        //         return JSON.stringify({success: false, error:`Position ID ${post.positionExternalID} doesn't exists`});
+        //     }
+        //     //check that party exists
+        //     if (post.partyExternalID != null) {
+        //         let {partyExists, partyInternalID} = await getInternalPartyID(post.partyExternalID, ctx);
 
-                //get internal party ID
-                if (!partyExists) {
-                    return JSON.stringify({success: false, error:`Party ID ${post.partyExternalID} doesn't exists`});
-                }
+        //         //get internal party ID
+        //         if (!partyExists) {
+        //             return JSON.stringify({success: false, error:`Party ID ${post.partyExternalID} doesn't exists`});
+        //         }
 
-                post.partyInternalID = partyInternalID
-            } 
-         }
+        //         post.partyInternalID = partyInternalID
+        //     } 
+        //  }
 
-        }
+       // }
 
 
         ///// CREATE CANDIDATES
 
         // take one from the limit of candidates 
-        let newElectionConfigRunningCopy = {
-            ...electionConfig[0],
-            candidates : currentCandidateLimit-numofCandToInput
-        }
+        // let newElectionConfigRunningCopy = {
+        //     ...electionConfig[0],
+        //     candidates : currentCandidateLimit-numofCandToInput
+        // }
 
-        await ctx.stub.putState("2", Buffer.from(stringify(newElectionConfigRunningCopy)));
+        // await ctx.stub.putState("2", Buffer.from(stringify(newElectionConfigRunningCopy)));
 
         for (const candidate of candidatesArray) {
 
@@ -192,6 +218,9 @@ export class CandidatesContract extends Contract {
  
              // Insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
              await ctx.stub.putState(candidateID, Buffer.from(stringify((newCandidate))));
+             const extIDKey = `extID-${data.candidateExternalID}`;
+               // ---------- Map candidateExternalID to candidateID ----------
+            await ctx.stub.putState(extIDKey, Buffer.from(candidateID));
 
         }
 

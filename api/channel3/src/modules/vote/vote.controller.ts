@@ -56,19 +56,19 @@ export class VoteController {
 
     // save on live counting cache
     //let dataToSend = JSON.stringify({...vote}) 
-    let dataToSend = { multiplier: vote.multiplier, positionID: vote.positionID, candidateID: vote.candidateID, partyID: vote.partyID }
-    const liveCountResponse = await this.voteService.postVoteOnLiveCount(`${LIVE_COUNT_URL}/votes`,dataToSend)
+    // let dataToSend = { multiplier: vote.multiplier, positionID: vote.positionID, candidateID: vote.candidateID, partyID: vote.partyID }
+    // const liveCountResponse = await this.voteService.postVoteOnLiveCount(`${LIVE_COUNT_URL}/votes`,dataToSend)
 
-    if (liveCountResponse.status !== 200 && liveCountResponse.status !== 201) {
-      console.warn('Live count service responded with unexpected status', liveCountResponse.status);
-      console.log('livecount',liveCountResponse)
-      return res.status(207).json({
-        statusCode: 207,
-        message: 'Vote saved on chain, but live count update may have failed',
-        success: true,
-        liveCountStatus: liveCountResponse.status
-      });
-    }
+    // if (liveCountResponse.status !== 200 && liveCountResponse.status !== 201) {
+    //   console.warn('Live count service responded with unexpected status', liveCountResponse.status);
+    //   console.log('livecount',liveCountResponse)
+    //   return res.status(207).json({
+    //     statusCode: 207,
+    //     message: 'Vote saved on chain, but live count update may have failed',
+    //     success: true,
+    //     liveCountStatus: liveCountResponse.status
+    //   });
+    // }
     
     return res.status(201).json({ statusCode: 201, message: 'vote saved correctly', success: true });
   

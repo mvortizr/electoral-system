@@ -62,7 +62,7 @@ docker pull docker.io/mvortizr/channel1_api:v1.41
 
 # pushear a dockerhub
 docker login
-docker push mvortizr/channel1_api:v1.42
+docker push mvortizr/channel1_api:v1.44
 
 # Tener el IP de un docker
 docker inspect 2802b898fe0a9cce4a2df7cfcba8b2fd8511adb41235207645ddf316305c15c0 | grep IPAddress

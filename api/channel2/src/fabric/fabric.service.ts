@@ -52,10 +52,10 @@ export class FabricService {
             client,
             identity,
             signer,
-            evaluateOptions: () => ({ deadline: Date.now() + 5000 }),
-            endorseOptions: () => ({ deadline: Date.now() + 15000 }),
-            submitOptions: () => ({ deadline: Date.now() + 5000 }),
-            commitStatusOptions: () => ({ deadline: Date.now() + 60000 }),
+            evaluateOptions: () => ({ deadline: Date.now() + 50000 }),
+            endorseOptions: () => ({ deadline: Date.now() + 150000 }),
+            submitOptions: () => ({ deadline: Date.now() + 50000 }),
+            commitStatusOptions: () => ({ deadline: Date.now() + 600000 }),
           });
         
     }

@@ -139,7 +139,7 @@ kubectl logs -f <pod-name> -n <namespace>
 
 kubectl logs -f nestjs-api-deployment-77895b9d64-zng7s
 kubectl logs -f channel2-api-f9d76f4b8-c6hkc -n voting-system-bchain-network
-kubectl logs -f org1-peer3-85ddd8c989-4kz7t -n voting-system-bchain-network
+kubectl logs -f channel1-api-57f99f6fb7-6mwzq -n voting-system-bchain-network
 
 kubectl -n voting-system-bchain-network delete ingress couchdb-ingress nestjs-api-ingress
 

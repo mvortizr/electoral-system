@@ -1,17 +1,17 @@
 [
   {
-    "positionID": "7ed68bdb-7ef9-479f-8fbf-1df57cdbf5b8",
-    "positionName": "Senador de la junta de vecinos",
-    "vacancies": 3
+    "positionID": "e2ff4edc-f0aa-4727-b8d1-ffb5fb68ad2f",
+    "positionName": "Regidor de la gobernación",
+    "vacancies": 2
   },
   {
-    "positionID": "a1679fd5-29e9-4d68-8ddf-cbfc1f88ed3a",
-    "positionName": "Gobernador de la asamblea nacional",
-    "vacancies": 4
-  },
-  {
-    "positionID": "2da85cb0-f71e-47af-a29d-f1433351b9f2",
-    "positionName": "Consejero Legislativo Regional de la comunidad",
+    "positionID": "49c1aa90-c179-40df-8531-c81680db6949",
+    "positionName": "Consejero Electoral del municipio",
     "vacancies": 1
+  },
+  {
+    "positionID": "e3345b8a-86d8-4ac8-bfa0-3ff30ad3351a",
+    "positionName": "Regidor del municipio",
+    "vacancies": 2
   }
 ]

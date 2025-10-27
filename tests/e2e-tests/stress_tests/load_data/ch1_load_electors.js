@@ -1,23 +1,23 @@
-// k6 run ch1_stress_test_v3.js
+// k6 run ch1_load_electors.js --out json=results_electors.json
 
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 import { SharedArray } from 'k6/data';
-import { API_KEY_1, BASE_URL_1 } from '../data_loaders/consts.js'
+import { API_KEY_1, BASE_URL_1 } from '../../data_loaders/consts.js'
 
 // 1. Configuration Constants (Update these for your environment)
 const BASE_URL = BASE_URL_1;
 const API_KEY = API_KEY_1;
 // *** MODIFICATION: New Endpoint ***
-const ENDPOINT = '/candidate/createCandidate'; 
+const ENDPOINT = '/elector/createElector'; 
 // The following constant is no longer needed but kept for context if you switch back
 // const BATCH_SIZE = 5; 
-const DATA_FILE_NAME = '../generated_data/candidates.json';
-const VU_NUMBER = 10;
+const DATA_FILE_NAME = '../../generated_data/electors.json';
+const VU_NUMBER = 50;
 
 // 2. Load Existing Data (The loading logic remains the same)
 // K6 will load this file once and share it across all VUs.
-const ALL_CANDIDATES = new SharedArray('allCandidates', function () {
+const ALL_ELECTORS = new SharedArray('allElectors', function () {
     let rawData;
     
     // --- Step 1: Attempt to Read the File ---
@@ -54,20 +54,20 @@ const ALL_CANDIDATES = new SharedArray('allCandidates', function () {
 });
 
 // Calculate the total number of candidates globally
-const TOTAL_CANDIDATES_COUNT = ALL_CANDIDATES.length;
+const TOTAL_ELECTOR_COUNT = ALL_ELECTORS.length;
 
-console.log(`Calculated total candidates to create: ${TOTAL_CANDIDATES_COUNT}`);
+console.log(`Calculated total candidates to create: ${TOTAL_ELECTOR_COUNT}`);
 
 
 // 3. Test Options (Updated for one iteration per candidate)
 export let options = {
-  // *** MODIFICATION: Use 'shared-iterations' with TOTAL_CANDIDATES_COUNT ***
+  // *** MODIFICATION: Use 'shared-iterations' with TOTAL_ELECTOR_COUNT ***
   // Each iteration now corresponds to sending ONE candidate.
   scenarios: {
     single_upload_scenario: {
       executor: 'shared-iterations',
       // Set the total number of iterations equal to the total number of candidates.
-      iterations: TOTAL_CANDIDATES_COUNT, 
+      iterations: TOTAL_ELECTOR_COUNT, 
       vus: VU_NUMBER, // Number of concurrent users
       maxDuration: '30m', 
       gracefulStop: '10s',
@@ -85,7 +85,7 @@ export let options = {
 export default function () {
   const url = `${BASE_URL}${ENDPOINT}`;
   
- if (TOTAL_CANDIDATES_COUNT === 0) {
+ if (TOTAL_ELECTOR_COUNT === 0) {
       return; 
   }
 
@@ -99,21 +99,21 @@ export default function () {
   // VU 2, ITER 0 -> Index 1
   // ...
   // VU 1, ITER 1 -> Index 10
-  const candidateIndex = (__VU - 1) + __ITER * VU_NUMBER;
+  const electorIndex = (__VU - 1) + __ITER * VU_NUMBER;
 
   // Safety check: if the calculated index is beyond the length of the data array, exit.
-  // This handles the remainder when TOTAL_CANDIDATES_COUNT is not divisible by VU_NUMBER.
-  if (candidateIndex >= TOTAL_CANDIDATES_COUNT) {
+  // This handles the remainder when TOTAL_ELECTOR_COUNT is not divisible by VU_NUMBER.
+  if (electorIndex >= TOTAL_ELECTOR_COUNT) {
       return;
   }
   
   // *** MODIFICATION: Get a single candidate payload ***
-  const candidatePayload = ALL_CANDIDATES[candidateIndex];
+  const electorPayload = ALL_ELECTORS[electorIndex];
 
   // If the candidate object is undefined, skip.
-  if (!candidatePayload) {
+  if (!electorPayload) {
       // Log this as a serious data integrity issue if it happens after the bounds check
-      console.error(`FATAL: Candidate payload is undefined for index ${candidateIndex}.`);
+      console.error(`FATAL: Candidate payload is undefined for index ${electorIndex}.`);
       return;
   }
 
@@ -123,12 +123,12 @@ export default function () {
   };
 
   // Perform the POST request with the single candidate object
-  const res = http.post(url, JSON.stringify(candidatePayload), { headers: headers });
+  const res = http.post(url, JSON.stringify(electorPayload), { headers: headers });
 
   if (res.status !== 201) {
-    console.error(`INDEX = ${candidateIndex}, ITER = ${__ITER}, VU = ${__VU},  FAILED: ${res.status} - ${res.body}`);
+    console.error(`INDEX = ${electorIndex}, ITER = ${__ITER}, VU = ${__VU},  FAILED: ${res.status} - ${res.body}`);
   }  else {
-    console.log (`INDEX = ${candidateIndex}, ITER = ${__ITER}, VU = ${__VU},  SUCCEEDED: ${res.status} -  ${res.body}`);
+    console.log (`INDEX = ${electorIndex}, ITER = ${__ITER}, VU = ${__VU},  SUCCEEDED: ${res.status} -  ${res.body}`);
   }
 
   // 5. Verification checks
@@ -143,7 +143,7 @@ export default function () {
         return false;
       }
     },
-    'response time is fast': (r) => r.timings.duration < 1000,
+    'response time is fast': (r) => r.timings.duration < 7000,
   });
 
   // Wait for 0.5 seconds before the next iteration

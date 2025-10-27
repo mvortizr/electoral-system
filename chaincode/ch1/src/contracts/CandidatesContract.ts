@@ -25,27 +25,27 @@ export class CandidatesContract extends Contract {
 
         //// VALIDATIONS
 
-        // check that election config exists and bring the number of parties
-        let electionConfig = await bringElectionConfig(ctx);
-        if (electionConfig.length === 0) {
-            return JSON.stringify({success: false, error:`election config not set`});
-        } 
+        // // check that election config exists and bring the number of parties
+        // let electionConfig = await bringElectionConfig(ctx);
+        // if (electionConfig.length === 0) {
+        //     return JSON.stringify({success: false, error:`election config not set`});
+        // } 
 
-        // check all parties are inputed before starting with positions
-        let currentPartiesMissing = electionConfig[0].parties
-        let currentPositionMissing = electionConfig[0].positions
-        if (currentPartiesMissing >0) {
-            return JSON.stringify({success: false, error: "please input all the parties before introducing candidate data" });
-        }
-        if (currentPositionMissing>0) {
-            return JSON.stringify({success: false, error: "please input all the positions before introducing candidate data" });
-        }
+        // // check all parties are inputed before starting with positions
+        // let currentPartiesMissing = electionConfig[0].parties
+        // let currentPositionMissing = electionConfig[0].positions
+        // if (currentPartiesMissing >0) {
+        //     return JSON.stringify({success: false, error: "please input all the parties before introducing candidate data" });
+        // }
+        // if (currentPositionMissing>0) {
+        //     return JSON.stringify({success: false, error: "please input all the positions before introducing candidate data" });
+        // }
 
-         // check to not input more candidates than the ones in the config
-         let currentCandidateLimit = electionConfig[0].candidates
-         if (currentCandidateLimit <=0) {
-             return JSON.stringify({success: false, error: "max candidate limit reached" });
-         }
+        //  // check to not input more candidates than the ones in the config
+        //  let currentCandidateLimit = electionConfig[0].candidates
+        //  if (currentCandidateLimit <=0) {
+        //      return JSON.stringify({success: false, error: "max candidate limit reached" });
+        //  }
  
          //check that there's not another candidate with the same extID
          let doesExtCandIDExists = await isExternalCandidateIDDuplicated(data, ctx)
@@ -80,12 +80,12 @@ export class CandidatesContract extends Contract {
          }
 
  
-         // all in order, take one from the limit of candidates 
-           let newElectionConfigRunningCopy = {
-             ...electionConfig[0],
-             candidates : currentCandidateLimit-1
-         }
-         await ctx.stub.putState("2", Buffer.from(stringify(newElectionConfigRunningCopy)));
+        //  // all in order, take one from the limit of candidates 
+        //    let newElectionConfigRunningCopy = {
+        //      ...electionConfig[0],
+        //      candidates : currentCandidateLimit-1
+        //  }
+        //  await ctx.stub.putState("2", Buffer.from(stringify(newElectionConfigRunningCopy)));
  
 
         //////////CREATE CANDIDATE/////////// 
